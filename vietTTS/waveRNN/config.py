@@ -1,14 +1,6 @@
 from pathlib import Path
 from typing import NamedTuple
 
-import einops
-import haiku as hk
-import jax
-import jax.numpy as jnp
-import matplotlib.pyplot as plt
-import numpy as np
-import optax
-
 
 class TrainingConfig(NamedTuple):
   end_step: int

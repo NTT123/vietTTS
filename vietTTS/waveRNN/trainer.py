@@ -1,9 +1,8 @@
 import pickle
 import time
-from pathlib import Path
 from typing import Deque
 
-import IPython.display as ipd
+import matplotlib.pyplot as plt
 import soundfile as sf
 from tabulate import tabulate
 from vietTTS.tacotron.dsp import *
@@ -37,7 +36,6 @@ next(data_iter).shape, next(data_iter).dtype
 
 rng = jax.random.PRNGKey(42)
 y = next(data_iter)
-print('Data batch info:', y.shape, y.dtype)
 mu = encode_16bit_mu_law(y)
 sr = FLAGS.sample_rate
 

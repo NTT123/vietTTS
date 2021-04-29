@@ -2,16 +2,9 @@ from argparse import Namespace
 from pathlib import Path
 from typing import NamedTuple
 
-import haiku as hk
-import jax
-import jax.numpy as jnp
-import matplotlib.pyplot as plt
-import numpy as np
-import optax
 from einops import rearrange
 from jax.numpy import ndarray
 from tabulate import tabulate
-from tqdm.auto import tqdm
 
 
 class TacotronInput(NamedTuple):
@@ -64,8 +57,8 @@ class FLAGS(Namespace):
 
   max_reduce_factor = 32
   _training_schedule = [
-      TrainConfig(5_000,  32, 1e-4, 0.5),
-      TrainConfig(6_000,  16, 1e-6, 0.5),
+      TrainConfig(5_000,   32, 1e-4, 0.5),
+      TrainConfig(6_000,   16, 1e-6, 0.5),
       TrainConfig(10_000,  16, 1e-4, 0.5),
       TrainConfig(11_000,   8, 1e-6, 0.5),
       TrainConfig(20_000,   8, 1e-4, 0.5),
@@ -107,5 +100,3 @@ class FLAGS(Namespace):
 
   # postnet
   postnet_dim = 512
-
-

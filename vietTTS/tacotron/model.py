@@ -1,7 +1,10 @@
 # haiku tacotron model
-
+import haiku as hk
+import jax
+import jax.numpy as jnp
 
 from .config import *
+
 
 class Tacotron(hk.Module):
   """Tacotron 2."""

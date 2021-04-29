@@ -1,7 +1,6 @@
 import random as rd
 from pathlib import Path
 
-import librosa
 import numpy as np
 import soundfile as sf
 

@@ -1,4 +1,6 @@
-# Another TTS 
+# A Vietnamese TTS
+
+Tacotron + WaveRNN for vietnamese dataset.
 
 ### Install
 
