@@ -1,8 +1,11 @@
-# A Vietnamese TTS
+A Vietnamese TTS
+================
 
 Tacotron + WaveRNN for vietnamese dataset.
 
-### Install
+Install
+-------
+
 
 ```sh
 git clone https://github.com/NTT123/vietTTS.git
@@ -10,27 +13,31 @@ cd vietTTS
 pip3 install -e .
 ```
 
-### Download reinfo dataset
+Download reinfo dataset
+-----------------------
 
 ```sh
 bash ./scripts/download_reinfo_dataset.sh
 ```
 
-### Train Tacotron 
+Train Tacotron 
+--------------
 
 ```sh
 python3 -m vietTTS.tacotron.trainer
 ```
 
-### Train waveRNN
+Train waveRNN
+-------------
 
 ```sh
 python3 -m vietTTS.waveRNN.trainer
 ```
 
 
-### Synthesize speech
+Synthesize speech
+-----------------
 
 ```sh
-python3 -m vietTTS.synthesizer -text="hôm qua em tới trường" --output=clip.wav
+python3 -m vietTTS.synthesizer --text="####### hôm qua em tới trường #######" --output=clip.wav
 ```
