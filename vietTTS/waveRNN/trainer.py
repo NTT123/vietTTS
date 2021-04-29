@@ -194,7 +194,7 @@ def gen_test_sample(test_clip, step=0):
 
 
 test_clip, _sr = sf.read(test_wav_files[0], dtype='int16')
-gen_test_sample(test_clip=test_clip[None, :])
+gen_test_sample(test_clip=test_clip[None, :], step=0)
 
 
 def print_flags(dict):
@@ -246,6 +246,6 @@ for step in range(training_step + 1, 1 + FLAGS.total_training_steps):
 
   # generate test samples
   if step % 10000 == 0:
-    gen_test_sample(test_clip=test_clip[None, :])
+    gen_test_sample(test_clip=test_clip[None, :], step=step)
     # gen_test_sample(test_clip=test_clip[None, ss:ss+l])
     # gen_test_sample()
