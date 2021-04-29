@@ -116,14 +116,15 @@ params, aux = net.init(rng, inputs, 1, 0.5)
 optim_state = optimizer.init(params)
 
 
-def plot_attn(L, LL):
+def plot_attn(L, LL, step=0):
   plt.figure(figsize=(10, 3))
   plt.imshow(
       jax.device_get(aux['tacotron']['attn'])[:L, :LL],
       interpolation='nearest',
       aspect='auto',
   )
-  plt.show()
+  plt.savefig(FLAGS.ckpt_dir / f'attn_{step}.png')
+  plt.close()
 
 
 def save_ckpt(step, params, aux, optim_state, rng):
@@ -222,4 +223,4 @@ for i in range(last_step + 1, 1 + FLAGS.training_steps):
     print(f'  {i:06d} | loss {loss:.3f} | {speed:.3f} it/s | LR {lr:.3e} | reduce factor {current_config.reduce_factor} | mel dropout {current_config.mel_dropout:.3f} ')
 
   if i % (10*FLAGS.logging_freq) == 0:
-    plot_attn(batch.text_len[0], batch.mel_len[0]//current_config.reduce_factor)
+    plot_attn(batch.text_len[0], batch.mel_len[0]//current_config.reduce_factor, step=i)
