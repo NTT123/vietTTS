@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Deque
 
 import IPython.display as ipd
+import soundfile as sf
 from tabulate import tabulate
 from vietTTS.tacotron.dsp import *
 
@@ -108,6 +109,7 @@ def load_latest_checkpoint(path=ckpt_dir):
 if not FLAGS.ckpt_dir.exists():
   FLAGS.ckpt_dir.mkdir(parents=True, exist_ok=True)
 
+
 def make_new_log_file():
   counter = len(tuple(FLAGS.ckpt_dir.glob('log.*.txt')))
   fn = FLAGS.ckpt_dir / f'log.{counter}.txt'
@@ -167,7 +169,7 @@ def regenerate_from_signal_(y, rng):
 regenerate_from_signal = jax.jit(regenerate_from_signal_.apply)
 
 
-def gen_test_sample(test_clip):
+def gen_test_sample(test_clip, step=0):
   t1 = time.perf_counter()
   synthesized_clip, reg, pr = regenerate_from_signal(params, aux, test_clip, rng)[0]
   synthesized_clip = jax.device_get(synthesized_clip)
@@ -176,19 +178,23 @@ def gen_test_sample(test_clip):
   delta = t2 - t1
   l = len(synthesized_clip) / sr
   print(f'  take {delta:.3f} seconds to generate {l:.3f} seconds, RTF = {delta / l:.3f}')
-  plt.plot(jax.device_get(reg[0, :, 0]))
-  plt.show()
+  # plt.plot(jax.device_get(reg[0, :, 0]))
+  # plt.show()
   # plt.imshow(pr[0].T)
   # plt.show()
   plt.figure(figsize=(20, 6))
   plt.matshow(pr[0, 12000:12100].T, interpolation='nearest', fignum=0, aspect='auto')
-  plt.show()
+  plt.savefig(FLAGS.ckpt_dir / f'predictive_dist_{step}.png')
+  plt.close()
+  # plt.show()
+  sf.write(str(FLAGS.ckpt_dir/f'generated_clip_{step}.wav'), synthesized_clip, sr)
+  sf.write(str(FLAGS.ckpt_dir/f'gt_clip_{step}.wav'), test_clip[0], sr)
   # display(ipd.Audio(synthesized_clip, rate=sr))
   # display(ipd.Audio(test_clip[0], rate=sr))
 
 
 test_clip, _sr = sf.read(test_wav_files[0], dtype='int16')
-# gen_test_sample(test_clip=test_clip[None, :])
+gen_test_sample(test_clip=test_clip[None, :])
 
 
 def print_flags(dict):

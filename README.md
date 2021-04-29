@@ -5,6 +5,7 @@
 ```sh
 git clone https://github.com/NTT123/vietTTS.git
 cd vietTTS 
+pip3 install -e .
 ```
 
 ### Download reinfo dataset

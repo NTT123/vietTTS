@@ -3,7 +3,7 @@ from setuptools import setup
 __version__ = '0.1'
 url = 'https://github.com/ntt123/vietTTS'
 
-install_requires = ['tabulate', 'optax', 'jax', 'jaxlib',
+install_requires = ['tabulate', 'optax', 'jax', 'jaxlib', 'einops', 'librosa',
                     'dm-haiku @ git+https://github.com/deepmind/dm-haiku', 'tqdm', 'gdown']
 setup_requires = []
 tests_require = []
