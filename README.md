@@ -27,7 +27,7 @@ Download reinfo dataset
 -----------------------
 
 ```sh
-bash ./scripts/download_reinfo_dataset.sh
+bash ./scripts/download_aligned_reinfo_dataset.sh
 ```
 
 
