@@ -4,7 +4,7 @@ __version__ = '0.1'
 url = 'https://github.com/ntt123/vietTTS'
 
 install_requires = ['tabulate', 'optax', 'jax', 'jaxlib', 'einops', 'librosa',
-                    'dm-haiku @ git+https://github.com/deepmind/dm-haiku', 'tqdm', 'gdown']
+                    'textgrid', 'dm-haiku @ git+https://github.com/deepmind/dm-haiku', 'tqdm', 'gdown']
 setup_requires = []
 tests_require = []
 
