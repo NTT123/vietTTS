@@ -61,7 +61,7 @@ def train():
   params, aux = net.init(rng, muinputs, mel)
   optimizer = make_optim(FLAGS._training_schedule[0].learning_rate)
   optim_state = optimizer.init(params)
-  training_step = 0
+  training_step = -1
 
   @jax.jit
   def update(params, aux, optim_state, batch, learning_rate):

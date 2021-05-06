@@ -27,6 +27,6 @@ class FLAGS:
 
   # training config
   ckpt_dir = Path('assets/reinfo/waveRNN')
-  wav_data_dir = Path('/tmp/reinfo/raw/pp')
+  wav_data_dir = Path('train_data')
   sample_rate = 16_000
   variance_loss_scale = 0.1  # regularization term

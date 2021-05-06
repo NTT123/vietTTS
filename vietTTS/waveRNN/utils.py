@@ -83,7 +83,7 @@ def regenerate_from_signal_(y, rng, sr):
   return (out, reg, pr)
 
 
-regenerate_from_signal = jax.jit(regenerate_from_signal_.apply)
+regenerate_from_signal = jax.jit(regenerate_from_signal_.apply, static_argnums=[4])
 
 
 def gen_test_sample(params, aux, rng, test_clip, step=0, sr=16000):
