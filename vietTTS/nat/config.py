@@ -31,8 +31,8 @@ class FLAGS(Namespace):
   max_grad_norm = 1.0
 
   # ckpt
-  ckpt_dir = Path('assets/reinfo/nat')
-  data_dir = Path('assets/reinfo/data')
+  ckpt_dir = Path('assets/infore/nat')
+  data_dir = Path('assets/infore/data')
   data_dir = Path('train_data')
 
 

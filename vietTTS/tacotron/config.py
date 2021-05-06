@@ -76,8 +76,8 @@ class FLAGS(Namespace):
       TrainConfig(200_000,  1, 1e-5, 0.0),
   ]
 
-  ckpt_dir = Path('assets/reinfo/tacotron')
-  data_dir = Path('/tmp/reinfo/raw/pp')
+  ckpt_dir = Path('assets/infore/tacotron')
+  data_dir = Path('/tmp/infore/raw/pp')
 
   # dsp
   sample_rate = 16_000
