@@ -49,6 +49,7 @@ def text2tokens(text, lexicon_fn):
       for p in word:
         if p in phonemes:
           tokens.append(phonemes.index(p))
+  tokens.append(0) # silence
   return tokens
 
 
