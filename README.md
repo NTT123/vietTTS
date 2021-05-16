@@ -1,9 +1,9 @@
 A Vietnamese TTS
 ================
 
-Tacotron + WaveRNN for vietnamese datasets.
+Tacotron + HiFiGAN vocoder for vietnamese datasets.
 
-A synthesized audio clip is at [assets/infore/clip.wav](assets/infore/clip.wav).
+A synthesized audio clip: [clip.wav](assets/infore/clip.wav). A colab notebook: [notebook](https://colab.research.google.com/drive/1oczrWOQOr1Y_qLdgis1twSlNZlfPVXoY?usp=sharing).
 
 Install
 -------
@@ -49,17 +49,47 @@ python3 -m vietTTS.nat.acoustic_trainer
 
 
 
-Train waveRNN
+Train HiFiGAN vocoder
 -------------
 
+We use the original implementation from HiFiGAN authors at https://github.com/jik876/hifi-gan. Use the config file at `assets/hifigan/config.json` to train your model.
+
 ```sh
-python3 -m vietTTS.waveRNN.trainer
+git clone https://github.com/jik876/hifi-gan.git
+
+# create dataset in hifi-gan format
+ln -sf `pwd`/train_data hifi-gan/data
+cd hifi-gan/data
+ls -1 *.wav | sed -e 's/\.wav$//' > files.txt
+cd ..
+head -n 100 data/files.txt > val_files.txt
+tail -n +101 data/files.txt > train_files.txt
+rm data/files.txt
+
+# training
+python3 train.py \
+  --config ../assets/hifigan/config.json 
+  --input_wavs_dir=data  \
+  --input_training_file=train_files.txt \
+  --input_validation_file=val_files.txt
 ```
 
+Then, use the following command to convert pytorch model to haiku format:
+```sh
+cd ..
+python3 -m vietTTS.hifigan.convert_torch_model_to_haiku \
+  --config-file=assets/hifigan/config.json \
+  --checkpoint-file=hifi-gan/cp_hifigan/g_[latest_checkpoint]
+```
 
 Synthesize speech
 -----------------
 
 ```sh
-python3 -m vietTTS.synthesizer --use-nat --lexicon-file train_data/lexicon.txt --text="hôm qua em tới trường" --output=clip.wav
+python3 -m vietTTS.synthesizer \
+  --use-nat \
+  --use-hifigan \
+  --lexicon-file=train_data/lexicon.txt 
+  --text="hôm qua em tới trường" \
+  --output=clip.wav
 ```

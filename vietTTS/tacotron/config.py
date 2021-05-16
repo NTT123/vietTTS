@@ -85,6 +85,8 @@ class FLAGS(Namespace):
   pad_mel_len = 800
   pad_text_len = 200
   n_fft = 1024
+  fmin = 0.0
+  fmax = 8000
 
   # encoder
   _alphabet = make_alphabet()

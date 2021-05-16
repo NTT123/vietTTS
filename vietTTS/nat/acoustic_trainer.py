@@ -7,7 +7,6 @@ import jax
 import jax.numpy as jnp
 import matplotlib.pyplot as plt
 import optax
-from jax.interpreters.masking import is_tracing
 from tqdm.auto import tqdm
 from vietTTS.nat.config import AcousticInput
 from vietTTS.tacotron.dsp import MelFilter
@@ -28,7 +27,7 @@ def val_net(x): return AcousticModel(is_training=False)(x)
 
 @jax.jit
 def val_forward(params, aux, rng, inputs: AcousticInput):
-  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim)
+  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
   B, L, D = mels.shape
   inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1)
@@ -40,7 +39,7 @@ def val_forward(params, aux, rng, inputs: AcousticInput):
 
 
 def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
-  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim)
+  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
   B, L, D = mels.shape
   inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1)
@@ -50,7 +49,7 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   loss1 = (jnp.square(mel1_hat - mels) + jnp.square(mel2_hat - mels)) / 2
   loss2 = (jnp.abs(mel1_hat - mels) + jnp.abs(mel2_hat - mels)) / 2
   loss = jnp.mean((loss1 + loss2)/2, axis=-1)
-  mask = jnp.arange(0, L)[None, :] < (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
+  mask = (jnp.arange(0, L)[None, :] - 10) < (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
   loss = jnp.sum(loss * mask) / jnp.sum(mask)
   return (loss, new_aux) if is_training else (loss, new_aux, mel2_hat, mels)
 
@@ -87,12 +86,12 @@ def train():
                                       FLAGS.batch_size, FLAGS.max_wave_len, 'train')
   val_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
                                     FLAGS.batch_size, FLAGS.max_wave_len, 'val')
-  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim)
+  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   batch = next(train_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
   params, aux, rng, optim_state = initial_state(batch)
-  losses = Deque(maxlen=10)
-  val_losses = Deque(maxlen=10)
+  losses = Deque(maxlen=1000)
+  val_losses = Deque(maxlen=100)
 
   last_step = -1
 

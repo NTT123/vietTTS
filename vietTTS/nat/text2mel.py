@@ -49,7 +49,7 @@ def text2tokens(text, lexicon_fn):
       for p in word:
         if p in phonemes:
           tokens.append(phonemes.index(p))
-  tokens.append(0) # silence
+  tokens.append(0)  # silence
   return tokens
 
 
@@ -80,7 +80,9 @@ def text2mel(text: str, lexicon_fn=FLAGS.data_dir / 'lexicon.txt', silence_durat
       durations
   )
   mels = predict_mel(tokens, durations)
-  return mels
+  end_silence = durations[0, -1].item() / 10
+  silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
+  return mels[:, :-silence_frame]
 
 
 if __name__ == '__main__':
@@ -95,3 +97,5 @@ if __name__ == '__main__':
   plt.imshow(mel[0].T, origin='lower', aspect='auto')
   plt.savefig(str(args.output))
   plt.close()
+  mel = jax.device_get(mel)
+  mel.tofile('clip.mel')

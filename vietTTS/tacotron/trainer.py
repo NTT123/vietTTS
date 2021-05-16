@@ -16,7 +16,7 @@ def net(x, r, m): return Tacotron(is_training=True)(x, r, m)
 
 
 def loss_fn(params, aux, rng, inputs: InputBatch, reduce_factor, mel_dropout):
-  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim)
+  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   mel = melfilter(inputs.wav.astype(jnp.float32) / (2**15))
   N, L, D = mel.shape
   input_mel = mel[:, (reduce_factor-1):(-reduce_factor):reduce_factor, :]

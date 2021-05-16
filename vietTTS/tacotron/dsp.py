@@ -99,8 +99,8 @@ def batched_stft(y: ndarray,
 class MelFilter:
   """Convert waveform to mel spectrogram."""
 
-  def __init__(self, sample_rate: int, n_fft: int, n_mels: int):
-    self.melfb = jax.device_put(librosa.filters.mel(sr=sample_rate, n_fft=n_fft, n_mels=n_mels))
+  def __init__(self, sample_rate: int, n_fft: int, n_mels: int, fmin=0.0, fmax=8000):
+    self.melfb = jax.device_put(librosa.filters.mel(sr=sample_rate, n_fft=n_fft, n_mels=n_mels, fmin=fmin, fmax=fmax))
     self.n_fft = n_fft
 
   def __call__(self, y: ndarray) -> ndarray:
@@ -111,7 +111,7 @@ class MelFilter:
     p = (self.n_fft - hop_length) // 2
     y = jnp.pad(y, ((p, p), (0, 0)), mode='reflect')
     spec = batched_stft(y, self.n_fft, hop_length, window_length, 'hann', False, 'reflect')
-    mag = jnp.abs(spec)
+    mag = jnp.sqrt(jnp.square(spec.real) + jnp.square(spec.imag) + 1e-9)
     mel = jnp.einsum('ms,sfn->nfm', self.melfb, mag)
-    cond = jnp.log(mel + 1e-5)
+    cond = jnp.log(jnp.clip(mel, a_min=1e-5, a_max=None))
     return cond

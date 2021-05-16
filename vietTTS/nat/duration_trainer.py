@@ -54,7 +54,7 @@ def update(params, aux, rng, optim_state, inputs: DurationInput):
 
 def initial_state(batch):
   rng = jax.random.PRNGKey(42)
-  params, aux = hk.transform_with_state(lambda x: DurationModel(False)(x)).init(rng, batch)
+  params, aux = hk.transform_with_state(lambda x: DurationModel(True)(x)).init(rng, batch)
   optim_state = optimizer.init(params)
   return params, aux, rng, optim_state
 
@@ -89,6 +89,8 @@ def train():
             initial=last_step+1,
             ncols=80,
             desc='training')
+  best_val_step = last_step
+  best_val_loss = 1e9
   for step in tr:
     batch = next(train_data_iter)
     loss, (params, aux, rng, optim_state) = update(params, aux, rng, optim_state, batch)
@@ -101,9 +103,16 @@ def train():
     if step % 1000 == 0:
       loss = sum(losses).item() / len(losses)
       val_loss = sum(val_losses).item() / len(val_losses)
+      if val_loss < best_val_loss:
+        best_val_loss = val_loss
+        best_val_step = step
       plot_val_duration(step, next(val_data_iter), params, aux, rng)
       tr.write(f' {step:>6d}/{FLAGS.num_training_steps:>6d} | train loss {loss:.3f} | val loss {val_loss:.3f}')
       save_ckpt(step, params, aux, rng, optim_state, ckpt_dir=FLAGS.ckpt_dir)
+
+      if step - best_val_step > 5000:
+        tr.write('Early Stopping!')
+        break
 
 
 if __name__ == '__main__':
