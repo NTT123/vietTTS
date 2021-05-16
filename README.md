@@ -68,8 +68,8 @@ rm data/files.txt
 
 # training
 python3 train.py \
-  --config ../assets/hifigan/config.json 
-  --input_wavs_dir=data  \
+  --config ../assets/hifigan/config.json \
+  --input_wavs_dir=data \
   --input_training_file=train_files.txt \
   --input_validation_file=val_files.txt
 ```
@@ -89,7 +89,7 @@ Synthesize speech
 python3 -m vietTTS.synthesizer \
   --use-nat \
   --use-hifigan \
-  --lexicon-file=train_data/lexicon.txt 
+  --lexicon-file=train_data/lexicon.txt \
   --text="hôm qua em tới trường" \
   --output=clip.wav
 ```
