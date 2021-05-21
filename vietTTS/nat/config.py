@@ -27,7 +27,8 @@ class FLAGS(Namespace):
 
   # training
   batch_size = 64
-  learning_rate = 3e-4
+  learning_rate = 1e-3
+  duration_learning_rate = 1e-4
   max_grad_norm = 1.0
 
   # ckpt

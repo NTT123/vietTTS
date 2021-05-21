@@ -40,7 +40,7 @@ val_loss_fn = jax.jit(partial(loss_fn, is_training=False))
 loss_vag = jax.value_and_grad(loss_fn, has_aux=True)
 
 optimizer = optax.chain(optax.clip_by_global_norm(FLAGS.max_grad_norm),
-                        optax.adam(FLAGS.learning_rate))
+                        optax.adam(FLAGS.duration_learning_rate))
 
 
 @jax.jit
@@ -64,9 +64,10 @@ def plot_val_duration(step: int, batch, params, aux, rng):
   predicted_dur, gt_dur = predict_duration(params, aux, rng, batch)
   L = batch.lengths[0]
   x = np.arange(0, L) * 3
-  plt.bar(x + 1, predicted_dur[0, :L])
-  plt.bar(x, gt_dur[0, :L])
+  plt.plot(predicted_dur[0, :L])
+  plt.plot(gt_dur[0, :L])
   plt.legend(['predicted', 'gt'])
+  plt.title("Phoneme durations")
   plt.savefig(fn)
   plt.close()
 
@@ -107,7 +108,7 @@ def train():
         best_val_loss = val_loss
         best_val_step = step
       plot_val_duration(step, next(val_data_iter), params, aux, rng)
-      tr.write(f' {step:>6d}/{FLAGS.num_training_steps:>6d} | train loss {loss:.3f} | val loss {val_loss:.3f}')
+      tr.write(f' {step:>6d}/{FLAGS.num_training_steps:>6d} | train loss {loss:.5f} | val loss {val_loss:.5f}')
       save_ckpt(step, params, aux, rng, optim_state, ckpt_dir=FLAGS.ckpt_dir)
 
       if step - best_val_step > 5000:

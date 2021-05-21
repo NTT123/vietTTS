@@ -61,7 +61,7 @@ def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: st
       if len(batch) == batch_size:
         ps, ds, lengths = zip(*batch)
         ps = np.array(ps, dtype=np.int32)
-        ds = np.array(ds, dtype=np.float32) * 10
+        ds = np.array(ds, dtype=np.float32)
         lengths = np.array(lengths, dtype=np.int32)
         yield DurationInput(ps, lengths, ds)
         batch = []
@@ -102,7 +102,7 @@ def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_le
       if len(batch) == batch_size:
         ps, ds, lengths, wavs, wav_lengths = zip(*batch)
         ps = np.array(ps, dtype=np.int32)
-        ds = np.array(ds, dtype=np.float32) * 10
+        ds = np.array(ds, dtype=np.float32)
         lengths = np.array(lengths, dtype=np.int32)
         wavs = np.array(wavs)
         wav_lengths = np.array(wav_lengths, dtype=np.int32)

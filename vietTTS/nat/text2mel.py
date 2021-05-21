@@ -64,7 +64,7 @@ def predict_mel(tokens, durations):
     net = AcousticModel(is_training=False)
     return net.inference(tokens, durations, n_frames)
 
-  durations = durations / 10 * FLAGS.sample_rate / (FLAGS.n_fft//4)
+  durations = durations * FLAGS.sample_rate / (FLAGS.n_fft//4)
   n_frames = int(jnp.sum(durations).item())
   predict_fn = jax.jit(forward.apply, static_argnums=[5])
   tokens = np.array(tokens, dtype=np.int32)[None, :]
@@ -76,11 +76,11 @@ def text2mel(text: str, lexicon_fn=FLAGS.data_dir / 'lexicon.txt', silence_durat
   durations = predict_duration(tokens)
   durations = jnp.where(
       np.array(tokens)[None, :] <= 2,
-      jnp.clip(durations, a_min=silence_duration * 10, a_max=10),
+      jnp.clip(durations, a_min=silence_duration, a_max=None),
       durations
   )
   mels = predict_mel(tokens, durations)
-  end_silence = durations[0, -1].item() / 10
+  end_silence = durations[0, -1].item()
   silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
   return mels[:, :-silence_frame]
 
