@@ -9,10 +9,10 @@ import matplotlib.pyplot as plt
 import optax
 from tqdm.auto import tqdm
 from vietTTS.nat.config import AcousticInput
-from vietTTS.tacotron.dsp import MelFilter
 
 from .config import FLAGS, AcousticInput
 from .data_loader import load_textgrid_wav
+from .dsp import MelFilter
 from .model import AcousticModel
 from .utils import print_flags
 

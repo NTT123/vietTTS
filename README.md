@@ -87,8 +87,6 @@ Synthesize speech
 
 ```sh
 python3 -m vietTTS.synthesizer \
-  --use-nat \
-  --use-hifigan \
   --lexicon-file=train_data/lexicon.txt \
   --text="hôm qua em tới trường" \
   --output=clip.wav

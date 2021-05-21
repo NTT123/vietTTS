@@ -1,11 +1,7 @@
-from typing import NamedTuple, Optional, Tuple
-
 import haiku as hk
 import jax
 import jax.numpy as jnp
-from einops.einops import rearrange
 from jax.numpy import ndarray
-from vietTTS.tacotron.config import FLAGS
 
 from .config import FLAGS, AcousticInput, DurationInput
 
