@@ -18,9 +18,8 @@ def load_lexicon(fn):
 
 
 def predict_duration(tokens):
-  forward_fn = jax.jit(hk.transform_with_state(
-      lambda x: DurationModel(is_training=False)(x)
-  ).apply)
+  def fwd_(x): return DurationModel(is_training=False)(x)
+  forward_fn = jax.jit(hk.transform_with_state(fwd_).apply)
   with open(FLAGS.ckpt_dir / 'duration_ckpt_latest.pickle', 'rb') as f:
     dic = pickle.load(f)
   x = DurationInput(
@@ -36,20 +35,22 @@ def text2tokens(text, lexicon_fn):
   lexicon = load_lexicon(lexicon_fn)
 
   words = text.strip().lower().split()
-  tokens = [0]
+  tokens = [FLAGS.sil_index]
   for word in words:
-    if word in phonemes:
+    if word in FLAGS.special_phonemes:
       tokens.append(phonemes.index(word))
     elif word in lexicon:
       p = lexicon[word]
       p = p.split()
       p = [phonemes.index(pp) for pp in p]
       tokens.extend(p)
+      tokens.append(FLAGS.word_end_index)
     else:
       for p in word:
         if p in phonemes:
           tokens.append(phonemes.index(p))
-  tokens.append(0)  # silence
+      tokens.append(FLAGS.word_end_index)
+  tokens.append(FLAGS.sp_index)  # silence
   return tokens
 
 
@@ -75,14 +76,17 @@ def text2mel(text: str, lexicon_fn=FLAGS.data_dir / 'lexicon.txt', silence_durat
   tokens = text2tokens(text, lexicon_fn)
   durations = predict_duration(tokens)
   durations = jnp.where(
-      np.array(tokens)[None, :] <= 2,
+      np.array(tokens)[None, :] == FLAGS.sp_index,
       jnp.clip(durations, a_min=silence_duration, a_max=None),
       durations
   )
+  durations = jnp.where(np.array(tokens)[None, :] == FLAGS.word_end_index, 0., durations)
   mels = predict_mel(tokens, durations)
-  end_silence = durations[0, -1].item()
-  silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
-  return mels[:, :-silence_frame]
+  if tokens[-1] == FLAGS.sp_index:
+    end_silence = durations[0, -1].item()
+    silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
+    mels = mels[:, :(mels.shape[1]-silence_frame)]
+  return mels
 
 
 if __name__ == '__main__':

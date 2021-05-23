@@ -10,10 +10,10 @@ import optax
 from tqdm.auto import tqdm
 from vietTTS.nat.config import DurationInput
 
-from .config import *
+from .config import FLAGS
 from .data_loader import textgrid_data_loader
 from .model import DurationModel
-from .utils import *
+from .utils import load_latest_ckpt, print_flags, save_ckpt
 
 
 def loss_fn(params, aux, rng, x: DurationInput, is_training=True):
@@ -22,6 +22,8 @@ def loss_fn(params, aux, rng, x: DurationInput, is_training=True):
     return DurationModel(is_training=is_training)(x)
   durations, aux = net.apply(params, aux, rng, x)
   mask = jnp.arange(0, x.phonemes.shape[1])[None, :] < x.lengths[:, None]
+  # NOT predict [WORD END] token
+  mask = jnp.where(x.phonemes == FLAGS.word_end_index, False, mask)
   masked_loss = jnp.abs(durations - x.durations) * mask
   loss = jnp.sum(masked_loss) / jnp.sum(mask)
   return loss, aux
@@ -39,8 +41,10 @@ val_loss_fn = jax.jit(partial(loss_fn, is_training=False))
 
 loss_vag = jax.value_and_grad(loss_fn, has_aux=True)
 
-optimizer = optax.chain(optax.clip_by_global_norm(FLAGS.max_grad_norm),
-                        optax.adam(FLAGS.duration_learning_rate))
+optimizer = optax.chain(
+    optax.clip_by_global_norm(FLAGS.max_grad_norm),
+    optax.adamw(FLAGS.duration_learning_rate, weight_decay=FLAGS.weight_decay)
+)
 
 
 @jax.jit
@@ -85,9 +89,9 @@ def train():
     print('Generate random initial states...')
     params, aux, rng, optim_state = initial_state(next(train_data_iter))
 
-  tr = tqdm(range(last_step+1, 1+FLAGS.num_training_steps),
+  tr = tqdm(range(last_step + 1, 1 + FLAGS.num_training_steps),
             total=1 + FLAGS.num_training_steps,
-            initial=last_step+1,
+            initial=last_step + 1,
             ncols=80,
             desc='training')
   best_val_step = last_step
@@ -110,10 +114,6 @@ def train():
       plot_val_duration(step, next(val_data_iter), params, aux, rng)
       tr.write(f' {step:>6d}/{FLAGS.num_training_steps:>6d} | train loss {loss:.5f} | val loss {val_loss:.5f}')
       save_ckpt(step, params, aux, rng, optim_state, ckpt_dir=FLAGS.ckpt_dir)
-
-      if step - best_val_step > 5000:
-        tr.write('Early Stopping!')
-        break
 
 
 if __name__ == '__main__':

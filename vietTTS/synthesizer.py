@@ -1,9 +1,12 @@
+import re
+import unicodedata
 from argparse import ArgumentParser
 from pathlib import Path
 
 import soundfile as sf
 
 from .hifigan.mel2wave import mel2wave
+from .nat.config import FLAGS
 from .nat.text2mel import text2mel
 
 parser = ArgumentParser()
@@ -16,10 +19,15 @@ args = parser.parse_args()
 
 
 def nat_normalize_text(text):
+  text = unicodedata.normalize('NFKC', text)
   text = text.lower().strip()
-  import re
-  text = re.sub(r'[\n.,:]+', ' sp ', text)
+  sp = FLAGS.special_phonemes[FLAGS.sp_index]
+  text = re.sub(r'[\n.,:]+', f' {sp} ', text)
+  text = text.replace('"', " ")
+  text = re.sub(r'\s+', ' ', text)
+  text = re.sub(r'[.,:;?!]+', f' {sp} ', text)
   text = re.sub('[ ]+', ' ', text)
+  text = re.sub(f'( {sp}+)+ ', f' {sp} ', text)
   return text.strip()
 
 

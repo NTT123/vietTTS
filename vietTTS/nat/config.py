@@ -18,6 +18,12 @@ class FLAGS(Namespace):
   max_phoneme_seq_len = 128 * 3
   max_wave_len = 1024 * 64 * 3
 
+  # Montreal Forced Aligner
+  special_phonemes = ['sil', 'sp', 'spn', ' ']  # [sil], [sp] [spn] [word end]
+  sil_index = special_phonemes.index('sil')
+  sp_index = special_phonemes.index('sp')
+  word_end_index = special_phonemes.index(' ')
+
   # dsp
   mel_dim = 80
   n_fft = 1024
@@ -27,9 +33,10 @@ class FLAGS(Namespace):
 
   # training
   batch_size = 64
-  learning_rate = 1e-3
+  learning_rate = 1e-4
   duration_learning_rate = 1e-4
   max_grad_norm = 1.0
+  weight_decay = 1e-4
 
   # ckpt
   ckpt_dir = Path('assets/infore/nat')

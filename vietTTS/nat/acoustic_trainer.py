@@ -61,7 +61,7 @@ loss_vag = jax.value_and_grad(train_loss_fn, has_aux=True)
 
 optimizer = optax.chain(
     optax.clip_by_global_norm(1.0),
-    optax.adam(FLAGS.learning_rate)
+    optax.adamw(FLAGS.learning_rate, weight_decay=FLAGS.weight_decay)
 )
 
 

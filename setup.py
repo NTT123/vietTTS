@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = '0.2.2'
+__version__ = '0.3.0'
 url = 'https://github.com/ntt123/vietTTS'
 
 install_requires = ['tabulate', 'optax', 'jax', 'jaxlib', 'einops', 'librosa',

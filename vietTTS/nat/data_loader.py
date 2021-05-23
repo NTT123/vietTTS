@@ -4,9 +4,8 @@ from pathlib import Path
 import numpy as np
 import textgrid
 from scipy.io import wavfile
-from vietTTS.nat.model import DurationModel
 
-from .config import AcousticInput, DurationInput
+from .config import FLAGS, AcousticInput, DurationInput
 
 
 def load_phonemes_set_from_lexicon_file(fn: Path):
@@ -16,7 +15,7 @@ def load_phonemes_set_from_lexicon_file(fn: Path):
     phonemes = phonemes.split()
     S.update(phonemes)
 
-  S = ['sil', 'sp', 'spn'] + sorted(list(S))
+  S = FLAGS.special_phonemes + sorted(list(S))
   return S
 
 
@@ -25,10 +24,26 @@ def pad_seq(s, maxlen, value=0):
   return tuple(s) + (value,) * (maxlen - len(s))
 
 
+def is_in_word(phone, word):
+  def time_in_word(time, word):
+    return (word.minTime - 1e-3) < time and (word.maxTime + 1e-3) > time
+  return time_in_word(phone.minTime, word) and time_in_word(phone.maxTime, word)
+
+
 def load_textgrid(fn: Path):
   tg = textgrid.TextGrid.fromFile(str(fn.resolve()))
   data = []
+  words = list(tg[0])
+  widx = 0
+  assert tg[1][0].minTime == 0, "The first phoneme has to start at time 0"
   for p in tg[1]:
+    if not p in words[widx]:
+      widx = widx + 1
+      if len(words[widx-1].mark) > 0:
+        data.append((FLAGS.special_phonemes[FLAGS.word_end_index], 0.0))
+      if widx >= len(words):
+        break
+      assert p in words[widx], 'mismatched word vs phoneme'
     data.append((p.mark.strip().lower(), p.duration()))
   return data
 
@@ -36,7 +51,7 @@ def load_textgrid(fn: Path):
 def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: str):
   tg_files = sorted(data_dir.glob('*.TextGrid'))
   random.Random(42).shuffle(tg_files)
-  L = len(tg_files) * 8 // 10
+  L = len(tg_files) * 95 // 100
   assert mode in ['train', 'val']
   phonemes = load_phonemes_set_from_lexicon_file(data_dir / 'lexicon.txt')
   if mode == 'train':
@@ -70,7 +85,7 @@ def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: st
 def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_len, mode: str):
   tg_files = sorted(data_dir.glob('*.TextGrid'))
   random.Random(42).shuffle(tg_files)
-  L = len(tg_files) * 8 // 10
+  L = len(tg_files) * 95 // 100
   assert mode in ['train', 'val']
   phonemes = load_phonemes_set_from_lexicon_file(data_dir / 'lexicon.txt')
   if mode == 'train':
@@ -88,6 +103,18 @@ def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_le
 
     wav_file = data_dir / f'{fn.stem}.wav'
     sr, y = wavfile.read(wav_file)
+    y = np.copy(y)
+    start_time = 0
+    for i, (phone_idx, duration) in enumerate(zip(ps, ds)):
+      l = int(start_time * sr)
+      end_time = start_time + duration
+      r = int(end_time * sr)
+      if i == len(ps) - 1:
+        r = len(y)
+      if phone_idx < len(FLAGS.special_phonemes):
+        y[l: r] = 0
+      start_time = end_time
+
     if len(y) > pad_wav_len:
       y = y[:pad_wav_len]
     wav_length = len(y)
