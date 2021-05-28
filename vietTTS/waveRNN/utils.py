@@ -56,7 +56,7 @@ def regenerate_from_signal_(y, rng, sr):
   y = jnp.pad(y, ((0, 0), (pad_left, pad_right)))
   mel = melfilter(y)
 
-  net = WaveRNN(is_training=False)
+  net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
   x = jnp.array([128])
   hx = net.gru.initial_state(1)
   out = []
@@ -91,7 +91,8 @@ def gen_test_sample(params, aux, rng, test_clip, step=0, sr=16000):
   t1 = time.perf_counter()
   synthesized_clip, reg, pr = regenerate_from_signal(params, aux, test_clip, rng, sr)[0]
   synthesized_clip = jax.device_get(synthesized_clip)
-  synthesized_clip = librosa.mu_expand(synthesized_clip[0] - 128)
+  n_elem = 2**FLAGS.mu_law_bits
+  synthesized_clip = librosa.mu_expand(synthesized_clip[0] - n_elem//2, mu=n_elem - 1)
   t2 = time.perf_counter()
   delta = t2 - t1
   l = len(synthesized_clip) / sr
