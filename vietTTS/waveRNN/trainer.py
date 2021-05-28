@@ -87,8 +87,8 @@ def train():
   l2s = Deque(maxlen=100)
   start = time.perf_counter()
   training_config = FLAGS._training_schedule[0]
-
-  for step in range(training_step + 1, 1 + FLAGS.total_training_steps):
+  total_training_steps = FLAGS._training_schedule[-1].end_step
+  for step in range(training_step + 1, 1 + total_training_steps):
     training_step += 1
     # update train config
     if step % 1000 == 0:
