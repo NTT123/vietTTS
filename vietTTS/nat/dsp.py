@@ -1,13 +1,13 @@
 from functools import partial
-from typing import Deque, List, Optional, Tuple
+from typing import Optional
 
 import jax
 import jax.numpy as jnp
 import librosa
-import optax
 from einops import rearrange
 from jax.numpy import ndarray
-from librosa.core import fft
+
+from .config import FLAGS
 
 
 def rolling_window(a: ndarray, window: int, hop_length: int):
@@ -99,7 +99,7 @@ def batched_stft(y: ndarray,
 class MelFilter:
   """Convert waveform to mel spectrogram."""
 
-  def __init__(self, sample_rate: int, n_fft: int, n_mels: int, fmin=0.0, fmax=8000):
+  def __init__(self, sample_rate: int, n_fft: int, n_mels: int, fmin=FLAGS.fmin, fmax=FLAGS.fmax):
     self.melfb = jax.device_put(librosa.filters.mel(sr=sample_rate, n_fft=n_fft, n_mels=n_mels, fmin=fmin, fmax=fmax))
     self.n_fft = n_fft
 

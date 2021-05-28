@@ -15,6 +15,7 @@ parser.add_argument('--output', default='clip.wav', type=Path)
 parser.add_argument('--sample-rate', default=16000, type=int)
 parser.add_argument('--silence-duration', default=-1, type=float)
 parser.add_argument('--lexicon-file', default=None)
+parser.add_argument('--use-waveRNN', default=False, action='store_true')
 args = parser.parse_args()
 
 
@@ -34,6 +35,10 @@ def nat_normalize_text(text):
 text = nat_normalize_text(args.text)
 print('Normalized text input:', text)
 mel = text2mel(text, args.lexicon_file, args.silence_duration)
-wave = mel2wave(mel)
+if args.use_waveRNN:
+  from .waveRNN.mel2wave import mel2wave
+  wave = mel2wave(mel)
+else:
+  wave = mel2wave(mel)
 print('writing output to file', args.output)
 sf.write(str(args.output), wave, samplerate=args.sample_rate)
