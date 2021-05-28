@@ -19,6 +19,7 @@ def generate_from_mel_(mel, rng):
   out = []
 
   mel = net.upsample(mel)
+  n_elem = 2**FLAGS.mu_law_bits
 
   def loop(mel, prev_state):
     x, rng, hx = prev_state
@@ -28,7 +29,7 @@ def generate_from_mel_(mel, rng):
     x = net.o2(jax.nn.relu(net.o1(x)))
     x = jax.nn.log_softmax(x, axis=-1)
     pr = jnp.exp(x)
-    v = jnp.linspace(0, 255, 256)[None, None, :]
+    v = jnp.linspace(0, n_elem-1, n_elem)[None, None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
@@ -53,7 +54,6 @@ def load_latest_checkpoint(path):
   with open(latest_ckpt, 'rb') as f:
     dic = pickle.load(f)
   return dic
-
 
 
 def mel2wave(mel):

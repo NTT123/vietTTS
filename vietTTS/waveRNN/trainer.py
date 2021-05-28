@@ -13,13 +13,14 @@ from .utils import *
 
 @hk.without_apply_rng
 @hk.transform_with_state
-def net(x, m): return WaveRNN()(x, m)
+def net(x, m): return WaveRNN(mu_law_bits=FLAGS.mu_law_bits)(x, m)
 
 
 def loss_fn(params, aux, batch, sr=16000):
   melfilter = MelFilter(sr, 1024, 80, fmin=FLAGS.fmin, fmax=FLAGS.fmax)
   y = batch
-  mu = encode_16bit_mu_law(y)
+  n_elem = 2**FLAGS.mu_law_bits
+  mu = encode_16bit_mu_law(y, mu=n_elem - 1)
   y = y.astype(jnp.float32) / (2**15)
   mel = melfilter(y)
   pad = 1024
@@ -28,11 +29,11 @@ def loss_fn(params, aux, batch, sr=16000):
   mutargets = mu[:, 1:]
   logpr, aux = net.apply(params, aux, muinputs, mel)
   pr = jnp.exp(logpr)
-  v = jnp.linspace(0, 255, 256)[None, None, :]
+  v = jnp.linspace(0, n_elem-1, n_elem)[None, None, :]
   mean = jnp.sum(pr * v, axis=-1, keepdims=True)
   variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
   reg = jnp.log(1 + jnp.sqrt(variance))
-  targets = jax.nn.one_hot(mutargets, num_classes=256)
+  targets = jax.nn.one_hot(mutargets, num_classes=n_elem)
   llh = jnp.sum(targets * logpr, axis=-1)
   l1 = -jnp.mean(llh)
   l2 = FLAGS.variance_loss_scale * jnp.mean(reg)
@@ -53,7 +54,8 @@ def train():
   next(data_iter).shape, next(data_iter).dtype
   rng = jax.random.PRNGKey(42)
   y = next(data_iter)
-  mu = encode_16bit_mu_law(y)
+  n_elem = 2**FLAGS.mu_law_bits
+  mu = encode_16bit_mu_law(y, mu=n_elem - 1)
   sr = FLAGS.sample_rate
   melfilter = MelFilter(sr, 1024, 80)
   mel = melfilter(y.astype(jnp.float32)/(2**15))

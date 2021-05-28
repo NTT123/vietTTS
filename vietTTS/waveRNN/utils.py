@@ -15,7 +15,7 @@ from .model import *
 def encode_16bit_mu_law(y, mu=255):
   y = y.astype(jnp.float32) / (2**15)  # [-1, 1]
   mu_y = jnp.sign(y) * jnp.log1p(mu * jnp.abs(y)) / jnp.log1p(mu)
-  mu_y = ((mu_y + 1)/2 * 255).astype(jnp.int32)
+  mu_y = ((mu_y + 1)/2 * mu).astype(jnp.int32)
   return mu_y
 
 
@@ -62,6 +62,7 @@ def regenerate_from_signal_(y, rng, sr):
   out = []
 
   mel = net.upsample(mel)
+  n_elem = 2**FLAGS.mu_law_bits
 
   def loop(mel, prev_state):
     x, rng, hx = prev_state
@@ -71,7 +72,7 @@ def regenerate_from_signal_(y, rng, sr):
     x = net.o2(jax.nn.relu(net.o1(x)))
     x = jax.nn.log_softmax(x, axis=-1)
     pr = jnp.exp(x)
-    v = jnp.linspace(0, 255, 256)[None, None, :]
+    v = jnp.linspace(0, n_elem-1, n_elem)[None, None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))

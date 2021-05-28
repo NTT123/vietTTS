@@ -43,12 +43,12 @@ class UpsampleNetwork(hk.Module):
 
 
 class WaveRNN(hk.Module):
-  def __init__(self, is_training=True):
+  def __init__(self, mu_law_bits, is_training=True):
     super().__init__()
     self.gru = hk.GRU(FLAGS.gru_dim)
-    self.input_embed = hk.Embed(256, FLAGS.embed_dim)
+    self.input_embed = hk.Embed(2**mu_law_bits, FLAGS.embed_dim)
     self.o1 = hk.Linear(FLAGS.gru_dim)
-    self.o2 = hk.Linear(256)
+    self.o2 = hk.Linear(2**mu_law_bits)
     self.upsample = UpsampleNetwork(num_output_channels=FLAGS.embed_dim, is_training=is_training)
     self.is_training = is_training
 
