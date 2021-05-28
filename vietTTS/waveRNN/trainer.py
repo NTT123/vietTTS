@@ -29,7 +29,7 @@ def loss_fn(params, aux, batch, sr=16000):
   mutargets = mu[:, 1:]
   logpr, aux = net.apply(params, aux, muinputs, mel)
   pr = jnp.exp(logpr)
-  v = jnp.linspace(0, n_elem-1, n_elem)[None, None, :]
+  v = jnp.linspace(0, 255, n_elem)[None, None, :] # use 255 because of historical reason.
   mean = jnp.sum(pr * v, axis=-1, keepdims=True)
   variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
   reg = jnp.log(1 + jnp.sqrt(variance))
