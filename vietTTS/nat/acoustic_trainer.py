@@ -25,19 +25,6 @@ def net(x): return AcousticModel(is_training=True)(x)
 def val_net(x): return AcousticModel(is_training=False)(x)
 
 
-@jax.jit
-def val_forward(params, aux, rng, inputs: AcousticInput):
-  melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
-  mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
-  B, L, D = mels.shape
-  inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1)
-
-  n_frames = inputs.durations * FLAGS.sample_rate / (FLAGS.n_fft//4)
-  inputs = inputs._replace(mels=inp_mels, durations=n_frames)
-  (mel1_hat, mel2_hat), new_aux = val_net.apply(params, aux, rng, inputs)
-  return mel1_hat, mel2_hat
-
-
 def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
@@ -49,7 +36,7 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   loss1 = (jnp.square(mel1_hat - mels) + jnp.square(mel2_hat - mels)) / 2
   loss2 = (jnp.abs(mel1_hat - mels) + jnp.abs(mel2_hat - mels)) / 2
   loss = jnp.mean((loss1 + loss2)/2, axis=-1)
-  mask = (jnp.arange(0, L)[None, :] - 10) < (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
+  mask = jnp.arange(0, L)[None, :] < (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
   loss = jnp.sum(loss * mask) / jnp.sum(mask)
   return (loss, new_aux) if is_training else (loss, new_aux, mel2_hat, mels)
 

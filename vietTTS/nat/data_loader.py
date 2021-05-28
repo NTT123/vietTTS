@@ -86,11 +86,13 @@ def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_le
   tg_files = sorted(data_dir.glob('*.TextGrid'))
   random.Random(42).shuffle(tg_files)
   L = len(tg_files) * 95 // 100
-  assert mode in ['train', 'val']
+  assert mode in ['train', 'val', 'gta']
   phonemes = load_phonemes_set_from_lexicon_file(data_dir / 'lexicon.txt')
-  if mode == 'train':
+  if mode == 'gta':
+    tg_files = tg_files # all files
+  elif mode == 'train':
     tg_files = tg_files[:L]
-  if mode == 'val':
+  elif mode == 'val':
     tg_files = tg_files[L:]
 
   data = []
@@ -119,19 +121,25 @@ def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_le
       y = y[:pad_wav_len]
     wav_length = len(y)
     y = np.pad(y, (0, pad_wav_len - len(y)))
-    data.append((ps, ds, l, y, wav_length))
+    data.append((fn.stem, ps, ds, l, y, wav_length))
 
   batch = []
   while True:
     random.shuffle(data)
-    for e in data:
+    for idx, e in enumerate(data):
       batch.append(e)
-      if len(batch) == batch_size:
-        ps, ds, lengths, wavs, wav_lengths = zip(*batch)
+      if len(batch) == batch_size or (mode == 'gta' and idx == len(data) - 1):
+        names, ps, ds, lengths, wavs, wav_lengths = zip(*batch)
         ps = np.array(ps, dtype=np.int32)
         ds = np.array(ds, dtype=np.float32)
         lengths = np.array(lengths, dtype=np.int32)
         wavs = np.array(wavs)
         wav_lengths = np.array(wav_lengths, dtype=np.int32)
-        yield AcousticInput(ps, lengths, ds, wavs, wav_lengths, None)
+        if mode == 'gta':
+          yield names, AcousticInput(ps, lengths, ds, wavs, wav_lengths, None)
+        else:
+          yield AcousticInput(ps, lengths, ds, wavs, wav_lengths, None)
         batch = []
+    if mode == 'gta':
+      assert len(batch) == 0
+      break

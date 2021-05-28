@@ -60,7 +60,7 @@ git clone https://github.com/jik876/hifi-gan.git
 # create dataset in hifi-gan format
 ln -sf `pwd`/train_data hifi-gan/data
 cd hifi-gan/data
-ls -1 *.wav | sed -e 's/\.wav$//' > files.txt
+ls -1 *.TextGrid | sed -e 's/\.TextGrid$//' > files.txt
 cd ..
 head -n 100 data/files.txt > val_files.txt
 tail -n +101 data/files.txt > train_files.txt
@@ -68,6 +68,22 @@ rm data/files.txt
 
 # training
 python3 train.py \
+  --config ../assets/hifigan/config.json \
+  --input_wavs_dir=data \
+  --input_training_file=train_files.txt \
+  --input_validation_file=val_files.txt
+```
+
+Finetune on Ground-Truth Aligned melspectrograms:
+```sh
+cd /path/to/vietTTS # go to vietTTS directory
+python3 -m vietTTS.nat.zero_silence_segments -o train_data # zero all [sil, sp, spn] segments
+python3 -m vietTTS.nat.gta -o /path/to/hifi-gan/ft_dataset  # create gta melspectrograms at hifi-gan/ft_dataset directory
+
+# turn on finetune
+cd /path/to/hifi-gan
+python3 train.py \
+  --fine_tuning True \
   --config ../assets/hifigan/config.json \
   --input_wavs_dir=data \
   --input_training_file=train_files.txt \
