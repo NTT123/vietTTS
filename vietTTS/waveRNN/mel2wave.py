@@ -14,7 +14,8 @@ from .model import WaveRNN
 @hk.transform_with_state
 def generate_from_mel_(mel, rng):
   net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
-  x = jnp.array([128])
+  n_elem = 2**FLAGS.mu_law_bits
+  x = jnp.array([n_elem//2])
   hx = net.gru.initial_state(1)
   out = []
 
@@ -29,7 +30,7 @@ def generate_from_mel_(mel, rng):
     x = net.o2(jax.nn.relu(net.o1(x)))
     x = jax.nn.log_softmax(x, axis=-1)
     pr = jnp.exp(x)
-    v = jnp.linspace(0, n_elem-1, n_elem)[None, None, :]
+    v = jnp.linspace(0, 255, n_elem)[None, None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
