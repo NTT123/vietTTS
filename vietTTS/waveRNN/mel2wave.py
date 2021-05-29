@@ -13,7 +13,7 @@ from .model import WaveRNN
 @hk.without_apply_rng
 @hk.transform_with_state
 def generate_from_mel_(mel, rng):
-  net = WaveRNN(is_training=False)
+  net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
   x = jnp.array([128])
   hx = net.gru.initial_state(1)
   out = []
@@ -69,7 +69,8 @@ def mel2wave(mel):
   rng = jax.random.PRNGKey(42)
   synthesized_clip, reg, pr = generate_from_mel(params, aux, mel, rng)[0]
   synthesized_clip = jax.device_get(synthesized_clip)
-  synthesized_clip = librosa.mu_expand(synthesized_clip[0] - 128)
+  n_elem = 2**FLAGS.mu_law_bits
+  synthesized_clip = librosa.mu_expand(synthesized_clip[0] - n_elem//2, mu=n_elem-1)
   t2 = time.perf_counter()
   delta = t2 - t1
   l = len(synthesized_clip) / FLAGS.sample_rate
