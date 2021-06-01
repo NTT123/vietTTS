@@ -48,9 +48,23 @@ python3 -m vietTTS.nat.acoustic_trainer
 ```
 
 
+Train Vocoders
+--------------
 
-Train HiFiGAN vocoder
--------------
+Vocoder is a network to transform melspectrogram to audio waveform. We support two neural vocoders: WaveRNN and HiFi-GAN.
+
+- WaveRNN:  Fast training (a week), slow inference: need 40 GPU seconds to generate 10 seconds audio clip (can be improved with custom cuda kernel or prunning). 
+- HiFi-GAN: Slow training (1 month), fast inference: can generate audio in real-time on CPUs
+
+### Train WaveRNN vocoder
+
+```sh
+# zero all [sil, sp, spn] segments
+python3 -m vietTTS.nat.zero_silence_segments -o train_data
+python3 -m vietTTS.waveRNN.trainer
+```
+
+### Train HiFiGAN vocoder
 
 We use the original implementation from HiFiGAN authors at https://github.com/jik876/hifi-gan. Use the config file at `assets/hifigan/config.json` to train your model.
 
@@ -102,8 +116,10 @@ Synthesize speech
 -----------------
 
 ```sh
-python3 -m vietTTS.synthesizer \
+python3 -m vietTTS.synthesizer \  
   --lexicon-file=train_data/lexicon.txt \
   --text="hôm qua em tới trường" \
   --output=clip.wav
 ```
+
+Use `--use-waveRNN` option to enable WaveRNN vocoder.
