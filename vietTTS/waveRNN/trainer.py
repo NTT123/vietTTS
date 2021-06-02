@@ -20,21 +20,21 @@ def loss_fn(params, aux, batch, sr=16000):
   melfilter = MelFilter(sr, 1024, 80, fmin=FLAGS.fmin, fmax=FLAGS.fmax)
   y = batch
   n_elem = 2**FLAGS.mu_law_bits
-  mu = encode_16bit_mu_law(y, mu=n_elem - 1)
+  mu = encode_16bit_coarse_fine(y)
   y = y.astype(jnp.float32) / (2**15)
   mel = melfilter(y)
   pad = 1024
   mu = mu[:, (pad-1):-pad]
-  muinputs = mu[:, :-1]
+  muinputs = mu[:, :-1].astype(jnp.float32) * (2.0 / 255.0) - 1.0
   mutargets = mu[:, 1:]
   logpr, aux = net.apply(params, aux, muinputs, mel)
-  pr = jnp.exp(logpr)
-  v = jnp.linspace(0, 255, n_elem)[None, None, :] # use 255 because of historical reason.
+  pr = jnp.exp(logpr[..., 0])
+  v = jnp.linspace(0, 255, n_elem)[None, None, :]  # use 255 because of historical reason.
   mean = jnp.sum(pr * v, axis=-1, keepdims=True)
   variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
   reg = jnp.log(1 + jnp.sqrt(variance))
-  targets = jax.nn.one_hot(mutargets, num_classes=n_elem)
-  llh = jnp.sum(targets * logpr, axis=-1)
+  targets = jax.nn.one_hot(mutargets, num_classes=n_elem, axis=-2)
+  llh = jnp.sum(targets * logpr, axis=-2)
   l1 = -jnp.mean(llh)
   l2 = FLAGS.variance_loss_scale * jnp.mean(reg)
   return l1 + l2, (l1, l2, aux)
@@ -55,13 +55,13 @@ def train():
   rng = jax.random.PRNGKey(42)
   y = next(data_iter)
   n_elem = 2**FLAGS.mu_law_bits
-  mu = encode_16bit_mu_law(y, mu=n_elem - 1)
+  mu = encode_16bit_coarse_fine(y)
   sr = FLAGS.sample_rate
   melfilter = MelFilter(sr, 1024, 80)
   mel = melfilter(y.astype(jnp.float32)/(2**15))
   pad = 1024
   mu = mu[:, pad-1:-pad]
-  muinputs = mu[:, :-1]
+  muinputs = mu[:, :-1].astype(jnp.float32) * (2.0 / 255.0) - 1.0
   params, aux = net.init(rng, muinputs, mel)
   optimizer = make_optim(FLAGS._training_schedule[0].learning_rate)
   optim_state = optimizer.init(params)

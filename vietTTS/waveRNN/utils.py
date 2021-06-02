@@ -2,6 +2,7 @@ import pickle
 import time
 
 import jax
+from jax._src.numpy.lax_numpy import concatenate
 import librosa
 import matplotlib.pyplot as plt
 import soundfile as sf
@@ -10,6 +11,14 @@ from vietTTS.nat.dsp import *
 
 from .config import *
 from .model import *
+
+
+def encode_16bit_coarse_fine(y):
+  y = y.astype(jnp.uint32) + 2**15
+  fine = jnp.bitwise_and(y, 0x00ff)
+  coarse = jnp.right_shift(y, 8)
+  y = jnp.stack((coarse, fine), axis=-1).astype(jnp.uint16)
+  return y
 
 
 def encode_16bit_mu_law(y, mu=255):
@@ -58,29 +67,45 @@ def regenerate_from_signal_(y, rng, sr):
 
   net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
   x = jnp.array([128])
-  hx = net.gru.initial_state(1)
+  c0 = jnp.array([0.]).astype(jnp.float32)
+  f0 = jnp.array([0.]).astype(jnp.float32)
+  hx = net.rnn.initial_state(1)
   out = []
 
   mel = net.upsample(mel)
   n_elem = 2**FLAGS.mu_law_bits
 
   def loop(mel, prev_state):
-    x, rng, hx = prev_state
-    rng1, rng = jax.random.split(rng)
-    x = net.input_embed(x) + mel
-    x, hx = net.gru(x, hx)
-    x = net.o2(jax.nn.relu(net.o1(x)))
-    x = jax.nn.log_softmax(x, axis=-1)
-    pr = jnp.exp(x)
-    v = jnp.linspace(0, n_elem-1, n_elem)[None, None, :]
+    coarse, fine, rng, hx = prev_state
+    rng1, rng2, rng = jax.random.split(rng, 3)
+    x = jnp.concatenate( 
+        (mel, jnp.stack((coarse, fine, coarse), axis=-1)),
+        axis=-1
+    )
+    (yc, _), hx = net.rnn.step(x, hx)
+    clogits = net.rnn.O2(jax.nn.relu(net.rnn.O1(yc)))
+    new_coarse_8bit = jax.random.categorical(rng1, clogits, axis=-1)
+    new_coarse = new_coarse_8bit.astype(jnp.float32) * (2.0 / 255.0) - 1.0
+    x = jnp.concatenate( 
+        (mel, jnp.stack((coarse, fine, new_coarse), axis=-1)),
+        axis=-1
+    )
+    (_, yf), new_hx = net.rnn.step(x, hx)
+    flogits = net.rnn.O4(jax.nn.relu(net.rnn.O3(yf)))
+    new_fine_8bit = jax.random.categorical(rng2, flogits, axis=-1)
+    new_fine = new_fine_8bit.astype(jnp.float32) * (2.0 / 255.0) - 1.0
+
+    clogits = jax.nn.softmax(clogits, axis=-1)
+    pr = jnp.exp(clogits)
+    v = jnp.linspace(0, n_elem-1, n_elem)[None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
-    x = jax.random.categorical(rng1, x)
-    return (x, reg, pr), (x, rng, hx)
+    return (new_coarse_8bit, new_fine_8bit, rng, pr), (new_coarse, new_fine, rng, new_hx)
 
-  h0 = (x, rng, hx)
-  (out, reg, pr), _ = hk.dynamic_unroll(loop, mel, h0, time_major=False)
+  h0 = (c0, f0, rng, hx)
+  (coarse, fine, reg, pr), _ = hk.dynamic_unroll(loop, mel, h0, time_major=False)
+  out = (coarse * 256 + fine - 2**15).astype(jnp.float32) / (2**15)
   return (out, reg, pr)
 
 
@@ -92,7 +117,6 @@ def gen_test_sample(params, aux, rng, test_clip, step=0, sr=16000):
   synthesized_clip, reg, pr = regenerate_from_signal(params, aux, test_clip, rng, sr)[0]
   synthesized_clip = jax.device_get(synthesized_clip)
   n_elem = 2**FLAGS.mu_law_bits
-  synthesized_clip = librosa.mu_expand(synthesized_clip[0] - n_elem//2, mu=n_elem - 1)
   t2 = time.perf_counter()
   delta = t2 - t1
   l = len(synthesized_clip) / sr
