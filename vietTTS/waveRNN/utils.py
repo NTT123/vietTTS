@@ -105,7 +105,7 @@ def regenerate_from_signal_(y, rng, sr):
 
   h0 = (c0, f0, rng, hx)
   (coarse, fine, reg, pr), _ = hk.dynamic_unroll(loop, mel, h0, time_major=False)
-  out = (coarse * 256 + fine - 2**15).astype(jnp.float32) / (2**15)
+  out = (coarse * 256 + fine - 2**15).astype(jnp.int16)
   return (out, reg, pr)
 
 
@@ -115,7 +115,7 @@ regenerate_from_signal = jax.jit(regenerate_from_signal_.apply, static_argnums=[
 def gen_test_sample(params, aux, rng, test_clip, step=0, sr=16000):
   t1 = time.perf_counter()
   synthesized_clip, reg, pr = regenerate_from_signal(params, aux, test_clip, rng, sr)[0]
-  synthesized_clip = jax.device_get(synthesized_clip)
+  synthesized_clip = jax.device_get(synthesized_clip[0])
   n_elem = 2**FLAGS.mu_law_bits
   t2 = time.perf_counter()
   delta = t2 - t1
