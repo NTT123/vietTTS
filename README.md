@@ -53,7 +53,7 @@ Train Vocoders
 
 Vocoder is a network to transform melspectrogram to audio waveform. We support two neural vocoders: WaveRNN and HiFi-GAN.
 
-- WaveRNN:  Fast training (a week), slow inference: need 40 GPU seconds to generate 10 seconds audio clip (can be improved with custom cuda kernel or prunning). 
+- WaveRNN:  Fast training (1 week), slow inference: need 40 seconds on GPU to generate 10 seconds audio clip (can be improved with custom cuda kernel or prunning). 
 - HiFi-GAN: Slow training (1 month), fast inference: can generate audio in real-time on CPUs
 
 ### Train WaveRNN vocoder
