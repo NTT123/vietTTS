@@ -32,6 +32,7 @@ bash ./scripts/download_aligned_infore_dataset.sh
 
 **Note**: this is a denoised and aligned version of the original dataset which is donated by the InfoRe Technology company (see [here](https://www.facebook.com/groups/j2team.community/permalink/1010834009248719/)). You can download the original dataset (**InfoRe Technology 1**) at [here](https://github.com/TensorSpeech/TensorFlowASR/blob/main/README.md#vietnamese).
 
+The Montreal Forced Aligner (MFA) is used to align transcript and speech (textgrid files). Visit [MFA](https://montreal-forced-aligner.readthedocs.io/en/latest/) for more information on how to create textgrid files.
 
 Train duration model
 --------------------
