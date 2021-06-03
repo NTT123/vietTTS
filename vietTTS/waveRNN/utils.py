@@ -14,10 +14,10 @@ from .model import *
 
 
 def encode_16bit_coarse_fine(y):
-  y = y.astype(jnp.uint32) + 2**15
+  y = y.astype(jnp.int32) + 2**15
   fine = jnp.bitwise_and(y, 0x00ff)
   coarse = jnp.right_shift(y, 8)
-  y = jnp.stack((coarse, fine), axis=-1).astype(jnp.uint16)
+  y = jnp.stack((coarse, fine), axis=-1).astype(jnp.int32)
   return y
 
 
