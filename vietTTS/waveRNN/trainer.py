@@ -121,7 +121,7 @@ def train():
       print(msg)
       logfile.write(msg + '\n')
 
-    if step % 10000 == 0:
+    if step % 1000 == 0:
       save_checkpoint(
           training_step,
           params,
@@ -130,7 +130,7 @@ def train():
       )
 
     # generate test samples
-    if step % 10000 == 0:
+    if step % 1000 == 0:
       gen_test_sample(params, aux, rng, test_clip=test_clip[None, :], step=step, sr=sr)
 
 

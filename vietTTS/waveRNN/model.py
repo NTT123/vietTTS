@@ -51,13 +51,13 @@ class WaveRNNOriginal(hk.Module):
     self.cond_dim = cond_dim
     self.R = hk.Linear(3 * hidden_dim, with_bias=True, w_init=hk.initializers.VarianceScaling())
     self.I_W = hk.get_parameter('I_W', (cond_dim + 3, hidden_dim*3), init=hk.initializers.VarianceScaling())
-    self.I_b = hk.get_parameter('I_b', (3*hidden_dim,), init=jnp.zeros)
+    self.I_b = hk.get_parameter('I_b', (1, 3*hidden_dim), init=jnp.zeros)
     assert hidden_dim % 2 == 0, "Need an even hidden dim"
     d = hidden_dim // 2
-    mask = jnp.ones_like(self.I_W).at[-1, :d].set(0.)
+    mask = jnp.ones_like(self.I_W)
+    mask = mask.at[-1, 0*d:1*d].set(0.0)
     mask = mask.at[-1, 2*d:3*d].set(0.0)
     mask = mask.at[-1, 4*d:5*d].set(0.0)
-    mask = mask.at[-2, :].set(0.0)
     self.I_W_mask = mask
     self.O1 = hk.Linear(hidden_dim//2)
     self.O2 = hk.Linear(256)
@@ -92,7 +92,10 @@ class WaveRNNOriginal(hk.Module):
     hx = self.initial_state(N)
     (yc, yf), _ = hk.dynamic_unroll(self.step, inputs, hx, time_major=False)
     logits = jnp.stack(
-        (self.O2(jax.nn.relu(self.O1(yc))), self.O4(jax.nn.relu(self.O3(yc)))),
+        (
+          self.O2(jax.nn.relu(self.O1(yc))), 
+          self.O4(jax.nn.relu(self.O3(yf)))
+        ),
         axis=-1
     )
     return jax.nn.log_softmax(logits, axis=-2)
