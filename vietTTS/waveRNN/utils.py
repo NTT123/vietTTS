@@ -82,7 +82,7 @@ def regenerate_from_signal_(y, rng, sr):
         (mel, jnp.stack((coarse, fine, coarse), axis=-1)),
         axis=-1
     )
-    (yc, _), hx = net.rnn.step(x, hx)
+    (yc, _), _ = net.rnn.step(x, hx)
     clogits = net.rnn.O2(jax.nn.relu(net.rnn.O1(yc)))
     new_coarse_8bit = jax.random.categorical(rng1, clogits, axis=-1)
     new_coarse = new_coarse_8bit.astype(jnp.float32) * (2.0 / 255.0) - 1.0
