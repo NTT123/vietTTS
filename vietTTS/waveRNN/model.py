@@ -50,11 +50,11 @@ class WaveRNNOriginal(hk.Module):
     self.hidden_dim = hidden_dim
     self.cond_dim = cond_dim
     self.R = hk.Linear(3 * hidden_dim, with_bias=True, w_init=hk.initializers.VarianceScaling())
-    self.I_W = hk.get_parameter('I_W', (cond_dim + 3, hidden_dim*3), init=hk.initializers.VarianceScaling())
+    embed_dim = hidden_dim//8
+    self.I_W = hk.get_parameter('I_W', (cond_dim + 3 * embed_dim, hidden_dim*3), init=hk.initializers.VarianceScaling())
     self.I_b = hk.get_parameter('I_b', (1, 3*hidden_dim), init=jnp.zeros)
     assert hidden_dim % 2 == 0, "Need an even hidden dim"
     d = hidden_dim // 2
-    embed_dim = hidden_dim//8
     mask = jnp.ones_like(self.I_W)
     mask = mask.at[-embed_dim:, 0*d:1*d].set(0.0)
     mask = mask.at[-embed_dim:, 2*d:3*d].set(0.0)
@@ -109,7 +109,7 @@ class WaveRNNOriginal(hk.Module):
 class WaveRNN(hk.Module):
   def __init__(self, is_training=True):
     super().__init__()
-    self.rnn = WaveRNNOriginal(FLAGS.gru_dim, FLAGS.gru_dim)
+    self.rnn = WaveRNNOriginal(FLAGS.gru_dim, FLAGS.gru_dim//2)
     self.upsample = UpsampleNetwork(num_output_channels=FLAGS.gru_dim//2, is_training=is_training)
     self.is_training = is_training
 

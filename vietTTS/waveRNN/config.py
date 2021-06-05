@@ -33,4 +33,3 @@ class FLAGS:
   fmax = 8000
   variance_loss_scale = 0.1  # regularization term
   bits = 16
-  mu_law_bits = 8

@@ -12,8 +12,7 @@ from .model import WaveRNN
 
 @hk.transform_with_state
 def generate_from_mel_(mel):
-  net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
-  n_elem = 2**FLAGS.mu_law_bits
+  net = WaveRNN(is_training=False)
   c0 = jnp.array([127])
   f0 = jnp.array([0])
   hx = net.gru.initial_state(1)
@@ -40,11 +39,11 @@ def generate_from_mel_(mel):
 
     clogits = jax.nn.softmax(clogits, axis=-1)
     pr = jnp.exp(clogits)
-    v = jnp.linspace(0, n_elem-1, n_elem)[None, :]
+    v = jnp.linspace(0, 255, 256)[None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
-    return (new_coarse_8bit, new_fine_8bit, reg, pr), (new_coarse_8bit, new_fine_8bit, rng, new_hx)
+    return (new_coarse_8bit, new_fine_8bit, reg, pr), (new_coarse_8bit, new_fine_8bit, new_hx)
 
   rng1s = jax.random.split(hk.next_rng_key(), L)[None]
   rng2s = jax.random.split(hk.next_rng_key(), L)[None]
@@ -81,9 +80,7 @@ def mel2wave(mel):
   t1 = time.perf_counter()
   rng = jax.random.PRNGKey(42)
   synthesized_clip, reg, pr = generate_from_mel(params, aux, rng, mel)[0]
-  synthesized_clip = jax.device_get(synthesized_clip)
-  n_elem = 2**FLAGS.mu_law_bits
-  synthesized_clip = librosa.mu_expand(synthesized_clip[0] - n_elem//2, mu=n_elem-1)
+  synthesized_clip = jax.device_get(synthesized_clip[0])
   t2 = time.perf_counter()
   delta = t2 - t1
   l = len(synthesized_clip) / FLAGS.sample_rate
