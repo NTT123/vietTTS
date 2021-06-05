@@ -10,35 +10,47 @@ from .config import *
 from .model import WaveRNN
 
 
-@hk.without_apply_rng
 @hk.transform_with_state
-def generate_from_mel_(mel, rng):
+def generate_from_mel_(mel):
   net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
   n_elem = 2**FLAGS.mu_law_bits
-  x = jnp.array([n_elem//2])
+  c0 = jnp.array([127])
+  f0 = jnp.array([0])
   hx = net.gru.initial_state(1)
   out = []
 
   mel = net.upsample(mel)
-  n_elem = 2**FLAGS.mu_law_bits
+  _, L, D = mel.shape
 
-  def loop(mel, prev_state):
-    x, rng, hx = prev_state
-    rng1, rng = jax.random.split(rng)
-    x = net.input_embed(x) + mel
-    x, hx = net.gru(x, hx)
-    x = net.o2(jax.nn.relu(net.o1(x)))
-    x = jax.nn.log_softmax(x, axis=-1)
-    pr = jnp.exp(x)
-    v = jnp.linspace(0, 255, n_elem)[None, None, :]
+  def loop(inputs, prev_state):
+    mel, rng1, rng2 = inputs
+    rng1, rng2 = rng1[0], rng2[0]
+    coarse, fine, hx = prev_state
+    coarse = net.rnn.c_embed(coarse)
+    fine = net.rnn.f_embed(fine)
+    x = jnp.concatenate((mel, coarse, fine, coarse), axis=-1)
+    (yc, _), _ = net.rnn.step(x, hx)
+    clogits = net.rnn.O2(jax.nn.relu(net.rnn.O1(yc)))
+    new_coarse_8bit = jax.random.categorical(rng1, clogits, axis=-1)
+    new_coarse = net.rnn.c_embed(new_coarse_8bit)
+    x = jnp.concatenate((mel, coarse, fine, new_coarse), axis=-1)
+    (_, yf), new_hx = net.rnn.step(x, hx)
+    flogits = net.rnn.O4(jax.nn.relu(net.rnn.O3(yf)))
+    new_fine_8bit = jax.random.categorical(rng2, flogits, axis=-1)
+
+    clogits = jax.nn.softmax(clogits, axis=-1)
+    pr = jnp.exp(clogits)
+    v = jnp.linspace(0, n_elem-1, n_elem)[None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
-    x = jax.random.categorical(rng1, x)
-    return (x, reg, pr), (x, rng, hx)
+    return (new_coarse_8bit, new_fine_8bit, reg, pr), (new_coarse_8bit, new_fine_8bit, rng, new_hx)
 
-  h0 = (x, rng, hx)
-  (out, reg, pr), _ = hk.dynamic_unroll(loop, mel, h0, time_major=False)
+  rng1s = jax.random.split(hk.next_rng_key(), L)[None]
+  rng2s = jax.random.split(hk.next_rng_key(), L)[None]
+  h0 = (c0, f0, hx)
+  (coarse, fine, reg, pr), _ = hk.dynamic_unroll(loop, (mel, rng1s, rng2s), h0, time_major=False)
+  out = (coarse * 256 + fine - 2**15).astype(jnp.int16)
   return (out, reg, pr)
 
 
@@ -68,7 +80,7 @@ def mel2wave(mel):
 
   t1 = time.perf_counter()
   rng = jax.random.PRNGKey(42)
-  synthesized_clip, reg, pr = generate_from_mel(params, aux, mel, rng)[0]
+  synthesized_clip, reg, pr = generate_from_mel(params, aux, rng, mel)[0]
   synthesized_clip = jax.device_get(synthesized_clip)
   n_elem = 2**FLAGS.mu_law_bits
   synthesized_clip = librosa.mu_expand(synthesized_clip[0] - n_elem//2, mu=n_elem-1)

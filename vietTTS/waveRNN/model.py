@@ -2,7 +2,7 @@ import haiku as hk
 import jax
 import jax.numpy as jnp
 
-from .config import *
+from .config import FLAGS
 
 
 class UpsampleNetwork(hk.Module):
@@ -54,15 +54,18 @@ class WaveRNNOriginal(hk.Module):
     self.I_b = hk.get_parameter('I_b', (1, 3*hidden_dim), init=jnp.zeros)
     assert hidden_dim % 2 == 0, "Need an even hidden dim"
     d = hidden_dim // 2
+    embed_dim = hidden_dim//8
     mask = jnp.ones_like(self.I_W)
-    mask = mask.at[-1, 0*d:1*d].set(0.0)
-    mask = mask.at[-1, 2*d:3*d].set(0.0)
-    mask = mask.at[-1, 4*d:5*d].set(0.0)
+    mask = mask.at[-embed_dim:, 0*d:1*d].set(0.0)
+    mask = mask.at[-embed_dim:, 2*d:3*d].set(0.0)
+    mask = mask.at[-embed_dim:, 4*d:5*d].set(0.0)
     self.I_W_mask = mask
     self.O1 = hk.Linear(hidden_dim//2)
     self.O2 = hk.Linear(256)
     self.O3 = hk.Linear(hidden_dim//2)
     self.O4 = hk.Linear(256)
+    self.c_embed = hk.Embed(256, embed_dim)
+    self.f_embed = hk.Embed(256, embed_dim)
 
   def initial_state(self, batch_size: int):
     return jnp.zeros((batch_size, self.hidden_dim))
@@ -86,33 +89,32 @@ class WaveRNNOriginal(hk.Module):
     yc, yf = jnp.split(ht, 2, axis=-1)
     return (yc, yf), ht
 
-  def __call__(self, inputs):
+  def __call__(self, x, mel):
     # inputs: N L (cond_dim + 3)
+    c = x[..., 0]
+    f = x[..., 1]
+    c_ = jnp.roll(c, -1, -1)
+    c = self.c_embed(c)
+    f = self.f_embed(f)
+    c_ = self.c_embed(c_)
+    inputs = jnp.concatenate((mel, c, f, c_), axis=-1)
+
     N, L, D = inputs.shape
     hx = self.initial_state(N)
     (yc, yf), _ = hk.dynamic_unroll(self.step, inputs, hx, time_major=False)
-    logits = jnp.stack(
-        (
-          self.O2(jax.nn.relu(self.O1(yc))), 
-          self.O4(jax.nn.relu(self.O3(yf)))
-        ),
-        axis=-1
-    )
+    logits = jnp.stack((self.O2(jax.nn.relu(self.O1(yc))), self.O4(jax.nn.relu(self.O3(yf)))), axis=-1)
     return jax.nn.log_softmax(logits, axis=-2)
 
 
 class WaveRNN(hk.Module):
-  def __init__(self, mu_law_bits, is_training=True):
+  def __init__(self, is_training=True):
     super().__init__()
     self.rnn = WaveRNNOriginal(FLAGS.gru_dim, FLAGS.gru_dim)
-    self.o1 = hk.Linear(FLAGS.gru_dim)
-    self.o2 = hk.Linear(2**mu_law_bits)
-    self.upsample = UpsampleNetwork(num_output_channels=FLAGS.gru_dim, is_training=is_training)
+    self.upsample = UpsampleNetwork(num_output_channels=FLAGS.gru_dim//2, is_training=is_training)
     self.is_training = is_training
 
   def __call__(self, x, mel):
     mel = self.upsample(mel)
     coarse_t = jnp.roll(x[..., 0], -1, -1)
-    x = jnp.concatenate((mel, x, coarse_t[..., None]), axis=-1)
-    log_pr = self.rnn(x)
+    log_pr = self.rnn(x, mel)
     return log_pr

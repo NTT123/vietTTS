@@ -55,9 +55,8 @@ def make_new_log_file():
   return open(fn, 'w', buffering=1)
 
 
-@hk.without_apply_rng
 @hk.transform_with_state
-def regenerate_from_signal_(y, rng, sr):
+def regenerate_from_signal_(y, sr):
   melfilter = MelFilter(sr, 1024, 80, fmin=FLAGS.fmin, fmax=FLAGS.fmax)
   pad_left = 1024
   pad_right = 1024
@@ -67,8 +66,8 @@ def regenerate_from_signal_(y, rng, sr):
 
   net = WaveRNN(mu_law_bits=FLAGS.mu_law_bits, is_training=False)
   x = jnp.array([128])
-  c0 = jnp.array([0.]).astype(jnp.float32)
-  f0 = jnp.array([0.]).astype(jnp.float32)
+  c0 = jnp.array([127])
+  f0 = jnp.array([0])
   hx = net.rnn.initial_state(1)
   out = []
 
@@ -78,23 +77,18 @@ def regenerate_from_signal_(y, rng, sr):
   def loop(inputs, prev_state):
     mel, rng1, rng2 = inputs
     rng1, rng2 = rng1[0], rng2[0]
-    coarse, fine, rng, hx = prev_state
-    x = jnp.concatenate(
-        (mel, jnp.stack((coarse, fine, coarse), axis=-1)),
-        axis=-1
-    )
+    coarse, fine, hx = prev_state
+    coarse = net.rnn.c_embed(coarse)
+    fine = net.rnn.f_embed(fine)
+    x = jnp.concatenate((mel, coarse, fine, coarse), axis=-1)
     (yc, _), _ = net.rnn.step(x, hx)
     clogits = net.rnn.O2(jax.nn.relu(net.rnn.O1(yc)))
     new_coarse_8bit = jax.random.categorical(rng1, clogits, axis=-1)
-    new_coarse = new_coarse_8bit.astype(jnp.float32) * (2.0 / 255.0) - 1.0
-    x = jnp.concatenate(
-        (mel, jnp.stack((coarse, fine, new_coarse), axis=-1)),
-        axis=-1
-    )
+    new_coarse = net.rnn.c_embed(new_coarse_8bit)
+    x = jnp.concatenate((mel, coarse, fine, new_coarse), axis=-1)
     (_, yf), new_hx = net.rnn.step(x, hx)
     flogits = net.rnn.O4(jax.nn.relu(net.rnn.O3(yf)))
     new_fine_8bit = jax.random.categorical(rng2, flogits, axis=-1)
-    new_fine = new_fine_8bit.astype(jnp.float32) * (2.0 / 255.0) - 1.0
 
     clogits = jax.nn.softmax(clogits, axis=-1)
     pr = jnp.exp(clogits)
@@ -102,9 +96,9 @@ def regenerate_from_signal_(y, rng, sr):
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
-    return (new_coarse_8bit, new_fine_8bit, reg, pr), (new_coarse, new_fine, rng, new_hx)
+    return (new_coarse_8bit, new_fine_8bit, reg, pr), (new_coarse_8bit, new_fine_8bit, new_hx)
 
-  h0 = (c0, f0, rng, hx)
+  h0 = (c0, f0, hx)
   _, L, _ = mel.shape
   rng1s = jax.random.split(hk.next_rng_key(), L)[None]
   rng2s = jax.random.split(hk.next_rng_key(), L)[None]
@@ -118,7 +112,7 @@ regenerate_from_signal = jax.jit(regenerate_from_signal_.apply, static_argnums=[
 
 def gen_test_sample(params, aux, rng, test_clip, step=0, sr=16000):
   t1 = time.perf_counter()
-  synthesized_clip, reg, pr = regenerate_from_signal(params, aux, test_clip, rng, sr)[0]
+  synthesized_clip, reg, pr = regenerate_from_signal(params, aux, rng, test_clip, sr)[0]
   synthesized_clip = jax.device_get(synthesized_clip[0])
   n_elem = 2**FLAGS.mu_law_bits
   t2 = time.perf_counter()
