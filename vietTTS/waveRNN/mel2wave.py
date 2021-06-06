@@ -15,7 +15,7 @@ def generate_from_mel_(mel):
   net = WaveRNN(is_training=False)
   c0 = jnp.array([127])
   f0 = jnp.array([0])
-  hx = net.gru.initial_state(1)
+  hx = net.rnn.initial_state(1)
   out = []
 
   mel = net.upsample(mel)
