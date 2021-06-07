@@ -33,7 +33,7 @@ def loss_fn(params, aux, batch, sr=16000):
   variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
   reg = jnp.log(1 + jnp.sqrt(variance))
   targets = jax.nn.one_hot(mutargets, num_classes=256, axis=-2)
-  llh = jnp.sum(targets * logpr, axis=-2)
+  llh = jnp.sum(targets * logpr, axis=[-2, -1])
   l1 = -jnp.mean(llh)
   l2 = FLAGS.variance_loss_scale * jnp.mean(reg)
   return l1 + l2, (l1, l2, aux)

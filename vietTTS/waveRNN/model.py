@@ -15,9 +15,9 @@ class UpsampleNetwork(hk.Module):
     self.dilated_conv_2 = hk.Conv1D(512, 2, 1, rate=4, padding='VALID')
     self.dilated_bn_2 = hk.BatchNorm(True, True, 0.99)
 
-    self.upsample_conv_1 = hk.Conv1DTranspose(512, kernel_shape=1, stride=2, padding='SAME')
+    self.upsample_conv_1 = hk.Conv1DTranspose(512, kernel_shape=1, stride=4, padding='SAME')
     self.upsample_bn_1 = hk.BatchNorm(True, True, 0.99)
-    self.upsample_conv_2 = hk.Conv1DTranspose(512, kernel_shape=1, stride=2, padding='SAME')
+    self.upsample_conv_2 = hk.Conv1DTranspose(512, kernel_shape=1, stride=4, padding='SAME')
     self.upsample_bn_2 = hk.BatchNorm(True, True, 0.99)
     self.upsample_conv_3 = hk.Conv1DTranspose(num_output_channels, kernel_shape=1, stride=4, padding='SAME')
     self.upsample_bn_3 = hk.BatchNorm(True, True, 0.99)
@@ -36,7 +36,7 @@ class UpsampleNetwork(hk.Module):
 
     # tile x16
     N, L, D = x.shape
-    x = jnp.tile(x[:, :, None, :], (1, 1, 16, 1))
+    x = jnp.tile(x[:, :, None, :], (1, 1, 4, 1))
     x = jnp.reshape(x, (N, -1, D))
 
     return x

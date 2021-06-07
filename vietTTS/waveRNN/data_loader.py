@@ -37,6 +37,8 @@ def make_data_iter_from_file_list(data_files, batch_size, seq_len, mode='train')
         batch.append(short_clip[start:end])
         if len(batch) == batch_size:
           batch = np.stack(batch, axis=0)
+          batch = batch.astype(np.float32) * np.random.uniform(0.5, 1.0, size=(batch_size, 1))
+          batch = np.rint(batch)
           yield batch
           batch = []
   elif mode == "val":
