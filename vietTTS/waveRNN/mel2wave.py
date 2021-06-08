@@ -13,7 +13,7 @@ from .model import WaveRNN
 @hk.transform_with_state
 def generate_from_mel_(mel):
   net = WaveRNN(is_training=False)
-  c0 = jnp.array([127])
+  c0 = jnp.array([(2**FLAGS.num_coarse_bits)//2])
   f0 = jnp.array([0])
   hx = net.rnn.initial_state(1)
   out = []
@@ -30,26 +30,26 @@ def generate_from_mel_(mel):
     x = jnp.concatenate((mel, coarse, fine, coarse), axis=-1)
     (yc, _), _ = net.rnn.step(x, hx)
     clogits = net.rnn.O2(jax.nn.relu(net.rnn.O1(yc)))
-    new_coarse_8bit = jax.random.categorical(rng1, clogits, axis=-1)
-    new_coarse = net.rnn.c_embed(new_coarse_8bit)
+    new_coarse_bit = jax.random.categorical(rng1, clogits, axis=-1)
+    new_coarse = net.rnn.c_embed(new_coarse_bit)
     x = jnp.concatenate((mel, coarse, fine, new_coarse), axis=-1)
     (_, yf), new_hx = net.rnn.step(x, hx)
     flogits = net.rnn.O4(jax.nn.relu(net.rnn.O3(yf)))
-    new_fine_8bit = jax.random.categorical(rng2, flogits, axis=-1)
+    new_fine_bit = jax.random.categorical(rng2, flogits, axis=-1)
 
     clogits = jax.nn.softmax(clogits, axis=-1)
     pr = jnp.exp(clogits)
-    v = jnp.linspace(0, 255, 256)[None, :]
+    v = jnp.linspace(0, 255, 2**FLAGS.num_coarse_bits)[None, :]
     mean = jnp.sum(pr * v, axis=-1, keepdims=True)
     variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
     reg = jnp.log(1 + jnp.sqrt(variance))
-    return (new_coarse_8bit, new_fine_8bit, reg, pr), (new_coarse_8bit, new_fine_8bit, new_hx)
+    return (new_coarse_bit, new_fine_bit, reg, pr), (new_coarse_bit, new_fine_bit, new_hx)
 
   rng1s = jax.random.split(hk.next_rng_key(), L)[None]
   rng2s = jax.random.split(hk.next_rng_key(), L)[None]
   h0 = (c0, f0, hx)
   (coarse, fine, reg, pr), _ = hk.dynamic_unroll(loop, (mel, rng1s, rng2s), h0, time_major=False)
-  out = (coarse * 256 + fine - 2**15).astype(jnp.int16)
+  out = (coarse * (2**FLAGS.num_fine_bits) + fine - 2**15).astype(jnp.int16)
   return (out, reg, pr)
 
 

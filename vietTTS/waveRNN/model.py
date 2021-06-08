@@ -54,18 +54,18 @@ class WaveRNNOriginal(hk.Module):
     self.I_W = hk.get_parameter('I_W', (cond_dim + 3 * embed_dim, hidden_dim*3), init=hk.initializers.VarianceScaling())
     self.I_b = hk.get_parameter('I_b', (1, 3*hidden_dim), init=jnp.zeros)
     assert hidden_dim % 2 == 0, "Need an even hidden dim"
-    d = hidden_dim // 2
+    d = hidden_dim // 4
     mask = jnp.ones_like(self.I_W)
-    mask = mask.at[-embed_dim:, 0*d:1*d].set(0.0)
-    mask = mask.at[-embed_dim:, 2*d:3*d].set(0.0)
-    mask = mask.at[-embed_dim:, 4*d:5*d].set(0.0)
+    mask = mask.at[-embed_dim:, 0*d:3*d].set(0.0)
+    mask = mask.at[-embed_dim:, 4*d:7*d].set(0.0)
+    mask = mask.at[-embed_dim:, 8*d:11*d].set(0.0)
     self.I_W_mask = mask
-    self.O1 = hk.Linear(hidden_dim//2)
-    self.O2 = hk.Linear(256)
-    self.O3 = hk.Linear(hidden_dim//2)
-    self.O4 = hk.Linear(256)
-    self.c_embed = hk.Embed(256, embed_dim)
-    self.f_embed = hk.Embed(256, embed_dim)
+    self.O1 = hk.Linear(3*d)
+    self.O2 = hk.Linear(2**FLAGS.num_coarse_bits)
+    self.O3 = hk.Linear(1*d)
+    self.O4 = hk.Linear(2**FLAGS.num_fine_bits)
+    self.c_embed = hk.Embed(2**FLAGS.num_coarse_bits, embed_dim)
+    self.f_embed = hk.Embed(2**FLAGS.num_fine_bits, embed_dim)
 
   def initial_state(self, batch_size: int):
     return jnp.zeros((batch_size, self.hidden_dim))
@@ -80,7 +80,7 @@ class WaveRNNOriginal(hk.Module):
     x = jnp.dot(inputs, self.I_W * self.I_W_mask)
     b = jnp.broadcast_to(self.I_b, x.shape)
     x = x + b
-    ut_2, rt_2, et_2 = jnp.split(x, 3, axis=-1)
+    ut_2, rt_2, et_2 = jnp.split(x, [3*self.hidden_dim//4], axis=-1)
 
     ut = jax.nn.sigmoid(ut_1 + ut_2)
     rt = jax.nn.sigmoid(rt_1 + rt_2)
@@ -102,8 +102,11 @@ class WaveRNNOriginal(hk.Module):
     N, L, D = inputs.shape
     hx = self.initial_state(N)
     (yc, yf), _ = hk.dynamic_unroll(self.step, inputs, hx, time_major=False)
-    logits = jnp.stack((self.O2(jax.nn.relu(self.O1(yc))), self.O4(jax.nn.relu(self.O3(yf)))), axis=-1)
-    return jax.nn.log_softmax(logits, axis=-2)
+    clogits_ = self.O2(jax.nn.relu(self.O1(yc)))
+    flogits_ = self.O4(jax.nn.relu(self.O3(yf)))
+    clogits = jax.nn.log_softmax(clogits_, axis=-1)
+    flogits = jax.nn.log_softmax(flogits_, axis=-1)
+    return clogits, flogits
 
 
 class WaveRNN(hk.Module):

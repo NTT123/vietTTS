@@ -26,24 +26,27 @@ def loss_fn(params, aux, batch, sr=16000):
   mu = mu[:, (pad-1):-pad]
   muinputs = mu[:, :-1]
   mutargets = mu[:, 1:]
-  logpr, aux = net.apply(params, aux, muinputs, mel)
-  pr = jnp.exp(logpr[..., 0])
-  v = jnp.linspace(0, 255, 256)[None, None, :]  # use 255 because of historical reason.
+  (clogpr, flogpr), aux = net.apply(params, aux, muinputs, mel)
+  pr = jnp.exp(clogpr)
+  v = jnp.linspace(0, 255, 2**FLAGS.num_coarse_bits)[None, None, :]  # use 255 because of historical reason.
   mean = jnp.sum(pr * v, axis=-1, keepdims=True)
   variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
   reg = jnp.log(1 + jnp.sqrt(variance))
-  targets = jax.nn.one_hot(mutargets, num_classes=256, axis=-2)
-  llh = jnp.sum(targets * logpr, axis=[-2, -1])
-  l1 = -jnp.mean(llh)
+  ctargets = jax.nn.one_hot(mutargets[..., 0], num_classes=2**FLAGS.num_coarse_bits, axis=-1)
+  ftargets = jax.nn.one_hot(mutargets[..., 1], num_classes=2**FLAGS.num_fine_bits, axis=-1)
+  cllh = jnp.sum(ctargets * clogpr, axis=-1)
+  fllh = jnp.sum(ftargets * flogpr, axis=-1)
+  l1 = -jnp.mean(cllh + fllh)
   l2 = FLAGS.variance_loss_scale * jnp.mean(reg)
   return l1 + l2, (l1, l2, aux)
 
 
-def make_optim(lr):
+def make_optim():
   return optax.chain(
       optax.clip_by_global_norm(1.),
-      optax.scale_by_adam(),
-      optax.scale(-lr)
+      optax.adam(
+          optax.exponential_decay(FLAGS.learnign_rate, 100_000, 0.5, False, 1e-6)
+      )
   )
 
 
@@ -61,14 +64,13 @@ def train():
   mu = mu[:, pad-1:-pad]
   muinputs = mu[:, :-1]
   params, aux = net.init(rng, muinputs, mel)
-  optimizer = make_optim(FLAGS._training_schedule[0].learning_rate)
+  optimizer = make_optim()
   optim_state = optimizer.init(params)
   training_step = -1
 
   @jax.jit
-  def update(params, aux, optim_state, batch, learning_rate):
+  def update(params, aux, optim_state, batch):
     (loss, (l1, l2, new_aux)), grads = jax.value_and_grad(loss_fn, has_aux=True)(params, aux, batch)
-    optimizer = make_optim(learning_rate)
     updates, new_optim_state = optimizer.update(grads, optim_state, params)
     new_params = optax.apply_updates(params, updates)
     return (loss, l1, l2), new_params, new_aux, new_optim_state
@@ -86,25 +88,10 @@ def train():
   l1s = Deque(maxlen=100)
   l2s = Deque(maxlen=100)
   start = time.perf_counter()
-  training_config = FLAGS._training_schedule[0]
   total_training_steps = FLAGS._training_schedule[-1].end_step
   for step in range(training_step + 1, 1 + total_training_steps):
     training_step += 1
-    # update train config
-    if step % 1000 == 0:
-      for config in FLAGS._training_schedule:
-        if step < config.end_step:
-          training_config = config
-          data_iter = make_train_data_iter(training_config.batch_size)
-          break
-
-    (loss, l1, l2), params, aux, optim_state = update(
-        params,
-        aux,
-        optim_state,
-        next(data_iter),
-        training_config.learning_rate
-    )
+    (_, l1, l2), params, aux, optim_state = update(params, aux, optim_state, next(data_iter))
     l1s.append(l1)
     l2s.append(l2)
 
@@ -114,18 +101,12 @@ def train():
       start = end
       l1 = sum(l1s, 0.0).item() / len(l1s)
       l2 = sum(l2s, 0.0).item() / len(l2s)
-      msg = (f'  {step:06d} | train loss {l1:.3f} | reg loss {l2:.3f} | {speed:.3f} it/s | '
-             f'LR {training_config.learning_rate:.3e} | batch size {training_config.batch_size} ')
+      msg = (f'  {step:06d} | train loss {l1:.3f} | reg loss {l2:.3f} | {speed:.3f} it/s ')
       print(msg)
       logfile.write(msg + '\n')
 
     if step % 1000 == 0:
-      save_checkpoint(
-          training_step,
-          params,
-          aux,
-          optim_state,
-      )
+      save_checkpoint(training_step, params, aux, optim_state)
 
     # generate test samples
     if step % 1000 == 0:

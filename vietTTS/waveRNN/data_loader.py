@@ -1,4 +1,4 @@
-import random as rd
+import random
 from pathlib import Path
 
 import numpy as np
@@ -21,7 +21,7 @@ def make_data_iter_from_file_list(data_files, batch_size, seq_len, mode='train')
   batch = []
   if mode == 'train':
     while True:
-      rd.shuffle(data_files)
+      random.shuffle(data_files)
       for fn in data_files:
         if fn.stem in data_cache:
           short_clip = data_cache[fn.stem]
@@ -31,7 +31,7 @@ def make_data_iter_from_file_list(data_files, batch_size, seq_len, mode='train')
         L = len(short_clip) - 1 - seq_len
         if L < 0:
           continue
-        start = rd.randint(0, L)
+        start = random.randint(0, L)
         end = start + seq_len
 
         batch.append(short_clip[start:end])
