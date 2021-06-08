@@ -45,13 +45,13 @@ def make_optim():
   return optax.chain(
       optax.clip_by_global_norm(1.),
       optax.adam(
-          optax.exponential_decay(FLAGS.learnign_rate, 100_000, 0.5, False, 1e-6)
+          optax.exponential_decay(FLAGS.learning_rate, 100_000, 0.5, False, 1e-6)
       )
   )
 
 
 def train():
-  data_iter = make_train_data_iter(FLAGS._training_schedule[0].batch_size)
+  data_iter = make_train_data_iter(FLAGS.batch_size)
   # generate initial states
   next(data_iter).shape, next(data_iter).dtype
   rng = jax.random.PRNGKey(42)
@@ -88,7 +88,7 @@ def train():
   l1s = Deque(maxlen=100)
   l2s = Deque(maxlen=100)
   start = time.perf_counter()
-  total_training_steps = FLAGS._training_schedule[-1].end_step
+  total_training_steps = FLAGS.training_steps
   for step in range(training_step + 1, 1 + total_training_steps):
     training_step += 1
     (_, l1, l2), params, aux, optim_state = update(params, aux, optim_state, next(data_iter))

@@ -80,13 +80,13 @@ class WaveRNNOriginal(hk.Module):
     x = jnp.dot(inputs, self.I_W * self.I_W_mask)
     b = jnp.broadcast_to(self.I_b, x.shape)
     x = x + b
-    ut_2, rt_2, et_2 = jnp.split(x, [3*self.hidden_dim//4], axis=-1)
+    ut_2, rt_2, et_2 = jnp.split(x, 3, axis=-1)
 
     ut = jax.nn.sigmoid(ut_1 + ut_2)
     rt = jax.nn.sigmoid(rt_1 + rt_2)
     et = jnp.tanh(rt * et_1 + et_2)
     ht = ut * hx + (1. - ut) * et
-    yc, yf = jnp.split(ht, 2, axis=-1)
+    yc, yf = jnp.split(ht, [3*self.hidden_dim//4], axis=-1)
     return (yc, yf), ht
 
   def __call__(self, x, mel):
