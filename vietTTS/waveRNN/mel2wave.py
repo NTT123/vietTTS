@@ -23,7 +23,6 @@ def generate_from_mel_(mel):
 
   def loop(inputs, prev_state):
     mel, rng1, rng2 = inputs
-    rng1, rng2 = rng1[0], rng2[0]
     coarse, fine, hx = prev_state
     coarse = net.rnn.c_embed(coarse)
     fine = net.rnn.f_embed(fine)
@@ -36,21 +35,15 @@ def generate_from_mel_(mel):
     (_, yf), new_hx = net.rnn.step(x, hx)
     flogits = net.rnn.O4(jax.nn.relu(net.rnn.O3(yf)))
     new_fine_bit = jax.random.categorical(rng2, flogits, axis=-1)
+    return (new_coarse_bit, new_fine_bit), (new_coarse_bit, new_fine_bit, new_hx)
 
-    clogits = jax.nn.softmax(clogits, axis=-1)
-    pr = jnp.exp(clogits)
-    v = jnp.linspace(0, 255, 2**FLAGS.num_coarse_bits)[None, :]
-    mean = jnp.sum(pr * v, axis=-1, keepdims=True)
-    variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
-    reg = jnp.log(1 + jnp.sqrt(variance))
-    return (new_coarse_bit, new_fine_bit, reg, pr), (new_coarse_bit, new_fine_bit, new_hx)
-
-  rng1s = jax.random.split(hk.next_rng_key(), L)[None]
-  rng2s = jax.random.split(hk.next_rng_key(), L)[None]
+  rng1s = jax.random.split(hk.next_rng_key(), L)
+  rng2s = jax.random.split(hk.next_rng_key(), L)
   h0 = (c0, f0, hx)
-  (coarse, fine, reg, pr), _ = hk.dynamic_unroll(loop, (mel, rng1s, rng2s), h0, time_major=False)
+  mel = jnp.swapaxes(mel, 0, 1)
+  (coarse, fine), _ = hk.dynamic_unroll(loop, (mel, rng1s, rng2s), h0, time_major=True)
   out = (coarse * (2**FLAGS.num_fine_bits) + fine - 2**15).astype(jnp.int16)
-  return (out, reg, pr)
+  return jnp.squeeze(out, -1)
 
 
 generate_from_mel = jax.jit(generate_from_mel_.apply)
@@ -79,8 +72,8 @@ def mel2wave(mel):
 
   t1 = time.perf_counter()
   rng = jax.random.PRNGKey(42)
-  synthesized_clip, reg, pr = generate_from_mel(params, aux, rng, mel)[0]
-  synthesized_clip = jax.device_get(synthesized_clip[0])
+  synthesized_clip = generate_from_mel(params, aux, rng, mel)[0]
+  synthesized_clip = jax.device_get(synthesized_clip)
   t2 = time.perf_counter()
   delta = t2 - t1
   l = len(synthesized_clip) / FLAGS.sample_rate
