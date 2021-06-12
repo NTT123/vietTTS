@@ -15,7 +15,6 @@ class FLAGS:
   sample_rate = 16_000
   fmin = 0
   fmax = 8000
-  variance_loss_scale = 0.1  # regularization term
   bits = 16
   num_coarse_bits = 10
   num_fine_bits = 6

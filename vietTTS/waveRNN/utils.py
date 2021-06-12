@@ -90,19 +90,15 @@ def regenerate_from_signal_(y, sr):
 
     clogits = jax.nn.softmax(clogits, axis=-1)
     pr = jnp.exp(clogits)
-    v = jnp.linspace(0, 255, 2**FLAGS.num_coarse_bits)[None, :]
-    mean = jnp.sum(pr * v, axis=-1, keepdims=True)
-    variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
-    reg = jnp.log(1 + jnp.sqrt(variance))
-    return (new_coarse_bit, new_fine_bit, reg, pr), (new_coarse_bit, new_fine_bit, new_hx)
+    return (new_coarse_bit, new_fine_bit, pr), (new_coarse_bit, new_fine_bit, new_hx)
 
   h0 = (c0, f0, hx)
   _, L, _ = mel.shape
   rng1s = jax.random.split(hk.next_rng_key(), L)[None]
   rng2s = jax.random.split(hk.next_rng_key(), L)[None]
-  (coarse, fine, reg, pr), _ = hk.dynamic_unroll(loop, (mel, rng1s, rng2s), h0, time_major=False)
+  (coarse, fine, pr), _ = hk.dynamic_unroll(loop, (mel, rng1s, rng2s), h0, time_major=False)
   out = (coarse * (2**FLAGS.num_fine_bits) + fine - 2**15).astype(jnp.int16)
-  return (out, reg, pr)
+  return (out, pr)
 
 
 regenerate_from_signal = jax.jit(regenerate_from_signal_.apply, static_argnums=[4])
@@ -110,7 +106,7 @@ regenerate_from_signal = jax.jit(regenerate_from_signal_.apply, static_argnums=[
 
 def gen_test_sample(params, aux, rng, test_clip, step=0, sr=16000):
   t1 = time.perf_counter()
-  synthesized_clip, reg, pr = regenerate_from_signal(params, aux, rng, test_clip, sr)[0]
+  synthesized_clip, pr = regenerate_from_signal(params, aux, rng, test_clip, sr)[0]
   synthesized_clip = jax.device_get(synthesized_clip[0])
   t2 = time.perf_counter()
   delta = t2 - t1

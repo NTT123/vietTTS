@@ -102,10 +102,8 @@ class WaveRNNOriginal(hk.Module):
     N, L, D = inputs.shape
     hx = self.initial_state(N)
     (yc, yf), _ = hk.dynamic_unroll(self.step, inputs, hx, time_major=False)
-    clogits_ = self.O2(jax.nn.relu(self.O1(yc)))
-    flogits_ = self.O4(jax.nn.relu(self.O3(yf)))
-    clogits = jax.nn.log_softmax(clogits_, axis=-1)
-    flogits = jax.nn.log_softmax(flogits_, axis=-1)
+    clogits = self.O2(jax.nn.relu(self.O1(yc)))
+    flogits = self.O4(jax.nn.relu(self.O3(yf)))
     return clogits, flogits
 
 

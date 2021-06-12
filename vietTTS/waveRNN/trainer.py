@@ -16,6 +16,11 @@ from .utils import *
 def net(x, m): return WaveRNN()(x, m)
 
 
+def cross_entropy_logits_sparse(logits, labels):
+  labeled_logits = jnp.take_along_axis(logits, labels[..., None], -1).squeeze(-1)
+  return jax.nn.logsumexp(logits, axis=-1) - labeled_logits
+
+
 def loss_fn(params, aux, batch, sr=16000):
   melfilter = MelFilter(sr, 1024, 80, fmin=FLAGS.fmin, fmax=FLAGS.fmax)
   y = batch
@@ -27,18 +32,10 @@ def loss_fn(params, aux, batch, sr=16000):
   muinputs = mu[:, :-1]
   mutargets = mu[:, 1:]
   (clogpr, flogpr), aux = net.apply(params, aux, muinputs, mel)
-  pr = jnp.exp(clogpr)
-  v = jnp.linspace(0, 255, 2**FLAGS.num_coarse_bits)[None, None, :]  # use 255 because of historical reason.
-  mean = jnp.sum(pr * v, axis=-1, keepdims=True)
-  variance = jnp.sum(jnp.square(v - mean) * pr, axis=-1, keepdims=True)
-  reg = jnp.log(1 + jnp.sqrt(variance))
-  ctargets = jax.nn.one_hot(mutargets[..., 0], num_classes=2**FLAGS.num_coarse_bits, axis=-1)
-  ftargets = jax.nn.one_hot(mutargets[..., 1], num_classes=2**FLAGS.num_fine_bits, axis=-1)
-  cllh = jnp.sum(ctargets * clogpr, axis=-1)
-  fllh = jnp.sum(ftargets * flogpr, axis=-1)
-  l1 = -jnp.mean(cllh + fllh)
-  l2 = FLAGS.variance_loss_scale * jnp.mean(reg)
-  return l1 + l2, (l1, l2, aux)
+  cllh = cross_entropy_logits_sparse(clogpr, mutargets[..., 0])
+  fllh = cross_entropy_logits_sparse(flogpr, mutargets[..., 1])
+  loss = jnp.mean(cllh + fllh)
+  return loss, aux
 
 
 def make_optim():
@@ -70,10 +67,10 @@ def train():
 
   @jax.jit
   def update(params, aux, optim_state, batch):
-    (loss, (l1, l2, new_aux)), grads = jax.value_and_grad(loss_fn, has_aux=True)(params, aux, batch)
+    (loss, new_aux), grads = jax.value_and_grad(loss_fn, has_aux=True)(params, aux, batch)
     updates, new_optim_state = optimizer.update(grads, optim_state, params)
     new_params = optax.apply_updates(params, updates)
-    return (loss, l1, l2), new_params, new_aux, new_optim_state
+    return loss, new_params, new_aux, new_optim_state
 
   logfile = make_new_log_file()
   dic = load_latest_checkpoint()
@@ -91,17 +88,15 @@ def train():
   total_training_steps = FLAGS.training_steps
   for step in range(training_step + 1, 1 + total_training_steps):
     training_step += 1
-    (_, l1, l2), params, aux, optim_state = update(params, aux, optim_state, next(data_iter))
-    l1s.append(l1)
-    l2s.append(l2)
+    loss, params, aux, optim_state = update(params, aux, optim_state, next(data_iter))
+    losses.append(loss)
 
     if step % 100 == 0:
       end = time.perf_counter()
       speed = 100 / (end - start)
       start = end
-      l1 = sum(l1s, 0.0).item() / len(l1s)
-      l2 = sum(l2s, 0.0).item() / len(l2s)
-      msg = (f'  {step:06d} | train loss {l1:.3f} | reg loss {l2:.3f} | {speed:.3f} it/s ')
+      loss = sum(losses, 0.0).item() / len(losses)
+      msg = (f'  {step:06d} | train loss {loss:.3f} | {speed:.3f} it/s ')
       print(msg)
       logfile.write(msg + '\n')
 
