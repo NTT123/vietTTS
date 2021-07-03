@@ -13,7 +13,6 @@ setup(
     version=__version__,
     description='A vietnamese text-to-speech system.',
     author='ntt123',
-    author_email='xcodevn@gmail.com',
     url=url,
     keywords=['text-to-speech', 'tts', 'deep-learning', 'dm-haiku', 'jax', 'vietnamese', 'speech-synthesis'],
     install_requires=install_requires,
