@@ -6,17 +6,19 @@ from jax.numpy import ndarray
 
 
 class FLAGS(Namespace):
+  range_lstm_dim = 256
   duration_lstm_dim = 256
   vocab_size = 256
+  speaker_embed_dim = 64
   duration_embed_dropout_rate = 0.5
-  num_training_steps = 200_000
+  num_training_steps = 1_000_000
   postnet_dim = 512
   acoustic_decoder_dim = 512
   acoustic_encoder_dim = 256
 
   # dataset
   max_phoneme_seq_len = 128 * 3
-  max_wave_len = 1024 * 64 * 3
+  max_wave_len = 1024 * 64 * 2
 
   # Montreal Forced Aligner
   special_phonemes = ['sil', 'sp', 'spn', ' ']  # [sil], [sp] [spn] [word end]
@@ -27,6 +29,7 @@ class FLAGS(Namespace):
   # dsp
   mel_dim = 80
   n_fft = 1024
+  hop_length = n_fft // 4
   sample_rate = 16000
   fmin = 0.0
   fmax = 8000
@@ -40,7 +43,6 @@ class FLAGS(Namespace):
 
   # ckpt
   ckpt_dir = Path('assets/infore/nat')
-  data_dir = Path('assets/infore/data')
   data_dir = Path('train_data')
 
 
@@ -57,3 +59,6 @@ class AcousticInput(NamedTuple):
   wavs: ndarray
   wav_lengths: ndarray
   mels: ndarray
+  frame_idx_fwd: ndarray
+  frame_idx_bwd: ndarray
+  speakers: ndarray

@@ -6,28 +6,15 @@ import jax.numpy as jnp
 import matplotlib.pyplot as plt
 import numpy as np
 
-from .config import FLAGS, DurationInput
+from .config import FLAGS
 from .data_loader import load_phonemes_set_from_lexicon_file
-from .model import AcousticModel, DurationModel
+from .model import NATNet
 
 
 def load_lexicon(fn):
   lines = open(fn, 'r').readlines()
   lines = [l.lower().strip().split('\t') for l in lines]
   return dict(lines)
-
-
-def predict_duration(tokens):
-  def fwd_(x): return DurationModel(is_training=False)(x)
-  forward_fn = jax.jit(hk.transform_with_state(fwd_).apply)
-  with open(FLAGS.ckpt_dir / 'duration_ckpt_latest.pickle', 'rb') as f:
-    dic = pickle.load(f)
-  x = DurationInput(
-      np.array(tokens, dtype=np.int32)[None, :],
-      np.array([len(tokens)], dtype=np.int32),
-      None
-  )
-  return forward_fn(dic['params'], dic['aux'], dic['rng'], x)[0]
 
 
 def text2tokens(text, lexicon_fn):
@@ -46,46 +33,39 @@ def text2tokens(text, lexicon_fn):
       tokens.extend(p)
       tokens.append(FLAGS.word_end_index)
     else:
-      for p in word:
-        if p in phonemes:
-          tokens.append(phonemes.index(p))
+      w = word
+      while len(w) > 0:
+        for l in [3, 2, 1]:
+          if w[0:l] in phonemes:
+            tokens.append(phonemes.index(w[0:l]))
+            w = w[l:]
+            break
+        else:
+          w = w[1:]
       tokens.append(FLAGS.word_end_index)
   tokens.append(FLAGS.sp_index)  # silence
   return tokens
 
 
-def predict_mel(tokens, durations):
-  ckpt_fn = FLAGS.ckpt_dir / 'acoustic_ckpt_latest.pickle'
+def predict_mel(tokens, silence_duration, speaker):
+  ckpt_fn = FLAGS.ckpt_dir / 'nat_ckpt_latest.pickle'
   with open(ckpt_fn, 'rb') as f:
     dic = pickle.load(f)
     last_step, params, aux, rng, optim_state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
 
   @hk.transform_with_state
-  def forward(tokens, durations, n_frames):
-    net = AcousticModel(is_training=False)
-    return net.inference(tokens, durations, n_frames)
+  def forward(tokens, silence_duration, speaker):
+    net = NATNet(is_training=False)
+    return net.inference(tokens, silence_duration, speaker)
 
-  durations = durations * FLAGS.sample_rate / (FLAGS.n_fft//4)
-  n_frames = int(jnp.sum(durations).item())
-  predict_fn = jax.jit(forward.apply, static_argnums=[5])
+  predict_fn = forward.apply
   tokens = np.array(tokens, dtype=np.int32)[None, :]
-  return predict_fn(params, aux, rng, tokens, durations, n_frames)[0]
+  return predict_fn(params, aux, rng, tokens, silence_duration, speaker)[0]
 
 
-def text2mel(text: str, lexicon_fn=FLAGS.data_dir / 'lexicon.txt', silence_duration: float = -1.):
+def text2mel(text: str, lexicon_fn=FLAGS.data_dir / 'lexicon.txt', silence_duration: float = -1., speaker: int = 0):
   tokens = text2tokens(text, lexicon_fn)
-  durations = predict_duration(tokens)
-  durations = jnp.where(
-      np.array(tokens)[None, :] == FLAGS.sp_index,
-      jnp.clip(durations, a_min=silence_duration, a_max=None),
-      durations
-  )
-  durations = jnp.where(np.array(tokens)[None, :] == FLAGS.word_end_index, 0., durations)
-  mels = predict_mel(tokens, durations)
-  if tokens[-1] == FLAGS.sp_index:
-    end_silence = durations[0, -1].item()
-    silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
-    mels = mels[:, :(mels.shape[1]-silence_frame)]
+  mels = predict_mel(tokens, silence_duration, speaker)
   return mels
 
 
@@ -94,9 +74,10 @@ if __name__ == '__main__':
   from pathlib import Path
   parser = ArgumentParser()
   parser.add_argument('--text', type=str, required=True)
+  parser.add_argument('--speaker', type=int, default=0)
   parser.add_argument('--output', type=Path, required=True)
   args = parser.parse_args()
-  mel = text2mel(args.text)
+  mel = text2mel(args.text, speaker=args.speaker)
   plt.figure(figsize=(10, 5))
   plt.imshow(mel[0].T, origin='lower', aspect='auto')
   plt.savefig(str(args.output))

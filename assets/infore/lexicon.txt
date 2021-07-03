@@ -1,4406 +1,5482 @@
-huy	h u y
-nam	n a m
-hóa	h ó a
-bố	b ố
-chồng	c h ồ n g
-xì	x ì
-tin	t i n
-đối	đ ố i
-thoại	t h o ạ i
-bá	b á
-đạo	đ ạ o
-với	v ớ i
-con	c o n
-dâu	d â u
-hải	h ả i
-yến	y ế n
-chất	c h ấ t
-nhờn	n h ờ n
-này	n à y
-có	c ó
-tác	t á c
-dụng	d ụ n g
-giúp	g i ú p
-bôi	b ô i
-trơn	t r ơ n
-tránh	t r á n h
-đau	đ a u
-rát	r á t
-để	đ ể
-được	đ ư ợ c
-trải	t r ả i
-nghiệm	n g h i ệ m
-cảm	c ả m
-giác	g i á c
-thoải	t h o ả i
-mái	m á i
-và	v à
-rinh	r i n h
-qua	q u a
-tặng	t ặ n g
-nào	n à o
-đây	đ â y
-chính	c h í n h
-là	l à
-cách	c á c h
-thai	t h a i
-hiệu	h i ệ u
-quả	q u ả
-nhất	n h ấ t
-mà	m à
-không	k h ô n g
-cần	c ầ n
-sử	s ử
-bao	b a o
-cao	c a o
-su	s u
-cặp	c ặ p
-đôi	đ ô i
-cũng	c ũ n g
-biết	b i ế t
-sở	s ở
-tài	t à i
-tỉnh	t ỉ n h
-bình	b ì n h
-dương	d ư ơ n g
-đang	đ a n g
-phối	p h ố i
-hợp	h ợ p
-xây	x â y
-dựng	d ự n g
-thông	t h ô n g
-quy	q u y
-hoạch	h o ạ c h
-đất	đ ấ t
-của	c ủ a
-nhiều	n h i ề u
-trụ	t r ụ
-công	c ô n g
-còn	c ò n
-lại	l ạ i
-tiếp	t i ế p
-tục	t ụ c
-bán	b á n
-đấu	đ ấ u
-giá	g i á
-nhưng	n h ư n g
-những	n h ữ n g
-đứa	đ ứ a
-trẻ	t r ẻ
-phải	p h ả i
-mang	m a n g
-trong	t r o n g
-mình	m ì n h
-giọt	g i ọ t
-máu	m á u
-tượng	t ư ợ n g
-xâm	x â m
-hại	h ạ i
-thì	t h ì
-thực	t h ự c
-sự	s ự
-cay	c a y
-đắng	đ ắ n g
-cùng	c ù n g
-họ	h ọ
-người	n g ư ờ i
-mê	m ê
-dòng	d ò n g
-gốm	g ố m
-mỹ	m ỹ
-thiện	t h i ệ n
-đầy	đ ầ y
-sáng	s á n g
-tạo	t ạ o
-tìm	t ì m
-đến	đ ế n
-ông	ô n g
-thiết	t h i ế t
-kế	k ế
-tiêu	t i ê u
-bản	b ả n
-khác	k h á c
-nhau	n h a u
-đặt	đ ặ t
-hàng	h à n g
-làm	l à m
-thỉnh	t h ỉ n h
-thoảng	t h o ả n g
-dùng	d ù n g
-bàn	b à n
-tay	t a y
-mạnh	m ạ n h
-mẽ	m ẽ
-đảo	đ ả o
-thịt	t h ị t
-từ	t ừ
-dưới	d ư ớ i
-lên	l ê n
-trên	t r ê n
-miếng	m i ế n g
-bóng	b ó n g
-mượt	m ư ợ t
-nhìn	n h ì n
-đã	đ ã
-sẽ	s ẽ
-ngon	n g o n
-rồi	r ồ i
-sao	s a o
-thức	t h ứ c
-ăn	ă n
-đủ	đ ủ
-dinh	d i n h
-dưỡng	d ư ỡ n g
-đồng	đ ồ n g
-thời	t h ờ i
-khi	k h i
-chế	c h ế
-biến	b i ế n
-mùi	m ù i
-khói	k h ó i
-độc	đ ộ c
-ảnh	ả n h
-hưởng	h ư ở n g
-sức	s ứ c
-khỏe	k h ỏ e
-cả	c ả
-gia	g i a
-đình	đ ì n h
-nhận	n h ậ n
-đám	đ á m
-tiệc	t i ệ c
-cưới	c ư ớ i
-hỏi	h ỏ i
-gần	g ầ n
-xa	x a
-luôn	l u ô n
-mẫu	m ẫ u
-xe	x e
-hoa	h o a
-đời	đ ờ i
-mới	m ớ i
-hà	h à
-nội	n ộ i
-lấy	l ấ y
-ý	ý
-kiến	k i ế n
-về	v ề
-việc	v i ệ c
-chặt	c h ặ t
-hạ	h ạ
-thay	t h a y
-thế	t h ế
-toàn	t o à n
-bộ	b ộ
-cây	c â y
-xà	x à
-cừ	c ừ
-vi	v i
-đi	đ i
-cường	c ư ờ n g
-đô	đ ô
-la	l a
-xóa	x ó a
-tan	t a n
-nghi	n g h i
-án	á n
-đường	đ ư ờ n g
-ai	a i
-nấy	n ấ y
-mỗi	m ỗ i
-chúng	c h ú n g
-ta	t a
-đều	đ ề u
-một	m ộ t
-điều	đ i ề u
-gì	g ì
-đó	đ ó
-cho	c h o
-giới	g i ớ i
-khả	k h ả
-năng	n ă n g
-nhanh	n h a n h
-chóng	c h ó n g
-đánh	đ á n h
-hơi	h ơ i
-giả	g i ả
-cơ	c ơ
-quan	q u a n
-xử	x ử
-lý	l ý
-hồ	h ồ
-sơ	s ơ
-đăng	đ ă n g
-ký	k ý
-nhãn	n h ã n
-tại	t ạ i
-việt	v i ệ t
-chí	c h í
-lựa	l ự a
-chọn	c h ọ n
-địa	đ ị a
-chỉ	c h ỉ
-niềng	n i ề n g
-răng	r ă n g
-uy	u y
-tín	t í n
-ở	ở
-sài	s à i
-gòn	g ò n
-xương	x ư ơ n g
-bệnh	b ệ n h
-miệng	m i ệ n g
-hề	h ề
-hiếm	h i ế m
-gặp	g ặ p
-đáng	đ á n g
-tự	t ự
-hào	h à o
-món	m ó n
-phở	p h ở
-bò	b ò
-mặt	m ặ t
-vị	v ị
-trí	t r í
-đầu	đ ầ u
-danh	d a n h
-sách	s á c h
-linh	l i n h
-đại	đ ạ i
-sứ	s ứ
-chiến	c h i ế n
-dịch	d ị c h
-đội	đ ộ i
-mũ	m ũ
-bảo	b ả o
-hiểm	h i ể m
-chủ	c h ủ
-tịch	t ị c h
-thái	t h á i
-sơn	s ơ n
-trần	t r ầ n
-anh	a n h
-tú	t ú
-trưởng	t r ư ở n g
-văn	v ă n
-vũ	v ũ
-thất	t h ấ t
-tình	t ì n h
-lẽ	l ẽ
-tồi	t ồ i
-tệ	t ệ
-từng	t ừ n g
-bị	b ị
-phát	p h á t
-hiện	h i ệ n
-giống	g i ố n g
-hệt	h ệ t
-gốc	g ố c
-chi	c h i
-tiết	t i ế t
-nhỏ	n h ỏ
-chuyện	c h u y ệ n
-xảy	x ả y
-ra	r a
-đột	đ ộ t
-ngột	n g ộ t
-dọa	d ọ a
-sợ	s ợ
-hết	h ế t
-mọi	m ọ i
-tô	t ô
-mộ	m ộ
-tới	t ớ i
-mức	m ứ c
-hô	h ô
-lớn	l ớ n
-kêu	k ê u
-gọi	g ọ i
-y	y
-loạt	l o ạ t
-nghị	n g h ị
-đổ	đ ổ
-vốn	v ố n
-tỷ	t ỷ
-usd	u s d
-vào	v à o
-sau	s a u
-vay	v a y
-tiền	t i ề n
-vợ	v ợ
-lẩn	l ẩ n
-trả	t r ả
-tóc	t ó c
-hậu	h ậ u
-thu	t h u
-hoài	h o à i
-nghệ	n g h ệ
-sĩ	s ĩ
-trang	t r a n g
-phục	p h ụ c
-trắng	t r ắ n g
-tham	t h a m
-dự	d ự
-do	d o
-sàn	s à n
-ngoài	n g o à i
-trời	t r ờ i
-độ	đ ộ
-bền	b ề n
-thẩm	t h ẩ m
-đẹp	đ ẹ p
-thi	t h i
-các	c á c
-hạng	h ạ n g
-mục	m ụ c
-trình	t r ì n h
-nó	n ó
-tiên	t i ê n
-cô	c ô
-gái	g á i
-lãng	l ã n g
-mạn	m ạ n
-dịu	d ị u
-dàng	d à n g
-nữ	n ữ
-tính	t í n h
-màu	m à u
-thấy	t h ấ y
-giữa	g i ữ a
-hai	h a i
-lông	l ô n g
-mày	m à y
-thường	t h ư ờ n g
-phổi	p h ổ i
-nỗi	n ỗ i
-buồn	b u ồ n
-rõ	r õ
-khuôn	k h u ô n
-dân	d â n
-nơi	n ơ i
-góc	g ó c
-phòng	p h ò n g
-bày	b à y
-thú	t h ú
-bông	b ô n g
-bạn	b ạ n
-bè	b è
-hâm	h â m
-ngọc	n g ọ c
-hân	h â n
-yêu	y ê u
-thích	t h í c h
-thử	t h ử
-thách	t h á c h
-tù	t ù
-tá	t á
-ngày	n g à y
-đọc	đ ọ c
-hiểu	h i ể u
-áp	á p
-nguyên	n g u y ê n
-tắc	t ắ c
-tiễn	t i ễ n
-giàu	g i à u
-nay	n a y
-đơn	đ ơ n
-giản	g i ả n
-đặc	đ ặ c
-biệt	b i ệ t
-kiếm	k i ế m
-hội	h ộ i
-đưa	đ ư a
-sản	s ả n
-phẩm	p h ẩ m
-trà	t r à
-vả	v ả
-nước	n ư ớ c
-máy	m á y
-lạnh	l ạ n h
-thảm	t h ả m
-lót	l ó t
-hệ	h ệ
-thống	t h ố n g
-chiếu	c h i ế u
-kiệm	k i ệ m
-điện	đ i ệ n
-thâm	t h â m
-hơn	h ơ n
-thạch	t h ạ c h
-viết	v i ế t
-bức	b ứ c
-thư	t h ư
-đề	đ ề
-tên	t ê n
-cảnh	c ả n h
-sát	s á t
-khu	k h u
-vực	v ự c
-nhằm	n h ằ m
-đe	đ e
-bà	b à
-cơn	c ơ n
-nhức	n h ứ c
-xuất	x u ấ t
-thoái	t h o á i
-cột	c ộ t
-sống	s ố n g
-yếu	y ế u
-trạng	t r ạ n g
-viêm	v i ê m
-lần	l ầ n
-trường	t r ư ờ n g
-tôi	t ô i
-giáo	g i á o
-viên	v i ê n
-đua	đ u a
-trái	t r á i
-ngược	n g ư ợ c
-ê	ê
-kíp	k í p
-phim	p h i m
-hùng	h ù n g
-dàn	d à n
-diễn	d i ễ n
-cha	c h a
-cõng	c õ n g
-gương	g ư ơ n g
-ngang	n g a n g
-khai	k h a i
-thiếu	t h i ế u
-nợ	n ợ
-nên	n ê n
-gây	g â y
-vụ	v ụ
-cướp	c ư ớ p
-giờ	g i ờ
-sóng	s ó n g
-gió	g i ó
-thùy	t h ù y
-chút	c h ú t
-nghĩ	n g h ĩ
-ngợi	n g ợ i
-lầm	l ầ m
-cũ	c ũ
-chú	c h ú
-vì	v ì
-ngoại	n g o ạ i
-hình	h ì n h
-nóng	n ó n g
-bỏng	b ỏ n g
-hộ	h ộ
-tranh	t r a n h
-luận	l u ậ n
-chiều	c h i ề u
-trước	t r ư ớ c
-hành	h à n h
-động	đ ộ n g
-chức	c h ứ c
-cuộc	c u ộ c
-kịp	k ị p
-ngăn	n g ă n
-chặn	c h ặ n
-chuyên	c h u y ê n
-cung	c u n g
-cấp	c ấ p
-loại	l o ạ i
-nhôm	n h ô m
-thanh	t h a n h
-định	đ ị n h
-theo	t h e o
-tiến	t i ế n
-nghĩa	n g h ĩ a
-hằng	h ằ n g
-thành	t h à n h
-nổi	n ổ i
-tiếng	t i ế n g
-chung	c h u n g
-bật	b ậ t
-phút	p h ú t
-chót	c h ó t
-nói	n ó i
-ba	b a
-vậy	v ậ y
-vệ	v ệ
-bỏ	b ỏ
-chạy	c h ạ y
-đàn	đ à n
-vẫn	v ẫ n
-cầm	c ầ m
-dao	d a o
-đuổi	đ u ổ i
-đâm	đ â m
-nhát	n h á t
-vùng	v ù n g
-ngực	n g ự c
-cổ	c ổ
-khiến	k h i ế n
-nạn	n ạ n
-nhân	n h â n
-gục	g ụ c
-chỗ	c h ỗ
-mặc	m ặ c
-chiếc	c h i ế c
-áo	á o
-phông	p h ô n g
-xanh	x a n h
-nhạt	n h ạ t
-quần	q u ầ n
-dài	d à i
-be	b e
-đeo	đ e o
-kính	k í n h
-mát	m á t
-quen	q u e n
-thuộc	t h u ộ c
-viện	v i ệ n
-sắm	s ắ m
-may	m a y
-như	n h ư
-bằng	b ằ n g
-chứng	c h ứ n g
-ngờ	n g ờ
-bí	b í
-mật	m ậ t
-hẹn	h ẹ n
-hò	h ò
-cư	c ư
-mạng	m ạ n g
-tinh	t i n h
-phụ	p h ụ
-càng	c à n g
-nặng	n ặ n g
-biểu	b i ể u
-huyết	h u y ế t
-chưa	c h ư a
-buộc	b u ộ c
-phẫu	p h ẫ u
-thuật	t h u ậ t
-cứu	c ứ u
-loan	l o a n
-dung	d u n g
-đuối	đ u ố i
-khiêm	k h i ê m
-nhường	n h ư ờ n g
-lành	l à n h
-hầu	h ầ u
-cố	c ố
-tra	t r a
-giật	g i ậ t
-tông	t ô n g
-hồng	h ồ n g
-cánh	c á n h
-trở	t r ở
-thật	t h ậ t
-hấp	h ấ p
-dẫn	d ẫ n
-tuy	t u y
-nhiên	n h i ê n
-rằng	r ằ n g
-muốn	m u ố n
-thêm	t h ê m
-nhắm	n h ắ m
-ty	t y
-triều	t r i ề u
-đen	đ e n
-kinh	k i n h
-doanh	d o a n h
-ngả	n g ả
-trung	t r u n g
-quốc	q u ố c
-sông	s ô n g
-long	l o n g
-nghiệp	n g h i ệ p
-dây	d â y
-kê	k ê
-lập	l ậ p
-chòi	c h ò i
-lợi	l ợ i
-bất	b ấ t
-hút	h ú t
-cát	c á t
-lậu	l ậ u
-nghiên	n g h i ê n
-nhà	n h à
-khoa	k h o a
-học	h ọ c
-da	d a
-lão	l ã o
-hoá	h o á
-tố	t ố
-khí	k h í
-dầu	d ầ u
-thuốc	t h u ố c
-lá	l á
-tử	t ử
-thơm	t h ơ m
-điểm	đ i ể m
-lễ	l ễ
-diện	d i ệ n
-đồ	đ ồ
-bơi	b ơ i
-trượt	t r ư ợ t
-tuyết	t u y ế t
-chấp	c h ấ p
-chỉn	c h ỉ n
-chu	c h u
-đắt	đ ắ t
-đỏ	đ ỏ
-kiện	k i ệ n
-nhã	n h ã
-giải	g i ả i
-tỏa	t ỏ a
-xúc	x ú c
-làn	l à n
-mịn	m ị n
-màng	m à n g
-môn	m ô n
-lịch	l ị c h
-gũi	g ũ i
-thắp	t h ắ p
-niềm	n i ề m
-hứng	h ứ n g
-đam	đ a m
-em	e m
-sinh	s i n h
-phương	p h ư ơ n g
-mai	m a i
-táo	t á o
-bạo	b ạ o
-đầm	đ ầ m
-cắt	c ắ t
-xẻ	x ẻ
-duy	d u y
-trì	t r ì
-sạch	s ạ c h
-rửa	r ử a
-xuyên	x u y ê n
-hoặc	h o ặ c
-đái	đ á i
-dầm	d ầ m
-nhuộm	n h u ộ m
-cầu	c ầ u
-kỳ	k ỳ
-truyền	t r u y ề n
-ngắn	n g ắ n
-bổ	b ổ
-luống	l u ố n g
-trào	t r à o
-lưu	l ư u
-đoạn	đ o ạ n
-sốc	s ố c
-thủ	t h ủ
-báo	b á o
-phanh	p h a n h
-phui	p h u i
-ép	é p
-nghỉ	n g h ỉ
-ghen	g h e n
-mẹ	m ẹ
-hé	h é
-lộ	l ộ
-gay	g a y
-cấn	c ấ n
-ngân	n g â n
-ts	t s
-hôm	h ô m
-bước	b ư ớ c
-lãnh	l ã n h
-suốt	s u ố t
-nữa	n ữ a
-hồn	h ồ n
-tộc	t ộ c
-xế	x ế
-lơ	l ơ
-mỏi	m ỏ i
-mệt	m ệ t
-huống	h u ố n g
-xấu	x ấ u
-thể	t h ể
-tường	t ư ờ n g
-sửa	s ử a
-đổi	đ ổ i
-đích	đ í c h
-vui	v u i
-chơi	c h ơ i
-vương	v ư ơ n g
-quán	q u á n
-rất	r ấ t
-hỗn	h ỗ n
-cực	c ự c
-mã	m ã
-giỏi	g i ỏ i
-bởi	b ở i
-lắm	l ắ m
-gớm	g ớ m
-phân	p h â n
-đệ	đ ệ
-khớp	k h ớ p
-căn	c ă n
-phổ	p h ổ
-lúc	l ú c
-sắp	s ắ p
-xịt	x ị t
-chân	c h â n
-mất	m ấ t
-chương	c h ư ơ n g
-năm	n ă m
-lửa	l ử a
-ban	b a n
-nhạc	n h ạ c
-thân	t h â n
-nửa	n ử a
-kia	k i a
-mua	m u a
-ủng	ủ n g
-thải	t h ả i
-vấn	v ấ n
-tối	t ố i
-tầm	t ầ m
-đông	đ ô n g
-đèn	đ è n
-pha	p h a
-ngẫm	n g ẫ m
-quyền	q u y ề n
-lộc	l ộ c
-tật	t ậ t
-chị	c h ị
-ngại	n g ạ i
-cứ	c ứ
-đứng	đ ứ n g
-quỹ	q u ỹ
-dễ	d ễ
-minh	m i n h
-nguyệt	n g u y ệ t
-đóng	đ ó n g
-góp	g ó p
-kể	k ể
-tuyển	t u y ể n
-chuyến	c h u y ế n
-ấy	ấ y
-lực	l ự c
-tam	t a m
-che	c h e
-tròn	t r ò n
-tháp	t h á p
-lục	l ụ c
-lăng	l ă n g
-bát	b á t
-di	d i
-hạnh	h ạ n h
-nhi	n h i
-vịnh	v ị n h
-gửi	g ử i
-vòng	v ò n g
-chia	c h i a
-thập	t h ậ p
-ác	á c
-bại	b ạ i
-hoàn	h o à n
-trống	t r ố n g
-giám	g i á m
-khách	k h á c h
-lật	l ậ t
-đêm	đ ê m
-lào	l à o
-in	i n
-đoàn	đ o à n
-tàu	t à u
-dừng	d ừ n g
-hẳn	h ẳ n
-bụi	b ụ i
-bẩn	b ẩ n
-tạp	t ạ p
-bã	b ã
-thừa	t h ừ a
-tận	t ậ n
-sâu	s â u
-lỗ	l ỗ
-khô	k h ô
-chợ	c h ợ
-rẽ	r ẽ
-xã	x ã
-cam	c a m
-tuyên	t u y ê n
-kẹo	k ẹ o
-dụ	d ụ
-dỗ	d ỗ
-du	d u
-dã	d ã
-trai	t r a i
-đớn	đ ớ n
-khối	k h ố i
-não	n ã o
-bác	b á c
-sỹ	s ỹ
-họng	h ọ n g
-ly	l y
-gầm	g ầ m
-nhẹ	n h ẹ
-ôm	ô m
-nụ	n ụ
-hôn	h ô n
-nhiệt	n h i ệ t
-xưng	x ư n g
-ngũ	n g ũ
-lương	l ư ơ n g
-tướng	t ư ớ n g
-trương	t r ư ơ n g
-liêu	l i ê u
-vu	v u
-cấm	c ấ m
-cáp	c á p
-hoảng	h o ả n g
-tháng	t h á n g
-trị	t r ị
-sang	s a n g
-thương	t h ư ơ n g
-bé	b é
-khống	k h ố n g
-sẵn	s ẵ n
-sàng	s à n g
-ngõ	n g õ
-ô	ô
-phố	p h ố
-hoàng	h o à n g
-thám	t h á m
-tốt	t ố t
-thắt	t h ắ t
-lưng	l ư n g
-lâu	l â u
-trọng	t r ọ n g
-hay	h a y
-thiệu	t h i ệ u
-giao	g i a o
-trực	t r ự c
-rẻ	r ẻ
-số	s ố
-lượng	l ư ợ n g
-kẻ	k ẻ
-chết	c h ế t
-bổng	b ổ n g
-khó	k h ó
-trùm	t r ù m
-phan	p h a n
-quân	q u â n
-giặc	g i ặ c
-lôi	l ô i
-kéo	k é o
-quý	q u ý
-sai	s a i
-nhật	n h ậ t
-tích	t í c h
-sớm	s ớ m
-hung	h u n g
-ánh	á n h
-chanh	c h a n h
-chắc	c h ắ c
-chắn	c h ắ n
-dành	d à n h
-giảm	g i ả m
-cân	c â n
-đặn	đ ặ n
-tăng	t ă n g
-rệt	r ệ t
-chống	c h ố n g
-tuổi	t u ổ i
-thọ	t h ọ
-nếu	n ế u
-chữa	c h ữ a
-triệt	t r i ệ t
-tai	t a i
-nghiêm	n g h i ê m
-tức	t ứ c
-óc	ó c
-tạm	t ạ m
-thứ	t h ứ
-hoạt	h o ạ t
-ổn	ổ n
-cải	c ả i
-suất	s u ấ t
-pin	p i n
-so	s o
-lứa	l ứ a
-mong	m o n g
-cán	c á n
-dục	d ụ c
-tư	t ư
-tưởng	t ư ở n g
-rèn	r è n
-luyện	l u y ệ n
-thần	t h ầ n
-dáng	d á n g
-váy	v á y
-bút	b ú t
-chì	c h ì
-vẻ	v ẻ
-quyến	q u y ế n
-rũ	r ũ
-hắn	h ắ n
-lừa	l ừ a
-đểu	đ ể u
-vôi	v ô i
-bột	b ộ t
-hoà	h o à
-ph	p h
-hẹp	h ẹ p
-vọng	v ọ n g
-nhảy	n h ả y
-lũy	l ũ y
-kỹ	k ỹ
-trợ	t r ợ
-nhẫn	n h ẫ n
-tâm	t â m
-mấy	m ấ y
-khóa	k h ó a
-cụ	c ụ
-non	n o n
-đâu	đ â u
-thổi	t h ổ i
-phong	p h o n g
-mắt	m ắ t
-niên	n i ê n
-bây	b â y
-mốt	m ố t
-bề	b ề
-khôn	k h ô n
-cộng	c ộ n g
-đáo	đ á o
-ngủ	n g ủ
-giấc	g i ấ c
-ngơi	n g ơ i
-giãn	g i ã n
-trúc	t r ú c
-sư	s ư
-nâng	n â n g
-đẳng	đ ẳ n g
-hàu	h à u
-kích	k í c h
-khá	k h á
-nguy	n g u y
-ví	v í
-mắc	m ắ c
-buồng	b u ồ n g
-trứng	t r ứ n g
-hữu	h ữ u
-nhiễm	n h i ễ m
-tòa	t ò a
-thuận	t h u ậ n
-nhộn	n h ộ n
-nhịp	n h ị p
-hồi	h ồ i
-phạm	p h ạ m
-sanh	s a n h
-châu	c h â u
-phỏng	p h ỏ n g
-ngừa	n g ừ a
-ung	u n g
-mưa	m ư a
-thang	t h a n g
-nuôi	n u ô i
-dĩ	d ĩ
-ấm	ấ m
-cúng	c ú n g
-biển	b i ể n
-tơ	t ơ
-treo	t r e o
-tập	t ậ p
-canh	c a n h
-rớt	r ớ t
-trùng	t r ù n g
-đào	đ à o
-ca	c a
-quá	q u á
-hỗ	h ỗ
-kiệt	k i ệ t
-gồng	g ồ n g
-đúng	đ ú n g
-pháp	p h á p
-luật	l u ậ t
-phù	p h ù
-lời	l ờ i
-khiếu	k h i ế u
-nại	n ạ i
-kiểm	k i ể m
-mối	m ố i
-xứ	x ứ
-bối	b ố i
-bom	b o m
-đạn	đ ạ n
-khoai	k h o a i
-tây	t â y
-trữ	t r ữ
-liệu	l i ệ u
-voan	v o a n
-nét	n é t
-nàng	n à n g
-hảo	h ả o
-bên	b ê n
-lẫn	l ẫ n
-kiểu	k i ể u
-chưng	c h ư n g
-thắng	t h ắ n g
-kiêng	k i ê n g
-nà	n à
-đoản	đ o ả n
-cú	c ú
-tã	t ã
-thèm	t h è m
-tao	t a o
-nhỉ	n h ỉ
-nè	n è
-tiện	t i ệ n
-tế	t ế
-chờ	c h ờ
-kết	k ế t
-cuối	c u ố i
-tụng	t ụ n g
-oanh	o a n h
-xác	x á c
-chấm	c h ấ m
-dứt	d ứ t
-buổi	b u ổ i
-họp	h ọ p
-đồn	đ ồ n
-tất	t ấ t
-lỗi	l ỗ i
-hãy	h ã y
-liên	l i ê n
-vé	v é
-ưu	ư u
-đãi	đ ã i
-bay	b a y
-nhé	n h é
-đai	đ a i
-lao	l a o
-toán	t o á n
-quyết	q u y ế t
-nát	n á t
-bắt	b ắ t
-ít	í t
-e	e
-cái	c á i
-ngoan	n g o a n
-mảnh	m ả n h
-chàng	c h à n g
-soái	s o á i
-xinh	x i n h
-cười	c ư ờ i
-chảy	c h ả y
-nhổ	n h ổ
-tiểu	t i ể u
-buốt	b u ố t
-vô	v ô
-rộng	r ộ n g
-rãi	r ã i
-phái	p h á i
-chim	c h i m
-bồ	b ồ
-câu	c â u
-vừa	v ừ a
-ràng	r à n g
-mềm	m ề m
-ngọt	n g ọ t
-thôi	t h ô i
-thấp	t h ấ p
-đòi	đ ò i
-sổ	s ổ
-hạn	h ạ n
-phú	p h ú
-nha	n h a
-an	a n
-miễn	m i ễ n
-phí	p h í
-lắp	l ắ p
-gọn	g ọ n
-lẹ	l ẹ
-nối	n ố i
-bờ	b ờ
-kênh	k ê n h
-dị	d ị
-ứng	ứ n g
-sữa	s ữ a
-bú	b ú
-phản	p h ả n
-thăng	t h ă n g
-trầm	t r ầ m
-nhọc	n h ọ c
-lọc	l ọ c
-xơ	x ơ
-vải	v ả i
-giữ	g i ữ
-nhấp	n h ấ p
-bảng	b ả n g
-đáp	đ á p
-trao	t r a o
-vỏ	v ỏ
-kim	k i m
-nghiền	n g h i ề n
-mũi	m ũ i
-lo	l o
-tiếc	t i ế c
-rau	r a u
-diếp	d i ế p
-cá	c á
-mụn	m ụ n
-nhọt	n h ọ t
-sẹo	s ẹ o
-nám	n á m
-tàn	t à n
-nhang	n h a n g
-chớ	c h ớ
-tỏ	t ỏ
-chịu	c h ị u
-vài	v à i
-khen	k h e n
-đòn	đ ò n
-roi	r o i
-bế	b ế
-mâu	m â u
-thuẫn	t h u ẫ n
-vâng	v â n g
-chán	c h á n
-đừng	đ ừ n g
-cập	c ậ p
-phi	p h i
-bài	b à i
-uống	u ố n g
-rượu	r ư ợ u
-bia	b i a
-tung	t u n g
-chiêu	c h i ê u
-ngô	n g ô
-điên	đ i ê n
-phật	p h ậ t
-cùa	c ù a
-nuốt	n u ố t
-rời	r ờ i
-khỏi	k h ỏ i
-dược	d ư ợ c
-bì	b ì
-bầu	b ầ u
-nắm	n ắ m
-ngón	n g ó n
-thở	t h ở
-tẩm	t ẩ m
-ong	o n g
-xuống	x u ố n g
-nhu	n h u
-khuyến	k h u y ế n
-khích	k h í c h
-chuyển	c h u y ể n
-xin	x i n
-thau	t h a u
-dọn	d ọ n
-bể	b ể
-quận	q u ậ n
-trưng	t r ư n g
-khuất	k h u ấ t
-tu	t u
-tuyệt	t u y ệ t
-đao	đ a o
-niết	n i ế t
-diệt	d i ệ t
-béo	b é o
-bụng	b ụ n g
-hài	h à i
-hòa	h ò a
-bực	b ự c
-bội	b ộ i
-tiệm	t i ệ m
-tĩnh	t ĩ n h
-tống	t ố n g
-gậy	g ậ y
-chổi	c h ổ i
-xua	x u a
-trăm	t r ă m
-đu	đ u
-thừng	t h ừ n g
-leo	l e o
-vách	v á c h
-núi	n ú i
-dâng	d â n g
-hương	h ư ơ n g
-vua	v u a
-dưa	d ư a
-gang	g a n g
-min	m i n
-khoáng	k h o á n g
-tọa	t ọ a
-lạc	l ạ c
-trục	t r ụ c
-xuân	x u â n
-võ	v õ
-đỉnh	đ ỉ n h
-chẳng	c h ẳ n g
-ham	h a m
-thăm	t h ă m
-lòng	l ò n g
-cáo	c á o
-oan	o a n
-kiều	k i ề u
-biện	b i ệ n
-gạo	g ạ o
-lứt	l ứ t
-chuẩn	c h u ẩ n
-khám	k h á m
-phác	p h á c
-lê	l ê
-sốt	s ố t
-ven	v e n
-bùng	b ù n g
-gian	g i a n
-nỡ	n ỡ
-bướm	b ư ớ m
-giết	g i ế t
-rừng	r ừ n g
-ống	ố n g
-xô	x ô
-ấn	ấ n
-xót	x ó t
-giọng	g i ọ n g
-lừng	l ừ n g
-lẫy	l ẫ y
-gam	g a m
-phom	p h o m
-thượng	t h ư ợ n g
-phúc	p h ú c
-tuýp	t u ý p
-sắt	s ắ t
-tấn	t ấ n
-bóp	b ó p
-vong	v o n g
-cản	c ả n
-tổ	t ổ
-trúng	t r ú n g
-khắc	k h ắ c
-khăn	k h ă n
-nắng	n ắ n g
-đẩy	đ ẩ y
-nôi	n ô i
-xách	x á c h
-phá	p h á
-giang	g i a n g
-tạt	t ạ t
 a	a
-xít	x í t
-nhàn	n h à n
-khoán	k h o á n
-hiển	h i ể n
-dữ	d ữ
-tợn	t ợ n
-xi	x i
-nhan	n h a n
-trông	t r ô n g
-quà	q u à
-chiếm	c h i ế m
-nhiếp	n h i ế p
-quay	q u a y
-giường	g i ư ờ n g
-chối	c h ố i
-bắc	b ắ c
-chảo	c h ả o
-ngập	n g ậ p
-bếp	b ế p
-chiên	c h i ê n
-vàng	v à n g
-mông	m ô n g
-mi	m i
-duyên	d u y ê n
-pô	p ô
-ngay	n g a y
-dấu	d ấ u
-kĩ	k ĩ
-nồng	n ồ n g
-nhẹn	n h ẹ n
-mưu	m ư u
-tăm	t ă m
-bừng	b ừ n g
-sặc	s ặ c
-sỡ	s ỡ
-bứt	b ứ t
-rứt	r ứ t
-căng	c ă n g
-thẳng	t h ẳ n g
-loạn	l o ạ n
-cuồng	c u ồ n g
-thoát	t h o á t
-chốn	c h ố n
-ngục	n g ụ c
-phủ	p h ủ
-vàn	v à n
-gà	g à
-om	o m
-lang	l a n g
-lạ	l ạ
-mại	m ạ i
-tản	t ả n
-chém	c h é m
-tấp	t ấ p
-gãy	g ã y
-vấp	v ấ p
-ngã	n g ã
-tui	t u i
-khẩn	k h ẩ n
-vật	v ậ t
-thúc	t h ú c
-dịp	d ị p
-sếp	s ế p
-hời	h ờ i
-hợt	h ợ t
-nhóm	n h ó m
-bốn	b ố n
-đa	đ a
-đỡ	đ ỡ
-kém	k é m
-mắn	m ắ n
-sánh	s á n h
-tắt	t ắ t
-trút	t r ú t
-sườn	s ư ờ n
-đĩa	đ ĩ a
-rắc	r ắ c
-cọng	c ọ n g
-xong	x o n g
-thù	t h ù
-chột	c h ộ t
-mực	m ự c
-nang	n a n g
-ván	v á n
-cơm	c ơ m
-sét	s é t
-bách	b á c h
-vội	v ộ i
-ạ	ạ
-sa	s a
-mạc	m ạ c
-phía	p h í a
-móc	m ó c
-gỗ	g ỗ
-tắm	t ắ m
-sạn	s ạ n
-búp	b ú p
-bê	b ê
-bồn	b ồ n
-hư	h ư
-hỏng	h ỏ n g
-túi	t ú i
-giấy	g i ấ y
-đảm	đ ả m
-môi	m ô i
-phần	p h ầ n
-vết	v ế t
-giun	g i u n
-sán	s á n
-tội	t ộ i
-chừa	c h ừ a
-thói	t h ó i
-làng	l à n g
-bích	b í c h
-vẽ	v ẽ
-ruộng	r u ộ n g
-mướt	m ư ớ t
-trọn	t r ọ n
-ngôi	n g ô i
-sum	s u m
-suê	s u ê
-lí	l í
-ảo	ả o
-xem	x e m
-đúc	đ ú c
-náo	n á o
-tha	t h a
-quê	q u ê
-cạnh	c ạ n h
-hãng	h ã n g
-mống	m ố n g
-vân	v â n
-lĩnh	l ĩ n h
-phép	p h é p
-khiển	k h i ể n
-cốt	c ố t
-nằm	n ằ m
-vỉa	v ỉ a
-hè	h è
-buôn	b u ô n
-chấn	c h ấ n
-cuốn	c u ố n
-pa	p a
-khuyên	k h u y ê n
-le	l e
-nin	n i n
-khán	k h á n
-đài	đ à i
-xôn	x ô n
-xao	x a o
-trò	t r ò
-đụng	đ ụ n g
-đũa	đ ũ a
-nhớ	n h ớ
-khoản	k h o ả n
-xứng	x ứ n g
-cám	c á m
-đắp	đ ắ p
-seo	s e o
-rao	r a o
-vặt	v ặ t
-ắp	ắ p
-kỷ	k ỷ
-niệm	n i ệ m
-song	s o n g
-lây	l â y
-ngứa	n g ứ a
-nốt	n ố t
-loét	l o é t
-khâu	k h â u
-gấu	g ấ u
-hổng	h ổ n g
-đằng	đ ằ n g
-thiên	t h i ê n
-quấn	q u ấ n
-quýt	q u ý t
-mở	m ở
-cửa	c ử a
-kiên	k i ê n
-mạo	m ạ o
-choáng	c h o á n g
-váng	v á n g
-rể	r ể
-cấu	c ấ u
-khảo	k h ả o
-chăm	c h ă m
-sóc	s ó c
-sắc	s ắ c
-thảo	t h ả o
-bạch	b ạ c h
-thị	t h ị
-lìa	l ì a
-mách	m á c h
-dạ	d ạ
-dày	d à y
-quảng	q u ả n g
-khỏa	k h ỏ a
-quản	q u ả n
-ngạch	n g ạ c h
-khem	k h e m
-cà	c à
-phê	p h ê
-rang	r a n g
-hạt	h ạ t
-dạo	d ạ o
-quanh	q u a n h
-tầng	t ầ n g
-tương	t ư ơ n g
-chăng	c h ă n g
-nho	n h o
-gồm	g ồ m
-xông	x ô n g
-kháng	k h á n g
-ôtô	ô t ô
-chở	c h ở
-trú	t r ú
-gio	g i o
-huyện	h u y ệ n
-can	c a n
-ma	m a
-túy	t ú y
-xưởng	x ư ở n g
-chụp	c h ụ p
-khánh	k h á n h
-giấu	g i ấ u
-vun	v u n
-má	m á
-ửng	ử n g
-hổ	h ổ
-rối	r ố i
-ruột	r u ộ t
-bơm	b ơ m
-giếng	g i ế n g
-khoan	k h o a n
-thiểu	t h i ể u
-mệnh	m ệ n h
-vướng	v ư ớ n g
-asean	a s e a n
-lược	l ư ợ c
-vận	v ậ n
-tróc	t r ó c
-kín	k í n
-cứng	c ứ n g
-nhắc	n h ắ c
-dù	d ù
-âm	â m
-chững	c h ữ n g
-nỗ	n ỗ
-phồn	p h ồ n
-vinh	v i n h
-triển	t r i ể n
-đùa	đ ù a
-trớn	t r ớ n
-cưng	c ư n g
-rơi	r ơ i
-dở	d ở
-khóc	k h ó c
-thước	t h ư ớ c
-to	t o
-vươn	v ư ơ n
-thủy	t h ủ y
-mau	m a u
-ghé	g h é
-đón	đ ó n
-mổ	m ổ
-lư	l ư
-ủy	ủ y
-yên	y ê n
-mùa	m ù a
-nực	n ự c
-dép	d é p
-ninh	n i n h
-nập	n ậ p
-lỏng	l ỏ n g
-măng	m ă n g
-đá	đ á
-riêng	r i ê n g
-buýt	b u ý t
-ngưng	n g ư n g
-tờ	t ờ
-khiêu	k h i ê u
-say	s a y
-trụi	t r ụ i
-chứa	c h ứ a
-bồi	b ồ i
-khang	k h a n g
-vắng	v ắ n g
-nôn	n ô n
-ói	ó i
-gầy	g ầ y
-còm	c ò m
-nghe	n g h e
-khò	k h ò
-khè	k h è
-tái	t á i
-ích	í c h
-gân	g â n
-chằng	c h ằ n g
-diệp	d i ệ p
-nhập	n h ậ p
-nuối	n u ố i
-ngoái	n g o á i
-nhũng	n h ũ n g
-chườm	c h ư ờ m
-rên	r ê n
-khẳng	k h ẳ n g
-ngồi	n g ồ i
-sảnh	s ả n h
-khoảng	k h o ả n g
-sân	s â n
-nới	n ớ i
-thấu	t h ấ u
-xăm	x ă m
-nề	n ề
-cờ	c ờ
-bãi	b ã i
-bọn	b ọ n
-tuyền	t u y ề n
-lâm	l â m
-cẩn	c ẩ n
-thận	t h ậ n
-sầm	s ầ m
-uất	u ấ t
-ngành	n g à n h
-nghề	n g h ề
-buông	b u ô n g
-chiểu	c h i ể u
-cậu	c ậ u
-ồn	ồ n
-oxy	o x y
-bọc	b ọ c
-chài	c h à i
-ẩm	ẩ m
-lớp	l ớ p
-tươi	t ư ơ i
-dẫu	d ẫ u
-sẻ	s ẻ
-dính	d í n h
-liền	l i ề n
-đức	đ ứ c
-tháo	t h á o
-bục	b ụ c
-lò	l ò
-giảng	g i ả n g
-cẩm	c ẩ m
-tùy	t ù y
-búa	b ú a
-tạ	t ạ
-bung	b u n g
-ập	ậ p
-dối	d ố i
-doạ	d o ạ
-thoi	t h o i
-thóp	t h ó p
-ương	ư ơ n g
-thơ	t h ơ
-vóc	v ó c
-hãi	h ã i
-sầu	s ầ u
-chín	c h í n
-hái	h á i
-ủ	ủ
-héo	h é o
-đành	đ à n h
-hèn	h è n
-ghê	g h ê
-cằn	c ằ n
-nhằn	n h ằ n
-chửi	c h ử i
-mắng	m ắ n g
-khơi	k h ơ i
-bám	b á m
-tôm	t ô m
-thí	t h í
-nhào	n h à o
-vón	v ó n
-cục	c ụ c
-khép	k h é p
-lái	l á i
-lùi	l ù i
-xoay	x o a y
-tốc	t ố c
-bữa	b ữ a
-đợi	đ ợ i
-nạ	n ạ
-gan	g a n
-bánh	b á n h
-khổng	k h ổ n g
-lồ	l ồ
-kem	k e m
-sút	s ú t
-gạt	g ạ t
-ái	á i
-tre	t r e
-hang	h a n g
-sừng	s ừ n g
-cheo	c h e o
-quăng	q u ă n g
-lạch	l ạ c h
-ổ	ổ
-rêu	r ê u
-tỉ	t ỉ
-mỉ	m ỉ
-ráp	r á p
-se	s e
-khít	k h í t
-thuê	t h u ê
-taxi	t a x i
-tổng	t ổ n g
-đốc	đ ố c
-lùng	l ù n g
-khái	k h á i
-bạc	b ạ c
-hắt	h ắ t
-hủi	h ủ i
-sững	s ữ n g
-sờ	s ờ
-thẻ	t h ẻ
-lãi	l ã i
-gợi	g ợ i
-nhăn	n h ă n
-nhượng	n h ư ợ n g
-nở	n ở
-hướng	h ư ớ n g
-sỏi	s ỏ i
-nhiệm	n h i ệ m
-lén	l é n
-đấy	đ ấ y
-ga	g a
-gối	g ố i
-xu	x u
-mạt	m ạ t
-bụ	b ụ
-bẫm	b ẫ m
-vọt	v ọ t
-gói	g ó i
-diệu	d i ệ u
-nhờ	n h ờ
-tẻ	t ẻ
-bời	b ờ i
-lô	l ô
-trộm	t r ộ m
-nộp	n ộ p
-phạt	p h ạ t
-ngầm	n g ầ m
-mập	m ậ p
-lộng	l ộ n g
-lấp	l ấ p
-lánh	l á n h
-ngàn	n g à n
-nga	n g a
-bão	b ã o
-tụt	t ụ t
-huỳnh	h u ỳ n h
-điểu	đ i ể u
-thuyên	t h u y ê n
-thao	t h a o
-loài	l o à i
-lệ	l ệ
-tiêm	t i ê m
-nguồn	n g u ồ n
-vựng	v ự n g
-đạt	đ ạ t
-vững	v ữ n g
-ngữ	n g ữ
-xạ	x ạ
-giặt	g i ặ t
-mẻ	m ẻ
-vớt	v ớ t
-nguội	n g u ộ i
-xối	x ố i
-men	m e n
-đem	đ e m
-nung	n u n g
-tuần	t u ầ n
-tuông	t u ô n g
-ghét	g h é t
-thụ	t h ụ
-thỏa	t h ỏ a
-mãn	m ã n
-dạng	d ạ n g
-tửu	t ử u
-ướm	ư ớ m
-triệu	t r i ệ u
-chẩn	c h ẩ n
-đoán	đ o á n
-nứt	n ứ t
-chịt	c h ị t
-chít	c h í t
-chữ	c h ữ
-cấy	c ấ y
-ghép	g h é p
-ẩn	ẩ n
-băn	b ă n
-khoăn	k h o ă n
-cận	c ậ n
-kề	k ề
-đương	đ ư ơ n g
-nạp	n ạ p
-chan	c h a n
-dường	d ư ờ n g
-nổ	n ổ
-hy	h y
-ngươi	n g ư ơ i
-rốt	r ố t
-múa	m ú a
-già	g i à
-tát	t á t
-ngà	n g à
-cống	c ố n g
-xả	x ả
-xếp	x ế p
-lốt	l ố t
-bến	b ế n
-săn	s ă n
-đà	đ à
-nẵng	n ẵ n g
-hước	h ư ớ c
-phán	p h á n
-phấn	p h ấ n
-viền	v i ề n
-chọc	c h ọ c
-húp	h ú p
-sụt	s ụ t
-kì	k ì
-mọc	m ọ c
-hát	h á t
-ném	n é m
-chai	c h a i
-kẹp	k ẹ p
-sấy	s ấ y
-gánh	g á n h
-đè	đ è
-giày	g i à y
-cước	c ư ớ c
-trách	t r á c h
-cành	c à n h
-thuyết	t h u y ế t
-ấp	ấ p
-ôi	ô i
-nhầm	n h ầ m
-bấm	b ấ m
-nút	n ú t
-thiệt	t h i ệ t
-bướng	b ư ớ n g
-hí	h í
-ầm	ầ m
-ĩ	ĩ
-ghi	g h i
-rào	r à o
-thánh	t h á n h
-đoạt	đ o ạ t
-trinh	t r i n h
-muộn	m u ộ n
-lồng	l ồ n g
-lột	l ộ t
-lai	l a i
-nhảm	n h ả m
-nhưỡng	n h ư ỡ n g
-khoe	k h o e
-luồn	l u ồ n
-hổi	h ổ i
-gắng	g ắ n g
-biên	b i ê n
-dựa	d ự a
-dãy	d ã y
-muối	m u ố i
-chinh	c h i n h
-cựu	c ự u
-hàn	h à n
-hầm	h ầ m
-thoáng	t h o á n g
-đỗ	đ ỗ
-mơ	m ơ
-mộng	m ộ n g
-đạp	đ ạ p
-ngáp	n g á p
-lác	l á c
-đác	đ á c
-ngửa	n g ử a
-liệt	l i ệ t
-tuân	t u â n
-thợ	t h ợ
-thuyền	t h u y ề n
-nhiêu	n h i ê u
-thắc	t h ắ c
-thự	t h ự
-ngọ	n g ọ
-trồng	t r ồ n g
-cổng	c ổ n g
-thép	t h é p
-chạm	c h ạ m
-trổ	t r ổ
-nhậu	n h ậ u
-cược	c ư ợ c
-mời	m ờ i
-phen	p h e n
-khổ	k h ổ
-nhược	n h ư ợ c
-nan	n a n
-mí	m í
-nếp	n ế p
-hi	h i
-trọ	t r ọ
-ngạc	n g ạ c
-giai	g i a i
-chăn	c h ă n
-xệ	x ệ
-xí	x í
-dắt	d ắ t
-khung	k h u n g
-cất	c ấ t
-chao	c h a o
-chục	c h ụ c
-thậm	t h ậ m
-vời	v ờ i
-màn	m à n
-kịt	k ị t
-lũi	l ũ i
-lói	l ó i
-bới	b ớ i
-đập	đ ậ p
-soi	s o i
-quặng	q u ặ n g
-đính	đ í n h
-xóm	x ó m
-dặn	d ặ n
-vĩnh	v ĩ n h
-tràng	t r à n g
-lắng	l ắ n g
-rạn	r ạ n
-tải	t ả i
-dần	d ầ n
-van	v a n
-ráo	r á o
-gắn	g ắ n
-thác	t h á c
-rạch	r ạ c h
-rốn	r ố n
-chào	c h à o
-mẩu	m ẩ u
-lụa	l ụ a
-thua	t h u a
-chỉnh	c h ỉ n h
-băng	b ă n g
-tân	t â n
-trừ	t r ừ
-lan	l a n
-hường	h ư ờ n g
-trăng	t r ă n g
-dời	d ờ i
-châm	c h â m
-họa	h ọ a
-truyện	t r u y ệ n
-cắm	c ắ m
-khủng	k h ủ n g
-khiếp	k h i ế p
-mọt	m ọ t
-trầy	t r ầ y
-xước	x ư ớ c
-suôn	s u ô n
-tủy	t ủ y
-lanh	l a n h
-đốt	đ ố t
-đẻ	đ ẻ
-nhút	n h ú t
-xoa	x o a
-vỗ	v ỗ
-khắp	k h ắ p
-tuyến	t u y ế n
-thuần	t h u ầ n
-củ	c ủ
-tỉa	t ỉ a
-dẹp	d ẹ p
-tim	t i m
-bỉnh	b ỉ n h
-sụn	s ụ n
-tồn	t ồ n
-lụy	l ụ y
-luân	l u â n
-thôn	t h ô n
-hoành	h o à n h
-xăng	x ă n g
-chật	c h ậ t
-sol	s o l
-huấn	h u ấ n
-mỡ	m ỡ
-nịt	n ị t
-đọng	đ ọ n g
-lặng	l ặ n g
-ủi	ủ i
-hàm	h à m
-cắn	c ắ n
-nhem	n h e m
-nhuốc	n h u ố c
-phường	p h ư ờ n g
-cử	c ử
-trật	t r ậ t
-bồng	b ồ n g
-bềnh	b ề n h
-ren	r e n
-cóc	c ó c
-êm	ê m
-xưa	x ư a
-thả	t h ả
-thầy	t h ầ y
-bậc	b ậ c
-hưng	h ư n g
-trại	t r ạ i
-nhắn	n h ắ n
-thò	t h ò
-vẫy	v ẫ y
-xung	x u n g
-gióng	g i ó n g
-mèo	m è o
-chủng	c h ủ n g
-soát	s o á t
-đốm	đ ố m
-tím	t í m
-dư	d ư
-thô	t h ô
-quyên	q u y ê n
-tà	t à
-rực	r ự c
-rỡ	r ỡ
-khởi	k h ở i
-my	m y
-khinh	k h i n h
-phức	p h ứ c
-thưởng	t h ư ở n g
-chui	c h u i
-né	n é
-mâm	m â m
-ghế	g h ế
-móng	m ó n g
-đậm	đ ậ m
-khoái	k h o á i
-sún	s ú n
-nhai	n h a i
-chậm	c h ậ m
-sảo	s ả o
-cong	c o n g
-đãng	đ ã n g
-hủ	h ủ
-riềng	r i ề n g
-tỏi	t ỏ i
-giã	g i ã
-nhuyễn	n h u y ễ n
-trộn	t r ộ n
-heo	h e o
-nêm	n ê m
-quét	q u é t
-quên	q u ê n
-hlv	h l v
-tỳ	t ỳ
-tổn	t ổ n
-tạng	t ạ n g
-mút	m ú t
-đệm	đ ệ m
-cháy	c h á y
-chảnh	c h ả n h
-ngào	n g à o
-xích	x í c h
-mượn	m ư ợ n
-gỡ	g ỡ
-phiên	p h i ê n
-kịch	k ị c h
-hoãn	h o ã n
-lạm	l ạ m
-hòn	h ò n
-khéo	k h é o
-đạc	đ ạ c
-khẩu	k h ẩ u
-nấu	n ấ u
-dằn	d ằ n
-nhí	n h í
-nhảnh	n h ả n h
-gấp	g ấ p
-bù	b ù
-tuấn	t u ấ n
-thản	t h ả n
-quang	q u a n g
-lốp	l ố p
-dạy	d ạ y
-cội	c ộ i
-li	l i
-phơi	p h ơ i
-sạt	s ạ t
-lở	l ở
-soạn	s o ạ n
-cuống	c u ố n g
-hối	h ố i
-hả	h ả
-ruồi	r u ồ i
-tả	t ả
-kiết	k i ế t
-lị	l ị
-đậu	đ ậ u
-hận	h ậ n
-hiền	h i ề n
-chuồng	c h u ồ n g
-vượt	v ư ợ t
-phóng	p h ó n g
-bạt	b ạ t
-lấn	l ấ n
-vở	v ở
-điển	đ i ể n
-gáy	g á y
-trẹo	t r ẹ o
-quai	q u a i
-nghẹn	n g h ẹ n
-ngôn	n g ô n
-lối	l ố i
-quỳnh	q u ỳ n h
-phó	p h ó
-cúc	c ú c
-quỳ	q u ỳ
-sạm	s ạ m
-ngừng	n g ừ n g
-vai	v a i
-bênh	b ê n h
-thịnh	t h ị n h
-kép	k é p
-chiêm	c h i ê m
-doãn	d o ã n
-vảy	v ả y
-xé	x é
-toạc	t o ạ c
-bỉm	b ỉ m
-tấu	t ấ u
-đo	đ o
-trội	t r ộ i
-đảng	đ ả n g
-ngụy	n g ụ y
-đồi	đ ồ i
-trụy	t r ụ y
-tần	t ầ n
-ngần	n g ầ n
-vuông	v u ô n g
-kèm	k è m
-đựng	đ ự n g
-gìn	g ì n
-điệp	đ i ệ p
-mẫn	m ẫ n
-nảy	n ả y
-chước	c h ư ớ c
-hôi	h ô i
-xảo	x ả o
-khử	k h ử
-tiệt	t i ệ t
-khuẩn	k h u ẩ n
-trấn	t r ấ n
-mạch	m ạ c h
-khúc	k h ú c
-chiết	c h i ế t
-tẩy	t ẩ y
-ớt	ớ t
-siêu	s i ê u
-quẩn	q u ẩ n
-mây	m â y
-sâm	s â m
-hỏa	h ỏ a
-cháu	c h á u
-khuya	k h u y a
-huỷ	h u ỷ
-ngắt	n g ắ t
-gài	g à i
-nhấn	n h ấ n
-xét	x é t
-suy	s u y
-thủng	t h ủ n g
-lưỡng	l ư ỡ n g
-rằm	r ằ m
-mùng	m ù n g
-tết	t ế t
-tuỳ	t u ỳ
-côn	c ô n
-trạm	t r ạ m
-thầm	t h ầ m
-ơn	ơ n
-vĩ	v ĩ
-tủi	t ủ i
-bấy	b ấ y
-tanh	t a n h
-bành	b à n h
-mịch	m ị c h
-chua	c h u a
-gừng	g ừ n g
-rồng	r ồ n g
-suối	s u ố i
-duyệt	d u y ệ t
-toan	t o a n
-phũ	p h ũ
-phàng	p h à n g
-gỏi	g ỏ i
-dừa	d ừ a
-giòn	g i ò n
-đền	đ ề n
-chen	c h e n
-xỉ	x ỉ
-rách	r á c h
-mini	m i n i
-album	a l b u m
-tấm	t ấ m
-đắc	đ ắ c
-nhuận	n h u ậ n
-mì	m ì
-sệt	s ệ t
-vo	v o
-rỉ	r ỉ
-thê	t h ê
-kỵ	k ỵ
-hao	h a o
-tán	t á n
-than	t h a n
-mô	m ô
-gập	g ậ p
-chuỗi	c h u ỗ i
-nhạy	n h ạ y
-bén	b é n
-vây	v â y
-virus	v i r u s
-trám	t r á m
-xỉn	x ỉ n
-kitô	k i t ô
-cõi	c õ i
-phách	p h á c h
-miêu	m i ê u
-mãnh	m ã n h
-ôn	ô n
-trận	t r ậ n
-nón	n ó n
-vành	v à n h
-ngoạn	n g o ạ n
-chạp	c h ạ p
-nền	n ề n
-cu	c u
-đàm	đ à m
-băm	b ă m
-miền	m i ề n
-xài	x à i
-rễ	r ễ
-vịt	v ị t
-giỗ	g i ỗ
-phiêu	p h i ê u
-cởi	c ở i
-à	à
-kg	k g
-giầy	g i ầ y
-dẻo	d ẻ o
-gãi	g ã i
-nghiệt	n g h i ệ t
-viễn	v i ễ n
-nấm	n ấ m
-bặm	b ặ m
-sập	s ậ p
-á	á
-thon	t h o n
-gạch	g ạ c h
-ngổn	n g ổ n
-phiền	p h i ề n
-trích	t r í c h
-ngọn	n g ọ n
-táp	t á p
-cỏ	c ỏ
-dại	d ạ i
-trèo	t r è o
-mẹo	m ẹ o
-xù	x ù
-im	i m
-nhựa	n h ự a
-thoa	t h o a
-son	s o n
-vang	v a n g
-lộn	l ộ n
-g	g
-thụy	t h ụ y
-trân	t r â n
-tít	t í t
-thoả	t h o ả
-sướng	s ư ớ n g
-chìm	c h ì m
-đắm	đ ắ m
-phượng	p h ư ợ n g
-nắp	n ắ p
-mờ	m ờ
-sương	s ư ơ n g
-ã	ã
-miên	m i ê n
-ốm	ố m
-tốn	t ố n
-chứ	c h ứ
-lọt	l ọ t
-lợn	l ợ n
-nghênh	n g h ê n h
-trừng	t r ừ n g
-rắn	r ắ n
-ưa	ư a
-chuộng	c h u ộ n g
-i	i
-ngu	n g u
-dốt	d ố t
-đần	đ ầ n
-độn	đ ộ n
-nghệch	n g h ệ c h
-tủ	t ủ
-mặn	m ặ n
-nén	n é n
-quẹo	q u ẹ o
-rặng	r ặ n g
-rượi	r ư ợ i
-cọ	c ọ
-mỏ	m ỏ
-rác	r á c
-vất	v ấ t
-khoá	k h o á
-sáu	s á u
-nẻ	n ẻ
-lán	l á n
-khoắn	k h o ắ n
-bân	b â n
-vụng	v ụ n g
-ào	à o
-đói	đ ó i
-lầu	l ầ u
-oi	o i
-ả	ả
-vẹn	v ẹ n
-khiếm	k h i ế m
-khuyết	k h u y ế t
-gắt	g ắ t
-hứa	h ứ a
-cạch	c ạ c h
-dai	d a i
-nhách	n h á c h
-nghét	n g h é t
-xén	x é n
-tịnh	t ị n h
-phụng	p h ụ n g
-hủy	h ủ y
-lượt	l ư ợ t
-nhũ	n h ũ
-lúa	l ú a
-rút	r ú t
-huế	h u ế
-cự	c ự
-khứu	k h ứ u
-thốt	t h ố t
-giận	g i ậ n
-cãi	c ã i
-rơm	r ơ m
-ướp	ư ớ p
-nướng	n ư ớ n g
-hán	h á n
-ti	t i
-quạnh	q u ạ n h
-lọ	l ọ
-mọ	m ọ
-hoắc	h o ắ c
-rảnh	r ả n h
-vạch	v ạ c h
-chênh	c h ê n h
-video	v i d e o
-mỉm	m ỉ m
-ngán	n g á n
-dán	d á n
-dì	d ì
-nông	n ô n g
-ân	â n
-hất	h ấ t
-the	t h e
-vỡ	v ỡ
-thục	t h ụ c
-khôi	k h ô i
-cỗ	c ỗ
-bó	b ó
-nhàng	n h à n g
-sói	s ó i
-xám	x á m
-thỏ	t h ỏ
-sành	s à n h
-bảy	b ả y
-vạn	v ạ n
-nọ	n ọ
-gót	g ó t
-tôn	t ô n
-lượn	l ư ợ n
-liều	l i ề u
-thược	t h ư ợ c
-cụm	c ụ m
-gioăng	g i o ă n g
-tứ	t ứ
-thà	t h à
-dặm	d ặ m
-hựu	h ự u
-điệu	đ i ệ u
-cữ	c ữ
-ngượng	n g ư ợ n g
-bận	b ậ n
-béng	b é n g
-tùng	t ù n g
-phiến	p h i ế n
-súng	s ú n g
-đứt	đ ứ t
-gẫy	g ẫ y
-giàn	g i à n
-trâm	t r â m
-xấp	x ấ p
-nạo	n ạ o
-úy	ú y
-dũng	d ũ n g
-túc	t ú c
-quấy	q u ấ y
-ngủi	n g ủ i
-lỡ	l ỡ
-mắm	m ắ m
-ao	a o
-ngớ	n g ớ
-ngất	n g ấ t
-xỉu	x ỉ u
-thỉu	t h ỉ u
-kình	k ì n h
-tuất	t u ấ t
-rủi	r ủ i
-ro	r o
-lồi	l ồ i
-tàng	t à n g
-com	c o m
-kho	k h o
-úc	ú c
-mộc	m ộ c
-tràn	t r à n
-nhớt	n h ớ t
-ngắm	n g ắ m
-nẫng	n ẫ n g
-thấm	t h ấ m
-thía	t h í a
-giông	g i ô n g
-nhó	n h ó
-thun	t h u n
-vứt	v ứ t
-xoang	x o a n g
-nhỡ	n h ỡ
-sảy	s ả y
-toi	t o i
-mác	m á c
-dám	d á m
-khuê	k h u ê
-nghìn	n g h ì n
-thằng	t h ằ n g
-cuội	c u ộ i
-cương	c ư ơ n g
-cạn	c ạ n
-đê	đ ê
-vườn	v ư ờ n
-quạt	q u ạ t
-suýt	s u ý t
-trưa	t r ư a
-sấu	s ấ u
-dội	d ộ i
-mường	m ư ờ n g
-chà	c h à
-hít	h í t
-thiền	t h i ề n
-yoga	y o g a
-bỗng	b ỗ n g
-chuyền	c h u y ề n
-xui	x u i
-xẻo	x ẻ o
-ghềnh	g h ề n h
-nếm	n ế m
-lam	l a m
-nhục	n h ụ c
-mị	m ị
-yếm	y ế m
-dụm	d ụ m
-súc	s ú c
-đùm	đ ù m
-hờn	h ờ n
-kẽm	k ẽ m
-tỵ	t ỵ
-khoảnh	k h o ả n h
-giáng	g i á n g
-ước	ư ớ c
-khoang	k h o a n g
-chuộc	c h u ộ c
-hoạ	h o ạ
-ion	i o n
-nức	n ứ c
-gày	g à y
-khoác	k h o á c
-ngậm	n g ậ m
-cưa	c ư a
-trỗi	t r ỗ i
-dậy	d ậ y
-ám	á m
-mầm	m ầ m
-phai	p h a i
-khăm	k h ă m
-mìn	m ì n
-phiếu	p h i ế u
-vẳng	v ẳ n g
-ức	ứ c
-nhoáng	n h o á n g
-giơ	g i ơ
-tưới	t ư ớ i
-rạng	r ạ n g
-thuế	t h u ế
-thiệp	t h i ệ p
-bẻ	b ẻ
-phồng	p h ồ n g
-oa	o a
-keo	k e o
-núm	n ú m
-khe	k h e
-thốn	t h ố n
-lự	l ự
-phô	p h ô
-bi	b i
-nơ	n ơ
-lệnh	l ệ n h
-tành	t à n h
-khát	k h á t
-tựu	t ự u
-bọng	b ọ n g
-sưng	s ư n g
-hộp	h ộ p
-lẫm	l ẫ m
-h	h
-bắn	b ắ n
-niêm	n i ê m
-râm	r â m
-tuệ	t u ệ
-top	t o p
-sưu	s ư u
-xốp	x ố p
-trán	t r á n
-niu	n i u
-đun	đ u n
-rộn	r ộ n
-giành	g i à n h
-hoán	h o á n
-sùng	s ù n g
-bái	b á i
-đò	đ ò
-phà	p h à
-phao	p h a o
-rầm	r ầ m
-hét	h é t
-gào	g à o
-gò	g ò
-quế	q u ế
-đậy	đ ậ y
-gàng	g à n g
-n	n
-gao	g a o
-mồng	m ồ n g
-sùi	s ù i
-mào	m à o
-sỉ	s ỉ
-lẻ	l ẻ
-liêm	l i ê m
-nhở	n h ở
-co	c o
-stress	s t r e s s
-dồn	d ồ n
-dập	d ậ p
-đống	đ ố n g
-mồm	m ồ m
-tảng	t ả n g
-xíu	x í u
-ùn	ù n
-nêu	n ê u
-khấu	k h ấ u
-đế	đ ế
-mừng	m ừ n g
-phẫn	p h ẫ n
-loi	l o i
-bắp	b ắ p
-ngẩm	n g ẩ m
-lắc	l ắ c
-trịnh	t r ị n h
-rà	r à
-sẩy	s ẩ y
-thét	t h é t
-dãn	d ã n
-nhốt	n h ố t
-vía	v í a
-pu	p u
-va	v a
-tri	t r i
-tru	t r u
-loãng	l o ã n g
-canxi	c a n x i
-chẽ	c h ẽ
-hụt	h ụ t
-mangan	m a n g a n
-rình	r ì n h
-mò	m ò
-thờ	t h ờ
-léo	l é o
-m	m
-robot	r o b o t
-nao	n a o
-bớt	b ớ t
-bèo	b è o
-muỗi	m u ỗ i
-lăn	l ă n
-nhúng	n h ú n g
-vụn	v ụ n
-hoang	h o a n g
-nồi	n ồ i
-đùi	đ ù i
-bóc	b ó c
-bòn	b ò n
-bon	b o n
-mủ	m ủ
-quầng	q u ầ n g
-bàng	b à n g
-sạc	s ạ c
-ốc	ố c
-mĩ	m ĩ
-rung	r u n g
-vy	v y
-chùm	c h ù m
-me	m e
-nghịch	n g h ị c h
-ngợm	n g ợ m
-giấm	g i ấ m
-hóc	h ó c
-phun	p h u n
-ướt	ư ớ t
-gán	g á n
-cáng	c á n g
-tang	t a n g
-dõi	d õ i
-lề	l ề
-lưới	l ư ớ i
-cắp	c ắ p
-ngải	n g ả i
-xắn	x ắ n
-phận	p h ậ n
-hễ	h ễ
-địch	đ ị c h
-nã	n ã
-ngàng	n g à n g
-nến	n ế n
-mỏng	m ỏ n g
-đờ	đ ờ
-vãi	v ã i
-lau	l a u
-quắt	q u ắ t
-thề	t h ề
-ngớt	n g ớ t
-chậu	c h ậ u
-toà	t o à
-láng	l á n g
-giềng	g i ề n g
-bẩm	b ẩ m
-dọc	d ọ c
-ơi	ơ i
-gã	g ã
-nhàm	n h à m
-chó	c h ó
-khay	k h a y
-chìa	c h ì a
-mãi	m ã i
-khứ	k h ứ
-pháo	p h á o
-khoát	k h o á t
-ngây	n g â y
-trướng	t r ư ớ n g
-nhì	n h ì
-truy	t r u y
-liễu	l i ễ u
-dỗi	d ỗ i
-cớ	c ớ
-biếm	b i ế m
-gặt	g ặ t
-binh	b i n h
-xiếc	x i ế c
-trơ	t r ơ
-bốc	b ố c
-mù	m ù
-mịt	m ị t
-mảng	m ả n g
-chừng	c h ừ n g
-trôi	t r ô i
-séc	s é c
-âu	â u
-chúa	c h ú a
-ngói	n g ó i
-chê	c h ê
-xướng	x ư ớ n g
-miều	m i ề u
-đuôi	đ u ô i
-mét	m é t
-cậy	c ậ y
-bít	b í t
-nâu	n â u
-tào	t à o
-phớ	p h ớ
-xào	x à o
-bằm	b ằ m
-loa	l o a
-ngách	n g á c h
-xộn	x ộ n
-tem	t e m
-krông	k r ô n g
-thùng	t h ù n g
-lênh	l ê n h
-khênh	k h ê n h
-phớt	p h ớ t
-lãm	l ã m
-nần	n ầ n
-đoan	đ o a n
-dông	d ô n g
-thày	t h à y
-bói	b ó i
-sụ	s ụ
-sụp	s ụ p
-diêu	d i ê u
-rập	r ậ p
-giương	g i ư ơ n g
-ngấn	n g ấ n
-bẹt	b ẹ t
-tíu	t í u
-hở	h ở
-xuồng	x u ồ n g
-sót	s ó t
-ưng	ư n g
-quyệt	q u y ệ t
-ok	o k
-ư	ư
-dua	d u a
-hong	h o n g
-ngoai	n g o a i
-bào	b à o
-mòn	m ò n
-lố	l ố
-bịch	b ị c h
-thạo	t h ạ o
-hơ	h ơ
-hớ	h ớ
-chốt	c h ố t
-giây	g i â y
-ngộ	n g ộ
-ngặt	n g ặ t
-nghèo	n g h è o
-chồn	c h ồ n
-ghẻ	g h ẻ
-lũ	l ũ
-mốc	m ố c
-lửng	l ử n g
-thửa	t h ử a
-đ	đ
-tách	t á c h
-phôi	p h ô i
-trót	t r ó t
-kiếp	k i ế p
-ế	ế
-tằm	t ằ m
-rả	r ả
-thút	t h ú t
-thít	t h í t
-lính	l í n h
-đắn	đ ắ n
-đếm	đ ế m
-xuể	x u ể
-quát	q u á t
-san	s a n
-thòi	t h ò i
-sửng	s ử n g
-cưỡng	c ư ỡ n g
-nhặt	n h ặ t
-nhăng	n h ă n g
-dưng	d ư n g
-cồn	c ồ n
-khoẻ	k h o ẻ
-đày	đ à y
-đọa	đ ọ a
-lạt	l ạ t
-ri	r i
-sảng	s ả n g
-giãi	g i ã i
-b	b
-nguôi	n g u ô i
-khốc	k h ố c
-vút	v ú t
-lệch	l ệ c h
-thắm	t h ắ m
-nằng	n ằ n g
-nặc	n ặ c
-hê	h ê
-trễ	t r ễ
-khắt	k h ắ t
-nguyện	n g u y ệ n
-trẻo	t r ẻ o
-sủa	s ủ a
-uỷ	u ỷ
-mớ	m ớ
-trâu	t r â u
-bơ	b ơ
-vú	v ú
-trốn	t r ố n
-chần	c h ầ n
-chừ	c h ừ
-nhối	n h ố i
-bùa	b ù a
-mao	m a o
-coi	c o i
-sượng	s ư ợ n g
-đặng	đ ặ n g
-lường	l ư ờ n g
-nản	n ả n
-calo	c a l o
-săm	s ă m
-vét	v é t
-mương	m ư ơ n g
-bấn	b ấ n
-hắc	h ắ c
-mé	m é
-năn	n ă n
-nỉ	n ỉ
-giỏ	g i ỏ
-lì	l ì
-lung	l u n g
-que	q u e
-chè	c h è
-tho	t h o
-qui	q u i
-chay	c h a y
-luộc	l u ộ c
-ngao	n g a o
-gạn	g ạ n
-cặn	c ặ n
-lặp	l ặ p
-sởi	s ở i
-vác	v á c
-rựa	r ự a
-nai	n a i
-xoá	x o á
-dâm	d â m
-ranh	r a n h
-sáp	s á p
-thỏi	t h ỏ i
-cóp	c ó p
-ải	ả i
-sen	s e n
-đượm	đ ư ợ m
-toát	t o á t
-tý	t ý
-gáp	g á p
-nạc	n ạ c
-cuộn	c u ộ n
-cửu	c ử u
-tơi	t ơ i
-rộ	r ộ
-đèo	đ è o
-xòe	x ò e
-nách	n á c h
-trọt	t r ọ t
-rệ	r ệ
-suông	s u ô n g
-nhặn	n h ặ n
-ngựa	n g ự a
-khải	k h ả i
-đôn	đ ô n
-nhá	n h á
-lụt	l ụ t
-thiếp	t h i ế p
-hoan	h o a n
-nom	n o m
-k	k
-bô	b ô
-chập	c h ậ p
-mũm	m ũ m
-mĩm	m ĩ m
-bụt	b ụ t
-thiêu	t h i ê u
-rụi	r ụ i
-lều	l ề u
-điêu	đ i ê u
-toilet	t o i l e t
-lữ	l ữ
-sởn	s ở n
-gai	g a i
-ốp	ố p
-lát	l á t
-hoại	h o ạ i
-gượng	g ư ợ n g
-hấu	h ấ u
-mark	m a r k
-tua	t u a
-rua	r u a
-trác	t r á c
-thúy	t h ú y
-cài	c à i
-nhơn	n h ơ n
-lóc	l ó c
-đấng	đ ấ n g
-na	n a
-ẩu	ẩ u
-mếu	m ế u
-mích	m í c h
-riết	r i ế t
-thắn	t h ắ n
-chuột	c h u ộ t
-sôi	s ô i
-phế	p h ế
-xá	x á
-nhịn	n h ị n
-nong	n o n g
-mẩn	m ẩ n
-nghiện	n g h i ệ n
-sàm	s à m
-thót	t h ó t
-gián	g i á n
-gas	g a s
-tò	t ò
-cáu	c á u
-rùng	r ù n g
-sấp	s ấ p
-bọt	b ọ t
-níu	n í u
-bệt	b ệ t
-vàm	v à m
-phết	p h ế t
-kít	k í t
-thuỷ	t h u ỷ
-teo	t e o
-tóp	t ó p
-quắp	q u ắ p
-gác	g á c
-mão	m ã o
-bai	b a i
-tậu	t ậ u
-nhái	n h á i
-no	n o
-nấc	n ấ c
-sưởi	s ư ở i
-cs	c s
-háng	h á n g
-đợt	đ ợ t
-vòi	v ò i
-bar	b a r
-bẩy	b ẩ y
-dang	d a n g
-kẹt	k ẹ t
-khét	k h é t
-lẹt	l ẹ t
-tựa	t ự a
-trắc	t r ắ c
-test	t e s t
-út	ú t
-trù	t r ù
-ấu	ấ u
-hỉ	h ỉ
-biếu	b i ế u
-neo	n e o
-kìm	k ì m
-hãm	h ã m
-tị	t ị
-quãng	q u ã n g
-rỗi	r ỗ i
-chúc	c h ú c
-vũng	v ũ n g
-l	l
-dê	d ê
-giục	g i ụ c
-gắm	g ắ m
-tráng	t r á n g
-giắt	g i ắ t
-v	v
-chùi	c h ù i
-sung	s u n g
-bón	b ó n
-thiều	t h i ề u
-phiện	p h i ệ n
-nhầy	n h ầ y
-ngâm	n g â m
-quỵ	q u ỵ
-hiếp	h i ế p
-củng	c ủ n g
-mài	m à i
-uốn	u ố n
-khóe	k h ó e
-nộm	n ộ m
-ếch	ế c h
-lươn	l ư ơ n
-nương	n ư ơ n g
-rẫy	r ẫ y
-khốn	k h ố n
-nhõm	n h õ m
-trệt	t r ệ t
-mụ	m ụ
-xay	x a y
-nành	n à n h
-sạp	s ạ p
-nhóc	n h ó c
-khan	k h a n
-trồi	t r ồ i
-đinh	đ i n h
-thượt	t h ư ợ t
-muống	m u ố n g
-dền	d ề n
-éo	é o
-huynh	h u y n h
-hốt	h ố t
-uể	u ể
-đàng	đ à n g
-hiên	h i ê n
-mồi	m ồ i
-nhô	n h ô
-lưỡi	l ư ỡ i
-ruồng	r u ồ n g
-dửng	d ử n g
-dò	d ò
-khiết	k h i ế t
-rụt	r ụ t
-rè	r è
-trớ	t r ớ
-trêu	t r ê u
-tuý	t u ý
-dăm	d ă m
-mè	m è
-nhọn	n h ọ n
-phăng	p h ă n g
-chướng	c h ư ớ n g
-tê	t ê
-gươm	g ư ơ m
-vơi	v ơ i
-vali	v a l i
-sợi	s ợ i
-lòa	l ò a
-núc	n ú c
-chải	c h ả i
-nhung	n h u n g
-bùi	b ù i
-phất	p h ấ t
-diễu	d i ễ u
-gật	g ậ t
-gù	g ù
-võng	v õ n g
-nghé	n g h é
-chau	c h a u
-ỷ	ỷ
-bỉ	b ỉ
-khiên	k h i ê n
-hũ	h ũ
-dí	d í
-ỡm	ỡ m
-ờ	ờ
-triết	t r i ế t
-luyến	l u y ế n
-hố	h ố
-thầu	t h ầ u
-chánh	c h á n h
-mành	m à n h
-rèm	r è m
-sáo	s á o
-ngáy	n g á y
-tẩu	t ẩ u
-nhét	n h é t
-gổ	g ổ
-đả	đ ả
-thạnh	t h ạ n h
-vén	v é n
-kha	k h a
-kiếng	k i ế n g
-hiến	h i ế n
-ngẫu	n g ẫ u
-ị	ị
-đơ	đ ơ
-ngẩn	n g ẩ n
-ngơ	n g ơ
-manh	m a n h
-vèo	v è o
-ngưỡng	n g ư ỡ n g
-eo	e o
-lầy	l ầ y
-rong	r o n g
-dột	d ộ t
-lổ	l ổ
-luồng	l u ồ n g
-giằng	g i ằ n g
-mía	m í a
-dè	d è
-nghinh	n g h i n h
-bong	b o n g
-nhiếc	n h i ế c
-cúm	c ú m
-cồng	c ồ n g
-chiêng	c h i ê n g
-kiềm	k i ề m
-d	d
-chép	c h é p
-thềm	t h ề m
-đẽ	đ ẽ
-man	m a n
-kiêu	k i ê u
-lui	l u i
-ruổi	r u ổ i
-hấn	h ấ n
-ngoi	n g o i
-vạ	v ạ
-tước	t ư ớ c
-trĩ	t r ĩ
-nheo	n h e o
-nhẵn	n h ẵ n
-chùa	c h ù a
-hươu	h ư ơ u
-máo	m á o
-cháo	c h á o
-ka	k a
-mụi	m ụ i
-cốp	c ố p
-ho	h o
-lẩu	l ẩ u
-xắt	x ắ t
-rước	r ư ớ c
-táng	t á n g
-xoong	x o o n g
-huyền	h u y ề n
-sủng	s ủ n g
-tụ	t ụ
-hãnh	h ã n h
-tấc	t ấ c
-lon	l o n
-thui	t h u i
-thủi	t h ủ i
-nhói	n h ó i
-xoăn	x o ă n
-oái	o á i
-ăm	ă m
-rán	r á n
-cộm	c ộ m
-rãnh	r ã n h
-chàm	c h à m
-kí	k í
-khăng	k h ă n g
-tằn	t ằ n
-khao	k h a o
-nhíp	n h í p
-cưu	c ư u
-nghiêng	n g h i ê n g
-thạc	t h ạ c
-dĩnh	d ĩ n h
-tiều	t i ề u
-tuỵ	t u ỵ
-nể	n ể
-xát	x á t
-ngóng	n g ó n g
-té	t é
-thìa	t h ì a
-nhâm	n h â m
-kèo	k è o
-khế	k h ế
-phang	p h a n g
-ve	v e
-rượt	r ư ợ t
-rít	r í t
-cỡ	c ỡ
-ray	r a y
-xoắn	x o ắ n
-kiêm	k i ê m
-đục	đ ụ c
-rò	r ò
-tấy	t ấ y
-xoài	x o à i
-chén	c h é n
-siêng	s i ê n g
-vấy	v ấ y
-nũng	n ũ n g
-nịu	n ị u
-nhõng	n h õ n g
-nhẽo	n h ẽ o
-náu	n á u
-nhãng	n h ã n g
-thổ	t h ổ
-nhĩ	n h ĩ
-tởm	t ở m
-hoi	h o i
-tro	t r o
-kệ	k ệ
-ngấm	n g ấ m
-cò	c ò
-kè	k è
-lõi	l õ i
-lười	l ư ờ i
-biếng	b i ế n g
-sửu	s ử u
-vá	v á
-ak	a k
-mít	m í t
-điềm	đ i ề m
-đạm	đ ạ m
-dong	d o n g
-dỏng	d ỏ n g
-cặm	c ặ m
-cụi	c ụ i
-nhị	n h ị
-yết	y ế t
-rịa	r ị a
-phả	p h ả
-hót	h ó t
-bửu	b ử u
-nàn	n à n
-mồ	m ồ
-hiếu	h i ế u
-đễ	đ ễ
-đan	đ a n
-bướu	b ư ớ u
-phùng	p h ù n g
-mướp	m ư ớ p
-c	c
-martin	m a r t i n
-p	p
-chọi	c h ọ i
-mền	m ề n
-len	l e n
-thiêm	t h i ê m
-chả	c h ả
-rủ	r ủ
-rạp	r ạ p
-súp	s ú p
-dấp	d ấ p
-túng	t ú n g
-tiềm	t i ề m
-bọ	b ọ
-lội	l ộ i
-diễm	d i ễ m
-mỉa	m ỉ a
-visa	v i s a
-đẫm	đ ẫ m
-nghén	n g h é n
-bần	b ầ n
-quái	q u á i
-đùng	đ ù n g
-bịa	b ị a
-tóm	t ó m
-bừa	b ừ a
-xiết	x i ế t
-nài	n à i
-euro	e u r o
-gianh	g i a n h
-nhánh	n h á n h
-dên	d ê n
-suyễn	s u y ễ n
-xuôi	x u ô i
-rỗng	r ỗ n g
-hăng	h ă n g
-hạm	h ạ m
-át	á t
-háo	h á o
-ỉ	ỉ
-sịt	s ị t
-hống	h ố n g
-hách	h á c h
-nạt	n ạ t
-rụng	r ụ n g
-ngự	n g ự
-hộc	h ộ c
-run	r u n
-rẩy	r ẩ y
-bịt	b ị t
-phẳng	p h ẳ n g
-chãi	c h ã i
-ín	í n
-lặn	l ặ n
-muôn	m u ô n
-tươm	t ư ơ m
-phẩy	p h ẩ y
-ngừ	n g ừ
-liu	l i u
-mòng	m ò n g
-lút	l ú t
-laser	l a s e r
-ngưu	n g ư u
-côi	c ô i
-ầu	ầ u
-trói	t r ó i
-nhủ	n h ủ
-ngư	n g ư
-khê	k h ê
-sì	s ì
-thảnh	t h ả n h
-thơi	t h ơ i
-ổi	ổ i
-khuynh	k h u y n h
-ù	ù
-ngông	n g ô n g
-xuẩn	x u ẩ n
-cóng	c ó n g
-bấp	b ấ p
-cai	c a i
-ngậu	n g ậ u
-liếc	l i ế c
-phiếm	p h i ế m
-nhẽ	n h ẽ
-nhếch	n h ế c h
-nhác	n h á c
-điếc	đ i ế c
-huơ	h u ơ
-lờ	l ờ
-đố	đ ố
-ố	ố
-lay	l a y
-tụy	t ụ y
-duệ	d u ệ
-ngạn	n g ạ n
-khảng	k h ả n g
-thuột	t h u ộ t
-tắn	t ắ n
-hởi	h ở i
-ram	r a m
-dệt	d ệ t
-ghẹ	g h ẹ
-voọc	v o ọ c
-tuộc	t u ộ c
-thiêng	t h i ê n g
-liêng	l i ê n g
-xạo	x ạ o
-nhiễu	n h i ễ u
-dốc	d ố c
-đọ	đ ọ
-huê	h u ê
-phì	p h ì
-hãn	h ã n
-phe	p h e
-lấm	l ấ m
-lét	l é t
-gen	g e n
-khương	k h ư ơ n g
-nộ	n ộ
-nhú	n h ú
-quặn	q u ặ n
-càu	c à u
-đáy	đ á y
-ngùng	n g ù n g
-gõ	g õ
-huệ	h u ệ
-vạt	v ạ t
-ồ	ồ
-ạt	ạ t
-chường	c h ư ờ n g
-bỉu	b ỉ u
-múi	m ú i
-miến	m i ế n
-lõm	l õ m
-xen	x e n
-quây	q u â y
-ngốc	n g ố c
-nháo	n h á o
-lướt	l ư ớ t
-cúi	c ú i
-giùm	g i ù m
-cốc	c ố c
-hạch	h ạ c h
-dải	d ả i
-km	k m
-cào	c à o
-hiệp	h i ệ p
-x	x
-nhợt	n h ợ t
-găng	g ă n g
-tia	t i a
-vịn	v ị n
-rọ	r ọ
-dấm	d ấ m
-dúi	d ú i
-cẩu	c ẩ u
-cọc	c ọ c
-dạt	d ạ t
-bầy	b ầ y
-quyện	q u y ệ n
-ngậy	n g ậ y
-quật	q u ậ t
-real	r e a l
-giũ	g i ũ
-vãn	v ã n
-shop	s h o p
-xịn	x ị n
-giáp	g i á p
-nhồi	n h ồ i
-siết	s i ế t
-kali	k a l i
-phốt	p h ố t
-pho	p h o
-sò	s ò
-khuỷu	k h u ỷ u
-sãi	s ã i
-rôn	r ô n
-gom	g o m
-mải	m ả i
-vó	v ó
-ngãi	n g ã i
-vượng	v ư ợ n g
-râu	r â u
-dấn	d ấ n
-ni	n i
-trăn	t r ă n
-chồm	c h ồ m
-bưởi	b ư ở i
-diệc	d i ệ c
-phước	p h ư ớ c
-rền	r ề n
-nhụt	n h ụ t
-ganh	g a n h
-rôm	r ô m
-bết	b ế t
-óng	ó n g
-reo	r e o
-mưng	m ư n g
-hiv	h i v
-tía	t í a
-sả	s ả
-mạ	m ạ
-trợn	t r ợ n
-rỗ	r ỗ
-ưỡn	ư ỡ n
-quỷ	q u ỷ
-nuông	n u ô n g
-bẫy	b ẫ y
-gọt	g ọ t
-thố	t h ố
-hập	h ậ p
-phàn	p h à n
-máng	m á n g
-khía	k h í a
-rồ	r ồ
-chói	c h ó i
-khẽ	k h ẽ
-mến	m ế n
-giam	g i a m
-nhòa	n h ò a
-khâm	k h â m
-chúm	c h ú m
-chím	c h í m
-ngát	n g á t
-lẻo	l ẻ o
-oai	o a i
-trầu	t r ầ u
-sọ	s ọ
-huyệt	h u y ệ t
-vằng	v ằ n g
-hông	h ô n g
-chặng	c h ặ n g
-thối	t h ố i
-trạch	t r ạ c h
-phím	p h í m
-bộc	b ộ c
-vin	v i n
-studio	s t u d i o
-ngoa	n g o a
-niệu	n i ệ u
-cuốc	c u ố c
-ách	á c h
-toả	t o ả
-nhún	n h ú n
-dạn	d ạ n
-dồi	d ồ i
-dào	d à o
-diều	d i ề u
-ắng	ắ n g
-miện	m i ệ n
-quách	q u á c h
-túm	t ú m
-đong	đ o n g
-lảo	l ả o
-ngỡ	n g ỡ
-vờ	v ờ
-trối	t r ố i
-mỗ	m ỗ
-còi	c ò i
-xẩy	x ẩ y
-thóc	t h ó c
-lép	l é p
-sớt	s ớ t
-sải	s ả i
-gí	g í
-thuở	t h u ở
-vẹt	v ẹ t
-kelvin	k e l v i n
-nhố	n h ố
-cảng	c ả n g
-ùa	ù a
-đỗi	đ ỗ i
-cưỡi	c ư ỡ i
-chội	c h ộ i
-nùng	n ù n g
-khau	k h a u
-tày	t à y
-khấn	k h ấ n
-muỗng	m u ỗ n g
-đĩnh	đ ĩ n h
-trọc	t r ọ c
-ngài	n g à i
-cù	c ù
-diên	d i ê n
-lu	l u
-thảng	t h ả n g
-lượm	l ư ợ m
-vặn	v ặ n
-nghêu	n g h ê u
-há	h á
-voi	v o i
-đt	đ t
-inh	i n h
-ỏi	ỏ i
-rắt	r ắ t
-kẻo	k ẻ o
-cua	c u a
-văng	v ă n g
-khư	k h ư
-nết	n ế t
-cạo	c ạ o
-hanh	h a n h
-sần	s ầ n
-ơ	ơ
-cạm	c ạ m
-lựu	l ự u
-mọng	m ọ n g
-tắp	t ắ p
-dôi	d ô i
-chuối	c h u ố i
-mún	m ú n
-lận	l ậ n
-sứt	s ứ t
-cuông	c u ô n g
-én	é n
-ợ	ợ
-xụp	x ụ p
-nỏ	n ỏ
-ton	t o n
-ngùi	n g ù i
-phu	p h u
-hun	h u n
-chắt	c h ắ t
-chiu	c h i u
-noãn	n o ã n
-pop	p o p
-rock	r o c k
-xê	x ê
-điền	đ i ề n
-dát	d á t
-vợt	v ợ t
-cằm	c ằ m
-bạnh	b ạ n h
-đước	đ ư ớ c
-hưu	h ư u
-hen	h e n
-hẹ	h ẹ
-yểu	y ể u
-nải	n ả i
-gara	g a r a
-vớ	v ớ
-vẩn	v ẩ n
-thìn	t h ì n
-nhả	n h ả
-bùn	b ù n
-lem	l e m
-bang	b a n g
-cừu	c ừ u
-xuýt	x u ý t
-hức	h ứ c
-ngầu	n g ầ u
-mẫm	m ẫ m
-karaoke	k a r a o k e
-gu	g u
-tí	t í
-vức	v ứ c
-gi	g i
-dẳng	d ẳ n g
-lún	l ú n
-cút	c ú t
-cuồn	c u ồ n
-kỉ	k ỉ
-đanh	đ a n h
-vít	v í t
-rành	r à n h
-bịp	b ị p
-bự	b ự
-chĩa	c h ĩ a
-tì	t ì
-úp	ú p
-nô	n ô
-ngửi	n g ử i
-trìu	t r ì u
-toại	t o ạ i
-sá	s á
-nhoi	n h o i
-nhìu	n h ì u
-lằng	l ằ n g
-nhằng	n h ằ n g
-dượt	d ư ợ t
-trặc	t r ặ c
-dìm	d ì m
-lòe	l ò e
-loẹt	l o ẹ t
-yểm	y ể m
-beo	b e o
-đoái	đ o á i
-chùng	c h ù n g
-oải	o ả i
-víu	v í u
-vòm	v ò m
-ngùn	n g ù n
-ngụt	n g ụ t
-noi	n o i
-phổng	p h ổ n g
-xuyến	x u y ế n
-nhện	n h ệ n
-nhím	n h í m
-am	a m
-vắn	v ắ n
-thớ	t h ớ
-loáng	l o á n g
-quện	q u ệ n
-nặn	n ặ n
-giò	g i ò
-quất	q u ấ t
-viếng	v i ế n g
-đấm	đ ấ m
-vuốt	v u ố t
-nịch	n ị c h
-adn	a d n
-bưu	b ư u
-phàm	p h à m
-lân	l â n
-ngụm	n g ụ m
-khanh	k h a n h
-ghẽ	g h ẽ
-xèo	x è o
-chèo	c h è o
-vùi	v ù i
-chuồn	c h u ồ n
-kén	k é n
-nhen	n h e n
-xém	x é m
-cầy	c ầ y
-vầng	v ầ n g
-ang	a n g
-áng	á n g
-sồi	s ồ i
-thung	t h u n g
-lủng	l ủ n g
-ngoặt	n g o ặ t
-cau	c a u
-thũng	t h ũ n g
-khiêng	k h i ê n g
-tưng	t ư n g
-tửng	t ử n g
-ngạt	n g ạ t
-ó	ó
-sòng	s ò n g
-rầu	r ầ u
-trảng	t r ả n g
-báu	b á u
-hòng	h ò n g
-gội	g ộ i
-bin	b i n
-đán	đ á n
-nhòe	n h ò e
-đicr	đ i c r
-lỉnh	l ỉ n h
-khỉnh	k h ỉ n h
-chuông	c h u ô n g
-lèo	l è o
-chích	c h í c h
-rông	r ô n g
-lõng	l õ n g
-vợi	v ợ i
-chôm	c h ô m
-bưng	b ư n g
-môt	m ô t
-húc	h ú c
-rìu	r ì u
-rạo	r ạ o
-nẹp	n ẹ p
-chòm	c h ò m
-sam	s a m
-sọc	s ọ c
-sấm	s ấ m
-lốc	l ố c
-xoáy	x o á y
-mướn	m ư ớ n
-vơ	v ơ
-bịu	b ị u
-lẻn	l ẻ n
-lợ	l ợ
-thuôn	t h u ô n
-bạ	b ạ
-dẹt	d ẹ t
-nác	n á c
-dơ	d ơ
-rạc	r ạ c
-đới	đ ớ i
-toản	t o ả n
-bủa	b ủ a
-răn	r ă n
-huyên	h u y ê n
-tĩu	t ĩ u
-giêng	g i ê n g
-vắt	v ắ t
-nhậm	n h ậ m
-hạo	h ạ o
-xóc	x ó c
-nhừ	n h ừ
-ben	b e n
-oánh	o á n h
-mu	m u
-cộ	c ộ
-thẫm	t h ẫ m
-giở	g i ở
-vã	v ã
-cúp	c ú p
-ghim	g h i m
-sim	s i m
-qúy	q ú y
-hờ	h ờ
-ghe	g h e
-hến	h ế n
-lách	l á c h
-xiên	x i ê n
-tivi	t i v i
-mánh	m á n h
-khoé	k h o é
-bo	b o
-nhơ	n h ơ
-đigiúp	đ i g i ú p
-lạp	l ạ p
-mười	m ư ờ i
-rã	r ã
-mấu	m ấ u
-pơ	p ơ
-vồng	v ồ n g
-rơ	r ơ
-khỉ	k h ỉ
-nhót	n h ó t
-nhàu	n h à u
-uổng	u ổ n g
-mươi	m ư ơ i
-tám	t á m
-rùa	r ù a
-chéo	c h é o
-đáu	đ á u
-rậm	r ậ m
-xổ	x ổ
-thó	t h ó
-ráng	r á n g
-chợt	c h ợ t
-chửa	c h ử a
-gởi	g ở i
-bẹp	b ẹ p
-ươn	ư ơ n
-búi	b ú i
-kìa	k ì a
-khmer	k h m e r
-mầu	m ầ u
-ngút	n g ú t
-xú	x ú
-uế	u ế
-rích	r í c h
-mận	m ậ n
-chát	c h á t
-ất	ấ t
-quí	q u í
-khoanh	k h o a n h
-rặn	r ặ n
-đét	đ é t
-lùm	l ù m
-xùm	x ù m
-veo	v e o
-ló	l ó
-uyên	u y ê n
-quậy	q u ậ y
-nẻo	n ẻ o
-cụt	c ụ t
-vò	v ò
-vãng	v ã n g
-dỡ	d ỡ
-ngai	n g a i
-bập	b ậ p
-lỵ	l ỵ
-hằn	h ằ n
-lã	l ã
-nhộng	n h ộ n g
-nhích	n h í c h
-gờm	g ờ m
-khước	k h ư ớ c
-bẹn	b ẹ n
-hòm	h ò m
-bún	b ú n
-rưng	r ư n g
-uyển	u y ể n
-ngóc	n g ó c
-s	s
-nhấc	n h ấ c
-túa	t ú a
-bặt	b ặ t
-cày	c à y
-vồn	v ồ n
-bu	b u
-góa	g ó a
-đìu	đ ì u
-hiu	h i u
-banh	b a n h
-giỡn	g i ỡ n
-đủng	đ ủ n g
-vung	v u n g
-trồ	t r ồ
-nghẹt	n g h ẹ t
-hoen	h o e n
-gỉ	g ỉ
-rết	r ế t
-thằn	t h ằ n
-lằn	l ằ n
-hâu	h â u
-mế	m ế
-bun	b u n
-chớp	c h ớ p
-tiếu	t i ế u
-rận	r ậ n
-gở	g ở
-quệt	q u ệ t
-bẽ	b ẽ
-quặc	q u ặ c
-tròng	t r ò n g
-gàu	g à u
-phuy	p h u y
-đủi	đ ủ i
-đốn	đ ố n
-huân	h u â n
-nơm	n ơ m
-nớp	n ớ p
-vạc	v ạ c
-rởm	r ở m
-hoả	h o ả
-vệt	v ệ t
-xẻng	x ẻ n g
-rạ	r ạ
-láo	l á o
-hoạn	h o ạ n
-vữa	v ữ a
-nguyền	n g u y ề n
-ngỗng	n g ỗ n g
-gắp	g ắ p
-rô	r ô
-dãi	d ã i
-loay	l o a y
-hoay	h o a y
-chỏng	c h ỏ n g
-chơ	c h ơ
-muôi	m u ô i
-duỗi	d u ỗ i
-lỏi	l ỏ i
-xõa	x õ a
-lỏm	l ỏ m
-choàng	c h o à n g
-cốm	c ố m
-thúng	t h ú n g
-sính	s í n h
-miệt	m i ệ t
-vát	v á t
-rưới	r ư ớ i
-quầy	q u ầ y
-dìu	d ì u
-khuấy	k h u ấ y
-đềm	đ ề m
-chun	c h u n
-thím	t h í m
-vừng	v ừ n g
-tặc	t ặ c
-nháy	n h á y
-chốc	c h ố c
-gấc	g ấ c
-nham	n h a m
-núp	n ú p
-sà	s à
-hực	h ự c
-then	t h e n
-tr	t r
-dũ	d ũ
-chôn	c h ô n
-đằm	đ ằ m
-au	a u
-xiêu	x i ê u
-hù	h ù
-bầm	b ầ m
-ăng	ă n g
-liếm	l i ế m
-ắt	ắ t
-oăm	o ă m
-tếu	t ế u
-múc	m ú c
-thưa	t h ư a
-vắc	v ắ c
-toác	t o á c
-nhấm	n h ấ m
-nháp	n h á p
-đổng	đ ổ n g
-ngấy	n g ấ y
-han	h a n
-nghẽn	n g h ẽ n
-vồ	v ồ
-chửng	c h ử n g
-hùm	h ù m
-ngời	n g ờ i
-câm	c â m
-gieo	g i e o
-xỏ	x ỏ
-chắp	c h ắ p
-vênh	v ê n h
-bở	b ở
-méo	m é o
-mó	m ó
-bõm	b õ m
-kạn	k ạ n
-cỏi	c ỏ i
-găm	g ă m
-lẽo	l ẽ o
-ghiền	g h i ề n
-khứa	k h ứ a
-líu	l í u
-ắc	ắ c
-kị	k ị
-chành	c h à n h
-ha	h a
-nhẩm	n h ẩ m
-moi	m o i
-đận	đ ậ n
-ngộp	n g ộ p
-loai	l o a i
-bảnh	b ả n h
-hột	h ộ t
-tút	t ú t
-hẻm	h ẻ m
-chèn	c h è n
-toái	t o á i
-hậm	h ậ m
-sê	s ê
-ới	ớ i
-rộp	r ộ p
-nựng	n ự n g
-quyển	q u y ể n
-trỏ	t r ỏ
-xói	x ó i
-nồm	n ồ m
-tráo	t r á o
-nín	n í n
-nãy	n ã y
-xỉa	x ỉ a
-giễu	g i ễ u
-cợt	c ợ t
-tớ	t ớ
-chon	c h o n
-thong	t h o n g
-gặm	g ặ m
-mép	m é p
-kháu	k h á u
-dẻ	d ẻ
-càn	c à n
-ì	ì
-còng	c ò n g
-day	d a y
-bả	b ả
-ru	r u
-nóc	n ó c
-bìa	b ì a
-giếm	g i ế m
-nhỏm	n h ỏ m
-cứa	c ứ a
-vố	v ố
-chác	c h á c
-ngụ	n g ụ
-khựng	k h ự n g
-choi	c h o i
-đản	đ ả n
-quặt	q u ặ t
-thính	t h í n h
-lạy	l ạ y
-ríu	r í u
-ối	ố i
-nghê	n g h ê
-dậu	d ậ u
-bìu	b ì u
-hùa	h ù a
-bét	b é t
-hú	h ú
-hĩnh	h ĩ n h
-tuột	t u ộ t
-lọi	l ọ i
-nhe	n h e
-dứa	d ứ a
-hom	h o m
-mề	m ề
-đay	đ a y
-nguỵ	n g u ỵ
-tuốt	t u ố t
-ỉm	ỉ m
-sô	s ô
-oán	o á n
-q	q
-bậy	b ậ y
-mứt	m ứ t
-lia	l i a
-cạc	c ạ c
-nít	n í t
-lủi	l ủ i
-két	k é t
-chẻ	c h ẻ
-địu	đ ị u
-thán	t h á n
-nịnh	n ị n h
-nọt	n ọ t
-dấy	d ấ y
-lể	l ể
-ừ	ừ
-kẽ	k ẽ
-sộ	s ộ
-rọi	r ọ i
-cộp	c ộ p
-bìm	b ì m
-xôi	x ô i
-trau	t r a u
-nệm	n ệ m
-khất	k h ấ t
-mia	m i a
-coca	c o c a
-lả	l ả
-tăn	t ă n
-tề	t ề
-phay	p h a y
-khuông	k h u ô n g
-ứ	ứ
-nớt	n ớ t
-vế	v ế
-tâng	t â n g
-sứa	s ứ a
-móm	m ó m
-hẫng	h ẫ n g
-gạ	g ạ
-ke	k e
-ình	ì n h
-cũn	c ũ n
-cỡn	c ỡ n
-dực	d ự c
-dũa	d ũ a
-dòi	d ò i
-lết	l ế t
-xâu	x â u
-rủng	r ủ n g
-rỉnh	r ỉ n h
-bệ	b ệ
-kiệu	k i ệ u
-nghiễm	n g h i ễ m
-chằm	c h ằ m
-ngoãn	n g o ã n
-trằn	t r ằ n
-nhựt	n h ự t
-lòi	l ò i
-thiu	t h i u
-khảnh	k h ả n h
-lùn	l ù n
-nòi	n ò i
-iu	i u
-trọi	t r ọ i
-vẩy	v ẩ y
-sồ	s ồ
-sề	s ề
-trui	t r u i
-bêu	b ê u
-kèn	k è n
-sắn	s ắ n
-chuốc	c h u ố c
-củi	c ủ i
-cối	c ố i
-ổng	ổ n g
-ảm	ả m
-rưỡi	r ư ỡ i
-răm	r ă m
-ươm	ư ơ m
-te	t e
-hốc	h ố c
-đóa	đ ó a
-ẵm	ẵ m
-nhản	n h ả n
-quệ	q u ệ
-chạc	c h ạ c
-ngợp	n g ợ p
-ngòi	n g ò i
-giâm	g i â m
-nghiến	n g h i ế n
-lù	l ù
-khàn	k h à n
-ngoắt	n g o ắ t
-cụp	c ụ p
-pi	p i
-liếng	l i ế n g
-dỏm	d ỏ m
-xuê	x u ê
-xhcn	x h c n
-sũng	s ũ n g
-trệ	t r ệ
-chếch	c h ế c h
-đờm	đ ờ m
-dơi	d ơ i
-vái	v á i
-phộng	p h ộ n g
-hì	h ì
-ớn	ớ n
-lùa	l ù a
-lít	l í t
-bổn	b ổ n
-òa	ò a
-hói	h ó i
-lợp	l ợ p
-lịm	l ị m
-hửng	h ử n g
-nhum	n h u m
-ngáo	n g á o
-nép	n é p
-quỵt	q u ỵ t
-nhão	n h ã o
-khạc	k h ạ c
-xoan	x o a n
-rét	r é t
-nhọ	n h ọ
-bẽo	b ẽ o
-úng	ú n g
-ươi	ư ơ i
-mửa	m ử a
-chư	c h ư
-thình	t h ì n h
-sào	s à o
-vót	v ó t
-rợp	r ợ p
-uẩn	u ẩ n
-ghì	g h ì
-rói	r ó i
-dẽ	d ẽ
-lảng	l ả n g
-loang	l o a n g
-sục	s ụ c
-xổm	x ổ m
-bòng	b ò n g
-tuồn	t u ồ n
-thới	t h ớ i
-khèn	k h è n
-véo	v é o
-ú	ú
-ụ	ụ
-phin	p h i n
-phơ	p h ơ
-lúng	l ú n g
-phèo	p h è o
-rắp	r ắ p
-ngò	n g ò
-phung	p h u n g
-tốp	t ố p
-nhẹt	n h ẹ t
-dẫm	d ẫ m
-rót	r ó t
-mân	m â n
-casino	c a s i n o
-tom	t o m
-vánh	v á n h
-chầm	c h ầ m
-rợn	r ợ n
-chông	c h ô n g
-gợn	g ợ n
-lụng	l ụ n g
-pen	p e n
-miếu	m i ế u
-rải	r ả i
-xoàng	x o à n g
-him	h i m
-túp	t ú p
-trãi	t r ã i
-bâu	b â u
-nán	n á n
-giầu	g i ầ u
-dởm	d ở m
-trẽn	t r ẽ n
-sưa	s ư a
-vẹo	v ẹ o
-kềnh	k ề n h
-phào	p h à o
-tót	t ó t
-hợi	h ợ i
-thăn	t h ă n
-rú	r ú
-khuân	k h u â n
-ngót	n g ó t
-guitar	g u i t a r
-tặn	t ặ n
-buồm	b u ồ m
-nọc	n ọ c
-lạng	l ạ n g
-căm	c ă m
-thây	t h â y
-gọng	g ọ n g
-kỉnh	k ỉ n h
-luẩn	l u ẩ n
-ròng	r ò n g
-hỉnh	h ỉ n h
-lặt	l ặ t
-ứa	ứ a
-xập	x ậ p
-gành	g à n h
-ná	n á
-duật	d u ậ t
-hạc	h ạ c
-ghẹo	g h ẹ o
-luyn	l u y n
-búng	b ú n g
-tụi	t ụ i
-lẳng	l ẳ n g
-kháo	k h á o
-tảo	t ả o
-bôn	b ô n
-dái	d á i
-vối	v ố i
-rổ	r ổ
-chóc	c h ó c
-bốt	b ố t
-cơi	c ơ i
-diêm	d i ê m
-tuồng	t u ồ n g
-ken	k e n
-phảng	p h ả n g
-rệu	r ệ u
-thuỳ	t h u ỳ
-mạp	m ạ p
-bấc	b ấ c
-sex	s e x
-tòi	t ò i
-vụt	v ụ t
-thêu	t h ê u
-rầy	r ầ y
-nanh	n a n h
-thảy	t h ả y
-ệ	ệ
-quẳng	q u ẳ n g
-híp	h í p
-thoạt	t h o ạ t
-cắc	c ắ c
-gồ	g ồ
-ghề	g h ề
-thết	t h ế t
-rim	r i m
-nhuần	n h u ầ n
-phầm	p h ầ m
-sắng	s ắ n g
-tràm	t r à m
-sám	s á m
-tạc	t ạ c
-hinh	h i n h
-nem	n e m
-hững	h ữ n g
-xúy	x ú y
-nấp	n ấ p
-thụt	t h ụ t
-đờn	đ ờ n
-lim	l i m
-nhổm	n h ổ m
-nhúm	n h ú m
-nua	n u a
-mỏm	m ỏ m
-khấm	k h ấ m
-ùng	ù n g
-ọp	ọ p
-ẹp	ẹ p
-trườn	t r ư ờ n
-nấng	n ấ n g
-quẹt	q u ẹ t
-hớt	h ớ t
-rìa	r ì a
-truồng	t r u ồ n g
-hóng	h ó n g
-hớn	h ớ n
-hiềm	h i ề m
-thếp	t h ế p
-giẻ	g i ẻ
-ngưởng	n g ư ở n g
-ki	k i
-ốt	ố t
-xiêm	x i ê m
-giăng	g i ă n g
-biền	b i ề n
-nẩy	n ẩ y
-mênh	m ê n h
-gáo	g á o
-hăm	h ă m
-ngạo	n g ạ o
 ad	a d
-rần	r ầ n
-huyễn	h u y ễ n
-tủa	t ủ a
-tòng	t ò n g
-bâng	b â n g
-khuâng	k h u â n g
-thâu	t h â u
-xoạc	x o ạ c
-thuấn	t h u ấ n
-xéo	x é o
-nuột	n u ộ t
-mơn	m ơ n
-giàng	g i à n g
-dom	d o m
-hạp	h ạ p
-dằng	d ằ n g
-dặc	d ặ c
-triền	t r i ề n
-chụm	c h ụ m
-khểnh	k h ể n h
-ngoặc	n g o ặ c
-thớt	t h ớ t
-choang	c h o a n g
-điếm	đ i ế m
-dà	d à
-cún	c ú n
-trỉa	t r ỉ a
-đom	đ o m
-đóm	đ ó m
-phèn	p h è n
-oxi	o x i
-nhúc	n h ú c
-quơ	q u ơ
-trẩy	t r ẩ y
-toa	t o a
+adn	a d n
+ai	a i
+ak	a k
+album	a l b u m
+am	a m
+an	a n
+ang	a ng
+anh	a nh
+ao	a o
+asean	a s e a n
+au	a u
+b	b
+ba	b a
+bai	b a i
+ban	b a n
+bang	b a ng
+banh	b a nh
+bao	b a o
+bar	b a r
+bay	b a y
+be	b e
+ben	b e n
+beng	b e ng
+beo	b e o
+bi	b i
+bia	b i a
+bin	b i n
+binh	b i nh
+biên	b i ê n
+biêng	b i ê ng
+biếc	b i ế c
+biếm	b i ế m
+biến	b i ế n
+biếng	b i ế ng
+biết	b i ế t
+biếu	b i ế u
+biền	b i ề n
+biển	b i ể n
+biểu	b i ể u
+biện	b i ệ n
+biệt	b i ệ t
+bo	b o
+boa	b o a
+bom	b o m
+bon	b o n
+bong	b o ng
+bu	b u
+bun	b u n
+bung	b u ng
+buôn	b u ô n
+buông	b u ô ng
+buýt	b u ý t
+buốt	b u ố t
+buồm	b u ồ m
+buồn	b u ồ n
+buồng	b u ồ ng
+buổi	b u ổ i
+buộc	b u ộ c
+bà	b à
+bài	b à i
+bàn	b à n
+bàng	b à ng
+bành	b à nh
+bào	b à o
+bàu	b à u
+bày	b à y
+bá	b á
+bác	b á c
+bách	b á ch
+bái	b á i
+bám	b á m
+bán	b á n
+báng	b á ng
+bánh	b á nh
+báo	b á o
+bát	b á t
+báu	b á u
+bân	b â n
+bâng	b â ng
+bâu	b â u
+bây	b â y
+bã	b ã
+bãi	b ã i
+bão	b ã o
+bè	b è
 bèn	b è n
-nhòm	n h ò m
-ngó	n g ó
-xếch	x ế c h
-giê	g i ê
-guồng	g u ồ n g
-gả	g ả
-sụa	s ụ a
-lum	l u m
-khờ	k h ờ
-lú	l ú
-tiệp	t i ệ p
-cạy	c ạ y
-ọe	ọ e
-lũng	l ũ n g
-nhử	n h ử
-đớp	đ ớ p
-róc	r ó c
-ké	k é
-mợ	m ợ
-phình	p h ì n h
-rằn	r ằ n
-khua	k h u a
-lừ	l ừ
-thỏm	t h ỏ m
-radio	r a d i o
-khấp	k h ấ p
-oằn	o ằ n
-si	s i
-choán	c h o á n
-quáng	q u á n g
-quằn	q u ằ n
-quại	q u ạ i
-sái	s á i
-hóp	h ó p
-tột	t ộ t
-khóm	k h ó m
-đơm	đ ơ m
-lắt	l ắ t
-dặt	d ặ t
-nái	n á i
-gông	g ô n g
-cùm	c ù m
+bèo	b è o
+bé	b é
+bén	b é n
+béng	b é ng
+béo	b é o
+bét	b é t
+bê	b ê
+bên	b ê n
+bênh	b ê nh
+bêu	b ê u
+bì	b ì
+bìa	b ì a
+bìm	b ì m
+bình	b ì nh
+bìu	b ì u
+bí	b í
+bích	b í ch
+bính	b í nh
+bít	b í t
+bíu	b í u
+bò	b ò
+bòn	b ò n
+bòng	b ò ng
+bó	b ó
+bóc	b ó c
+bói	b ó i
+bón	b ó n
+bóng	b ó ng
+bóp	b ó p
+bót	b ó t
+bô	b ô
+bôi	b ô i
+bôn	b ô n
+bông	b ô ng
+bõm	b õ m
+bõng	b õ ng
+bù	b ù
+bùa	b ù a
+bùi	b ù i
+bùn	b ù n
+bùng	b ù ng
+bú	b ú
+búa	b ú a
+búi	b ú i
+bún	b ú n
+búng	b ú ng
+búp	b ú p
+bút	b ú t
+băm	b ă m
+băn	b ă n
+băng	b ă ng
 bĩ	b ĩ
-von	v o n
-vãnh	v ã n h
+bĩnh	b ĩ nh
+bĩu	b ĩ u
+bũm	b ũ m
+bơ	b ơ
+bơi	b ơ i
+bơm	b ơ m
+bưng	b ư ng
+bưu	b ư u
+bươi	b ư ơ i
+bươm	b ư ơ m
 bươu	b ư ơ u
-bụp	b ụ p
-xẹp	x ẹ p
-thinh	t h i n h
-rớm	r ớ m
-ku	k u
-nhoà	n h o à
-tược	t ư ợ c
-um	u m
-nhứt	n h ứ t
-nhỉnh	n h ỉ n h
-xo	x o
-gộc	g ộ c
-chét	c h é t
-dật	d ậ t
-són	s ó n
-sền	s ề n
-nhuệ	n h u ệ
-riu	r i u
-sậm	s ậ m
+bước	b ư ớ c
+bướm	b ư ớ m
+bướng	b ư ớ ng
+bướu	b ư ớ u
+bưởi	b ư ở i
+bạ	b ạ
+bạc	b ạ c
+bạch	b ạ ch
+bại	b ạ i
+bạn	b ạ n
+bạnh	b ạ nh
+bạo	b ạ o
+bạt	b ạ t
+bả	b ả
+bản	b ả n
+bảng	b ả ng
+bảnh	b ả nh
+bảo	b ả o
+bảy	b ả y
+bấc	b ấ c
+bấm	b ấ m
+bấn	b ấ n
+bấp	b ấ p
+bất	b ấ t
+bấu	b ấ u
+bấy	b ấ y
+bầm	b ầ m
+bần	b ầ n
+bầu	b ầ u
+bầy	b ầ y
+bẩm	b ẩ m
+bẩn	b ẩ n
+bẩy	b ẩ y
+bẫm	b ẫ m
+bẫy	b ẫ y
+bậc	b ậ c
+bận	b ậ n
+bập	b ậ p
+bật	b ậ t
+bậy	b ậ y
+bắc	b ắ c
+bắn	b ắ n
+bắng	b ắ ng
+bắp	b ắ p
+bắt	b ắ t
+bằm	b ằ m
+bằng	b ằ ng
+bẵng	b ẵ ng
+bặm	b ặ m
+bặt	b ặ t
 bẹ	b ẹ
-trá	t r á
-chuốt	c h u ố t
-chình	c h ì n h
-giẫm	g i ẫ m
-đẵng	đ ẵ n g
-liềm	l i ề m
-rai	r a i
-xị	x ị
-luy	l u y
-hẩu	h ẩ u
-lốn	l ố n
-vông	v ô n g
-thào	t h à o
+bẹn	b ẹ n
+bẹo	b ẹ o
+bẹp	b ẹ p
+bẹt	b ẹ t
+bẻ	b ẻ
+bẽ	b ẽ
+bẽn	b ẽ n
+bẽo	b ẽ o
+bế	b ế
+bến	b ế n
+bếp	b ế p
+bết	b ế t
+bề	b ề
+bền	b ề n
+bềnh	b ề nh
+bều	b ề u
+bể	b ể
+bệ	b ệ
+bệch	b ệ ch
+bện	b ệ n
+bệnh	b ệ nh
+bệt	b ệ t
+bệu	b ệ u
+bỉ	b ỉ
+bỉm	b ỉ m
+bỉnh	b ỉ nh
+bỉu	b ỉ u
+bị	b ị
+bịa	b ị a
+bịch	b ị ch
+bịn	b ị n
+bịp	b ị p
+bịt	b ị t
+bịu	b ị u
+bọ	b ọ
+bọc	b ọ c
+bọn	b ọ n
+bọng	b ọ ng
+bọp	b ọ p
+bọt	b ọ t
+bỏ	b ỏ
+bỏng	b ỏ ng
+bố	b ố
+bốc	b ố c
+bối	b ố i
+bốn	b ố n
+bống	b ố ng
+bốt	b ố t
+bồ	b ồ
+bồi	b ồ i
+bồn	b ồ n
+bồng	b ồ ng
+bổ	b ổ
+bổn	b ổ n
+bổng	b ổ ng
+bỗ	b ỗ
+bỗng	b ỗ ng
+bộ	b ộ
+bộc	b ộ c
+bội	b ộ i
+bộng	b ộ ng
+bột	b ộ t
+bới	b ớ i
+bớt	b ớ t
+bờ	b ờ
+bời	b ờ i
+bờm	b ờ m
+bở	b ở
+bởi	b ở i
+bỡ	b ỡ
+bợ	b ợ
+bợm	b ợ m
+bợn	b ợ n
+bụ	b ụ
+bụa	b ụ a
+bục	b ụ c
+bụi	b ụ i
+bụng	b ụ ng
+bụp	b ụ p
+bụt	b ụ t
+bủa	b ủ a
+bủm	b ủ m
+bức	b ứ c
+bứt	b ứ t
+bừa	b ừ a
+bừng	b ừ ng
+bửu	b ử u
+bữa	b ữ a
+bự	b ự
+bực	b ự c
+c	c
+ca	c a
+cai	c a i
+calo	c a l o
+cam	c a m
+can	c a n
+canh	c a nh
+canxi	c a n x i
+cao	c a o
+casino	c a s i n o
+cau	c a u
+cay	c a y
+cha	ch a
+chai	ch a i
+chan	ch a n
+chang	ch a ng
+chanh	ch a nh
+chao	ch a o
+chau	ch a u
+chay	ch a y
+che	ch e
+chem	ch e m
+chen	ch e n
+cheng	ch e ng
+cheo	ch e o
+chi	ch i
+chia	ch i a
+chim	ch i m
+chinh	ch i nh
+chiu	ch i u
+chiêm	ch i ê m
+chiên	ch i ê n
+chiêng	ch i ê ng
+chiêu	ch i ê u
+chiếc	ch i ế c
+chiếm	ch i ế m
+chiến	ch i ế n
+chiếng	ch i ế ng
+chiết	ch i ế t
+chiếu	ch i ế u
+chiền	ch i ề n
+chiều	ch i ề u
+chiểu	ch i ể u
+cho	ch o
+choang	ch o a ng
+choi	ch o i
+chon	ch o n
+chong	ch o ng
+choàng	ch o à ng
+choán	ch o á n
+choáng	ch o á ng
+choèn	ch o è n
+choạc	ch o ạ c
+choạng	ch o ạ ng
+choảng	ch o ả ng
+choắt	ch o ắ t
+chu	ch u
+chua	ch u a
+chui	ch u i
+chum	ch u m
+chun	ch u n
+chung	ch u ng
+chuyên	ch u y ê n
+chuyến	ch u y ế n
+chuyền	ch u y ề n
+chuyển	ch u y ể n
+chuyện	ch u y ệ n
+chuôi	ch u ô i
+chuông	ch u ô ng
+chuẩn	ch u ẩ n
+chuốc	ch u ố c
+chuối	ch u ố i
+chuốt	ch u ố t
+chuồi	ch u ồ i
+chuồn	ch u ồ n
+chuồng	ch u ồ ng
+chuỗi	ch u ỗ i
+chuộc	ch u ộ c
+chuộng	ch u ộ ng
+chuột	ch u ộ t
+chà	ch à
+chài	ch à i
+chàm	ch à m
+chàng	ch à ng
+chành	ch à nh
+chào	ch à o
+chày	ch à y
+chác	ch á c
+chái	ch á i
+chán	ch á n
+chánh	ch á nh
+cháo	ch á o
+chát	ch á t
+cháu	ch á u
+cháy	ch á y
+châm	ch â m
+chân	ch â n
+châu	ch â u
+chã	ch ã
+chãi	ch ã i
+chão	ch ã o
+chè	ch è
+chèn	ch è n
+chèo	ch è o
+ché	ch é
+chém	ch é m
+chén	ch é n
+chéo	ch é o
+chép	ch é p
+chét	ch é t
+chê	ch ê
+chêm	ch ê m
+chênh	ch ê nh
+chì	ch ì
+chìa	ch ì a
+chìm	ch ì m
+chình	ch ì nh
+chìu	ch ì u
+chí	ch í
+chích	ch í ch
+chím	ch í m
+chín	ch í n
+chính	ch í nh
+chít	ch í t
+chíu	ch í u
+chò	ch ò
+chòi	ch ò i
+chòm	ch ò m
+chòng	ch ò ng
+chó	ch ó
+chóc	ch ó c
+chóe	ch ó e
+chói	ch ó i
+chóng	ch ó ng
+chót	ch ó t
+chôm	ch ô m
+chôn	ch ô n
+chông	ch ô ng
+chù	ch ù
+chùa	ch ù a
+chùi	ch ù i
+chùm	ch ù m
+chùng	ch ù ng
+chú	ch ú
+chúa	ch ú a
+chúc	ch ú c
+chúi	ch ú i
+chúm	ch ú m
+chúng	ch ú ng
+chút	ch ú t
+chăm	ch ă m
+chăn	ch ă n
+chăng	ch ă ng
+chĩa	ch ĩ a
+chĩn	ch ĩ n
+chũi	ch ũ i
+chũn	ch ũ n
+chơ	ch ơ
+chơi	ch ơ i
+chư	ch ư
+chưa	ch ư a
+chưng	ch ư ng
+chương	ch ư ơ ng
+chước	ch ư ớ c
+chướng	ch ư ớ ng
+chườm	ch ư ờ m
+chường	ch ư ờ ng
+chưởng	ch ư ở ng
+chược	ch ư ợ c
+chạc	ch ạ c
+chạch	ch ạ ch
+chạm	ch ạ m
+chạn	ch ạ n
+chạnh	ch ạ nh
+chạp	ch ạ p
+chạy	ch ạ y
+chả	ch ả
+chải	ch ả i
+chảnh	ch ả nh
+chảo	ch ả o
+chảy	ch ả y
+chấm	ch ấ m
+chấn	ch ấ n
+chấp	ch ấ p
+chất	ch ấ t
+chấu	ch ấ u
+chầm	ch ầ m
+chần	ch ầ n
+chầu	ch ầ u
+chẩm	ch ẩ m
+chẩn	ch ẩ n
+chậm	ch ậ m
+chập	ch ậ p
+chật	ch ậ t
+chậu	ch ậ u
+chắc	ch ắ c
+chắm	ch ắ m
+chắn	ch ắ n
+chắp	ch ắ p
+chắt	ch ắ t
+chằm	ch ằ m
+chằn	ch ằ n
+chằng	ch ằ ng
+chẳng	ch ẳ ng
+chẵn	ch ẵ n
+chặn	ch ặ n
+chặng	ch ặ ng
+chặt	ch ặ t
+chẹn	ch ẹ n
+chẹo	ch ẹ o
+chẹp	ch ẹ p
+chẻ	ch ẻ
+chẽ	ch ẽ
+chẽn	ch ẽ n
+chế	ch ế
+chếch	ch ế ch
+chết	ch ế t
+chề	ch ề
+chềnh	ch ề nh
+chểnh	ch ể nh
+chệch	ch ệ ch
+chỉ	ch ỉ
+chỉn	ch ỉ n
+chỉnh	ch ỉ nh
+chị	ch ị
+chịt	ch ị t
+chịu	ch ị u
+chọc	ch ọ c
+chọi	ch ọ i
+chọn	ch ọ n
+chọn:	ch ọ n
+chọt	ch ọ t
+chỏ	ch ỏ
+chỏm	ch ỏ m
+chỏn	ch ỏ n
+chỏng	ch ỏ ng
+chốc	ch ố c
+chối	ch ố i
+chốn	ch ố n
+chống	ch ố ng
+chốt	ch ố t
+chồi	ch ồ i
+chồm	ch ồ m
+chồn	ch ồ n
+chồng	ch ồ ng
+chổi	ch ổ i
+chỗ	ch ỗ
+chội	ch ộ i
+chộp	ch ộ p
+chột	ch ộ t
+chớ	ch ớ
+chới	ch ớ i
+chớp	ch ớ p
+chờ	ch ờ
+chờn	ch ờ n
+chở	ch ở
+chợ	ch ợ
+chợp	ch ợ p
+chợt	ch ợ t
+chục	ch ụ c
+chụm	ch ụ m
+chụp	ch ụ p
+chủ	ch ủ
+chủng	ch ủ ng
+chứ	ch ứ
+chứa	ch ứ a
+chức	ch ứ c
+chứng	ch ứ ng
+chừ	ch ừ
+chừa	ch ừ a
+chừng	ch ừ ng
+chửa	ch ử a
+chửi	ch ử i
+chửng	ch ử ng
+chữ	ch ữ
+chữa	ch ữ a
+chững	ch ữ ng
+chực	ch ự c
+co	c o
+coca	c o c a
+coi	c o i
+com	c o m
+con	c o n
+cong	c o ng
+cs	c s
+cu	c u
+cua	c u a
+cun	c u n
+cung	c u ng
+cuông	c u ô ng
+cuốc	c u ố c
+cuối	c u ố i
+cuốn	c u ố n
+cuống	c u ố ng
+cuồn	c u ồ n
+cuồng	c u ồ ng
+cuỗm	c u ỗ m
+cuộc	c u ộ c
+cuội	c u ộ i
+cuộn	c u ộ n
+cà	c à
+cài	c à i
+càn	c à n
+càng	c à ng
+cành	c à nh
+cào	c à o
+càu	c à u
+cày	c à y
+cá	c á
+các	c á c
+cách	c á ch
+cái	c á i
+cám	c á m
+cán	c á n
+cáng	c á ng
+cánh	c á nh
+cáo	c á o
+cáp	c á p
+cát	c á t
+cáu	c á u
+cáy	c á y
+câm	c â m
+cân	c â n
+câu	c â u
+cây	c â y
+cãi	c ã i
+cò	c ò
+còi	c ò i
+còm	c ò m
+còn	c ò n
+còng	c ò ng
+có	c ó
+cóc	c ó c
+cói	c ó i
+cóng	c ó ng
+cóp	c ó p
+cót	c ó t
+cô	c ô
+côi	c ô i
+côm	c ô m
+côn	c ô n
+công	c ô ng
+cõi	c õ i
+cõng	c õ ng
+cù	c ù
+cùa	c ù a
+cùi	c ù i
+cùm	c ù m
+cùn	c ù n
+cùng	c ù ng
+cú	c ú
+cúc	c ú c
+cúi	c ú i
+cúm	c ú m
+cún	c ú n
+cúng	c ú ng
+cúp	c ú p
+cút	c ú t
+căm	c ă m
+căn	c ă n
+căng	c ă ng
+cũ	c ũ
+cũi	c ũ i
+cũn	c ũ n
+cũng	c ũ ng
+cơ	c ơ
+cơi	c ơ i
+cơm	c ơ m
+cơn	c ơ n
+cư	c ư
+cưa	c ư a
+cưng	c ư ng
+cưu	c ư u
+cương	c ư ơ ng
+cước	c ư ớ c
+cưới	c ư ớ i
+cướp	c ư ớ p
+cười	c ư ờ i
+cườm	c ư ờ m
+cường	c ư ờ ng
+cưỡi	c ư ỡ i
+cưỡng	c ư ỡ ng
+cược	c ư ợ c
+cạc	c ạ c
+cạch	c ạ ch
+cạm	c ạ m
+cạn	c ạ n
+cạnh	c ạ nh
+cạo	c ạ o
+cạp	c ạ p
+cạu	c ạ u
+cạy	c ạ y
+cả	c ả
+cải	c ả i
+cảm	c ả m
+cản	c ả n
+cảng	c ả ng
+cảnh	c ả nh
+cảo	c ả o
+cấm	c ấ m
+cấn	c ấ n
+cấp	c ấ p
+cất	c ấ t
+cấu	c ấ u
+cấy	c ấ y
+cầm	c ầ m
+cần	c ầ n
+cầu	c ầ u
+cầy	c ầ y
+cẩm	c ẩ m
+cẩn	c ẩ n
+cẩu	c ẩ u
+cẫng	c ẫ ng
+cận	c ậ n
+cập	c ậ p
+cật	c ậ t
+cậu	c ậ u
+cậy	c ậ y
+cắc	c ắ c
+cắm	c ắ m
+cắn	c ắ n
+cắp	c ắ p
+cắt	c ắ t
+cằm	c ằ m
+cằn	c ằ n
+cẳng	c ẳ ng
+cặm	c ặ m
+cặn	c ặ n
+cặp	c ặ p
+cọ	c ọ
+cọc	c ọ c
+cọn	c ọ n
+cọng	c ọ ng
+cọp	c ọ p
+cọt	c ọ t
+cỏ	c ỏ
+cỏi	c ỏ i
+cỏm	c ỏ m
+cố	c ố
+cốc	c ố c
+cối	c ố i
+cốm	c ố m
+cống	c ố ng
+cốp	c ố p
+cốt	c ố t
+cồ	c ồ
+cồm	c ồ m
+cồn	c ồ n
+cồng	c ồ ng
+cổ	c ổ
+cổng	c ổ ng
+cỗ	c ỗ
+cỗi	c ỗ i
+cộ	c ộ
+cội	c ộ i
+cộm	c ộ m
+cộng	c ộ ng
+cộp	c ộ p
+cột	c ộ t
+cớ	c ớ
+cờ	c ờ
+cời	c ờ i
+cởi	c ở i
+cỡ	c ỡ
+cỡi	c ỡ i
+cỡn	c ỡ n
+cợt	c ợ t
+cụ	c ụ
+cục	c ụ c
+cụi	c ụ i
+cụm	c ụ m
+cụp	c ụ p
+cụt	c ụ t
+củ	c ủ
+của	c ủ a
+củi	c ủ i
+củng	c ủ ng
+cứ	c ứ
+cứa	c ứ a
+cứng	c ứ ng
+cứu	c ứ u
+cừ	c ừ
+cừu	c ừ u
+cử	c ử
+cửa	c ử a
+cửi	c ử i
+cửu	c ử u
+cữ	c ữ
+cự	c ự
+cựa	c ự a
+cực	c ự c
+cựu	c ự u
+d	d
+da	d a
+dai	d a i
+dan	d a n
+dang	d a ng
+danh	d a nh
+dao	d a o
+day	d a y
+di	d i
+dim	d i m
+dinh	d i nh
+diêm	d i ê m
+diên	d i ê n
+diêu	d i ê u
+diếc	d i ế c
+diếp	d i ế p
+diết	d i ế t
+diếu	d i ế u
+diều	d i ề u
+diễm	d i ễ m
+diễn	d i ễ n
+diễu	d i ễ u
+diệc	d i ệ c
+diệm	d i ệ m
+diện	d i ệ n
+diệp	d i ệ p
+diệt	d i ệ t
+diệu	d i ệ u
+do	d o
+doanh	d o a nh
+doi	d o i
+dom	d o m
 don	d o n
-trứ	t r ứ
-tuýt	t u ý t
-chưởng	c h ư ở n g
-quẫn	q u ẫ n
-nhoài	n h o à i
-tậm	t ậ m
-rúng	r ú n g
+dong	d o ng
+doãn	d o ã n
+doạ	d o ạ
+du	d u
+dua	d u a
+dung	d u ng
+duy	d u y
+duyên	d u y ê n
+duyệt	d u y ệ t
+duật	d u ậ t
+duệ	d u ệ
+duỗi	d u ỗ i
+dà	d à
+dài	d à i
+dàn	d à n
+dàng	d à ng
+dành	d à nh
+dào	d à o
+dày	d à y
+dác	d á c
+dái	d á i
+dám	d á m
+dán	d á n
+dáng	d á ng
+dáo	d á o
+dát	d á t
+dâm	d â m
+dân	d â n
+dâng	d â ng
+dâu	d â u
+dây	d â y
+dã	d ã
+dãi	d ã i
+dãn	d ã n
+dãng	d ã ng
+dãy	d ã y
+dè	d è
+dép	d é p
+dê	d ê
+dên	d ê n
+dì	d ì
+dìm	d ì m
+dìu	d ì u
+dí	d í
+dính	d í nh
+dò	d ò
+dòi	d ò i
+dòm	d ò m
+dòng	d ò ng
+dó	d ó
+dóc	d ó c
+dóm	d ó m
+dôi	d ô i
+dông	d ô ng
+dõi	d õ i
+dõng	d õ ng
+dù	d ù
+dùi	d ù i
+dùng	d ù ng
+dúi	d ú i
+dúm	d ú m
+dún	d ú n
+dăm	d ă m
+dăn	d ă n
+dăng	d ă ng
+dĩ	d ĩ
+dĩa	d ĩ a
+dĩnh	d ĩ nh
+dũ	d ũ
+dũa	d ũ a
+dũng	d ũ ng
+dơ	d ơ
+dơi	d ơ i
+dư	d ư
+dưa	d ư a
+dưng	d ư ng
+dương	d ư ơ ng
+dưới	d ư ớ i
+dường	d ư ờ ng
+dưỡng	d ư ỡ ng
+dược	d ư ợ c
+dượt	d ư ợ t
+dạ	d ạ
+dạc	d ạ c
+dại	d ạ i
+dạm	d ạ m
+dạn	d ạ n
+dạng	d ạ ng
+dạo	d ạ o
+dạt	d ạ t
+dạy	d ạ y
+dả	d ả
+dải	d ả i
+dấm	d ấ m
+dấn	d ấ n
+dấp	d ấ p
+dấu	d ấ u
+dấy	d ấ y
+dầm	d ầ m
+dần	d ầ n
+dầu	d ầ u
+dẩn	d ẩ n
+dẫm	d ẫ m
+dẫn	d ẫ n
+dẫu	d ẫ u
+dẫy	d ẫ y
+dậm	d ậ m
+dập	d ậ p
+dật	d ậ t
+dậu	d ậ u
+dậy	d ậ y
+dắt	d ắ t
+dằn	d ằ n
+dằng	d ằ ng
+dẳng	d ẳ ng
+dặc	d ặ c
+dặm	d ặ m
+dặn	d ặ n
+dặt	d ặ t
+dẹp	d ẹ p
+dẹt	d ẹ t
+dẻ	d ẻ
+dẻo	d ẻ o
+dẽ	d ẽ
+dế	d ế
+dề	d ề
+dền	d ề n
+dềnh	d ề nh
+dễ	d ễ
+dệt	d ệ t
+dị	d ị
+dịch	d ị ch
+dịp	d ị p
+dịu	d ị u
+dọa	d ọ a
+dọc	d ọ c
+dọn	d ọ n
+dỏm	d ỏ m
+dỏng	d ỏ ng
+dốc	d ố c
+dối	d ố i
+dốt	d ố t
+dồi	d ồ i
+dồn	d ồ n
+dỗ	d ỗ
+dỗi	d ỗ i
+dội	d ộ i
+dột	d ộ t
+dớ	d ớ
+dời	d ờ i
+dờn	d ờ n
+dở	d ở
+dởm	d ở m
+dỡ	d ỡ
+dụ	d ụ
+dục	d ụ c
+dụm	d ụ m
+dụng	d ụ ng
+dứa	d ứ a
+dứt	d ứ t
+dừa	d ừ a
+dừng	d ừ ng
+dử	d ử
+dửng	d ử ng
+dữ	d ữ
+dự	d ự
+dựa	d ự a
+dực	d ự c
+dựng	d ự ng
+e	e
+em	e m
+eo	e o
+euro	e u r o
+g	g
+ga	g a
+gai	g a i
+gam	g a m
+gan	g a n
+gang	g a ng
+ganh	g a nh
+gao	g a o
+gara	g a r a
+gas	g a s
+gay	g a y
+gen	g e n
+ghe	gh e
+ghen	gh e n
+ghi	gh i
+ghim	gh i m
+ghiền	gh i ề n
+ghè	gh è
+ghèn	gh è n
+ghé	gh é
+ghém	gh é m
+ghép	gh é p
+ghét	gh é t
+ghê	gh ê
+ghì	gh ì
+ghìm	gh ì m
+ghẹ	gh ẹ
+ghẹo	gh ẹ o
+ghẻ	gh ẻ
+ghẽ	gh ẽ
+ghế	gh ế
+ghề	gh ề
+ghềnh	gh ề nh
+ghểnh	gh ể nh
+ghệt	gh ệ t
+gi	gi
+gia	gi a
+giai	gi a i
+giam	gi a m
+gian	gi a n
+giang	gi a ng
+gianh	gi a nh
+giao	gi a o
+gieo	gi e o
+gio	gi o
+gion	gi o n
+gioăng	gi o ă ng
+giua	gi u a
+giun	gi u n
+già	gi à
+giàn	gi à n
+giàng	gi à ng
+giành	gi à nh
+giàu	gi à u
+giày	gi à y
+giá	gi á
+giác	gi á c
+giám	gi á m
+gián	gi á n
+giáng	gi á ng
+giáo	gi á o
+giáp	gi á p
+giâm	gi â m
+giây	gi â y
+giã	gi ã
+giãi	gi ã i
+giãn	gi ã n
+giãy	gi ã y
+gièm	gi è m
+gié	gi é
+giê	gi ê
+giêng	gi ê ng
+giò	gi ò
+giòn	gi ò n
+gió	gi ó
+gión	gi ó n
+gióng	gi ó ng
+giô	gi ô
+giông	gi ô ng
+giùm	gi ù m
+giú	gi ú
+giúp	gi ú p
+giăm	gi ă m
+giăng	gi ă ng
+giũ	gi ũ
+giũa	gi ũ a
+giơ	gi ơ
+giương	gi ư ơ ng
+giướng	gi ư ớ ng
+giường	gi ư ờ ng
+giạt	gi ạ t
+giả	gi ả
+giải	gi ả i
+giảm	gi ả m
+giản	gi ả n
+giảng	gi ả ng
+giảnh	gi ả nh
+giảo	gi ả o
+giấc	gi ấ c
+giấm	gi ấ m
+giấp	gi ấ p
+giấu	gi ấ u
+giấy	gi ấ y
+giầm	gi ầ m
+giần	gi ầ n
+giầu	gi ầ u
+giầy	gi ầ y
+giẫm	gi ẫ m
+giậm	gi ậ m
+giận	gi ậ n
+giập	gi ậ p
+giật	gi ậ t
+giắt	gi ắ t
+giằm	gi ằ m
+giằn	gi ằ n
+giằng	gi ằ ng
+giặc	gi ặ c
+giặm	gi ặ m
+giặn	gi ặ n
+giặt	gi ặ t
+giẹo	gi ẹ o
+giẻ	gi ẻ
+giếm	gi ế m
+giếng	gi ế ng
+giết	gi ế t
+giềng	gi ề ng
+giễu	gi ễ u
+giọ	gi ọ
+giọng	gi ọ ng
+giọt	gi ọ t
+giỏ	gi ỏ
+giỏi	gi ỏ i
+giỏn	gi ỏ n
+giống	gi ố ng
+giồng	gi ồ ng
+giỗ	gi ỗ
+giới	gi ớ i
+giờ	gi ờ
+giời	gi ờ i
+giở	gi ở
+giỡn	gi ỡ n
+giụa	gi ụ a
+giục	gi ụ c
+giủi	gi ủ i
+giữ	gi ữ
+giữa	gi ữ a
+giựt	gi ự t
+go	g o
+gom	g o m
+gu	g u
+guitar	g u i t a r
+guốc	g u ố c
+guồng	g u ồ ng
+guộc	g u ộ c
+gà	g à
+gài	g à i
+gàn	g à n
+gàng	g à ng
+gành	g à nh
+gào	g à o
+gàu	g à u
+gày	g à y
+gác	g á c
+gái	g á i
+gán	g á n
+gánh	g á nh
+gáo	g á o
+gáp	g á p
+gáy	g á y
+gân	g â n
+gây	g â y
+gã	g ã
+gãi	g ã i
+gãy	g ã y
+gì	g ì
+gìn	g ì n
+gí	g í
+gò	g ò
+gòn	g ò n
+góa	g ó a
+góc	g ó c
+gói	g ó i
+góp	g ó p
+gót	g ó t
+gô	g ô
+gôn	g ô n
+gông	g ô ng
+gõ	g õ
+gù	g ù
+gú	g ú
+gút	g ú t
+găm	g ă m
+găng	g ă ng
+gũi	g ũ i
+gươm	g ư ơ m
+gương	g ư ơ ng
+gườm	g ư ờ m
+gường	g ư ờ ng
+gượng	g ư ợ ng
+gạ	g ạ
+gạch	g ạ ch
+gạn	g ạ n
+gạo	g ạ o
+gạt	g ạ t
+gả	g ả
+gảy	g ả y
+gấc	g ấ c
+gấp	g ấ p
+gấu	g ấ u
+gấy	g ấ y
+gầm	g ầ m
+gần	g ầ n
+gầu	g ầ u
+gầy	g ầ y
+gẫm	g ẫ m
+gẫu	g ẫ u
+gẫy	g ẫ y
+gập	g ậ p
+gật	g ậ t
+gậy	g ậ y
+gắm	g ắ m
+gắn	g ắ n
+gắng	g ắ ng
+gắp	g ắ p
+gắt	g ắ t
+gằn	g ằ n
+gặm	g ặ m
+gặn	g ặ n
+gặng	g ặ ng
+gặp	g ặ p
+gặt	g ặ t
+gỉ	g ỉ
+gọi	g ọ i
+gọn	g ọ n
+gọng	g ọ ng
+gọt	g ọ t
+gỏi	g ỏ i
+gỏng	g ỏ ng
+gốc	g ố c
+gối	g ố i
+gốm	g ố m
+gồ	g ồ
+gồm	g ồ m
+gồng	g ồ ng
+gổ	g ổ
+gỗ	g ỗ
+gộc	g ộ c
+gội	g ộ i
+gộp	g ộ p
+gớm	g ớ m
+gờm	g ờ m
+gở	g ở
+gởi	g ở i
+gỡ	g ỡ
+gợi	g ợ i
+gợn	g ợ n
+gợt	g ợ t
+gụ	g ụ
+gục	g ụ c
+gừng	g ừ ng
+gửi	g ử i
+h	h
+ha	h a
+hai	h a i
+ham	h a m
+han	h a n
+hang	h a ng
+hanh	h a nh
+hao	h a o
+hay	h a y
+he	h e
+hem	h e m
+hen	h e n
+heo	h e o
+hi	h i
+hia	h i a
+him	h i m
+hinh	h i nh
+hiu	h i u
+hiv	h i v
+hiên	h i ê n
+hiêng	h i ê ng
+hiếm	h i ế m
+hiến	h i ế n
+hiếp	h i ế p
+hiếu	h i ế u
+hiềm	h i ề m
+hiền	h i ề n
+hiểm	h i ể m
+hiển	h i ể n
+hiểu	h i ể u
+hiện	h i ệ n
+hiệp	h i ệ p
+hiệu	h i ệ u
+hlv	h l v
+ho	h o
+hoa	h o a
+hoan	h o a n
+hoang	h o a ng
+hoay	h o a y
+hoen	h o e n
+hoi	h o i
+hom	h o m
+hong	h o ng
+hoà	h o à
+hoài	h o à i
+hoàn	h o à n
+hoàng	h o à ng
+hoành	h o à nh
+hoá	h o á
+hoác	h o á c
+hoán	h o á n
+hoãn	h o ã n
+hoét	h o é t
+hoạ	h o ạ
+hoạch	h o ạ ch
+hoại	h o ạ i
+hoạn	h o ạ n
+hoạnh	h o ạ nh
+hoạt	h o ạ t
+hoả	h o ả
+hoải	h o ả i
+hoảng	h o ả ng
+hoắc	h o ắ c
+hoắt	h o ắ t
+hoẳn	h o ẳ n
+hoặc	h o ặ c
+hu	h u
+hun	h u n
+hung	h u ng
+huy	h u y
+huynh	h u y nh
+huyên	h u y ê n
+huyết	h u y ế t
+huyền	h u y ề n
+huyễn	h u y ễ n
+huyện	h u y ệ n
+huyệt	h u y ệ t
+huân	h u â n
+huê	h u ê
+huýt	h u ý t
+huơ	h u ơ
+huấn	h u ấ n
+huế	h u ế
+huếch	h u ế ch
+huề	h u ề
+huệ	h u ệ
+huống	h u ố ng
+huỳnh	h u ỳ nh
+huỷ	h u ỷ
+hy	h y
+hà	h à
+hài	h à i
+hàm	h à m
+hàn	h à n
+hàng	h à ng
+hành	h à nh
+hào	h à o
+hàu	h à u
+há	h á
+hách	h á ch
+hái	h á i
+hám	h á m
+hán	h á n
+háng	h á ng
+háo	h á o
+hát	h á t
+hâm	h â m
+hân	h â n
+hâu	h â u
+hãi	h ã i
+hãm	h ã m
+hãn	h ã n
+hãng	h ã ng
+hãnh	h ã nh
+hão	h ã o
+hãy	h ã y
+hè	h è
+hèn	h è n
+hé	h é
+héo	h é o
+hét	h é t
+hê	h ê
+hên	h ê n
+hênh	h ê nh
+hì	h ì
+hình	h ì nh
+hí	h í
+híp	h í p
+hít	h í t
+hò	h ò
+hòa	h ò a
+hòm	h ò m
+hòn	h ò n
+hòng	h ò ng
+hóa	h ó a
+hóc	h ó c
+hói	h ó i
+hóm	h ó m
+hóng	h ó ng
+hóp	h ó p
+hót	h ó t
+hô	h ô
+hôi	h ô i
+hôm	h ô m
+hôn	h ô n
+hông	h ô ng
+hù	h ù
+hùa	h ù a
+hùm	h ù m
+hùn	h ù n
+hùng	h ù ng
+hú	h ú
+húc	h ú c
+húi	h ú i
+húng	h ú ng
+húp	h ú p
+hút	h ú t
+húy	h ú y
+hăm	h ă m
+hăng	h ă ng
+hĩnh	h ĩ nh
+hũ	h ũ
+hũm	h ũ m
+hơ	h ơ
+hơi	h ơ i
+hơn	h ơ n
+hư	h ư
+hưng	h ư ng
+hưu	h ư u
+hương	h ư ơ ng
+hươu	h ư ơ u
+hước	h ư ớ c
+hướm	h ư ớ m
+hướng	h ư ớ ng
+hường	h ư ờ ng
+hưởng	h ư ở ng
+hượm	h ư ợ m
+hạ	h ạ
+hạc	h ạ c
+hạch	h ạ ch
+hại	h ạ i
+hạm	h ạ m
+hạn	h ạ n
+hạng	h ạ ng
+hạnh	h ạ nh
+hạo	h ạ o
+hạp	h ạ p
+hạt	h ạ t
+hả	h ả
+hải	h ả i
+hảm	h ả m
+hảo	h ả o
+hấn	h ấ n
+hấng	h ấ ng
+hấp	h ấ p
+hất	h ấ t
+hấu	h ấ u
+hầm	h ầ m
+hầu	h ầ u
+hầy	h ầ y
+hẩm	h ẩ m
+hẩu	h ẩ u
+hẫng	h ẫ ng
+hậm	h ậ m
+hận	h ậ n
+hập	h ậ p
+hậu	h ậ u
+hắc	h ắ c
+hắn	h ắ n
+hắng	h ắ ng
+hắt	h ắ t
+hằn	h ằ n
+hằng	h ằ ng
+hẳn	h ẳ n
+hẵng	h ẵ ng
+hặc	h ặ c
+hẹ	h ẹ
+hẹn	h ẹ n
+hẹp	h ẹ p
+hẻm	h ẻ m
+hến	h ế n
+hết	h ế t
+hề	h ề
+hể	h ể
+hển	h ể n
+hểnh	h ể nh
+hễ	h ễ
+hệ	h ệ
+hệt	h ệ t
+hỉ	h ỉ
+hỉnh	h ỉ nh
+họ	h ọ
+họa	h ọ a
+học	h ọ c
+họe	h ọ e
+họng	h ọ ng
+họp	h ọ p
+hỏa	h ỏ a
+hỏi	h ỏ i
+hỏm	h ỏ m
+hỏng	h ỏ ng
+hố	h ố
+hốc	h ố c
+hối	h ố i
+hống	h ố ng
+hốt	h ố t
+hồ	h ồ
+hồi	h ồ i
+hồn	h ồ n
+hồng	h ồ ng
+hổ	h ổ
+hổi	h ổ i
+hổm	h ổ m
+hổn	h ổ n
+hổng	h ổ ng
+hỗ	h ỗ
+hỗn	h ỗ n
+hộ	h ộ
+hộc	h ộ c
+hội	h ộ i
+hộn	h ộ n
+hộp	h ộ p
+hột	h ộ t
+hớ	h ớ
+hớn	h ớ n
+hớp	h ớ p
+hớt	h ớ t
+hờ	h ờ
+hời	h ờ i
+hờn	h ờ n
+hở	h ở
+hởi	h ở i
+hợi	h ợ i
+hợm	h ợ m
+hợp	h ợ p
+hợt	h ợ t
+hụ	h ụ
+hục	h ụ c
+hụi	h ụ i
+hụt	h ụ t
+hủ	h ủ
+hủi	h ủ i
+hủy	h ủ y
+hứa	h ứ a
+hức	h ứ c
+hứng	h ứ ng
+hừ	h ừ
+hừng	h ừ ng
+hửng	h ử ng
+hững	h ữ ng
+hữu	h ữ u
+hự	h ự
+hực	h ự c
+hựu	h ự u
+i	i
+im	i m
+in	i n
+inh	i nh
+ion	i o n
+iu	i u
+k	k
+ka	k a
+kali	k a l i
+karaoke	k a r a o k e
+ke	k e
+kelvin	k e l v i n
+kem	k e m
+ken	k e n
+keo	k e o
+kg	k g
+kha	kh a
+khai	kh a i
+khan	kh a n
+khang	kh a ng
+khanh	kh a nh
+khao	kh a o
+khau	kh a u
+khay	kh a y
+khe	kh e
+khem	kh e m
+khen	kh e n
+kheo	kh e o
+khi	kh i
+khinh	kh i nh
+khiêm	kh i ê m
+khiên	kh i ê n
+khiêng	kh i ê ng
+khiêu	kh i ê u
+khiếm	kh i ế m
+khiến	kh i ế n
+khiếp	kh i ế p
+khiết	kh i ế t
+khiếu	kh i ế u
+khiển	kh i ể n
+khmer	kh m e r
+kho	kh o
+khoa	kh o a
+khoai	kh o a i
+khoan	kh o a n
+khoang	kh o a ng
+khoanh	kh o a nh
+khoe	kh o e
+khom	kh o m
+khoá	kh o á
+khoác	kh o á c
+khoái	kh o á i
+khoán	kh o á n
+khoáng	kh o á ng
+khoát	kh o á t
+khoèo	kh o è o
+khoé	kh o é
+khoét	kh o é t
+khoăn	kh o ă n
+khoải	kh o ả i
+khoản	kh o ả n
+khoảng	kh o ả ng
+khoảnh	kh o ả nh
+khoắn	kh o ắ n
+khoắt	kh o ắ t
+khoẻ	kh o ẻ
+khu	kh u
+khua	kh u a
+khum	kh u m
+khung	kh u ng
+khuy	kh u y
+khuya	kh u y a
+khuynh	kh u y nh
+khuyên	kh u y ê n
+khuyến	kh u y ế n
+khuyết	kh u y ế t
+khuân	kh u â n
+khuâng	kh u â ng
+khuây	kh u â y
+khuê	kh u ê
+khuôn	kh u ô n
+khuông	kh u ô ng
+khuất	kh u ấ t
+khuấy	kh u ấ y
+khuẩn	kh u ẩ n
+khuỳnh	kh u ỳ nh
+khuỷu	kh u ỷ u
+khà	kh à
+khàn	kh à n
+khàng	kh à ng
+khá	kh á
+khác	kh á c
+khách	kh á ch
+khái	kh á i
+khám	kh á m
+khán	kh á n
+kháng	kh á ng
+khánh	kh á nh
+kháo	kh á o
+kháp	kh á p
+khát	kh á t
+kháu	kh á u
+khâm	kh â m
+khâu	kh â u
+khè	kh è
+khèn	kh è n
+khèo	kh è o
+khén	kh é n
+khéo	kh é o
+khép	kh é p
+khét	kh é t
+khê	kh ê
+khênh	kh ê nh
+khí	kh í
+khía	kh í a
+khích	kh í ch
+khít	kh í t
+khíu	kh í u
+khò	kh ò
+khó	kh ó
+khóa	kh ó a
+khóc	kh ó c
+khóe	kh ó e
+khói	kh ó i
+khóm	kh ó m
+khô	kh ô
+khôi	kh ô i
+khôn	kh ô n
+không	kh ô ng
+khù	kh ù
+khú	kh ú
+khúc	kh ú c
+khúm	kh ú m
+khăm	kh ă m
+khăn	kh ă n
+khăng	kh ă ng
+khơ	kh ơ
+khơi	kh ơ i
+khư	kh ư
+khươm	kh ư ơ m
+khươn	kh ư ơ n
+khương	kh ư ơ ng
+khước	kh ư ớ c
+khạc	kh ạ c
+khạng	kh ạ ng
+khả	kh ả
+khải	kh ả i
+khảng	kh ả ng
+khảnh	kh ả nh
+khảo	kh ả o
+khảy	kh ả y
+khấm	kh ấ m
+khấn	kh ấ n
+khấp	kh ấ p
+khất	kh ấ t
+khấu	kh ấ u
+khẩn	kh ẩ n
+khẩu	kh ẩ u
+khật	kh ậ t
+khắc	kh ắ c
+khắm	kh ắ m
+khắng	kh ắ ng
+khắp	kh ắ p
+khắt	kh ắ t
+khẳm	kh ẳ m
+khẳng	kh ẳ ng
+khẻ	kh ẻ
+khẽ	kh ẽ
+khế	kh ế
+khề	kh ề
+khều	kh ề u
+khểnh	kh ể nh
+khệ	kh ệ
+khệnh	kh ệ nh
+khỉ	kh ỉ
+khỉnh	kh ỉ nh
+khịt	kh ị t
+khỏa	kh ỏ a
+khỏe	kh ỏ e
+khỏi	kh ỏ i
+khố	kh ố
+khốc	kh ố c
+khối	kh ố i
+khốn	kh ố n
+khống	kh ố ng
+khổ	kh ổ
+khổng	kh ổ ng
+khớ	kh ớ
+khớp	kh ớ p
+khờ	kh ờ
+khởi	kh ở i
+khụ	kh ụ
+khủng	kh ủ ng
+khứ	kh ứ
+khứa	kh ứ a
+khứu	kh ứ u
+khừ	kh ừ
+khử	kh ử
+khựng	kh ự ng
+ki	k i
+kia	k i a
+kim	k i m
+kinh	k i nh
+kitô	k i t ô
+kiêm	k i ê m
+kiên	k i ê n
+kiêng	k i ê ng
+kiêu	k i ê u
+kiếm	k i ế m
+kiến	k i ế n
+kiếng	k i ế ng
+kiếp	k i ế p
+kiết	k i ế t
+kiềm	k i ề m
+kiền	k i ề n
+kiềng	k i ề ng
+kiều	k i ề u
+kiểm	k i ể m
+kiểng	k i ể ng
+kiểu	k i ể u
+kiệm	k i ệ m
+kiện	k i ệ n
+kiệt	k i ệ t
+kiệu	k i ệ u
+km	k m
+ko	k o
+krông	k r ô ng
+ku	k u
+ky	k y
+kè	k è
+kèm	k è m
+kèn	k è n
+kèo	k è o
+ké	k é
+kém	k é m
+kén	k é n
+kéo	k é o
+kép	k é p
+két	k é t
+kê	k ê
+kênh	k ê nh
+kêu	k ê u
+kì	k ì
+kìa	k ì a
+kìm	k ì m
+kình	k ì nh
+kí	k í
+kích	k í ch
+kín	k í n
+kính	k í nh
+kíp	k í p
+kít	k í t
+ký	k ý
+kĩ	k ĩ
+kạn	k ạ n
+kẹn	k ẹ n
+kẹo	k ẹ o
+kẹp	k ẹ p
+kẹt	k ẹ t
+kẻ	k ẻ
+kẻng	k ẻ ng
+kẻo	k ẻ o
+kẽ	k ẽ
+kẽm	k ẽ m
+kẽo	k ẽ o
+kế	k ế
+kếch	k ế ch
+kết	k ế t
+kề	k ề
+kền	k ề n
+kềnh	k ề nh
+kể	k ể
+kệ	k ệ
+kệnh	k ệ nh
+kỉ	k ỉ
+kỉnh	k ỉ nh
+kị	k ị
+kịch	k ị ch
+kịp	k ị p
+kịt	k ị t
+kỳ	k ỳ
+kỵ	k ỵ
+kỷ	k ỷ
+kỹ	k ỹ
+l	l
+la	l a
+lai	l a i
+lam	l a m
+lan	l a n
+lang	l a ng
+lanh	l a nh
+lao	l a o
+laser	l a s e r
+lau	l a u
+lay	l a y
+le	l e
+lem	l e m
+len	l e n
+leo	l e o
+li	l i
+lia	l i a
+lim	l i m
+lin	l i n
+linh	l i nh
+liu	l i u
+liêm	l i ê m
+liên	l i ê n
+liêng	l i ê ng
+liêu	l i ê u
+liếc	l i ế c
+liếm	l i ế m
+liến	l i ế n
+liếng	l i ế ng
+liềm	l i ề m
+liền	l i ề n
+liều	l i ề u
+liễu	l i ễ u
+liệng	l i ệ ng
+liệt	l i ệ t
+liệu	l i ệ u
+lo	l o
+loa	l o a
+loai	l o a i
+loan	l o a n
+loang	l o a ng
+loanh	l o a nh
+loay	l o a y
+loi	l o i
+lom	l o m
+lon	l o n
+long	l o ng
+loài	l o à i
+loàn	l o à n
+loàng	l o à ng
+loáng	l o á ng
+loãng	l o ã ng
+loé	l o é
+loét	l o é t
+loại	l o ạ i
+loạn	l o ạ n
+loạng	l o ạ ng
+loạt	l o ạ t
+loảng	l o ả ng
+loắt	l o ắ t
+loằng	l o ằ ng
+loẹt	l o ẹ t
+lu	l u
+lua	l u a
+lui	l u i
+lum	l u m
+lung	l u ng
+luy	l u y
+luyn	l u y n
+luyến	l u y ế n
+luyện	l u y ệ n
+luân	l u â n
+luôn	l u ô n
+luẩn	l u ẩ n
+luận	l u ậ n
+luật	l u ậ t
+luống	l u ố ng
+luồn	l u ồ n
+luồng	l u ồ ng
+luỗng	l u ỗ ng
+luộc	l u ộ c
+ly	l y
+là	l à
+lài	l à i
+làm	l à m
+làn	l à n
+làng	l à ng
+lành	l à nh
+lào	l à o
+làu	l à u
+lá	l á
+lác	l á c
+lách	l á ch
+lái	l á i
+lán	l á n
+láng	l á ng
+lánh	l á nh
+láo	l á o
+láp	l á p
+lát	l á t
+láu	l á u
+láy	l á y
+lâm	l â m
+lân	l â n
+lâng	l â ng
+lâu	l â u
+lây	l â y
+lã	l ã
+lãi	l ã i
+lãm	l ã m
+lãn	l ã n
+lãng	l ã ng
+lãnh	l ã nh
+lão	l ã o
+lè	l è
+lèo	l è o
+lé	l é
+léc	l é c
+lém	l é m
+lén	l é n
+léng	l é ng
+léo	l é o
+lép	l é p
+lét	l é t
+lê	l ê
+lên	l ê n
+lênh	l ê nh
+lêu	l ê u
+lì	l ì
+lìa	l ì a
+lìm	l ì m
+lình	l ì nh
+lí	l í
+lính	l í nh
+líp	l í p
+lít	l í t
+líu	l í u
+lò	l ò
+lòa	l ò a
+lòe	l ò e
+lòi	l ò i
+lòm	l ò m
+lòng	l ò ng
+ló	l ó
+lóc	l ó c
+lóe	l ó e
+lói	l ó i
+lóm	l ó m
+lóng	l ó ng
+lót	l ó t
+lô	l ô
+lôi	l ô i
+lôm	l ô m
+lông	l ô ng
+lõi	l õ i
+lõm	l õ m
+lõng	l õ ng
+lù	l ù
+lùa	l ù a
+lùi	l ù i
+lùm	l ù m
+lùn	l ù n
+lùng	l ù ng
+lú	l ú
+lúa	l ú a
+lúc	l ú c
+lúi	l ú i
+lúm	l ú m
+lún	l ú n
+lúng	l ú ng
+lút	l ú t
+lý	l ý
+lăm	l ă m
+lăn	l ă n
+lăng	l ă ng
+lĩnh	l ĩ nh
+lũ	l ũ
+lũi	l ũ i
+lũm	l ũ m
+lũn	l ũ n
+lũng	l ũ ng
+lũy	l ũ y
+lơ	l ơ
+lơi	l ơ i
+lơn	l ơ n
+lư	l ư
+lưng	l ư ng
+lưu	l ư u
+lươm	l ư ơ m
+lươn	l ư ơ n
+lương	l ư ơ ng
+lưới	l ư ớ i
+lướng	l ư ớ ng
+lướt	l ư ớ t
+lười	l ư ờ i
+lường	l ư ờ ng
+lưỡi	l ư ỡ i
+lưỡng	l ư ỡ ng
+lược	l ư ợ c
+lượm	l ư ợ m
+lượn	l ư ợ n
+lượng	l ư ợ ng
+lượt	l ư ợ t
+lạ	l ạ
+lạc	l ạ c
+lạch	l ạ ch
+lại	l ạ i
+lạm	l ạ m
+lạn	l ạ n
+lạng	l ạ ng
+lạnh	l ạ nh
+lạo	l ạ o
+lạp	l ạ p
+lạt	l ạ t
+lạy	l ạ y
+lả	l ả
+lải	l ả i
+lảm	l ả m
+lảng	l ả ng
+lảnh	l ả nh
+lảo	l ả o
+lảy	l ả y
+lấm	l ấ m
+lấn	l ấ n
+lấp	l ấ p
+lất	l ấ t
+lấy	l ấ y
+lầm	l ầ m
+lần	l ầ n
+lầu	l ầ u
+lầy	l ầ y
+lẩm	l ẩ m
+lẩn	l ẩ n
+lẩu	l ẩ u
+lẫm	l ẫ m
+lẫn	l ẫ n
+lẫy	l ẫ y
+lận	l ậ n
+lập	l ậ p
+lật	l ậ t
+lậu	l ậ u
+lắc	l ắ c
+lắm	l ắ m
+lắng	l ắ ng
+lắp	l ắ p
+lắt	l ắ t
+lằn	l ằ n
+lằng	l ằ ng
+lẳm	l ẳ m
+lẳn	l ẳ n
+lẳng	l ẳ ng
+lặm	l ặ m
+lặn	l ặ n
+lặng	l ặ ng
+lặp	l ặ p
+lặt	l ặ t
+lẹ	l ẹ
+lẹm	l ẹ m
+lẹt	l ẹ t
+lẻ	l ẻ
+lẻn	l ẻ n
+lẻng	l ẻ ng
+lẻo	l ẻ o
+lẽ	l ẽ
+lẽn	l ẽ n
+lẽo	l ẽ o
+lết	l ế t
+lếu	l ế u
+lề	l ề
+lềnh	l ề nh
+lều	l ề u
+lể	l ể
+lễ	l ễ
+lệ	l ệ
+lệch	l ệ ch
+lệnh	l ệ nh
+lỉm	l ỉ m
+lỉnh	l ỉ nh
+lị	l ị
+lịa	l ị a
+lịch	l ị ch
+lịm	l ị m
+lịnh	l ị nh
+lọ	l ọ
+lọc	l ọ c
+lọi	l ọ i
+lọng	l ọ ng
+lọt	l ọ t
+lỏi	l ỏ i
+lỏm	l ỏ m
+lỏn	l ỏ n
+lỏng	l ỏ ng
+lố	l ố
+lốc	l ố c
+lối	l ố i
+lốm	l ố m
+lốn	l ố n
+lốp	l ố p
+lốt	l ố t
+lồ	l ồ
+lồi	l ồ i
+lồm	l ồ m
+lồng	l ồ ng
+lổ	l ổ
+lổm	l ổ m
+lổng	l ổ ng
+lỗ	l ỗ
+lỗi	l ỗ i
+lộ	l ộ
+lộc	l ộ c
+lội	l ộ i
+lộn	l ộ n
+lộng	l ộ ng
+lộp	l ộ p
+lột	l ộ t
+lớn	l ớ n
+lớp	l ớ p
+lớt	l ớ t
+lờ	l ờ
+lời	l ờ i
+lờm	l ờ m
+lờn	l ờ n
+lở	l ở
+lởi	l ở i
+lởn	l ở n
+lỡ	l ỡ
+lỡm	l ỡ m
+lợ	l ợ
+lợi	l ợ i
+lợm	l ợ m
+lợn	l ợ n
+lợp	l ợ p
+lụ	l ụ
+lụa	l ụ a
+lục	l ụ c
+lụng	l ụ ng
+lụp	l ụ p
+lụt	l ụ t
+lụy	l ụ y
+lủ	l ủ
+lủi	l ủ i
+lủm	l ủ m
+lủng	l ủ ng
+lứa	l ứ a
+lức	l ứ c
+lứt	l ứ t
+lừ	l ừ
+lừa	l ừ a
+lừng	l ừ ng
+lử	l ử
+lửa	l ử a
+lửng	l ử ng
+lữ	l ữ
+lữa	l ữ a
+lững	l ữ ng
+lự	l ự
+lựa	l ự a
+lực	l ự c
+lựu	l ự u
+lỵ	l ỵ
+m	m
+ma	m a
+mai	m a i
+man	m a n
+mang	m a ng
+mangan	m a ng a n
+manh	m a nh
+mao	m a o
+mark	m a r k
+martin	m a r t i n
+mau	m a u
+may	m a y
+me	m e
+men	m e n
+mi	m i
+mia	m i a
+min	m i n
+minh	m i nh
+mini	m i n i
+miên	m i ê n
+miêu	m i ê u
+miến	m i ế n
+miếng	m i ế ng
+miết	m i ế t
+miếu	m i ế u
+miền	m i ề n
+miều	m i ề u
+miễn	m i ễ n
+miện	m i ệ n
+miệng	m i ệ ng
+miệt	m i ệ t
+mo	m o
+moi	m o i
+mon	m o n
+mong	m o ng
+mu	m u
+mua	m u a
+mun	m u n
+muôi	m u ô i
+muôn	m u ô n
+muông	m u ô ng
+muối	m u ố i
+muốn	m u ố n
+muống	m u ố ng
+muốt	m u ố t
+muồi	m u ồ i
+muỗi	m u ỗ i
+muỗm	m u ỗ m
+muỗng	m u ỗ ng
+muộn	m u ộ n
+my	m y
+mà	m à
+mài	m à i
+màn	m à n
+màng	m à ng
+mành	m à nh
+mào	m à o
+màu	m à u
+mày	m à y
+má	m á
+mác	m á c
+mách	m á ch
+mái	m á i
+mán	m á n
+máng	m á ng
+mánh	m á nh
+máo	m á o
+mát	m á t
+máu	m á u
+máy	m á y
+mâm	m â m
+mân	m â n
+mâu	m â u
+mây	m â y
+mã	m ã
+mãi	m ã i
+mãn	m ã n
+mãng	m ã ng
+mãnh	m ã nh
+mão	m ã o
+mè	m è
+mèn	m è n
+mèo	m è o
+mé	m é
+mém	m é m
+mén	m é n
+méo	m é o
+mép	m é p
+mét	m é t
+mê	m ê
+mênh	m ê nh
+mì	m ì
+mìn	m ì n
+mình	m ì nh
+mí	m í
+mía	m í a
+mích	m í ch
+míp	m í p
+mít	m í t
+míu	m í u
+mò	m ò
+mòi	m ò i
+mòn	m ò n
+mòng	m ò ng
+mó	m ó
+móc	m ó c
+mói	m ó i
+móm	m ó m
+món	m ó n
+móng	m ó ng
+móp	m ó p
+mót	m ó t
+mô	m ô
+môi	m ô i
+môn	m ô n
+mông	m ô ng
+môt	m ô t
+mõ	m õ
+mõm	m õ m
+mù	m ù
+mùa	m ù a
+mùi	m ù i
+mùn	m ù n
+mùng	m ù ng
+mú	m ú
+múa	m ú a
+múc	m ú c
+múi	m ú i
+mún	m ú n
+múp	m ú p
+mút	m ú t
+măm	m ă m
+măn	m ă n
+măng	m ă ng
+mĩ	m ĩ
+mĩm	m ĩ m
+mũ	m ũ
+mũi	m ũ i
+mũm	m ũ m
+mơ	m ơ
+mơn	m ơ n
+mưa	m ư a
+mưng	m ư ng
+mưu	m ư u
+mươi	m ư ơ i
+mương	m ư ơ ng
+mướn	m ư ớ n
+mướp	m ư ớ p
+mướt	m ư ớ t
+mười	m ư ờ i
+mường	m ư ờ ng
+mượn	m ư ợ n
+mượt	m ư ợ t
+mạ	m ạ
+mạc	m ạ c
+mạch	m ạ ch
+mại	m ạ i
+mạn	m ạ n
+mạng	m ạ ng
+mạnh	m ạ nh
+mạo	m ạ o
+mạp	m ạ p
+mạt	m ạ t
+mạy	m ạ y
+mả	m ả
+mải	m ả i
+mảng	m ả ng
+mảnh	m ả nh
+mấn	m ấ n
+mấp	m ấ p
+mất	m ấ t
+mấu	m ấ u
+mấy	m ấ y
+mầm	m ầ m
+mần	m ầ n
+mầu	m ầ u
+mẩn	m ẩ n
+mẩu	m ẩ u
+mẩy	m ẩ y
+mẫm	m ẫ m
+mẫn	m ẫ n
+mẫu	m ẫ u
+mận	m ậ n
+mập	m ậ p
+mật	m ậ t
+mậu	m ậ u
+mắc	m ắ c
+mắm	m ắ m
+mắn	m ắ n
+mắng	m ắ ng
+mắt	m ắ t
+mằn	m ằ n
+mẳn	m ẳ n
+mặc	m ặ c
+mặn	m ặ n
+mặt	m ặ t
+mẹ	m ẹ
+mẹo	m ẹ o
+mẹt	m ẹ t
+mẻ	m ẻ
+mẽ	m ẽ
+mế	m ế
+mếch	m ế ch
+mến	m ế n
+mếu	m ế u
+mề	m ề
+mềm	m ề m
+mền	m ề n
+mệ	m ệ
+mệnh	m ệ nh
+mệt	m ệ t
+mỉ	m ỉ
+mỉa	m ỉ a
+mỉm	m ỉ m
+mị	m ị
+mịch	m ị ch
+mịn	m ị n
+mịt	m ị t
+mọ	m ọ
+mọc	m ọ c
+mọi	m ọ i
+mọn	m ọ n
+mọng	m ọ ng
+mọt	m ọ t
+mỏ	m ỏ
+mỏi	m ỏ i
+mỏm	m ỏ m
+mỏng	m ỏ ng
+mố	m ố
+mốc	m ố c
+mối	m ố i
+mống	m ố ng
+mốt	m ố t
+mồ	m ồ
+mồi	m ồ i
+mồm	m ồ m
+mồng	m ồ ng
+mổ	m ổ
+mỗ	m ỗ
+mỗi	m ỗ i
+mộ	m ộ
+mộc	m ộ c
+mộng	m ộ ng
+một	m ộ t
+mớ	m ớ
+mới	m ớ i
+mớp	m ớ p
+mờ	m ờ
+mời	m ờ i
+mở	m ở
+mởn	m ở n
+mỡ	m ỡ
+mợ	m ợ
+mụ	m ụ
+mục	m ụ c
+mụi	m ụ i
+mụn	m ụ n
+mụp	m ụ p
+mủ	m ủ
+mủi	m ủ i
+mủn	m ủ n
+mức	m ứ c
+mứt	m ứ t
+mừng	m ừ ng
+mửa	m ử a
+mực	m ự c
+mỹ	m ỹ
+n	n
+na	n a
+nai	n a i
+nam	n a m
+nan	n a n
+nang	n a ng
+nanh	n a nh
+nao	n a o
+nay	n a y
+nem	n e m
+neo	n e o
+nga	ng a
+ngai	ng a i
+ngan	ng a n
+ngang	ng a ng
+ngao	ng a o
+ngay	ng a y
+nghe	ngh e
+nghi	ngh i
+nghinh	ngh i nh
+nghiêm	ngh i ê m
+nghiên	ngh i ê n
+nghiêng	ngh i ê ng
+nghiến	ngh i ế n
+nghiền	ngh i ề n
+nghiễm	ngh i ễ m
+nghiệm	ngh i ệ m
+nghiện	ngh i ệ n
+nghiệp	ngh i ệ p
+nghiệt	ngh i ệ t
+nghè	ngh è
+nghèo	ngh è o
+nghé	ngh é
+nghén	ngh é n
+nghét	ngh é t
+nghê	ngh ê
+nghênh	ngh ê nh
+nghêu	ngh ê u
+nghìn	ngh ì n
+nghĩ	ngh ĩ
+nghĩa	ngh ĩ a
+nghĩnh	ngh ĩ nh
+nghẹn	ngh ẹ n
+nghẹo	ngh ẹ o
+nghẹt	ngh ẹ t
+nghẻo	ngh ẻ o
+nghẽn	ngh ẽ n
+nghếch	ngh ế ch
+nghề	ngh ề
+nghệ	ngh ệ
+nghệch	ngh ệ ch
+nghỉ	ngh ỉ
+nghỉu	ngh ỉ u
+nghị	ngh ị
+nghịch	ngh ị ch
+ngoa	ng o a
+ngoai	ng o a i
+ngoan	ng o a n
+ngoang	ng o a ng
+ngoay	ng o a y
+ngoe	ng o e
+ngoi	ng o i
+ngon	ng o n
+ngoài	ng o à i
+ngoàm	ng o à m
+ngoác	ng o á c
+ngoách	ng o á ch
+ngoái	ng o á i
+ngoáo	ng o á o
+ngoáy	ng o á y
+ngoãn	ng o ã n
+ngoèo	ng o è o
+ngoéo	ng o é o
+ngoại	ng o ạ i
+ngoạn	ng o ạ n
+ngoảnh	ng o ả nh
+ngoắc	ng o ắ c
+ngoắt	ng o ắ t
+ngoằn	ng o ằ n
+ngoằng	ng o ằ ng
+ngoẵng	ng o ẵ ng
+ngoặc	ng o ặ c
+ngoặt	ng o ặ t
+ngu	ng u
+nguy	ng u y
+nguyên	ng u y ê n
+nguyền	ng u y ề n
+nguyễn	ng u y ễ n
+nguyện	ng u y ệ n
+nguyệt	ng u y ệ t
+nguôi	ng u ô i
+nguẩy	ng u ẩ y
+nguồi	ng u ồ i
+nguồn	ng u ồ n
+nguội	ng u ộ i
+nguỵ	ng u ỵ
+ngà	ng à
+ngài	ng à i
+ngàm	ng à m
+ngàn	ng à n
+ngàng	ng à ng
+ngành	ng à nh
+ngào	ng à o
+ngày	ng à y
+ngách	ng á ch
+ngán	ng á n
+ngáng	ng á ng
+ngáo	ng á o
+ngáp	ng á p
+ngát	ng á t
+ngáu	ng á u
+ngáy	ng á y
+ngâm	ng â m
+ngân	ng â n
+ngây	ng â y
+ngã	ng ã
+ngãi	ng ã i
+ngía	ng í a
+ngò	ng ò
+ngòi	ng ò i
+ngó	ng ó
+ngóc	ng ó c
+ngóe	ng ó e
+ngói	ng ó i
+ngón	ng ó n
+ngóng	ng ó ng
+ngót	ng ó t
+ngô	ng ô
+ngôi	ng ô i
+ngôn	ng ô n
+ngông	ng ô ng
+ngõ	ng õ
+ngùi	ng ù i
+ngùn	ng ù n
+ngùng	ng ù ng
+ngúc	ng ú c
+ngúng	ng ú ng
+ngút	ng ú t
+ngăn	ng ă n
+ngũ	ng ũ
+ngơ	ng ơ
+ngơi	ng ơ i
+ngư	ng ư
+ngưa	ng ư a
+ngưng	ng ư ng
+ngưu	ng ư u
+ngươi	ng ư ơ i
+ngước	ng ư ớ c
+người	ng ư ờ i
+ngưởng	ng ư ở ng
+ngưỡng	ng ư ỡ ng
+ngược	ng ư ợ c
+ngượng	ng ư ợ ng
+ngạc	ng ạ c
+ngạch	ng ạ ch
+ngại	ng ạ i
+ngạn	ng ạ n
+ngạo	ng ạ o
+ngạt	ng ạ t
+ngả	ng ả
+ngải	ng ả i
+ngảnh	ng ả nh
+ngấm	ng ấ m
+ngấn	ng ấ n
+ngất	ng ấ t
+ngấu	ng ấ u
+ngấy	ng ấ y
+ngầm	ng ầ m
+ngần	ng ầ n
+ngầu	ng ầ u
+ngầy	ng ầ y
+ngẩm	ng ẩ m
+ngẩn	ng ẩ n
+ngẩng	ng ẩ ng
+ngẫm	ng ẫ m
+ngẫu	ng ẫ u
+ngậm	ng ậ m
+ngập	ng ậ p
+ngậu	ng ậ u
+ngậy	ng ậ y
+ngắc	ng ắ c
+ngắm	ng ắ m
+ngắn	ng ắ n
+ngắt	ng ắ t
+ngẳng	ng ẳ ng
+ngẵng	ng ẵ ng
+ngặt	ng ặ t
+ngọ	ng ọ
+ngọc	ng ọ c
+ngọn	ng ọ n
+ngọng	ng ọ ng
+ngọt	ng ọ t
+ngỏ	ng ỏ
+ngốc	ng ố c
+ngồi	ng ồ i
+ngồm	ng ồ m
+ngồn	ng ồ n
+ngồng	ng ồ ng
+ngổ	ng ổ
+ngổm	ng ổ m
+ngổn	ng ổ n
+ngỗ	ng ỗ
+ngỗng	ng ỗ ng
+ngộ	ng ộ
+ngộn	ng ộ n
+ngộp	ng ộ p
+ngột	ng ộ t
+ngớ	ng ớ
+ngớn	ng ớ n
+ngớt	ng ớ t
+ngờ	ng ờ
+ngời	ng ờ i
+ngỡ	ng ỡ
+ngợ	ng ợ
+ngợi	ng ợ i
+ngợm	ng ợ m
+ngợp	ng ợ p
+ngụ	ng ụ
+ngụa	ng ụ a
+ngục	ng ụ c
+ngụm	ng ụ m
+ngụp	ng ụ p
+ngụt	ng ụ t
+ngụy	ng ụ y
+ngủ	ng ủ
+ngủi	ng ủ i
+ngủn	ng ủ n
+ngứ	ng ứ
+ngứa	ng ứ a
+ngừ	ng ừ
+ngừa	ng ừ a
+ngừng	ng ừ ng
+ngửa	ng ử a
+ngửi	ng ử i
+ngửng	ng ử ng
+ngữ	ng ữ
+ngự	ng ự
+ngựa	ng ự a
+ngực	ng ự c
+nha	nh a
+nhai	nh a i
+nham	nh a m
+nhan	nh a n
+nhang	nh a ng
+nhanh	nh a nh
+nhao	nh a o
+nhau	nh a u
+nhay	nh a y
+nhe	nh e
+nhem	nh e m
+nhen	nh e n
+nheo	nh e o
+nhi	nh i
+nhiên	nh i ê n
+nhiêu	nh i ê u
+nhiếc	nh i ế c
+nhiếp	nh i ế p
+nhiều	nh i ề u
+nhiễm	nh i ễ m
+nhiễu	nh i ễ u
+nhiệm	nh i ệ m
+nhiệt	nh i ệ t
+nho	nh o
+nhoai	nh o a i
+nhoe	nh o e
+nhoen	nh o e n
+nhoi	nh o i
+nhom	nh o m
+nhong	nh o ng
+nhoà	nh o à
+nhoài	nh o à i
+nhoáng	nh o á ng
+nhoét	nh o é t
+nhoẻn	nh o ẻ n
+nhu	nh u
+nhum	nh u m
+nhung	nh u ng
+nhuyễn	nh u y ễ n
+nhuần	nh u ầ n
+nhuận	nh u ậ n
+nhuệ	nh u ệ
+nhuốc	nh u ố c
+nhuốm	nh u ố m
+nhuộm	nh u ộ m
+nhà	nh à
+nhài	nh à i
+nhàm	nh à m
+nhàn	nh à n
+nhàng	nh à ng
+nhành	nh à nh
+nhào	nh à o
+nhàu	nh à u
+nhá	nh á
+nhác	nh á c
+nhách	nh á ch
+nhái	nh á i
+nháng	nh á ng
+nhánh	nh á nh
+nháo	nh á o
+nháp	nh á p
+nhát	nh á t
+nháy	nh á y
+nhâm	nh â m
+nhân	nh â n
+nhã	nh ã
+nhãi	nh ã i
+nhãn	nh ã n
+nhãng	nh ã ng
+nhão	nh ã o
+nhè	nh è
+nhèm	nh è m
+nhé	nh é
+nhép	nh é p
+nhét	nh é t
+nhì	nh ì
+nhìn	nh ì n
+nhìu	nh ì u
+nhí	nh í
+nhích	nh í ch
+nhím	nh í m
+nhíp	nh í p
+nhít	nh í t
+nhíu	nh í u
+nhòa	nh ò a
+nhòe	nh ò e
+nhòm	nh ò m
+nhó	nh ó
+nhóc	nh ó c
+nhói	nh ó i
+nhóm	nh ó m
+nhóng	nh ó ng
+nhóp	nh ó p
+nhót	nh ó t
+nhô	nh ô
+nhôm	nh ô m
+nhôn	nh ô n
+nhông	nh ô ng
+nhõ	nh õ
+nhõm	nh õ m
+nhõn	nh õ n
+nhõng	nh õ ng
+nhù	nh ù
+nhùi	nh ù i
+nhùng	nh ù ng
+nhú	nh ú
+nhúa	nh ú a
+nhúc	nh ú c
+nhúm	nh ú m
+nhún	nh ú n
+nhúng	nh ú ng
+nhút	nh ú t
+nhăm	nh ă m
+nhăn	nh ă n
+nhăng	nh ă ng
+nhĩ	nh ĩ
+nhũ	nh ũ
+nhũng	nh ũ ng
+nhơ	nh ơ
+nhơi	nh ơ i
+nhơn	nh ơ n
+như	nh ư
+nhưng	nh ư ng
+nhướng	nh ư ớ ng
+nhường	nh ư ờ ng
+nhưỡng	nh ư ỡ ng
+nhược	nh ư ợ c
+nhượng	nh ư ợ ng
+nhạc	nh ạ c
+nhại	nh ạ i
+nhạnh	nh ạ nh
+nhạo	nh ạ o
+nhạt	nh ạ t
+nhạy	nh ạ y
+nhả	nh ả
+nhải	nh ả i
+nhảm	nh ả m
+nhản	nh ả n
+nhảnh	nh ả nh
+nhảy	nh ả y
+nhấc	nh ấ c
+nhấm	nh ấ m
+nhấn	nh ấ n
+nhấp	nh ấ p
+nhất	nh ấ t
+nhầm	nh ầ m
+nhầy	nh ầ y
+nhẩm	nh ẩ m
+nhẫn	nh ẫ n
+nhẫy	nh ẫ y
+nhậm	nh ậ m
+nhận	nh ậ n
+nhập	nh ậ p
+nhật	nh ậ t
+nhậu	nh ậ u
+nhắc	nh ắ c
+nhắm	nh ắ m
+nhắn	nh ắ n
+nhắt	nh ắ t
+nhằm	nh ằ m
+nhằn	nh ằ n
+nhằng	nh ằ ng
+nhẵn	nh ẵ n
+nhặm	nh ặ m
+nhặn	nh ặ n
+nhặng	nh ặ ng
+nhặt	nh ặ t
+nhẹ	nh ẹ
+nhẹm	nh ẹ m
+nhẹn	nh ẹ n
+nhẹp	nh ẹ p
+nhẹt	nh ẹ t
+nhẻm	nh ẻ m
+nhẽ	nh ẽ
+nhẽo	nh ẽ o
+nhếch	nh ế ch
+nhện	nh ệ n
+nhệu	nh ệ u
+nhỉ	nh ỉ
+nhỉnh	nh ỉ nh
+nhị	nh ị
+nhịn	nh ị n
+nhịp	nh ị p
+nhọ	nh ọ
+nhọc	nh ọ c
+nhọn	nh ọ n
+nhọt	nh ọ t
+nhỏ	nh ỏ
+nhỏm	nh ỏ m
+nhố	nh ố
+nhối	nh ố i
+nhốt	nh ố t
+nhồi	nh ồ i
+nhồn	nh ồ n
+nhồng	nh ồ ng
+nhổ	nh ổ
+nhổm	nh ổ m
+nhổn	nh ổ n
+nhộn	nh ộ n
+nhộng	nh ộ ng
+nhột	nh ộ t
+nhớ	nh ớ
+nhớp	nh ớ p
+nhớt	nh ớ t
+nhờ	nh ờ
+nhờn	nh ờ n
+nhở	nh ở
+nhỡ	nh ỡ
+nhợt	nh ợ t
+nhụa	nh ụ a
+nhục	nh ụ c
+nhụt	nh ụ t
+nhụy	nh ụ y
+nhủ	nh ủ
+nhủi	nh ủ i
+nhủn	nh ủ n
+nhứ	nh ứ
+nhức	nh ứ c
+nhứt	nh ứ t
+nhừ	nh ừ
+nhử	nh ử
+những	nh ữ ng
+nhựa	nh ự a
+nhựt	nh ự t
+ni	n i
+nia	n i a
+nin	n i n
+ninh	n i nh
+niu	n i u
+niêm	n i ê m
+niên	n i ê n
+niêu	n i ê u
+niết	n i ế t
+niềm	n i ề m
+niềng	n i ề ng
+niệm	n i ệ m
+niệu	n i ệ u
+no	n o
+noi	n o i
+nom	n o m
+non	n o n
+nong	n o ng
+noãn	n o ã n
+nua	n u a
+nung	n u ng
+nuôi	n u ô i
+nuông	n u ô ng
+nuối	n u ố i
+nuốt	n u ố t
+nuột	n u ộ t
+nà	n à
+nài	n à i
+nàn	n à n
+nàng	n à ng
+nành	n à nh
+nào	n à o
+này	n à y
+ná	n á
+nác	n á c
+nách	n á ch
+nái	n á i
+nám	n á m
+nán	n á n
+náo	n á o
+nát	n á t
+náu	n á u
+náy	n á y
+nâng	n â ng
+nâu	n â u
+nây	n â y
+nã	n ã
+não	n ã o
+nãy	n ã y
+nè	n è
+nèo	n è o
+né	n é
+ném	n é m
+nén	n é n
+néo	n é o
+nép	n é p
+nét	n é t
+nê	n ê
+nêm	n ê m
+nên	n ê n
+nêu	n ê u
+nì	n ì
+nình	n ì nh
+ních	n í ch
+nín	n í n
+nính	n í nh
+nít	n í t
+níu	n í u
+nòi	n ò i
+nó	n ó
+nóc	n ó c
+nói	n ó i
+nón	n ó n
+nóng	n ó ng
+nót	n ó t
+nô	n ô
+nôi	n ô i
+nôm	n ô m
+nôn	n ô n
+nông	n ô ng
+nõn	n õ n
+nùn	n ù n
+nùng	n ù ng
+núc	n ú c
+núi	n ú i
+núm	n ú m
+núng	n ú ng
+núp	n ú p
+nút	n ú t
+năm	n ă m
+năn	n ă n
+năng	n ă ng
+nĩa	n ĩ a
+nũng	n ũ ng
+nơ	n ơ
+nơi	n ơ i
+nơm	n ơ m
+nư	n ư
+nương	n ư ơ ng
+nước	n ư ớ c
+nướng	n ư ớ ng
+nạ	n ạ
+nạc	n ạ c
+nại	n ạ i
+nạn	n ạ n
+nạnh	n ạ nh
+nạo	n ạ o
+nạp	n ạ p
+nạt	n ạ t
+nả	n ả
+nải	n ả i
+nản	n ả n
+nảy	n ả y
+nấc	n ấ c
+nấm	n ấ m
+nấng	n ấ ng
+nấp	n ấ p
+nấu	n ấ u
+nấy	n ấ y
+nần	n ầ n
+nầy	n ầ y
+nẩy	n ẩ y
+nẫng	n ẫ ng
+nậm	n ậ m
+nập	n ậ p
+nậu	n ậ u
+nắc	n ắ c
+nắm	n ắ m
+nắn	n ắ n
+nắng	n ắ ng
+nắp	n ắ p
+nằm	n ằ m
+nằn	n ằ n
+nằng	n ằ ng
+nẵng	n ẵ ng
+nặc	n ặ c
+nặn	n ặ n
+nặng	n ặ ng
+nẹp	n ẹ p
+nẻ	n ẻ
+nẻo	n ẻ o
+nếm	n ế m
+nến	n ế n
+nếp	n ế p
+nết	n ế t
+nếu	n ế u
+nề	n ề
+nền	n ề n
+nể	n ể
+nệ	n ệ
+nệm	n ệ m
+nỉ	n ỉ
+nịch	n ị ch
+nịnh	n ị nh
+nịt	n ị t
+nịu	n ị u
+nọ	n ọ
+nọc	n ọ c
+nọng	n ọ ng
+nọt	n ọ t
+nỏ	n ỏ
+nố	n ố
+nốc	n ố c
+nối	n ố i
+nống	n ố ng
+nốt	n ố t
+nồ	n ồ
+nồi	n ồ i
+nồm	n ồ m
+nồng	n ồ ng
+nổ	n ổ
+nổi	n ổ i
+nỗ	n ỗ
+nỗi	n ỗ i
+nộ	n ộ
+nộc	n ộ c
+nội	n ộ i
+nộm	n ộ m
+nộn	n ộ n
+nộp	n ộ p
+nớ	n ớ
+nới	n ớ i
+nớp	n ớ p
+nớt	n ớ t
+nở	n ở
+nỡ	n ỡ
+nợ	n ợ
+nụ	n ụ
+nức	n ứ c
+nứt	n ứ t
+nửa	n ử a
+nữ	n ữ
+nữa	n ữ a
+nự	n ự
+nực	n ự c
+nựng	n ự ng
+o	o
+oa	o a
+oai	o a i
+oan	o a n
+oanh	o a nh
+oe	o e
+oi	o i
+ok	o k
+om	o m
+ong	o ng
+oxi	o x i
+oxy	o x y
+oành	o à nh
+oác	o á c
+oách	o á ch
+oái	o á i
+oán	o á n
+oánh	o á nh
+oăm	o ă m
+oạp	o ạ p
+oải	o ả i
+oắt	o ắ t
+oằn	o ằ n
+p	p
+pa	p a
+pen	p e n
+ph	ph
+pha	ph a
+phai	ph a i
+phan	ph a n
+phang	ph a ng
+phanh	ph a nh
+phao	ph a o
+phay	ph a y
+phe	ph e
+phen	ph e n
+phi	ph i
+phim	ph i m
+phin	ph i n
+phiên	ph i ê n
+phiêu	ph i ê u
+phiếm	ph i ế m
+phiến	ph i ế n
+phiết	ph i ế t
+phiếu	ph i ế u
+phiền	ph i ề n
+phiện	ph i ệ n
+pho	ph o
+phom	ph o m
+phong	ph o ng
+phu	ph u
+phui	ph u i
+phun	ph u n
+phung	ph u ng
+phuy	ph u y
+phà	ph à
+phàm	ph à m
+phàn	ph à n
+phàng	ph à ng
+phào	ph à o
+phá	ph á
+phác	ph á c
+phách	ph á ch
+phái	ph á i
+phán	ph á n
+pháo	ph á o
+pháp	ph á p
+phát	ph á t
+phân	ph â n
+phây	ph â y
+phè	ph è
+phèn	ph è n
+phèng	ph è ng
+phèo	ph è o
+phéng	ph é ng
+phép	ph é p
+phét	ph é t
+phê	ph ê
+phì	ph ì
+phình	ph ì nh
+phí	ph í
+phía	ph í a
+phích	ph í ch
+phím	ph í m
+phính	ph í nh
+phò	ph ò
+phòi	ph ò i
+phòng	ph ò ng
+phó	ph ó
+phóc	ph ó c
+phóng	ph ó ng
+phót	ph ó t
+phô	ph ô
+phôi	ph ô i
+phông	ph ô ng
+phù	ph ù
+phùng	ph ù ng
+phú	ph ú
+phúc	ph ú c
+phúng	ph ú ng
+phút	ph ú t
+phăng	ph ă ng
+phĩnh	ph ĩ nh
+phũ	ph ũ
+phơ	ph ơ
+phơi	ph ơ i
+phơn	ph ơ n
+phương	ph ư ơ ng
+phước	ph ư ớ c
+phướn	ph ư ớ n
+phường	ph ư ờ ng
+phượng	ph ư ợ ng
+phạc	ph ạ c
+phạm	ph ạ m
+phạng	ph ạ ng
+phạt	ph ạ t
+phả	ph ả
+phải	ph ả i
+phản	ph ả n
+phảng	ph ả ng
+phảy	ph ả y
+phấn	ph ấ n
+phất	ph ấ t
+phầm	ph ầ m
+phần	ph ầ n
+phẩm	ph ẩ m
+phẩy	ph ẩ y
+phẫn	ph ẫ n
+phẫu	ph ẫ u
+phận	ph ậ n
+phật	ph ậ t
+phắc	ph ắ c
+phẳng	ph ẳ ng
+phế	ph ế
+phếch	ph ế ch
+phết	ph ế t
+phề	ph ề
+phều	ph ề u
+phễu	ph ễ u
+phệ	ph ệ
+phệnh	ph ệ nh
+phỉ	ph ỉ
+phỉnh	ph ỉ nh
+phịch	ph ị ch
+phọt	ph ọ t
+phỏng	ph ỏ ng
+phố	ph ố
+phốc	ph ố c
+phối	ph ố i
+phốt	ph ố t
+phồm	ph ồ m
+phồn	ph ồ n
+phồng	ph ồ ng
+phổ	ph ổ
+phổi	ph ổ i
+phổng	ph ổ ng
+phỗng	ph ỗ ng
+phộng	ph ộ ng
+phớ	ph ớ
+phới	ph ớ i
+phớt	ph ớ t
+phờ	ph ờ
+phở	ph ở
+phỡn	ph ỡ n
+phụ	ph ụ
+phục	ph ụ c
+phụng	ph ụ ng
+phủ	ph ủ
+phủi	ph ủ i
+phức	ph ứ c
+pi	p i
+pin	p i n
+piêu	p i ê u
+pop	p o p
+pu	p u
+pí	p í
+pô	p ô
+pơ	p ơ
+q	qu i
+qua	qu a
+quai	qu a i
+quan	qu a n
+quang	qu a ng
+quanh	qu a nh
+quay	qu a y
+que	qu e
+quen	qu e n
+queo	qu e o
+qui	qu i
+quoạng	qu o ạ ng
+quy	qu y
+quyên	qu y ê n
+quyến	qu y ế n
+quyết	qu y ế t
+quyền	qu y ề n
+quyển	qu y ể n
+quyện	qu y ệ n
+quyệt	qu y ệ t
+quà	qu à
+quài	qu à i
+quàng	qu à ng
+quày	qu à y
+quá	qu á
+quác	qu á c
+quách	qu á ch
+quái	qu á i
+quán	qu á n
+quáng	qu á ng
+quánh	qu á nh
+quát	qu á t
+quân	qu â n
+quây	qu â y
+quãng	qu ã ng
+què	qu è
+quèn	qu è n
+quét	qu é t
+quê	qu ê
+quên	qu ê n
+quì	qu ì
+quí	qu í
+quít	qu í t
+quý	qu ý
+quýnh	qu ý nh
+quýt	qu ý t
+quăm	qu ă m
+quăng	qu ă ng
+quĩ	qu ĩ
+quơ	qu ơ
+quạc	qu ạ c
+quạch	qu ạ ch
+quại	qu ạ i
+quạng	qu ạ ng
+quạnh	qu ạ nh
+quạt	qu ạ t
+quả	qu ả
+quải	qu ả i
+quản	qu ả n
+quảng	qu ả ng
+quảy	qu ả y
+quấn	qu ấ n
+quất	qu ấ t
+quấy	qu ấ y
+quần	qu ầ n
+quầng	qu ầ ng
+quầy	qu ầ y
+quẩn	qu ẩ n
+quẫn	qu ẫ n
+quẫy	qu ẫ y
+quận	qu ậ n
+quật	qu ậ t
+quậy	qu ậ y
+quắc	qu ắ c
+quắn	qu ắ n
+quắp	qu ắ p
+quắt	qu ắ t
+quằn	qu ằ n
+quẳng	qu ẳ ng
+quặc	qu ặ c
+quặm	qu ặ m
+quặn	qu ặ n
+quặng	qu ặ ng
+quặt	qu ặ t
+quẹo	qu ẹ o
+quẹt	qu ẹ t
+quế	qu ế
+quết	qu ế t
+quềnh	qu ề nh
+quệ	qu ệ
+quện	qu ệ n
+quệnh	qu ệ nh
+quệt	qu ệ t
+quỉ	qu ỉ
+quị	qu ị
+quốc	qu ố c
+quới	qu ớ i
+quớt	qu ớ t
+quờ	qu ờ
+quờn	qu ờ n
+quỳ	qu ỳ
+quỳnh	qu ỳ nh
+quỵ	qu ỵ
+quỵt	qu ỵ t
+quỷ	qu ỷ
+quỹ	qu ỹ
+qúy	ú y
+ra	r a
+radio	r a d i o
+rai	r a i
+ram	r a m
+ran	r a n
+rang	r a ng
+ranh	r a nh
+rao	r a o
+rau	r a u
+ray	r a y
+re	r e
+real	r e a l
+ren	r e n
+reng	r e ng
+reo	r e o
+ri	r i
+ria	r i a
+rim	r i m
+rinh	r i nh
+riu	r i u
+riêng	r i ê ng
+riêu	r i ê u
+riếp	r i ế p
+riết	r i ế t
+riềng	r i ề ng
+riệt	r i ệ t
+ro	r o
+robot	r o b o t
+rock	r o c k
+roi	r o i
+rom	r o m
+rong	r o ng
+ru	r u
+rua	r u a
+run	r u n
+rung	r u ng
+ruốc	r u ố c
+ruồi	r u ồ i
+ruồng	r u ồ ng
+ruổi	r u ổ i
+ruỗng	r u ỗ ng
+ruộng	r u ộ ng
+ruột	r u ộ t
+rà	r à
+ràng	r à ng
+rành	r à nh
+rào	r à o
+rày	r à y
+rác	r á c
+rách	r á ch
+rái	r á i
+rán	r á n
+ráng	r á ng
+ráo	r á o
+ráp	r á p
+rát	r á t
+ráy	r á y
+râm	r â m
+rân	r â n
+râu	r â u
+rã	r ã
+rãi	r ã i
+rãnh	r ã nh
+rãy	r ã y
+rè	r è
+rèm	r è m
+rèn	r è n
+rèo	r è o
+rén	r é n
+réo	r é o
+rét	r é t
+rê	r ê
+rên	r ê n
+rêu	r ê u
+rì	r ì
+rìa	r ì a
+rình	r ì nh
+rìu	r ì u
+rích	r í ch
+rít	r í t
+ríu	r í u
+rò	r ò
+ròi	r ò i
+ròm	r ò m
+ròng	r ò ng
+ró	r ó
+róc	r ó c
+rói	r ó i
+rón	r ó n
+rót	r ó t
+rô	r ô
+rôm	r ô m
+rôn	r ô n
+rông	r ô ng
+rõ	r õ
+rùa	r ù a
+rùm	r ù m
+rùng	r ù ng
+rú	r ú
+rúc	r ú c
+rúm	r ú m
+rúng	r ú ng
+rút	r ú t
+răm	r ă m
+răn	r ă n
+răng	r ă ng
+rĩ	r ĩ
+rũ	r ũ
+rơ	r ơ
+rơi	r ơ i
+rơm	r ơ m
+rơn	r ơ n
+rưng	r ư ng
+rươi	r ư ơ i
+rước	r ư ớ c
+rưới	r ư ớ i
+rướm	r ư ớ m
+rười	r ư ờ i
+rưởi	r ư ở i
+rưỡi	r ư ỡ i
+rượi	r ư ợ i
+rượt	r ư ợ t
+rượu	r ư ợ u
+rạ	r ạ
+rạc	r ạ c
+rạch	r ạ ch
+rạn	r ạ n
+rạng	r ạ ng
+rạo	r ạ o
+rạp	r ạ p
+rạt	r ạ t
+rạy	r ạ y
+rả	r ả
+rải	r ả i
+rảnh	r ả nh
+rảo	r ả o
+rấn	r ấ n
+rấp	r ấ p
+rất	r ấ t
+rầm	r ầ m
+rần	r ầ n
+rầu	r ầ u
+rầy	r ầ y
+rẩy	r ẩ y
+rẫy	r ẫ y
+rậm	r ậ m
+rận	r ậ n
+rập	r ậ p
+rật	r ậ t
+rắc	r ắ c
+rắm	r ắ m
+rắn	r ắ n
+rắp	r ắ p
+rắt	r ắ t
+rằm	r ằ m
+rằn	r ằ n
+rằng	r ằ ng
+rặn	r ặ n
+rặng	r ặ ng
+rẹo	r ẹ o
+rẹt	r ẹ t
+rẻ	r ẻ
+rẽ	r ẽ
+rế	r ế
+rến	r ế n
+rết	r ế t
+rề	r ề
+rền	r ề n
+rể	r ể
+rễ	r ễ
+rệ	r ệ
+rệt	r ệ t
+rệu	r ệ u
+rỉ	r ỉ
+rỉa	r ỉ a
+rỉnh	r ỉ nh
+rịa	r ị a
+rịch	r ị ch
+rịn	r ị n
+rịt	r ị t
+rọ	r ọ
+rọc	r ọ c
+rọi	r ọ i
+rỏi	r ỏ i
+rốc	r ố c
+rối	r ố i
+rốn	r ố n
+rống	r ố ng
+rốp	r ố p
+rốt	r ố t
+rồ	r ồ
+rồi	r ồ i
+rồng	r ồ ng
+rổ	r ổ
+rỗ	r ỗ
+rỗi	r ỗ i
+rỗng	r ỗ ng
+rộ	r ộ
+rộc	r ộ c
+rộn	r ộ n
+rộng	r ộ ng
+rộp	r ộ p
+rớm	r ớ m
+rớt	r ớ t
+rờ	r ờ
+rời	r ờ i
+rờm	r ờ m
+rờn	r ờ n
+rởm	r ở m
+rỡ	r ỡ
+rỡn	r ỡ n
+rợ	r ợ
+rợi	r ợ i
+rợn	r ợ n
+rợp	r ợ p
+rục	r ụ c
+rụi	r ụ i
+rụng	r ụ ng
+rụt	r ụ t
+rủ	r ủ
+rủa	r ủ a
+rủi	r ủ i
+rủng	r ủ ng
+rức	r ứ c
+rứt	r ứ t
+rừng	r ừ ng
+rửa	r ử a
+rữa	r ữ a
+rựa	r ự a
+rực	r ự c
+s	s
+sa	s a
+sai	s a i
+sam	s a m
+san	s a n
+sang	s a ng
+sanh	s a nh
+sao	s a o
+sau	s a u
+say	s a y
+se	s e
+sen	s e n
+seo	s e o
+sex	s e x
+shop	s h o p
+si	s i
+sim	s i m
+sinh	s i nh
+siêng	s i ê ng
+siêu	s i ê u
+siết	s i ế t
+so	s o
+soi	s o i
+sol	s o l
+son	s o n
+song	s o ng
+soái	s o á i
+soát	s o á t
+soạn	s o ạ n
+soạng	s o ạ ng
+soạt	s o ạ t
+stress	s tr e s s
+studio	s t u d i o
+su	s u
+sum	s u m
+sun	s u n
+sung	s u ng
+suy	s u y
+suyển	s u y ể n
+suyễn	s u y ễ n
+suê	s u ê
+suôn	s u ô n
+suông	s u ô ng
+suýt	s u ý t
+suất	s u ấ t
+suối	s u ố i
+suốt	s u ố t
+sà	s à
+sài	s à i
+sàm	s à m
+sàn	s à n
+sàng	s à ng
+sành	s à nh
+sào	s à o
+sá	s á
+sác	s á c
+sách	s á ch
+sái	s á i
+sám	s á m
+sán	s á n
+sáng	s á ng
+sánh	s á nh
+sáo	s á o
+sáp	s á p
+sát	s á t
+sáu	s á u
+sâm	s â m
+sân	s â n
+sâu	s â u
+sãi	s ã i
+sèo	s è o
+séc	s é c
+sét	s é t
+sê	s ê
+sên	s ê n
+sênh	s ê nh
+sêu	s ê u
+sì	s ì
+sính	s í nh
+sò	s ò
+sòng	s ò ng
+sóc	s ó c
+sói	s ó i
+són	s ó n
+sóng	s ó ng
+sót	s ó t
+sô	s ô
+sôi	s ô i
+sông	s ô ng
+sõi	s õ i
+sùi	s ù i
+sùng	s ù ng
+sú	s ú
+súc	s ú c
+sún	s ú n
+súng	s ú ng
+súp	s ú p
+sút	s ú t
+súy	s ú y
+săm	s ă m
+săn	s ă n
+sĩ	s ĩ
+sũng	s ũ ng
+sơ	s ơ
+sơm	s ơ m
+sơn	s ơ n
+sư	s ư
+sưa	s ư a
+sưng	s ư ng
+sưu	s ư u
+sương	s ư ơ ng
+sướng	s ư ớ ng
+sướt	s ư ớ t
+sườn	s ư ờ n
+sường	s ư ờ ng
+sưởi	s ư ở i
+sượng	s ư ợ ng
+sượt	s ư ợ t
+sạc	s ạ c
+sạch	s ạ ch
+sạm	s ạ m
+sạn	s ạ n
+sạo	s ạ o
+sạp	s ạ p
+sạt	s ạ t
+sả	s ả
+sải	s ả i
+sản	s ả n
+sảng	s ả ng
+sảnh	s ả nh
+sảo	s ả o
+sảy	s ả y
+sấm	s ấ m
+sấp	s ấ p
+sấu	s ấ u
+sấy	s ấ y
+sầm	s ầ m
+sần	s ầ n
+sầu	s ầ u
+sẩn	s ẩ n
+sẩy	s ẩ y
+sẫm	s ẫ m
+sậm	s ậ m
+sập	s ậ p
+sắc	s ắ c
+sắm	s ắ m
+sắn	s ắ n
+sắng	s ắ ng
+sắp	s ắ p
+sắt	s ắ t
+sẵn	s ẵ n
+sặc	s ặ c
+sẹm	s ẹ m
+sẹo	s ẹ o
+sẻ	s ẻ
+sẻn	s ẻ n
+sẽ	s ẽ
+sếp	s ế p
+sếu	s ế u
+sề	s ề
+sền	s ề n
+sể	s ể
+sểnh	s ể nh
+sễ	s ễ
 sệ	s ệ
+sệt	s ệ t
+sỉ	s ỉ
+sịt	s ị t
+sọ	s ọ
+sọc	s ọ c
+sọm	s ọ m
+sọt	s ọ t
+sỏ	s ỏ
+sỏi	s ỏ i
+số	s ố
+sốc	s ố c
+sống	s ố ng
+sốt	s ố t
+sồ	s ồ
+sồi	s ồ i
+sồn	s ồ n
+sổ	s ổ
+sỗ	s ỗ
+sộ	s ộ
+sột	s ộ t
+sớ	s ớ
+sới	s ớ i
+sớm	s ớ m
+sớn	s ớ n
+sớt	s ớ t
+sờ	s ờ
+sờm	s ờ m
+sờn	s ờ n
+sở	s ở
+sởi	s ở i
+sởn	s ở n
+sỡ	s ỡ
+sợ	s ợ
+sợi	s ợ i
+sụ	s ụ
+sụa	s ụ a
+sục	s ụ c
+sụn	s ụ n
+sụp	s ụ p
+sụt	s ụ t
+sủa	s ủ a
+sủi	s ủ i
+sủng	s ủ ng
+sứ	s ứ
+sứa	s ứ a
+sức	s ứ c
+sứt	s ứ t
+sừng	s ừ ng
+sử	s ử
+sửa	s ử a
+sửng	s ử ng
+sửu	s ử u
+sữa	s ữ a
+sững	s ữ ng
+sự	s ự
+sực	s ự c
+sỹ	s ỹ
+t	t
+ta	t a
+tai	t a i
+tam	t a m
+tan	t a n
+tang	t a ng
+tanh	t a nh
+tao	t a o
+taxi	t a x i
+tay	t a y
+te	t e
+tem	t e m
+ten	t e n
+teo	t e o
+test	t e s t
+tha	th a
+thai	th a i
+tham	th a m
+than	th a n
+thang	th a ng
+thanh	th a nh
+thao	th a o
+thau	th a u
+thay	th a y
+the	th e
+then	th e n
+theo	th e o
+thi	th i
+thia	th i a
+thin	th i n
+thinh	th i nh
+thiu	th i u
+thiêm	th i ê m
+thiên	th i ê n
+thiêng	th i ê ng
+thiêu	th i ê u
+thiếc	th i ế c
+thiếp	th i ế p
+thiết	th i ế t
+thiếu	th i ế u
+thiềm	th i ề m
+thiền	th i ề n
+thiều	th i ề u
+thiển	th i ể n
+thiểu	th i ể u
+thiện	th i ệ n
+thiệp	th i ệ p
+thiệt	th i ệ t
+thiệu	th i ệ u
+tho	th o
+thoa	th o a
+thoang	th o a ng
+thoi	th o i
+thon	th o n
+thong	th o ng
+thoái	th o á i
+thoáng	th o á ng
+thoát	th o á t
+thoăn	th o ă n
+thoại	th o ạ i
+thoạt	th o ạ t
+thoả	th o ả
+thoải	th o ả i
+thoảng	th o ả ng
+thoắt	th o ắ t
+thu	th u
+thua	th u a
+thui	th u i
+thun	th u n
+thung	th u ng
+thuyên	th u y ê n
+thuyết	th u y ế t
+thuyền	th u y ề n
+thuê	th u ê
+thuôn	th u ô n
+thuấn	th u ấ n
+thuần	th u ầ n
+thuẫn	th u ẫ n
+thuận	th u ậ n
+thuật	th u ậ t
+thuế	th u ế
+thuốc	th u ố c
+thuồng	th u ồ ng
+thuộc	th u ộ c
+thuột	th u ộ t
+thuở	th u ở
+thuỳ	th u ỳ
+thuỷ	th u ỷ
+thà	th à
+thài	th à i
+thành	th à nh
+thào	th à o
+thày	th à y
+thác	th á c
+thách	th á ch
+thái	th á i
+thám	th á m
+thán	th á n
+tháng	th á ng
+thánh	th á nh
+tháo	th á o
+tháp	th á p
+thâm	th â m
+thân	th â n
+thâu	th â u
+thây	th â y
+thãi	th ã i
+thèm	th è m
+thèo	th è o
+thép	th é p
+thét	th é t
+thê	th ê
+thêm	th ê m
+thênh	th ê nh
+thêu	th ê u
+thì	th ì
+thìa	th ì a
+thìn	th ì n
+thình	th ì nh
+thìu	th ì u
+thí	th í
+thía	th í a
+thích	th í ch
+thím	th í m
+thín	th í n
+thính	th í nh
+thíp	th í p
+thít	th í t
+thò	th ò
+thòi	th ò i
+thòng	th ò ng
+thó	th ó
+thóa	th ó a
+thóc	th ó c
+thói	th ó i
+thóp	th ó p
+thót	th ó t
+thô	th ô
+thôi	th ô i
+thôn	th ô n
+thông	th ô ng
+thõng	th õ ng
+thù	th ù
+thùm	th ù m
+thùng	th ù ng
+thùy	th ù y
+thú	th ú
+thúc	th ú c
+thúng	th ú ng
+thút	th ú t
+thúy	th ú y
+thăm	th ă m
+thăn	th ă n
+thăng	th ă ng
+thũng	th ũ ng
+thơ	th ơ
+thơi	th ơ i
+thơm	th ơ m
+thư	th ư
+thưa	th ư a
+thương	th ư ơ ng
+thước	th ư ớ c
+thường	th ư ờ ng
+thưởng	th ư ở ng
+thưỡi	th ư ỡ i
+thưỡn	th ư ỡ n
+thược	th ư ợ c
+thượng	th ư ợ ng
+thượt	th ư ợ t
+thạc	th ạ c
+thạch	th ạ ch
+thạnh	th ạ nh
+thạo	th ạ o
+thả	th ả
+thải	th ả i
+thảm	th ả m
+thản	th ả n
+thảng	th ả ng
+thảnh	th ả nh
+thảo	th ả o
+thảy	th ả y
+thấm	th ấ m
+thấp	th ấ p
+thất	th ấ t
+thấu	th ấ u
+thấy	th ấ y
+thầm	th ầ m
+thần	th ầ n
+thầu	th ầ u
+thầy	th ầ y
+thẩm	th ẩ m
+thẩn	th ẩ n
+thẫm	th ẫ m
+thẫn	th ẫ n
+thậm	th ậ m
+thận	th ậ n
+thập	th ậ p
+thật	th ậ t
+thắc	th ắ c
+thắm	th ắ m
+thắn	th ắ n
+thắng	th ắ ng
+thắp	th ắ p
+thắt	th ắ t
+thằn	th ằ n
+thằng	th ằ ng
+thẳm	th ẳ m
+thẳng	th ẳ ng
+thẻ	th ẻ
+thế	th ế
+thếch	th ế ch
+thếp	th ế p
+thết	th ế t
+thề	th ề
+thềm	th ề m
+thều	th ề u
+thể	th ể
+thệ	th ệ
+thỉ	th ỉ
+thỉnh	th ỉ nh
+thỉu	th ỉ u
+thị	th ị
+thịch	th ị ch
+thịnh	th ị nh
+thịt	th ị t
+thịu	th ị u
+thọ	th ọ
+thọc	th ọ c
+thọt	th ọ t
+thỏ	th ỏ
+thỏa	th ỏ a
+thỏi	th ỏ i
+thỏm	th ỏ m
+thố	th ố
+thốc	th ố c
+thối	th ố i
+thốn	th ố n
+thống	th ố ng
+thốt	th ố t
+thồ	th ồ
+thồi	th ồ i
+thồn	th ồ n
+thổ	th ổ
+thổi	th ổ i
+thộp	th ộ p
+thớ	th ớ
+thới	th ớ i
+thớt	th ớ t
+thờ	th ờ
+thời	th ờ i
+thở	th ở
+thợ	th ợ
+thụ	th ụ
+thục	th ụ c
+thụng	th ụ ng
+thụp	th ụ p
+thụt	th ụ t
+thụy	th ụ y
+thủ	th ủ
+thủa	th ủ a
+thủi	th ủ i
+thủng	th ủ ng
+thủy	th ủ y
+thứ	th ứ
+thức	th ứ c
+thừ	th ừ
+thừa	th ừ a
+thừng	th ừ ng
+thử	th ử
+thửa	th ử a
+thững	th ữ ng
+thự	th ự
+thực	th ự c
+ti	t i
+tia	t i a
+tim	t i m
+tin	t i n
+tinh	t i nh
+tiu	t i u
+tivi	t i v i
+tiêm	t i ê m
+tiên	t i ê n
+tiêu	t i ê u
+tiếc	t i ế c
+tiếm	t i ế m
+tiến	t i ế n
+tiếng	t i ế ng
+tiếp	t i ế p
+tiết	t i ế t
+tiếu	t i ế u
+tiềm	t i ề m
+tiền	t i ề n
+tiều	t i ề u
+tiểu	t i ể u
+tiễn	t i ễ n
+tiễu	t i ễ u
+tiệc	t i ệ c
+tiệm	t i ệ m
+tiện	t i ệ n
+tiệp	t i ệ p
+tiệt	t i ệ t
+to	t o
+toa	t o a
+toan	t o a n
+toanh	t o a nh
+toe	t o e
+toi	t o i
+toilet	t o i l e t
+tom	t o m
+ton	t o n
+tong	t o ng
+top	t o p
+toà	t o à
+toài	t o à i
+toàn	t o à n
+toác	t o á c
+toái	t o á i
+toán	t o á n
+toát	t o á t
+toét	t o é t
+toạc	t o ạ c
+toại	t o ạ i
+toả	t o ả
+toản	t o ả n
+toẹt	t o ẹ t
+tr	tr
+tra	tr a
+trai	tr a i
+trang	tr a ng
+tranh	tr a nh
+trao	tr a o
+trau	tr a u
+tre	tr e
+treo	tr e o
+tri	tr i
+trinh	tr i nh
+triêng	tr i ê ng
+triết	tr i ế t
+triền	tr i ề n
+triềng	tr i ề ng
+triều	tr i ề u
+triển	tr i ể n
+triệng	tr i ệ ng
+triệt	tr i ệ t
+triệu	tr i ệ u
+tro	tr o
+trong	tr o ng
+tru	tr u
+trui	tr u i
+trung	tr u ng
+truy	tr u y
+truyền	tr u y ề n
+truyện	tr u y ệ n
+truân	tr u â n
+truật	tr u ậ t
+truồng	tr u ồ ng
+trà	tr à
+trài	tr à i
+tràm	tr à m
+tràn	tr à n
+tràng	tr à ng
+trành	tr à nh
+trào	tr à o
+trá	tr á
+trác	tr á c
+trách	tr á ch
+trái	tr á i
+trám	tr á m
+trán	tr á n
+tráng	tr á ng
+tránh	tr á nh
+tráo	tr á o
+tráp	tr á p
+trát	tr á t
+trâm	tr â m
+trân	tr â n
+trâu	tr â u
+trã	tr ã
+trãi	tr ã i
+trèo	tr è o
+trém	tr é m
+tréo	tr é o
+trê	tr ê
+trên	tr ê n
+trêu	tr ê u
+trì	tr ì
+trình	tr ì nh
+trìu	tr ì u
+trí	tr í
+trích	tr í ch
+trò	tr ò
+tròn	tr ò n
+tròng	tr ò ng
+tróc	tr ó c
+trói	tr ó i
+tróng	tr ó ng
+trót	tr ó t
+trôi	tr ô i
+trôm	tr ô m
+trông	tr ô ng
+trõn	tr õ n
+trù	tr ù
+trùi	tr ù i
+trùm	tr ù m
+trùn	tr ù n
+trùng	tr ù ng
+trú	tr ú
+trúc	tr ú c
+trúm	tr ú m
+trúng	tr ú ng
+trút	tr ú t
+trăm	tr ă m
+trăn	tr ă n
+trăng	tr ă ng
+trĩ	tr ĩ
+trĩu	tr ĩ u
+trũng	tr ũ ng
+trơ	tr ơ
+trơi	tr ơ i
+trơn	tr ơ n
+trư	tr ư
+trưa	tr ư a
+trưng	tr ư ng
+trương	tr ư ơ ng
+trước	tr ư ớ c
+trướng	tr ư ớ ng
+trườn	tr ư ờ n
+trường	tr ư ờ ng
+trưởng	tr ư ở ng
+trưỡng	tr ư ỡ ng
+trượt	tr ư ợ t
+trạc	tr ạ c
+trạch	tr ạ ch
+trại	tr ạ i
+trạm	tr ạ m
+trạng	tr ạ ng
+trả	tr ả
+trải	tr ả i
+trảng	tr ả ng
+trảo	tr ả o
+trảu	tr ả u
+trấn	tr ấ n
+trấu	tr ấ u
+trầm	tr ầ m
+trần	tr ầ n
+trầu	tr ầ u
+trầy	tr ầ y
+trẩy	tr ẩ y
+trẫm	tr ẫ m
+trận	tr ậ n
+trật	tr ậ t
+trắc	tr ắ c
+trắng	tr ắ ng
+trằn	tr ằ n
+trặc	tr ặ c
+trặn	tr ặ n
+trẹo	tr ẹ o
+trẻ	tr ẻ
+trẻo	tr ẻ o
+trẽn	tr ẽ n
+trếch	tr ế ch
+trề	tr ề
+trễ	tr ễ
+trệ	tr ệ
+trệt	tr ệ t
+trỉa	tr ỉ a
+trị	tr ị
+trịa	tr ị a
+trịch	tr ị ch
+trịnh	tr ị nh
+trịt	tr ị t
+trọ	tr ọ
+trọc	tr ọ c
+trọi	tr ọ i
+trọn	tr ọ n
+trọng	tr ọ ng
+trọt	tr ọ t
+trỏ	tr ỏ
+trối	tr ố i
+trốn	tr ố n
+trống	tr ố ng
+trồ	tr ồ
+trồi	tr ồ i
+trồng	tr ồ ng
+trổ	tr ổ
+trỗi	tr ỗ i
+trộ	tr ộ
+trội	tr ộ i
+trộm	tr ộ m
+trộn	tr ộ n
+trớ	tr ớ
+trớn	tr ớ n
+trớt	tr ớ t
+trờ	tr ờ
+trời	tr ờ i
+trở	tr ở
+trợ	tr ợ
+trợn	tr ợ n
+trợt	tr ợ t
+trụ	tr ụ
+trụa	tr ụ a
+trục	tr ụ c
+trụi	tr ụ i
+trụt	tr ụ t
+trụy	tr ụ y
+trứ	tr ứ
+trứng	tr ứ ng
+trừ	tr ừ
+trừng	tr ừ ng
+trửng	tr ử ng
+trữ	tr ữ
+trực	tr ự c
+ts	t s
+tu	t u
+tua	t u a
+tui	t u i
+tum	t u m
+tung	t u ng
+tuy	t u y
+tuyên	t u y ê n
+tuyến	t u y ế n
+tuyết	t u y ế t
+tuyền	t u y ề n
+tuyển	t u y ể n
+tuyệt	t u y ệ t
+tuân	t u â n
+tuôn	t u ô n
+tuông	t u ô ng
+tuý	t u ý
+tuýp	t u ý p
+tuýt	t u ý t
+tuấn	t u ấ n
+tuất	t u ấ t
+tuần	t u ầ n
+tuế	t u ế
+tuệ	t u ệ
+tuệch	t u ệ ch
+tuốt	t u ố t
+tuồn	t u ồ n
+tuồng	t u ồ ng
+tuổi	t u ổ i
+tuộc	t u ộ c
+tuột	t u ộ t
+tuỳ	t u ỳ
+tuỵ	t u ỵ
+ty	t y
+tà	t à
+tài	t à i
+tàn	t à n
+tàng	t à ng
+tành	t à nh
+tào	t à o
+tàu	t à u
+tày	t à y
+tá	t á
+tác	t á c
+tách	t á ch
+tái	t á i
+tám	t á m
+tán	t á n
+táng	t á ng
+tánh	t á nh
+táo	t á o
+táp	t á p
+tát	t á t
+táy	t á y
+tâm	t â m
+tân	t â n
+tâng	t â ng
+tây	t â y
+tã	t ã
+tãi	t ã i
+tè	t è
+tèn	t è n
+té	t é
+téc	t é c
+tém	t é m
+tén	t é n
+tép	t é p
+tét	t é t
+tê	t ê
+tên	t ê n
+tì	t ì
+tìm	t ì m
+tình	t ì nh
+tí	t í
+tía	t í a
+tích	t í ch
+tím	t í m
+tín	t í n
+tính	t í nh
+típ	t í p
+tít	t í t
+tíu	t í u
+tò	t ò
+tòa	t ò a
+tòe	t ò e
+tòi	t ò i
+tòm	t ò m
+tòng	t ò ng
+tóc	t ó c
+tóe	t ó e
+tóm	t ó m
+tóp	t ó p
+tót	t ó t
+tô	t ô
+tôi	t ô i
+tôm	t ô m
+tôn	t ô n
+tông	t ô ng
+tù	t ù
+tùa	t ù a
+tùng	t ù ng
+tùy	t ù y
+tú	t ú
+túa	t ú a
+túc	t ú c
+túi	t ú i
+túm	t ú m
+túng	t ú ng
+túp	t ú p
+tút	t ú t
+túy	t ú y
+tý	t ý
+tăm	t ă m
+tăn	t ă n
+tăng	t ă ng
+tĩnh	t ĩ nh
+tĩu	t ĩ u
+tũm	t ũ m
+tơ	t ơ
+tơi	t ơ i
+tư	t ư
+tưa	t ư a
+tưng	t ư ng
+tươi	t ư ơ i
+tươm	t ư ơ m
+tương	t ư ơ ng
+tước	t ư ớ c
+tưới	t ư ớ i
+tướng	t ư ớ ng
+tườm	t ư ờ m
+tường	t ư ờ ng
+tườu	t ư ờ u
+tưởi	t ư ở i
+tưởng	t ư ở ng
+tược	t ư ợ c
+tượng	t ư ợ ng
+tượp	t ư ợ p
+tạ	t ạ
+tạc	t ạ c
+tạch	t ạ ch
+tại	t ạ i
+tạm	t ạ m
+tạng	t ạ ng
+tạo	t ạ o
+tạp	t ạ p
+tạt	t ạ t
+tả	t ả
+tải	t ả i
+tản	t ả n
+tảng	t ả ng
+tảo	t ả o
+tấc	t ấ c
+tấm	t ấ m
+tấn	t ấ n
+tấp	t ấ p
+tất	t ấ t
+tấu	t ấ u
+tấy	t ấ y
+tầm	t ầ m
+tần	t ầ n
+tầng	t ầ ng
+tầy	t ầ y
+tẩm	t ẩ m
+tẩn	t ẩ n
+tẩu	t ẩ u
+tẩy	t ẩ y
+tậm	t ậ m
+tận	t ậ n
+tập	t ậ p
+tật	t ậ t
+tậu	t ậ u
+tắc	t ắ c
+tắm	t ắ m
+tắn	t ắ n
+tắp	t ắ p
+tắt	t ắ t
+tằm	t ằ m
+tằn	t ằ n
+tẳn	t ẳ n
+tặc	t ặ c
+tặn	t ặ n
+tặng	t ặ ng
+tẹo	t ẹ o
+tẹp	t ẹ p
+tẻ	t ẻ
+tế	t ế
+tết	t ế t
+tếu	t ế u
+tề	t ề
+tể	t ể
+tễ	t ễ
+tễnh	t ễ nh
+tệ	t ệ
+tệp	t ệ p
+tỉ	t ỉ
+tỉa	t ỉ a
+tỉm	t ỉ m
+tỉnh	t ỉ nh
+tị	t ị
+tịch	t ị ch
+tịnh	t ị nh
+tọa	t ọ a
+tọc	t ọ c
+tọp	t ọ p
+tỏ	t ỏ
+tỏa	t ỏ a
+tỏi	t ỏ i
+tố	t ố
+tốc	t ố c
+tối	t ố i
+tốn	t ố n
+tống	t ố ng
+tốp	t ố p
+tốt	t ố t
+tồi	t ồ i
+tồn	t ồ n
+tổ	t ổ
+tổn	t ổ n
+tổng	t ổ ng
+tộc	t ộ c
+tội	t ộ i
+tột	t ộ t
+tớ	t ớ
+tới	t ớ i
+tớn	t ớ n
+tờ	t ờ
+tởm	t ở m
+tợ	t ợ
+tợn	t ợ n
+tợp	t ợ p
+tụ	t ụ
+tục	t ụ c
+tụi	t ụ i
+tụm	t ụ m
+tụng	t ụ ng
+tụt	t ụ t
+tụy	t ụ y
+tủ	t ủ
+tủa	t ủ a
+tủi	t ủ i
+tủm	t ủ m
+tủn	t ủ n
+tủy	t ủ y
+tứ	t ứ
+tức	t ứ c
+từ	t ừ
+từng	t ừ ng
+tử	t ử
+tửa	t ử a
+tửng	t ử ng
+tửu	t ử u
+tự	t ự
+tựa	t ự a
+tựu	t ự u
+tỳ	t ỳ
+tỵ	t ỵ
+tỷ	t ỷ
+u	u
+um	u m
+ung	u ng
+usd	u s d
+uy	u y
+uyên	u y ê n
+uyển	u y ể n
+uất	u ấ t
+uẩn	u ẩ n
+uế	u ế
+uể	u ể
+uốn	u ố n
+uống	u ố ng
+uổng	u ổ ng
+uột	u ộ t
+uỵch	u ỵ ch
+uỷ	u ỷ
+v	v
+va	v a
+vai	v a i
+vali	v a l i
+van	v a n
+vang	v a ng
+vanh	v a nh
+vao	v a o
+vay	v a y
+ve	v e
+ven	v e n
+veo	v e o
+vi	v i
+video	v i d e o
+vin	v i n
+vinh	v i nh
+virus	v i r u s
+visa	v i s a
+viêm	v i ê m
+viên	v i ê n
+viếng	v i ế ng
+viết	v i ế t
+viền	v i ề n
+viển	v i ể n
+viễn	v i ễ n
+việc	v i ệ c
+viện	v i ệ n
+việt	v i ệ t
+vo	v o
+voan	v o a n
+voi	v o i
+von	v o n
+vong	v o ng
+voọc	v o ọ c
+vu	v u
+vua	v u a
+vui	v u i
+vun	v u n
+vung	v u ng
+vuông	v u ô ng
+vuốt	v u ố t
+vuột	v u ộ t
+vy	v y
+và	v à
+vài	v à i
+vàm	v à m
+vàn	v à n
+vàng	v à ng
+vành	v à nh
+vào	v à o
+vày	v à y
+vá	v á
+vác	v á c
+vách	v á ch
+vái	v á i
+ván	v á n
+váng	v á ng
+vánh	v á nh
+vát	v á t
+váy	v á y
+vân	v â n
+vâng	v â ng
+vây	v â y
+vã	v ã
+vãi	v ã i
+vãn	v ã n
+vãng	v ã ng
+vãnh	v ã nh
+vèo	v è o
+vé	v é
+vén	v é n
+véo	v é o
+vét	v é t
+vê	v ê
+vên	v ê n
+vênh	v ê nh
+vì	v ì
+ví	v í
+vía	v í a
+vít	v í t
+víu	v í u
+vò	v ò
+vòi	v ò i
+vòm	v ò m
+vòng	v ò ng
+vó	v ó
+vóc	v ó c
+vón	v ó n
+vót	v ó t
+vô	v ô
+vôi	v ô i
+vông	v ô ng
+võ	v õ
+võng	v õ ng
+vù	v ù
+vùi	v ù i
+vùn	v ù n
+vùng	v ù ng
+vú	v ú
+vút	v ú t
+văn	v ă n
+văng	v ă ng
+vĩ	v ĩ
+vĩnh	v ĩ nh
+vũ	v ũ
+vũng	v ũ ng
+vơ	v ơ
+vơi	v ơ i
+vươn	v ư ơ n
+vương	v ư ơ ng
+vướng	v ư ớ ng
+vườn	v ư ờ n
+vưởng	v ư ở ng
+vượng	v ư ợ ng
+vượt	v ư ợ t
+vạ	v ạ
+vạc	v ạ c
+vạch	v ạ ch
+vại	v ạ i
+vạm	v ạ m
+vạn	v ạ n
+vạt	v ạ t
+vả	v ả
+vải	v ả i
+vảng	v ả ng
+vảy	v ả y
+vấn	v ấ n
+vấp	v ấ p
+vất	v ấ t
+vấu	v ấ u
+vấy	v ấ y
+vần	v ầ n
+vầng	v ầ ng
+vầy	v ầ y
+vẩn	v ẩ n
+vẩy	v ẩ y
+vẫn	v ẫ n
+vẫy	v ẫ y
+vận	v ậ n
+vật	v ậ t
+vậy	v ậ y
+vắc	v ắ c
+vắn	v ắ n
+vắng	v ắ ng
+vắt	v ắ t
+vằn	v ằ n
+vằng	v ằ ng
+vẳng	v ẳ ng
+vặc	v ặ c
+vặn	v ặ n
+vặt	v ặ t
+vẹn	v ẹ n
+vẹo	v ẹ o
+vẹt	v ẹ t
+vẻ	v ẻ
+vẽ	v ẽ
+vế	v ế
+vếch	v ế ch
+vết	v ế t
+về	v ề
+vệ	v ệ
+vện	v ệ n
+vệt	v ệ t
+vỉ	v ỉ
+vỉa	v ỉ a
+vị	v ị
+vịm	v ị m
+vịn	v ị n
+vịnh	v ị nh
+vịt	v ị t
+vọng	v ọ ng
+vọt	v ọ t
+vỏ	v ỏ
+vỏn	v ỏ n
+vố	v ố
+vối	v ố i
+vốn	v ố n
+vồ	v ồ
+vồn	v ồ n
+vồng	v ồ ng
+vỗ	v ỗ
+vội	v ộ i
+vớ	v ớ
+với	v ớ i
+vớt	v ớ t
+vờ	v ờ
+vời	v ờ i
+vờn	v ờ n
+vở	v ở
+vởn	v ở n
+vỡ	v ỡ
+vợ	v ợ
+vợi	v ợ i
+vợt	v ợ t
+vụ	v ụ
+vụn	v ụ n
+vụng	v ụ ng
+vụt	v ụ t
+vức	v ứ c
+vứt	v ứ t
+vừa	v ừ a
+vừng	v ừ ng
+vửng	v ử ng
+vữa	v ữ a
+vững	v ữ ng
+vực	v ự c
+vựng	v ự ng
+x	x
+xa	x a
+xang	x a ng
+xanh	x a nh
+xao	x a o
+xay	x a y
+xe	x e
+xem	x e m
+xen	x e n
+xeo	x e o
+xhcn	x h c n
+xi	x i
+xia	x i a
+xin	x i n
+xinh	x i nh
+xiêm	x i ê m
+xiên	x i ê n
+xiêu	x i ê u
+xiếc	x i ế c
+xiết	x i ế t
+xiềng	x i ề ng
+xo	x o
+xoa	x o a
+xoan	x o a n
+xoang	x o a ng
+xoay	x o a y
+xoe	x o e
+xoen	x o e n
+xoi	x o i
+xom	x o m
+xon	x o n
+xong	x o ng
+xoong	x o o ng
+xoài	x o à i
+xoàn	x o à n
+xoàng	x o à ng
+xoá	x o á
+xoáy	x o á y
+xoè	x o è
+xoèn	x o è n
+xoét	x o é t
+xoăn	x o ă n
+xoạc	x o ạ c
+xoảng	x o ả ng
+xoắn	x o ắ n
+xoẹt	x o ẹ t
+xu	x u
+xua	x u a
+xui	x u i
+xum	x u m
+xung	x u ng
+xuyên	x u y ê n
+xuyến	x u y ế n
+xuân	x u â n
+xuê	x u ê
+xuôi	x u ô i
+xuýt	x u ý t
+xuất	x u ấ t
+xuẩn	x u ẩ n
+xuể	x u ể
+xuống	x u ố ng
+xuồng	x u ồ ng
+xy	x y
+xà	x à
+xài	x à i
+xàm	x à m
+xàng	x à ng
+xào	x à o
+xá	x á
+xác	x á c
+xách	x á ch
+xám	x á m
+xán	x á n
+xáo	x á o
+xát	x á t
+xâm	x â m
+xâu	x â u
+xây	x â y
+xã	x ã
+xè	x è
+xèng	x è ng
+xèo	x è o
+xé	x é
+xém	x é m
+xén	x é n
+xéo	x é o
+xét	x é t
+xê	x ê
+xênh	x ê nh
+xì	x ì
+xình	x ì nh
+xìu	x ì u
+xí	x í
+xích	x í ch
+xính	x í nh
+xít	x í t
+xíu	x í u
+xòa	x ò a
+xòe	x ò e
+xòng	x ò ng
+xó	x ó
+xóa	x ó a
+xóc	x ó c
+xói	x ó i
+xóm	x ó m
+xót	x ó t
+xô	x ô
+xôi	x ô i
+xôm	x ô m
+xôn	x ô n
+xông	x ô ng
+xõa	x õ a
+xù	x ù
+xùm	x ù m
+xú	x ú
+xúc	x ú c
+xúm	x ú m
+xúng	x ú ng
+xúy	x ú y
+xăm	x ă m
+xăng	x ă ng
+xơ	x ơ
+xơi	x ơ i
+xưa	x ư a
+xưng	x ư ng
+xương	x ư ơ ng
+xước	x ư ớ c
+xướng	x ư ớ ng
+xưởng	x ư ở ng
+xạ	x ạ
+xạc	x ạ c
+xạch	x ạ ch
+xạo	x ạ o
+xạp	x ạ p
+xả	x ả
+xảm	x ả m
+xảo	x ả o
+xảy	x ả y
+xấp	x ấ p
+xấu	x ấ u
+xẩm	x ẩ m
+xẩy	x ẩ y
+xập	x ậ p
+xắc	x ắ c
+xắn	x ắ n
+xắp	x ắ p
+xắt	x ắ t
+xẵng	x ẵ ng
+xẹo	x ẹ o
+xẹp	x ẹ p
+xẻ	x ẻ
+xẻng	x ẻ ng
+xẻo	x ẻ o
+xế	x ế
+xếch	x ế ch
+xếp	x ế p
+xềnh	x ề nh
+xể	x ể
+xệ	x ệ
+xệch	x ệ ch
+xỉ	x ỉ
+xỉa	x ỉ a
+xỉn	x ỉ n
+xỉnh	x ỉ nh
+xỉu	x ỉ u
+xị	x ị
+xịch	x ị ch
+xịn	x ị n
+xịt	x ị t
+xọc	x ọ c
+xọp	x ọ p
+xỏ	x ỏ
+xốc	x ố c
+xối	x ố i
+xốn	x ố n
+xống	x ố ng
+xốp	x ố p
+xồng	x ồ ng
+xổ	x ổ
+xổi	x ổ i
+xổm	x ổ m
+xổng	x ổ ng
+xộc	x ộ c
+xộn	x ộ n
+xới	x ớ i
+xớt	x ớ t
+xở	x ở
+xởi	x ở i
+xợt	x ợ t
+xụ	x ụ
+xục	x ụ c
+xụi	x ụ i
+xụp	x ụ p
+xứ	x ứ
+xứng	x ứ ng
+xử	x ử
+xửa	x ử a
+xửng	x ử ng
+y	y
+yoga	y o g a
+yên	y ê n
+yêng	y ê ng
+yêu	y ê u
+yếm	y ế m
+yến	y ế n
+yết	y ế t
+yếu	y ế u
+yểm	y ể m
+yểu	y ể u
+à	à
+ào	à o
+á	á
+ác	á c
+ách	á ch
+ái	á i
+ám	á m
+án	á n
+áng	á ng
+ánh	á nh
+áo	á o
+áp	á p
+át	á t
+áy	á y
+âm	â m
+ân	â n
+âu	â u
+ây	â y
+ã	ã
+è	è
+èo	è o
+é	é
+én	é n
+éo	é o
+ép	é p
+ê	ê
+êm	ê m
+ì	ì
+ình	ì nh
+í	í
+ích	í ch
+ín	í n
+ít	í t
+òa	ò a
+òng	ò ng
+ó	ó
+óc	ó c
+óe	ó e
+ói	ó i
+óng	ó ng
+ô	ô
+ôi	ô i
+ôm	ô m
+ôn	ô n
+ông	ô ng
+ôtô	ô t ô
+ù	ù
+ùa	ù a
+ùn	ù n
+ùng	ù ng
+ú	ú
+úa	ú a
+úc	ú c
+úm	ú m
+úng	ú ng
+úp	ú p
+út	ú t
+úy	ú y
+ý	ý
+ăm	ă m
+ăn	ă n
+ăng	ă ng
+đ	đ
+đa	đ a
+đai	đ a i
+đam	đ a m
+đan	đ a n
+đang	đ a ng
+đanh	đ a nh
+đao	đ a o
+đau	đ a u
+đay	đ a y
+đe	đ e
+đem	đ e m
+đen	đ e n
+đeo	đ e o
+đi	đ i
+đia	đ i a
+đicr	đ i c r
+đigiúp	đ i gi ú p
+đinh	đ i nh
+điên	đ i ê n
+điêu	đ i ê u
+điếc	đ i ế c
+điếm	đ i ế m
+điếu	đ i ế u
+điềm	đ i ề m
+điền	đ i ề n
+điều	đ i ề u
+điểm	đ i ể m
+điển	đ i ể n
+điểu	đ i ể u
+điệm	đ i ệ m
+điện	đ i ệ n
+điệp	đ i ệ p
+điệu	đ i ệ u
+đo	đ o
+đoan	đ o a n
+đom	đ o m
+đong	đ o ng
+đoài	đ o à i
+đoàn	đ o à n
+đoàng	đ o à ng
+đoái	đ o á i
+đoán	đ o á n
+đoạn	đ o ạ n
+đoạt	đ o ạ t
+đoản	đ o ả n
+đoảng	đ o ả ng
+đt	đ t
+đu	đ u
+đua	đ u a
+đui	đ u i
+đun	đ u n
+đung	đ u ng
+đuôi	đ u ô i
+đuốc	đ u ố c
+đuối	đ u ố i
+đuổi	đ u ổ i
+đuột	đ u ộ t
+đà	đ à
+đài	đ à i
+đàm	đ à m
+đàn	đ à n
+đàng	đ à ng
+đành	đ à nh
+đào	đ à o
+đày	đ à y
+đá	đ á
+đác	đ á c
+đái	đ á i
+đám	đ á m
+đán	đ á n
+đáng	đ á ng
+đánh	đ á nh
+đáo	đ á o
+đáp	đ á p
+đáu	đ á u
+đáy	đ á y
+đâm	đ â m
+đâu	đ â u
+đây	đ â y
+đã	đ ã
+đãi	đ ã i
+đãng	đ ã ng
+đè	đ è
+đèn	đ è n
+đèo	đ è o
+đéc	đ é c
+đéo	đ é o
+đét	đ é t
+đê	đ ê
+đêm	đ ê m
+đênh	đ ê nh
+đêu	đ ê u
+đìa	đ ì a
+đình	đ ì nh
+đìu	đ ì u
+đích	đ í ch
+đính	đ í nh
+đít	đ í t
+đò	đ ò
+đòi	đ ò i
+đòm	đ ò m
+đòn	đ ò n
+đòng	đ ò ng
+đó	đ ó
+đóa	đ ó a
+đói	đ ó i
+đóm	đ ó m
+đón	đ ó n
+đóng	đ ó ng
+đô	đ ô
+đôi	đ ô i
+đôn	đ ô n
+đông	đ ô ng
+đùa	đ ù a
+đùi	đ ù i
+đùm	đ ù m
+đùng	đ ù ng
+đú	đ ú
+đúc	đ ú c
+đúm	đ ú m
+đúng	đ ú ng
+đúp	đ ú p
+đút	đ ú t
+đăng	đ ă ng
+đĩ	đ ĩ
+đĩa	đ ĩ a
+đĩnh	đ ĩ nh
+đũa	đ ũ a
+đũng	đ ũ ng
+đơ	đ ơ
+đơm	đ ơ m
+đơn	đ ơ n
+đưa	đ ư a
+đương	đ ư ơ ng
+đước	đ ư ớ c
+đường	đ ư ờ ng
+được	đ ư ợ c
+đượm	đ ư ợ m
+đạc	đ ạ c
+đạch	đ ạ ch
+đại	đ ạ i
+đạm	đ ạ m
+đạn	đ ạ n
+đạo	đ ạ o
+đạp	đ ạ p
+đạt	đ ạ t
+đả	đ ả
+đảm	đ ả m
+đản	đ ả n
+đảng	đ ả ng
+đảo	đ ả o
+đấm	đ ấ m
+đấng	đ ấ ng
+đất	đ ấ t
+đấu	đ ấ u
+đấy	đ ấ y
+đầm	đ ầ m
+đần	đ ầ n
+đầu	đ ầ u
+đầy	đ ầ y
+đẩu	đ ẩ u
+đẩy	đ ẩ y
+đẫm	đ ẫ m
+đẫy	đ ẫ y
+đậm	đ ậ m
+đận	đ ậ n
+đập	đ ậ p
+đật	đ ậ t
+đậu	đ ậ u
+đậy	đ ậ y
+đắc	đ ắ c
+đắm	đ ắ m
+đắn	đ ắ n
+đắng	đ ắ ng
+đắp	đ ắ p
+đắt	đ ắ t
+đằm	đ ằ m
+đằng	đ ằ ng
+đẳng	đ ẳ ng
+đẵng	đ ẵ ng
+đặc	đ ặ c
+đặn	đ ặ n
+đặng	đ ặ ng
+đặt	đ ặ t
+đẹp	đ ẹ p
+đẻ	đ ẻ
+đẽ	đ ẽ
+đẽo	đ ẽ o
+đế	đ ế
+đếm	đ ế m
+đến	đ ế n
+đề	đ ề
+đềm	đ ề m
+đền	đ ề n
+đềnh	đ ề nh
+đều	đ ề u
+để	đ ể
+đểnh	đ ể nh
+đểu	đ ể u
+đễ	đ ễ
+đễnh	đ ễ nh
+đệ	đ ệ
+đệm	đ ệ m
+đỉnh	đ ỉ nh
+địa	đ ị a
+địch	đ ị ch
+định	đ ị nh
+địu	đ ị u
+đọ	đ ọ
+đọa	đ ọ a
+đọc	đ ọ c
+đọng	đ ọ ng
+đỏ	đ ỏ
+đố	đ ố
+đốc	đ ố c
+đối	đ ố i
+đốm	đ ố m
+đốn	đ ố n
+đống	đ ố ng
+đốt	đ ố t
+đồ	đ ồ
+đồi	đ ồ i
+đồn	đ ồ n
+đồng	đ ồ ng
+đổ	đ ổ
+đổi	đ ổ i
+đổng	đ ổ ng
+đỗ	đ ỗ
+đỗi	đ ỗ i
+độ	đ ộ
+độc	đ ộ c
+đội	đ ộ i
+độn	đ ộ n
+động	đ ộ ng
+độp	đ ộ p
+đột	đ ộ t
+đới	đ ớ i
+đớn	đ ớ n
+đớp	đ ớ p
+đờ	đ ờ
+đời	đ ờ i
+đờm	đ ờ m
+đờn	đ ờ n
+đỡ	đ ỡ
+đợi	đ ợ i
+đợp	đ ợ p
+đợt	đ ợ t
+đục	đ ụ c
+đụn	đ ụ n
+đụng	đ ụ ng
+đủ	đ ủ
+đủi	đ ủ i
+đủng	đ ủ ng
+đứa	đ ứ a
+đức	đ ứ c
+đứng	đ ứ ng
+đứt	đ ứ t
+đừng	đ ừ ng
+đựng	đ ự ng
+ĩ	ĩ
+ơ	ơ
+ơi	ơ i
+ơn	ơ n
+ư	ư
+ưa	ư a
+ưng	ư ng
+ưu	ư u
+ươi	ư ơ i
+ươm	ư ơ m
+ươn	ư ơ n
+ương	ư ơ ng
+ước	ư ớ c
+ướm	ư ớ m
+ướp	ư ớ p
+ướt	ư ớ t
+ưỡn	ư ỡ n
+ạ	ạ
+ạch	ạ ch
+ạt	ạ t
+ả	ả
+ải	ả i
+ảm	ả m
+ảnh	ả nh
+ảo	ả o
+ấm	ấ m
+ấn	ấ n
+ấp	ấ p
+ất	ấ t
+ấu	ấ u
+ấy	ấ y
+ầm	ầ m
+ầu	ầ u
+ẩm	ẩ m
+ẩn	ẩ n
+ẩu	ẩ u
+ậm	ậ m
+ập	ậ p
+ắc	ắ c
+ắng	ắ ng
+ắp	ắ p
+ắt	ắ t
+ằng	ằ ng
+ẵm	ẵ m
+ặc	ặ c
+ẹp	ẹ p
+ẻn	ẻ n
+ế	ế
+ếch	ế ch
+ềnh	ề nh
+ệ	ệ
+ệch	ệ ch
+ện	ệ n
+ỉ	ỉ
+ỉa	ỉ a
+ỉm	ỉ m
+ỉn	ỉ n
+ỉu	ỉ u
+ị	ị
+ịch	ị ch
+ọc	ọ c
+ọe	ọ e
+ọp	ọ p
+ỏi	ỏ i
+ỏn	ỏ n
+ỏng	ỏ ng
+ố	ố
+ốc	ố c
+ối	ố i
+ốm	ố m
+ống	ố ng
+ốp	ố p
+ốt	ố t
+ồ	ồ
+ồn	ồ n
+ồng	ồ ng
+ổ	ổ
+ổi	ổ i
+ổn	ổ n
+ổng	ổ ng
+ộc	ộ c
+ộn	ộ n
+ộp	ộ p
+ớ	ớ
+ới	ớ i
+ớn	ớ n
+ớt	ớ t
+ờ	ờ
+ở	ở
+ỡm	ỡ m
+ợ	ợ
+ụ	ụ
+ục	ụ c
+ủ	ủ
+ủa	ủ a
+ủi	ủ i
+ủn	ủ n
+ủng	ủ ng
+ủy	ủ y
+ứ	ứ
+ứa	ứ a
+ức	ứ c
+ứng	ứ ng
+ừ	ừ
+ửng	ử ng
+ỷ	ỷ

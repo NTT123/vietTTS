@@ -13,10 +13,10 @@ parser = ArgumentParser()
 parser.add_argument('-o', '--output-dir', type=Path, required=True)
 args = parser.parse_args()
 
-files = sorted(FLAGS.data_dir.glob('*.TextGrid'))
+files = sorted(FLAGS.data_dir.glob('*/*.TextGrid'))
 for fn in tqdm(files):
   tg = TextGrid.fromFile(str(fn.resolve()))
-  wav_fn = FLAGS.data_dir / f'{fn.stem}.wav'
+  wav_fn = fn.parent / f'{fn.stem}.wav'
   sr, y = wavfile.read(wav_fn)
   y = np.copy(y)
   for phone in tg[1]:

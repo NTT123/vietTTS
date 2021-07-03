@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = '0.3.1'
+__version__ = '0.4.0'
 url = 'https://github.com/ntt123/vietTTS'
 
 install_requires = ['tabulate', 'optax', 'jax', 'jaxlib', 'einops', 'librosa',
@@ -13,7 +13,6 @@ setup(
     version=__version__,
     description='A vietnamese text-to-speech system.',
     author='ntt123',
-    author_email='xcodevn@gmail.com',
     url=url,
     keywords=['text-to-speech', 'tts', 'deep-learning', 'dm-haiku', 'jax', 'vietnamese', 'speech-synthesis'],
     install_requires=install_requires,
