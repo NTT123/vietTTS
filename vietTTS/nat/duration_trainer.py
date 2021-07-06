@@ -3,6 +3,11 @@ import os
 from functools import partial
 from typing import Deque
 
+import jax.tools.colab_tpu
+
+if 'COLAB_TPU_ADDR' in os.environ:
+  jax.tools.colab_tpu.setup_tpu()
+
 import haiku as hk
 import jax
 import jax.numpy as jnp
