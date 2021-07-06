@@ -101,13 +101,23 @@ def train():
   num_devices = jax.local_device_count()
   print('Num devices:', num_devices)
 
+  # use bf16 for BatchNorm.
+  mp_policy = get_policy()
+  bn_policy = get_bn_policy().with_output_dtype(mp_policy.compute_dtype)
+  # NOTE: The order we call `set_policy` doesn't matter, when a method on a
+  # class is called the policy for that class will be applied, or it will
+  # inherit the policy from its parent module.
+  hk.mixed_precision.set_policy(hk.BatchNorm, bn_policy)
+  hk.mixed_precision.set_policy(DurationModel, mp_policy)
+
   def move_data_to_device(batch):
     batch = jax.tree_map(lambda x: jnp.reshape(x, (num_devices, x.shape[0]//num_devices) + x.shape[1:]), batch)
     return batch
 
   if latest_ckpt is not None:
-    last_step, params, aux, rng, optim_state = jax.tree_map(
-        lambda x: jnp.broadcast_to(x, (num_devices,) + x.shape), latest_ckpt)
+    last_step = latest_ckpt[0]
+    params, aux, rng, optim_state = jax.tree_map(
+        lambda x: jnp.broadcast_to(x, (num_devices,) + x.shape), latest_ckpt[1:])
   else:
     last_step = -1
     print('Generate random initial states...')
