@@ -102,7 +102,7 @@ def train():
     losses.append(loss)
 
     if step % 10 == 0:
-      val_loss, aux = val_loss_fn(params, aux, rng, next(val_data_iter))
+      val_loss, _ = val_loss_fn(params, aux, rng, next(val_data_iter))
       val_losses.append(val_loss)
 
     if step % 1000 == 0:
