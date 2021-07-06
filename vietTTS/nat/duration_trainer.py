@@ -1,4 +1,3 @@
-import functools
 import os
 from functools import partial
 from typing import Deque
@@ -24,8 +23,6 @@ from .model import DurationModel
 from .utils import load_latest_ckpt, print_flags, save_ckpt
 
 print(jax.devices())
-
-
 def get_policy(): return jmp.get_policy(FLAGS.mp_policy)
 def get_bn_policy(): return jmp.get_policy(FLAGS.mp_bn_policy)
 
@@ -61,7 +58,7 @@ optimizer = optax.chain(
 )
 
 
-@functools.partial(jax.pmap, axis_name='i')
+@partial(jax.pmap, axis_name='i')
 def update(params, aux, rng, optim_state, inputs: DurationInput):
   rng, new_rng = jax.random.split(rng)
   grads, (loss, new_aux) = jax.grad(loss_fn, has_aux=True)(params, aux, rng, inputs)
@@ -127,6 +124,7 @@ def train():
     last_step = -1
     print('Generate random initial states...')
     params, aux, rng, optim_state = jax.pmap(initial_state, axis_name='i')(move_data_to_device(next(train_data_iter)))
+
   tr = tqdm(range(last_step + 1, 1 + FLAGS.num_training_steps),
             total=1 + FLAGS.num_training_steps,
             initial=last_step + 1,

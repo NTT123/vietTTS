@@ -1,10 +1,17 @@
+import os
 import pickle
 from functools import partial
 from typing import Deque
 
+import jax.tools.colab_tpu
+
+if 'COLAB_TPU_ADDR' in os.environ:
+  jax.tools.colab_tpu.setup_tpu()
+
 import haiku as hk
 import jax
 import jax.numpy as jnp
+import jmp
 import matplotlib.pyplot as plt
 import optax
 from tqdm.auto import tqdm
@@ -15,6 +22,10 @@ from .data_loader import load_textgrid_wav
 from .dsp import MelFilter
 from .model import AcousticModel
 from .utils import print_flags
+
+print(jax.devices())
+def get_policy(): return jmp.get_policy(FLAGS.mp_policy)
+def get_bn_policy(): return jmp.get_policy(FLAGS.mp_bn_policy)
 
 
 @hk.transform_with_state
@@ -38,13 +49,14 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   loss = jnp.mean((loss1 + loss2)/2, axis=-1)
   mask = jnp.arange(0, L)[None, :] < (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
   loss = jnp.sum(loss * mask) / jnp.sum(mask)
-  return (loss, new_aux) if is_training else (loss, new_aux, mel2_hat, mels)
+  if is_training:
+    return loss, (loss, new_aux)
+  else:
+    return (loss, new_aux, mel2_hat, mels)
 
 
 train_loss_fn = partial(loss_fn, is_training=True)
-val_loss_fn = jax.jit(partial(loss_fn, is_training=False))
-
-loss_vag = jax.value_and_grad(train_loss_fn, has_aux=True)
+val_loss_fn = jax.pmap(partial(loss_fn, is_training=False), axis_name='i')
 
 optimizer = optax.chain(
     optax.clip_by_global_norm(1.0),
@@ -52,12 +64,19 @@ optimizer = optax.chain(
 )
 
 
-@jax.jit
+@partial(jax.pmap, axis_name='i')
 def update(params, aux, rng, optim_state, inputs):
   rng, new_rng = jax.random.split(rng)
-  (loss, new_aux), grads = loss_vag(params, aux, rng, inputs)
+  grads, (loss, new_aux) = jax.grad(train_loss_fn, has_aux=True)(params, aux, rng, inputs)
+  policy = get_policy()
+  grads = policy.cast_to_compute(grads)
+  loss_scale = jmp.StaticLossScale(2**15)
+  grads = loss_scale.unscale(grads)
+  grads = jax.lax.pmean(grads, axis_name='i')
+  grads = policy.cast_to_param(grads)
   updates, new_optim_state = optimizer.update(grads, optim_state, params)
   new_params = optax.apply_updates(updates, params)
+  loss = jax.lax.pmean(loss, axis_name='i')
   return loss, (new_params, new_aux, new_rng, new_optim_state)
 
 
@@ -76,11 +95,28 @@ def train():
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   batch = next(train_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
-  params, aux, rng, optim_state = initial_state(batch)
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
 
   last_step = -1
+
+  num_devices = jax.local_device_count()
+  print('Num devices:', num_devices)
+
+  # use bf16 for BatchNorm.
+  mp_policy = get_policy()
+  bn_policy = get_bn_policy().with_output_dtype(mp_policy.compute_dtype)
+  # NOTE: The order we call `set_policy` doesn't matter, when a method on a
+  # class is called the policy for that class will be applied, or it will
+  # inherit the policy from its parent module.
+  hk.mixed_precision.set_policy(hk.BatchNorm, bn_policy)
+  hk.mixed_precision.set_policy(AcousticModel, mp_policy)
+
+  def move_data_to_device(batch):
+    batch = jax.tree_map(lambda x: jnp.reshape(x, (num_devices, x.shape[0]//num_devices) + x.shape[1:]), batch)
+    return batch
+
+  params, aux, rng, optim_state = jax.pmap(initial_state, axis_name='i')(move_data_to_device(batch))
 
   # loading latest checkpoint
   ckpt_fn = FLAGS.ckpt_dir / 'acoustic_ckpt_latest.pickle'
@@ -89,6 +125,10 @@ def train():
     with open(ckpt_fn, 'rb') as f:
       dic = pickle.load(f)
       last_step, params, aux, rng, optim_state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
+      params, aux, rng, optim_state = jax.tree_map(
+          lambda x: jnp.broadcast_to(x, (num_devices,) + x.shape),
+          (params, aux, rng, optim_state)
+      )
 
   tr = tqdm(
       range(last_step + 1, FLAGS.num_training_steps + 1),
@@ -97,17 +137,17 @@ def train():
       initial=last_step+1
   )
   for step in tr:
-    batch = next(train_data_iter)
+    batch = move_data_to_device(next(train_data_iter))
     loss, (params, aux, rng, optim_state) = update(params, aux, rng, optim_state, batch)
-    losses.append(loss)
+    losses.append(loss[0])
 
     if step % 10 == 0:
-      val_batch = next(val_data_iter)
+      val_batch = move_data_to_device(next(val_data_iter))
       val_loss, val_aux, predicted_mel, gt_mel = val_loss_fn(params, aux, rng, val_batch)
-      val_losses.append(val_loss)
-      attn = jax.device_get(val_aux['acoustic_model']['attn'][0])
-      predicted_mel = jax.device_get(predicted_mel[0])
-      gt_mel = jax.device_get(gt_mel[0])
+      val_losses.append(jnp.mean(val_loss))
+      attn = jax.device_get(val_aux['acoustic_model']['attn'][0, 0])
+      predicted_mel = jax.device_get(predicted_mel[0, 0])
+      gt_mel = jax.device_get(gt_mel[0, 0])
 
     if step % 1000 == 0:
       loss = sum(losses).item() / len(losses)
