@@ -38,6 +38,10 @@ class FLAGS(Namespace):
   max_grad_norm = 1.0
   weight_decay = 1e-4
 
+  # mixed precision
+  mp_policy = 'p=f32,c=f32,o=f32'
+  mp_bn_policy = 'p=f32,c=f32,o=f32'
+
   # ckpt
   ckpt_dir = Path('assets/infore/nat')
   data_dir = Path('assets/infore/data')

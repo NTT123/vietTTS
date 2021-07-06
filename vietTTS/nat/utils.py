@@ -1,6 +1,7 @@
 import pickle
 from pathlib import Path
 
+import jax
 from tabulate import tabulate
 
 
@@ -15,6 +16,7 @@ def load_latest_ckpt(ckpt_dir: Path):
 
 
 def save_ckpt(step, params, aux, rng, optim_state, ckpt_dir: Path):
+  params, aux, rng, optim_state = jax.tree_map(lambda x: x[0], (params, aux, rng, optim_state))
   dic = {'step': step, 'params': params, 'aux': aux, 'rng': rng, 'optim_state': optim_state}
   with open(ckpt_dir/'duration_ckpt_latest.pickle', 'wb') as f:
     pickle.dump(dic, f)

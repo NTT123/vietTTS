@@ -1,10 +1,13 @@
 from setuptools import setup
 
-__version__ = '0.3.1'
+__version__ = '0.3.2'
 url = 'https://github.com/ntt123/vietTTS'
 
 install_requires = ['tabulate', 'optax', 'jax', 'jaxlib', 'einops', 'librosa',
-                    'textgrid', 'dm-haiku @ git+https://github.com/deepmind/dm-haiku', 'tqdm', 'gdown']
+                    'textgrid',
+                    'dm-haiku @ git+https://github.com/deepmind/dm-haiku',
+                    'jmp @ git+https://github.com/deepmind/jmp',
+                    'tqdm', 'gdown']
 setup_requires = []
 tests_require = []
 
