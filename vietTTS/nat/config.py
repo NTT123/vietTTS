@@ -14,6 +14,7 @@ class FLAGS(Namespace):
   acoustic_decoder_dim = 512
   acoustic_encoder_dim = 256
   reduce_factor = 2
+  steps_per_update = 10
 
   # dataset
   max_phoneme_seq_len = 128 * 3
@@ -33,7 +34,7 @@ class FLAGS(Namespace):
   fmax = 8000
 
   # training
-  batch_size = 64
+  batch_size = 64 * steps_per_update
   learning_rate = 1e-4
   duration_learning_rate = 1e-4
   max_grad_norm = 1.0

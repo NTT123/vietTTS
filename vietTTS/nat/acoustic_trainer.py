@@ -55,13 +55,24 @@ optimizer = optax.chain(
 )
 
 
-@jax.jit
-def update(params, aux, rng, optim_state, inputs):
+def update_step(prev_state, inputs):
+  params, aux, rng, optim_state = prev_state
   rng, new_rng = jax.random.split(rng)
   (loss, new_aux), grads = loss_vag(params, aux, rng, inputs)
   updates, new_optim_state = optimizer.update(grads, optim_state, params)
   new_params = optax.apply_updates(updates, params)
-  return loss, (new_params, new_aux, new_rng, new_optim_state)
+  return (new_params, new_aux, new_rng, new_optim_state), loss
+
+
+@jax.jit
+def update(params, aux, rng, optim_state, inputs):
+  state = (params, aux, rng, optim_state)
+  state, loss = jax.lax.scan(update_step, state, inputs)
+  return jnp.mean(loss), state
+
+
+def add_first_dim(x, size):
+  return jax.tree_map(lambda x: jnp.reshape(x, (size, -1) + x.shape[1:]), x)
 
 
 def initial_state(batch):
@@ -75,15 +86,15 @@ def train():
   train_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
                                       FLAGS.batch_size, FLAGS.max_wave_len, 'train')
   val_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
-                                    FLAGS.batch_size, FLAGS.max_wave_len, 'val')
+                                    FLAGS.batch_size / FLAGS.steps_per_update * 2, FLAGS.max_wave_len, 'val')
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
-  batch = next(train_data_iter)
+  batch = next(val_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
   params, aux, rng, optim_state = initial_state(batch)
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
 
-  last_step = -1
+  last_step = -FLAGS.steps_per_update
 
   # loading latest checkpoint
   ckpt_fn = FLAGS.ckpt_dir / 'acoustic_ckpt_latest.pickle'
@@ -94,13 +105,13 @@ def train():
       last_step, params, aux, rng, optim_state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
 
   tr = tqdm(
-      range(last_step + 1, FLAGS.num_training_steps + 1),
+      range(last_step + FLAGS.steps_per_update, FLAGS.num_training_steps + 1, FLAGS.steps_per_update),
       desc='training',
-      total=FLAGS.num_training_steps+1,
-      initial=last_step+1
+      total=FLAGS.num_training_steps // FLAGS.steps_per_update + 1,
+      initial=last_step//FLAGS.steps_per_update + 1, unit_scale=FLAGS.steps_per_update
   )
   for step in tr:
-    batch = next(train_data_iter)
+    batch = add_first_dim(next(train_data_iter), FLAGS.steps_per_update)
     loss, (params, aux, rng, optim_state) = update(params, aux, rng, optim_state, batch)
     losses.append(loss)
 
