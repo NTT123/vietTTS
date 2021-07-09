@@ -1,8 +1,8 @@
 import haiku as hk
 import jax
 import jax.numpy as jnp
-from jax.numpy import ndarray
 from einops import rearrange
+from jax.numpy import ndarray
 
 from .config import FLAGS, AcousticInput, DurationInput
 
@@ -117,7 +117,7 @@ class AcousticModel(hk.Module):
     lengths = jnp.array([L], dtype=jnp.int32)
     x = self.encoder(tokens, lengths)
     durations = durations / FLAGS.reduce_factor
-    x = self.upsample(x, durations, n_frames)
+    x = self.upsample(x, durations, n_frames / FLAGS.reduce_factor)
 
     def loop_fn(inputs, state):
       cond = inputs
