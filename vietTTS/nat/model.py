@@ -2,6 +2,7 @@ import haiku as hk
 import jax
 import jax.numpy as jnp
 from jax.numpy import ndarray
+from einops import rearrange
 
 from .config import FLAGS, AcousticInput, DurationInput
 
@@ -74,7 +75,7 @@ class AcousticModel(hk.Module):
         hk.LSTM(FLAGS.acoustic_decoder_dim),
         hk.LSTM(FLAGS.acoustic_decoder_dim)
     ])
-    self.projection = hk.Linear(FLAGS.mel_dim)
+    self.projection = hk.Linear(FLAGS.mel_dim * FLAGS.reduce_factor)
 
     # prenet
     self.prenet_fc1 = hk.Linear(256, with_bias=False)
@@ -115,6 +116,7 @@ class AcousticModel(hk.Module):
     B, L = tokens.shape
     lengths = jnp.array([L], dtype=jnp.int32)
     x = self.encoder(tokens, lengths)
+    durations = durations / FLAGS.reduce_factor
     x = self.upsample(x, durations, n_frames)
 
     def loop_fn(inputs, state):
@@ -124,19 +126,21 @@ class AcousticModel(hk.Module):
       x = jnp.concatenate((cond, prev_mel), axis=-1)
       x, new_hxcx = self.decoder(x, hxcx)
       x = self.projection(x)
-      return x, (x, new_hxcx)
+      x = rearrange(x, 'B (R D) -> B R D', D=FLAGS.mel_dim)
+      return x, (x[:, -1], new_hxcx)
 
     state = (
         jnp.zeros((B, FLAGS.mel_dim), dtype=jnp.float32),
         self.decoder.initial_state(B)
     )
     x, _ = hk.dynamic_unroll(loop_fn, x, state, time_major=False)
+    x = rearrange(x, 'B L R D -> B (L R) D')
     residual = self.postnet(x)
     return x + residual
 
   def __call__(self, inputs: AcousticInput):
     x = self.encoder(inputs.phonemes, inputs.lengths)
-    x = self.upsample(x, inputs.durations, inputs.mels.shape[1])
+    x = self.upsample(x, inputs.durations / FLAGS.reduce_factor, inputs.mels.shape[1])
     mels = self.prenet(inputs.mels)
     x = jnp.concatenate((x, mels), axis=-1)
     B, L, D = x.shape
@@ -151,5 +155,6 @@ class AcousticModel(hk.Module):
     mask = jax.tree_map(lambda x: jax.random.bernoulli(hk.next_rng_key(), 0.1, (B, L, x.shape[-1])), hx)
     x, _ = hk.dynamic_unroll(zoneout_decoder, (x, mask), hx, time_major=False)
     x = self.projection(x)
+    x = rearrange(x, 'B L (R D) -> B (L R) D', D=FLAGS.mel_dim)
     residual = self.postnet(x)
     return x, x + residual

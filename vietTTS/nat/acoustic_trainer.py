@@ -29,7 +29,10 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
   B, L, D = mels.shape
-  inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1)
+  r, r1 = FLAGS.reduce_factor, FLAGS.reduce_factor - 1
+  assert mels.shape[1] % r == 0
+  mels_ = mels[:, r1::r, :]
+  inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels_[:, :-1, :]), axis=1)
   n_frames = inputs.durations * FLAGS.sample_rate / (FLAGS.n_fft//4)
   inputs = inputs._replace(mels=inp_mels, durations=n_frames)
   (mel1_hat, mel2_hat), new_aux = (net if is_training else val_net).apply(params, aux, rng, inputs)

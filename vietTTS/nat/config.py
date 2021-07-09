@@ -13,6 +13,7 @@ class FLAGS(Namespace):
   postnet_dim = 512
   acoustic_decoder_dim = 512
   acoustic_encoder_dim = 256
+  reduce_factor = 2
 
   # dataset
   max_phoneme_seq_len = 128 * 3
