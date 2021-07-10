@@ -1,3 +1,4 @@
+import os
 import pickle
 from functools import partial
 from typing import Deque
@@ -15,6 +16,12 @@ from .data_loader import load_textgrid_wav
 from .dsp import MelFilter
 from .model import AcousticModel
 from .utils import print_flags
+
+if 'COLAB_TPU_ADDR' in os.environ:
+  print("Setting up TPU cores")
+  jax.tools.colab_tpu.setup_tpu()
+print("Jax devices:", jax.devices())
+num_devices = jax.device_count()
 
 
 @hk.transform_with_state
@@ -42,16 +49,17 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
 
 
 train_loss_fn = partial(loss_fn, is_training=True)
-val_loss_fn = jax.jit(partial(loss_fn, is_training=False))
+val_loss_fn = jax.pmap(partial(loss_fn, is_training=False), axis_name='i')
 
 loss_vag = jax.value_and_grad(train_loss_fn, has_aux=True)
 
 lr_scheduler = optax.warmup_exponential_decay_schedule(
-    0.0, FLAGS.learning_rate, 4_000, 50_000, 0.5, 0, False, FLAGS.learning_rate / 100)
+    0.0, FLAGS.learning_rate * num_devices, 4_000, 50_000, 0.5, 0, False, FLAGS.learning_rate / 100)
 optimizer = optax.chain(
     optax.clip_by_global_norm(1.0),
     optax.adamw(lr_scheduler, weight_decay=FLAGS.weight_decay)
 )
+
 
 def update_step(prev_state, inputs):
   params, aux, rng, optim_state = prev_state
@@ -61,34 +69,38 @@ def update_step(prev_state, inputs):
   new_params = optax.apply_updates(updates, params)
   return (new_params, new_aux, new_rng, new_optim_state), loss
 
-@jax.jit
+
+@partial(jax.pmap, axis_name='i')
 def update(params, aux, rng, optim_state, inputs):
   state = params, aux, rng, optim_state
   state, loss = jax.lax.scan(update_step, state, inputs)
-  return jnp.mean(loss), state
+  return jnp.mean(loss, axis=0), state
 
 
+@partial(jax.pmap, axis_name='i')
 def initial_state(batch):
   rng = jax.random.PRNGKey(42)
   params, aux = hk.transform_with_state(lambda x: AcousticModel(True)(x)).init(rng, batch)
   optim_state = optimizer.init(params)
   return params, aux, rng, optim_state
 
+
 def add_new_dim(batch, size):
   return jax.tree_map(
-    lambda x: jnp.reshape(x, (size, -1) + x.shape[1:]),
-    batch)
+      lambda x: jnp.reshape(x, size + (-1,) + x.shape[1:]),
+      batch)
+
 
 def train():
   train_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
-                                      FLAGS.batch_size, FLAGS.max_wave_len, 'train')
+                                      FLAGS.batch_size * FLAGS.steps_per_update * num_devices, FLAGS.max_wave_len, 'train')
   val_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
-                                    FLAGS.batch_size//FLAGS.steps_per_update * 2, FLAGS.max_wave_len, 'val')
+                                    FLAGS.batch_size * 2 * num_devices, FLAGS.max_wave_len, 'val')
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   batch = next(val_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
-  params, aux, rng, optim_state = initial_state(batch)
-  losses = Deque(maxlen=1000)
+  params, aux, rng, optim_state = initial_state(add_new_dim(batch, (num_devices, FLAGS.steps_per_update)))
+  losses = Deque(maxlen=100)
   val_losses = Deque(maxlen=100)
 
   last_step = -FLAGS.steps_per_update
@@ -99,27 +111,28 @@ def train():
     print('Resuming from latest checkpoint at', ckpt_fn)
     with open(ckpt_fn, 'rb') as f:
       dic = pickle.load(f)
-      last_step, params, aux, rng, optim_state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
+      last_step, state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
+      params, aux, rng, optim_state = jax.device_put_replicated(state, jax.devices())
 
   tr = tqdm(
       range(last_step + FLAGS.steps_per_update, FLAGS.num_training_steps + FLAGS.steps_per_update, FLAGS.steps_per_update),
       desc='training',
       total=FLAGS.num_training_steps // FLAGS.steps_per_update+1,
       initial=last_step//FLAGS.steps_per_update+1,
-      unit_scale = FLAGS.steps_per_update
+      unit_scale=FLAGS.steps_per_update
   )
   for step in tr:
-    batch = add_new_dim(next(train_data_iter), FLAGS.steps_per_update)
+    batch = add_new_dim(next(train_data_iter), (num_devices, FLAGS.steps_per_update))
     loss, (params, aux, rng, optim_state) = update(params, aux, rng, optim_state, batch)
-    losses.append(loss)
 
     if step % 10 == 0:
-      val_batch = next(val_data_iter)
+      losses.append(jnp.mean(loss))
+      val_batch = add_new_dim(next(val_data_iter), (num_devices, FLAGS.steps_per_update))
       val_loss, val_aux, predicted_mel, gt_mel = val_loss_fn(params, aux, rng, val_batch)
-      val_losses.append(val_loss)
-      attn = jax.device_get(val_aux['acoustic_model']['attn'][0])
-      predicted_mel = jax.device_get(predicted_mel[0])
-      gt_mel = jax.device_get(gt_mel[0])
+      val_losses.append(jnp.mean(val_loss))
+      attn = jax.device_get(val_aux['acoustic_model']['attn'][0, 0])
+      predicted_mel = jax.device_get(predicted_mel[0, 0])
+      gt_mel = jax.device_get(gt_mel[0, 0])
 
     if step % 1000 == 0:
       loss = sum(losses).item() / len(losses)
@@ -140,7 +153,9 @@ def train():
 
       # saving checkpoint
       with open(ckpt_fn, 'wb') as f:
-        pickle.dump({'step': step, 'params': params, 'aux': aux, 'rng': rng, 'optim_state': optim_state}, f)
+        (params_, aux_, rng_, optim_state_) = jax.device_get(
+            jax.tree_map(lambda x: x[0], (params, aux, rng, optim_state)))
+        pickle.dump({'step': step, 'params': params_, 'aux': aux_, 'rng': rng_, 'optim_state': optim_state_}, f)
 
 
 if __name__ == '__main__':

@@ -19,9 +19,9 @@ class TokenEncoder(hk.Module):
     self.conv1 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv2 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv3 = hk.Conv1D(lstm_dim, 3, padding='SAME')
-    self.bn1 = hk.BatchNorm(True, True, 0.999)
-    self.bn2 = hk.BatchNorm(True, True, 0.999)
-    self.bn3 = hk.BatchNorm(True, True, 0.999)
+    self.bn1 = hk.BatchNorm(True, True, 0.999, cross_replica_axis='i')
+    self.bn2 = hk.BatchNorm(True, True, 0.999, cross_replica_axis='i')
+    self.bn3 = hk.BatchNorm(True, True, 0.999, cross_replica_axis='i')
     self.lstm_fwd = LSTM(lstm_dim)
     self.lstm_bwd = hk.ResetCore(LSTM(lstm_dim))
     self.dropout_rate = dropout_rate
@@ -116,7 +116,7 @@ class AcousticModel(hk.Module):
     # posnet
     self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5, w_init=w_init)
                           for _ in range(4)] + [hk.Conv1D(FLAGS.mel_dim, 5)]
-    self.postnet_bns = [hk.BatchNorm(True, True, 0.999) for _ in range(4)] + [None]
+    self.postnet_bns = [hk.BatchNorm(True, True, 0.999, cross_replica_axis='i') for _ in range(4)] + [None]
 
   def prenet(self, x, dropout=0.5):
     x = jax.nn.relu(self.prenet_fc1(x))
