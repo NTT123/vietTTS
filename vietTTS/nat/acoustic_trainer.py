@@ -87,7 +87,7 @@ def initial_state(batch):
 
 def add_new_dim(batch, size):
   return jax.tree_map(
-      lambda x: jnp.reshape(x, size + (-1,) + x.shape[1:]),
+      lambda x: jnp.reshape(x, (*size, -1, *x.shape[1:])),
       batch)
 
 
@@ -99,7 +99,7 @@ def train():
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   batch = next(val_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
-  params, aux, rng, optim_state = initial_state(add_new_dim(batch, (num_devices, FLAGS.steps_per_update)))
+  params, aux, rng, optim_state = initial_state(add_new_dim(batch, (num_devices,)))
   losses = Deque(maxlen=100)
   val_losses = Deque(maxlen=100)
 
@@ -111,7 +111,7 @@ def train():
     print('Resuming from latest checkpoint at', ckpt_fn)
     with open(ckpt_fn, 'rb') as f:
       dic = pickle.load(f)
-      last_step, state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
+      last_step, state = dic['step'], (dic['params'], dic['aux'], dic['rng'], dic['optim_state'])
       params, aux, rng, optim_state = jax.device_put_replicated(state, jax.devices())
 
   tr = tqdm(
@@ -127,7 +127,7 @@ def train():
 
     if step % 10 == 0:
       losses.append(jnp.mean(loss))
-      val_batch = add_new_dim(next(val_data_iter), (num_devices, FLAGS.steps_per_update))
+      val_batch = add_new_dim(next(val_data_iter), (num_devices, ))
       val_loss, val_aux, predicted_mel, gt_mel = val_loss_fn(params, aux, rng, val_batch)
       val_losses.append(jnp.mean(val_loss))
       attn = jax.device_get(val_aux['acoustic_model']['attn'][0, 0])
