@@ -132,7 +132,7 @@ class AcousticModel(hk.Module):
 
     d2 = jnp.square((mid_pos[:, None, :] - ruler[:, :, None])) / 10.
     w = jax.nn.softmax(-d2, axis=-1)
-    hk.set_state('attn', w)
+    hk.set_state('attn', w[0])
     x = jnp.einsum('BLT,BTD->BLD', w, x)
     return x
 

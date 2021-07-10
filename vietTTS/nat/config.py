@@ -16,8 +16,8 @@ class FLAGS(Namespace):
   steps_per_update = 10
 
   # dataset
-  max_phoneme_seq_len = 128 * 3
-  max_wave_len = 1024 * 64 * 3
+  max_phoneme_seq_len = 128 * 2
+  max_wave_len = 1024 * 64 * 2
 
   # Montreal Forced Aligner
   special_phonemes = ['sil', 'sp', 'spn', ' ']  # [sil], [sp] [spn] [word end]

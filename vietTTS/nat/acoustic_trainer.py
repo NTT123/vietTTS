@@ -66,6 +66,8 @@ def update_step(prev_state, inputs):
   params, aux, rng, optim_state = prev_state
   rng, new_rng = jax.random.split(rng)
   (loss, new_aux), grads = loss_vag(params, aux, rng, inputs)
+  grads = jax.lax.pmean(grads, axis_name='i')
+  loss = jax.lax.pmean(loss, axis_name='i')
   updates, new_optim_state = optimizer.update(grads, optim_state, params)
   new_params = optax.apply_updates(updates, params)
   return (new_params, new_aux, new_rng, new_optim_state), loss
@@ -131,7 +133,7 @@ def train():
       val_batch = add_new_dim(next(val_data_iter), (num_devices, ))
       val_loss, val_aux, predicted_mel, gt_mel = val_loss_fn(params, aux, rng, val_batch)
       val_losses.append(jnp.mean(val_loss))
-      attn = jax.device_get(val_aux['acoustic_model']['attn'][0, 0])
+      attn = jax.device_get(val_aux['acoustic_model']['attn'][0])
       predicted_mel = jax.device_get(predicted_mel[0, 0])
       gt_mel = jax.device_get(gt_mel[0, 0])
 
