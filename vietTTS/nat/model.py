@@ -1,6 +1,9 @@
+from typing import Optional, Tuple
+
 import haiku as hk
 import jax
 import jax.numpy as jnp
+from haiku import LSTMState, RNNCore
 from jax.numpy import ndarray
 
 from .config import FLAGS, AcousticInput, DurationInput
@@ -16,11 +19,11 @@ class TokenEncoder(hk.Module):
     self.conv1 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv2 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv3 = hk.Conv1D(lstm_dim, 3, padding='SAME')
-    self.bn1 = hk.BatchNorm(True, True, 0.9)
-    self.bn2 = hk.BatchNorm(True, True, 0.9)
-    self.bn3 = hk.BatchNorm(True, True, 0.9)
-    self.lstm_fwd = hk.LSTM(lstm_dim)
-    self.lstm_bwd = hk.ResetCore(hk.LSTM(lstm_dim))
+    self.bn1 = hk.BatchNorm(True, True, 0.999)
+    self.bn2 = hk.BatchNorm(True, True, 0.999)
+    self.bn3 = hk.BatchNorm(True, True, 0.999)
+    self.lstm_fwd = LSTM(lstm_dim)
+    self.lstm_bwd = hk.ResetCore(LSTM(lstm_dim))
     self.dropout_rate = dropout_rate
 
   def __call__(self, x, lengths):
@@ -63,6 +66,36 @@ class DurationModel(hk.Module):
     return x
 
 
+class LSTM(RNNCore):
+  def __init__(self, hidden_size: int, name: Optional[str] = None):
+    super().__init__(name=name)
+    self.hidden_size = hidden_size
+
+  def __call__(
+      self,
+      inputs: jnp.ndarray,
+      prev_state: LSTMState,
+  ) -> Tuple[jnp.ndarray, LSTMState]:
+    if len(inputs.shape) > 2 or not inputs.shape:
+      raise ValueError("LSTM input must be rank-1 or rank-2.")
+    x_and_h = jnp.concatenate([inputs, prev_state.hidden], axis=-1)
+    w_init = hk.initializers.RandomUniform(-0.1, 0.1)
+    gated = hk.Linear(4 * self.hidden_size, w_init=w_init)(x_and_h)
+    # TODO(slebedev): Consider aligning the order of gates with Sonnet.
+    # i = input, g = cell_gate, f = forget_gate, o = output_gate
+    i, g, f, o = jnp.split(gated, indices_or_sections=4, axis=-1)
+    f = jax.nn.sigmoid(f + 1)  # Forget bias, as in sonnet.
+    c = f * prev_state.cell + jax.nn.sigmoid(i) * jnp.tanh(g)
+    c = jnp.clip(c, a_min=-10, a_max=10)
+    h = jax.nn.sigmoid(o) * jnp.tanh(c)
+    return h, LSTMState(h, c)
+
+  def initial_state(self, batch_size: int) -> LSTMState:
+    state = LSTMState(hidden=jnp.zeros([batch_size, self.hidden_size]),
+                      cell=jnp.zeros([batch_size, self.hidden_size]))
+    return state
+
+
 class AcousticModel(hk.Module):
   """Predict melspectrogram from aligned phonemes"""
 
@@ -71,17 +104,19 @@ class AcousticModel(hk.Module):
     self.is_training = is_training
     self.encoder = TokenEncoder(FLAGS.vocab_size, FLAGS.acoustic_encoder_dim, 0.5, is_training)
     self.decoder = hk.deep_rnn_with_skip_connections([
-        hk.LSTM(FLAGS.acoustic_decoder_dim),
-        hk.LSTM(FLAGS.acoustic_decoder_dim)
+        LSTM(FLAGS.acoustic_decoder_dim),
+        LSTM(FLAGS.acoustic_decoder_dim)
     ])
-    self.projection = hk.Linear(FLAGS.mel_dim)
+    w_init = hk.initializers.RandomUniform(-0.1, 0.1)
+    self.projection = hk.Linear(FLAGS.mel_dim, w_init=w_init)
 
     # prenet
     self.prenet_fc1 = hk.Linear(256, with_bias=False)
     self.prenet_fc2 = hk.Linear(256, with_bias=False)
     # posnet
-    self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5) for _ in range(4)] + [hk.Conv1D(FLAGS.mel_dim, 5)]
-    self.postnet_bns = [hk.BatchNorm(True, True, 0.9) for _ in range(4)] + [None]
+    self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5, w_init=w_init)
+                          for _ in range(4)] + [hk.Conv1D(FLAGS.mel_dim, 5)]
+    self.postnet_bns = [hk.BatchNorm(True, True, 0.999) for _ in range(4)] + [None]
 
   def prenet(self, x, dropout=0.5):
     x = jax.nn.relu(self.prenet_fc1(x))
