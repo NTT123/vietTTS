@@ -6,6 +6,7 @@ from typing import Deque
 import haiku as hk
 import jax
 import jax.numpy as jnp
+import jax.tools.colab_tpu
 import matplotlib.pyplot as plt
 import optax
 from tqdm.auto import tqdm
