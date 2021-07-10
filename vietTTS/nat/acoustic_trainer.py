@@ -73,7 +73,7 @@ def update_step(prev_state, inputs):
   return (new_params, new_aux, new_rng, new_optim_state), loss
 
 
-@partial(jax.pmap, axis_name='i')
+@partial(jax.pmap, axis_name='i', donate_argnums=(0, 1, 2, 3))
 def update(params, aux, rng, optim_state, inputs):
   state = params, aux, rng, optim_state
   state, loss = jax.lax.scan(update_step, state, inputs)
