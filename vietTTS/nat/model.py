@@ -111,8 +111,8 @@ class AcousticModel(hk.Module):
     self.projection = hk.Linear(FLAGS.mel_dim, w_init=w_init)
 
     # prenet
-    self.prenet_fc1 = hk.Linear(256, with_bias=False)
-    self.prenet_fc2 = hk.Linear(256, with_bias=False)
+    self.prenet_fc1 = hk.Linear(FLAGS.prenet_dim, w_init=hk.initializers.VarianceScaling(), with_bias=False)
+    self.prenet_fc2 = hk.Linear(FLAGS.prenet_dim, w_init=hk.initializers.VarianceScaling(), with_bias=False)
     # posnet
     self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5, w_init=w_init)
                           for _ in range(4)] + [hk.Conv1D(FLAGS.mel_dim, 5)]

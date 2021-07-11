@@ -14,6 +14,7 @@ class FLAGS(Namespace):
   acoustic_decoder_dim = 1024
   acoustic_encoder_dim = 256
   steps_per_update = 10
+  prenet_dim = 128
 
   # dataset
   max_phoneme_seq_len = 128 * 2
