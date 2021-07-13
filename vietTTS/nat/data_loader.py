@@ -3,6 +3,7 @@ from pathlib import Path
 
 import numpy as np
 import textgrid
+from tqdm.auto import tqdm
 from scipy.io import wavfile
 
 from .config import FLAGS, AcousticInput, DurationInput
@@ -81,7 +82,7 @@ def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: st
 
 
 def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_len, mode: str):
-  tg_files = sorted(data_dir.glob('*.TextGrid'))
+  tg_files = sorted((data_dir / 'wavs').glob('*.TextGrid'))
   random.Random(42).shuffle(tg_files)
   L = len(tg_files) * 95 // 100
   assert mode in ['train', 'val', 'gta']
@@ -94,14 +95,14 @@ def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_le
     tg_files = tg_files[L:]
 
   data = []
-  for fn in tg_files:
+  for fn in tqdm(tg_files):
     ps, ds = zip(*load_textgrid(fn))
     ps = [phonemes.index(p) for p in ps]
     l = len(ps)
     ps = pad_seq(ps, token_seq_len, 0)
     ds = pad_seq(ds, token_seq_len, 0)
 
-    wav_file = data_dir / f'{fn.stem}.wav'
+    wav_file = fn.parent / f'{fn.stem}.wav'
     sr, y = wavfile.read(wav_file)
     y = np.copy(y)
     start_time = 0
