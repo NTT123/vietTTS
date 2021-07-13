@@ -14,7 +14,7 @@ class FLAGS(Namespace):
   acoustic_decoder_dim = 512
   acoustic_encoder_dim = 256
   steps_per_update = 10
-  prenet_dim = 128
+  prenet_dim = 256
 
   # dataset
   max_phoneme_seq_len = 128 * 2
@@ -29,7 +29,7 @@ class FLAGS(Namespace):
   # dsp
   mel_dim = 80
   n_fft = 1024
-  sample_rate = 16000
+  sample_rate = 22050
   fmin = 0.0
   fmax = 8000
 
