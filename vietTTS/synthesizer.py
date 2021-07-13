@@ -12,7 +12,7 @@ from .nat.text2mel import text2mel
 parser = ArgumentParser()
 parser.add_argument('--text', type=str)
 parser.add_argument('--output', default='clip.wav', type=Path)
-parser.add_argument('--sample-rate', default=16000, type=int)
+parser.add_argument('--sample-rate', default=22050, type=int)
 parser.add_argument('--silence-duration', default=-1, type=float)
 parser.add_argument('--lexicon-file', default=None)
 args = parser.parse_args()

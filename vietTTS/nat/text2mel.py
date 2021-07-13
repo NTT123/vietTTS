@@ -13,8 +13,11 @@ from .model import AcousticModel, DurationModel
 
 def load_lexicon(fn):
   lines = open(fn, 'r').readlines()
-  lines = [l.lower().strip().split('\t') for l in lines]
-  return dict(lines)
+  res = {}
+  for l in lines:
+    word, *phonemes = l.lower().strip().split()
+    res[word] = ' '.join(phonemes)
+  return res
 
 
 def predict_duration(tokens):
