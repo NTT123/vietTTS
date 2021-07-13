@@ -43,7 +43,7 @@ class FLAGS(Namespace):
   # ckpt
   ckpt_dir = Path('assets/infore/nat')
   data_dir = Path('assets/infore/data')
-  data_dir = Path('train_data')
+  data_dir = Path('train_data/LJSpeech-1.1')
 
 
 class DurationInput(NamedTuple):
