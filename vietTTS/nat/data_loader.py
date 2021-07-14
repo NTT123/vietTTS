@@ -115,7 +115,11 @@ def split_clip_duration(fn, y, sr, ps, ds, pad_wav_len, token_seq_len):
       ly = len(short_y)
       short_ps = pad_seq(short_ps, token_seq_len, 0)
       short_ds = pad_seq(short_ds, token_seq_len, 0)
-      short_y = np.pad(short_y, (0, pad_wav_len - ly))
+      if ly <= pad_wav_len:
+        short_y = np.pad(short_y, (0, pad_wav_len - ly))
+      else:
+        short_y = short_y[:pad_wav_len]
+        ly = len(short_y)
       data.append((fn.stem, short_ps, short_ds, lp, short_y, ly))
       short_ds, short_ps = [], []
     short_ds.append(duration)
