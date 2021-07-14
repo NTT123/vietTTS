@@ -129,7 +129,7 @@ def train():
     batch = add_new_dim(next(train_data_iter), (num_devices, FLAGS.steps_per_update))
     loss, (params, aux, rng, optim_state) = update(params, aux, rng, optim_state, batch)
 
-    if step % 10 == 0:
+    if step % (10 * FLAGS.steps_per_update) == 0:
       losses.append(jnp.mean(loss))
       val_batch = add_new_dim(next(val_data_iter), (num_devices, ))
       val_loss, val_aux, predicted_mel, gt_mel = val_loss_fn(params, aux, rng, val_batch)
