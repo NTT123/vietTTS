@@ -114,7 +114,7 @@ def split_clip_duration(fn, y, sr, ps, ds, pad_wav_len, token_seq_len):
       lp = len(short_ps)
       ly = len(short_y)
       short_ps = pad_seq(short_ps, token_seq_len, 0)
-      short_ds = pad_seq(short_ds, token_seq_len, 0)
+      short_ds = pad_seq(short_ds, token_seq_len, 0.1)
       if ly <= pad_wav_len:
         short_y = np.pad(short_y, (0, pad_wav_len - ly))
       else:
@@ -155,7 +155,7 @@ def load_textgrid_wav(data_dir: Path, token_seq_len: int, batch_size, pad_wav_le
     else:
       lp = len(ps)
       ps = pad_seq(ps, token_seq_len, 0)
-      ds = pad_seq(ds, token_seq_len, 0)
+      ds = pad_seq(ds, token_seq_len, 0.1)
       ly = len(y)
       y = np.pad(y, (0, pad_wav_len - ly))
       data.append((fn.stem, ps, ds, lp, y, ly))
