@@ -4,6 +4,7 @@ import jax.numpy as jnp
 from jax.numpy import ndarray
 
 from .config import FLAGS, AcousticInput, DurationInput
+from .lstm import LSTM
 
 
 class TokenEncoder(hk.Module):
@@ -16,11 +17,11 @@ class TokenEncoder(hk.Module):
     self.conv1 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv2 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv3 = hk.Conv1D(lstm_dim, 3, padding='SAME')
-    self.bn1 = hk.BatchNorm(True, True, 0.9)
-    self.bn2 = hk.BatchNorm(True, True, 0.9)
-    self.bn3 = hk.BatchNorm(True, True, 0.9)
-    self.lstm_fwd = hk.LSTM(lstm_dim)
-    self.lstm_bwd = hk.ResetCore(hk.LSTM(lstm_dim))
+    self.bn1 = hk.BatchNorm(True, True, 0.999)
+    self.bn2 = hk.BatchNorm(True, True, 0.999)
+    self.bn3 = hk.BatchNorm(True, True, 0.999)
+    self.lstm_fwd = LSTM(lstm_dim)
+    self.lstm_bwd = hk.ResetCore(LSTM(lstm_dim))
     self.dropout_rate = dropout_rate
 
   def __call__(self, x, lengths):
@@ -52,7 +53,7 @@ class DurationModel(hk.Module):
                                 FLAGS.duration_embed_dropout_rate, is_training)
     self.projection = hk.Sequential([
         hk.Linear(FLAGS.duration_lstm_dim),
-        jax.nn.gelu,
+        jax.nn.relu,
         hk.Linear(1),
     ])
 
@@ -71,17 +72,17 @@ class AcousticModel(hk.Module):
     self.is_training = is_training
     self.encoder = TokenEncoder(FLAGS.vocab_size, FLAGS.acoustic_encoder_dim, 0.5, is_training)
     self.decoder = hk.deep_rnn_with_skip_connections([
-        hk.LSTM(FLAGS.acoustic_decoder_dim),
-        hk.LSTM(FLAGS.acoustic_decoder_dim)
+        LSTM(FLAGS.acoustic_decoder_dim),
+        LSTM(FLAGS.acoustic_decoder_dim)
     ])
     self.projection = hk.Linear(FLAGS.mel_dim)
 
     # prenet
-    self.prenet_fc1 = hk.Linear(256, with_bias=False)
-    self.prenet_fc2 = hk.Linear(256, with_bias=False)
+    self.prenet_fc1 = hk.Linear(FLAGS.prenet_dim, with_bias=False)
+    self.prenet_fc2 = hk.Linear(FLAGS.prenet_dim, with_bias=False)
     # posnet
     self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5) for _ in range(4)] + [hk.Conv1D(FLAGS.mel_dim, 5)]
-    self.postnet_bns = [hk.BatchNorm(True, True, 0.9) for _ in range(4)] + [None]
+    self.postnet_bns = [hk.BatchNorm(True, True, 0.999) for _ in range(4)] + [None]
 
   def prenet(self, x, dropout=0.5):
     x = jax.nn.relu(self.prenet_fc1(x))
@@ -91,11 +92,11 @@ class AcousticModel(hk.Module):
     return x
 
   def upsample(self, x, durations, L):
-    ruler = jnp.arange(0, L)[None, :]  # B, L
+    positions = jnp.arange(0, L)[None, :]  # B, L
     end_pos = jnp.cumsum(durations, axis=1)
     mid_pos = end_pos - durations/2  # B, T
 
-    d2 = jnp.square((mid_pos[:, None, :] - ruler[:, :, None])) / 10.
+    d2 = jnp.square((mid_pos[:, None, :] - positions[:, :, None])) / 10.
     w = jax.nn.softmax(-d2, axis=-1)
     hk.set_state('attn', w)
     x = jnp.einsum('BLT,BTD->BLD', w, x)
