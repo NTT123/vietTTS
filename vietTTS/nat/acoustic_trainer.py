@@ -46,9 +46,11 @@ val_loss_fn = jax.jit(partial(loss_fn, is_training=False))
 
 loss_vag = jax.value_and_grad(train_loss_fn, has_aux=True)
 
+lr_scheduler = optax.warmup_exponential_decay_schedule(
+    0.0, FLAGS.learning_rate, 1_000, 50_000, 0.5, 0, False, FLAGS.learning_rate/100)
 optimizer = optax.chain(
     optax.clip_by_global_norm(1.0),
-    optax.adamw(FLAGS.learning_rate, weight_decay=FLAGS.weight_decay)
+    optax.adamw(lr_scheduler, weight_decay=FLAGS.weight_decay)
 )
 
 

@@ -13,7 +13,7 @@ class TokenEncoder(hk.Module):
   def __init__(self, vocab_size, lstm_dim, dropout_rate, is_training=True):
     super().__init__()
     self.is_training = is_training
-    self.embed = hk.Embed(vocab_size, lstm_dim)
+    self.embed = hk.Embed(vocab_size, lstm_dim, w_init=hk.initializers.VarianceScaling(mode='fan_out'))
     self.conv1 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv2 = hk.Conv1D(lstm_dim, 3, padding='SAME')
     self.conv3 = hk.Conv1D(lstm_dim, 3, padding='SAME')
