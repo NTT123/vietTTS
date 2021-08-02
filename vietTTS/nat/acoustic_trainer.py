@@ -114,15 +114,19 @@ def train():
                                       FLAGS.batch_size * num_devices * spu, FLAGS.max_wave_len, 'train')
   val_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
                                     FLAGS.batch_size * num_devices, FLAGS.max_wave_len, 'val')
-  batch = next(train_data_iter)
+  batch = next(val_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
+  batch = add_new_dims(batch, (num_devices,))
 
   mel100 = batch.mels[:, :100]
   data_mean = jnp.mean(mel100)
   data_std = jnp.std(mel100)
-  print(
-      f'''Statistics of a batch vs FLAGS: mean/FLAGS.mean {data_mean}/{FLAGS.data_mean}  std/FLAGS.std {data_std}/{FLAGS.data_std}. 
-Modify config.py if these values do not matched!''')
+  print(f'''
+Statistics of a batch vs FLAGS: 
+  mean/FLAGS.mean {data_mean:.3f}/{FLAGS.data_mean}
+  std/FLAGS.std {data_std:.3f}/{FLAGS.data_std}. 
+Modify config.py if these values do not matched!
+''')
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
 
@@ -137,8 +141,6 @@ Modify config.py if these values do not matched!''')
       last_step, params, aux, rng, optim_state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
       params, aux, rng, optim_state = jax.device_put_replicated((params, aux, rng, optim_state), jax.devices())
   else:
-    batch = next(val_data_iter)
-    batch = add_new_dims(batch, (num_devices,))
     params, aux, rng, optim_state = initial_state(batch)
 
   tr = tqdm(range(last_step + spu, FLAGS.num_training_steps + spu, spu),
@@ -153,7 +155,7 @@ Modify config.py if these values do not matched!''')
     losses.append(loss)
 
     if step % 10 == 0:
-      val_batch = next(val_data_iter)
+      val_batch = add_new_dims(next(val_data_iter), (num_devices, ))
       val_loss, val_aux, predicted_mel, gt_mel = val_loss_fn(params, aux, rng, val_batch)
       val_losses.append(val_loss)
 
@@ -181,7 +183,7 @@ Modify config.py if these values do not matched!''')
 
       # saving checkpoint
       with open(ckpt_fn, 'wb') as f:
-        params_, aux_, rng_, optim_state_ = jax.tree_map(lambda x: jnp.device_get(x[0]),
+        params_, aux_, rng_, optim_state_ = jax.tree_map(lambda x: jax.device_get(x[0]),
                                                          (params, aux, rng, optim_state))
         pickle.dump({'step': step, 'params': params_, 'aux': aux_, 'rng': rng_, 'optim_state': optim_state_}, f)
 
