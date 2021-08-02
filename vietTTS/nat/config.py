@@ -29,8 +29,10 @@ class FLAGS(Namespace):
 
   # dsp
   mel_dim = 80
-  n_fft = 1024
   sample_rate = 16000
+  n_fft = 2048
+  window_length = 50 * sample_rate // 1000  # 50 ms
+  hop_length = 125 * sample_rate // 10000  # 12.5 ms
   fmin = 0.0
   fmax = 8000
 

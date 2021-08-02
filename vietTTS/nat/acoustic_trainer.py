@@ -39,8 +39,8 @@ def net(x): return AcousticModel(is_training=True)(x)
 def val_net(x): return AcousticModel(is_training=False)(x)
 
 
-melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
-hop_length = FLAGS.n_fft // 4
+melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.window_length,
+                      FLAGS.hop_length, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
 num_devices = jax.device_count()
 
 
@@ -50,7 +50,7 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   mels = (mels - FLAGS.data_mean) / FLAGS.data_std
   B, L, D = mels.shape
   inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1)
-  n_frames = inputs.durations * FLAGS.sample_rate / hop_length
+  n_frames = inputs.durations * FLAGS.sample_rate / FLAGS.hop_length
   inputs = inputs._replace(mels=inp_mels, durations=n_frames)
   (mel1_hat, mel2_hat), new_aux = (net if is_training else val_net).apply(params, aux, rng, inputs)
 
@@ -59,7 +59,7 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   loss2 = (jnp.abs(mel1_hat - mels) + jnp.abs(mel2_hat - mels)) / 2
   loss = jnp.mean((loss1 + loss2)/2, axis=-1)
   # compute masks for mel targets
-  mask = jnp.arange(0, L)[None, :] < (inputs.wav_lengths // hop_length)[:, None]
+  mask = jnp.arange(0, L)[None, :] < (inputs.wav_lengths // FLAGS.hop_length)[:, None]
   # compute loss per element
   loss = jnp.sum(loss * mask) / jnp.sum(mask)
   return (loss, new_aux) if is_training else (loss, new_aux, mel2_hat, mels)
@@ -70,7 +70,7 @@ val_loss_fn = jax.pmap(partial(loss_fn, is_training=False), axis_name='i')
 loss_vag = jax.value_and_grad(train_loss_fn, has_aux=True)
 
 lr_scheduler = optax.warmup_exponential_decay_schedule(
-    0.0, FLAGS.learning_rate * num_devices, 1_000, 50_000, 0.5, 0, False, FLAGS.learning_rate/100)
+    0.0, FLAGS.learning_rate * num_devices, 4_000, 50_000, 0.5, 0, False, FLAGS.learning_rate/100)
 optimizer = optax.chain(optax.clip_by_global_norm(1.0),
                         optax.adamw(lr_scheduler, weight_decay=FLAGS.weight_decay))
 
