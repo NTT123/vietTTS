@@ -1,0 +1,9 @@
+- [ ] use 24k sample rate (no way)
+- [ ] denoise/cleanup data (no way)
+- [ ] MFA realign with new phoneme set (working on it)
+- [x] clip LSTM cell
+- [x] unit norm embed vectors
+- [x] normalize data to mean 0, std 1
+- [ ] TPU support
+- [ ] new HiFi-GAN model
+- [ ] Finetune HiFi-GAN

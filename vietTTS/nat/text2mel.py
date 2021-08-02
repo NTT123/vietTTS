@@ -86,6 +86,7 @@ def text2mel(text: str, lexicon_fn=FLAGS.data_dir / 'lexicon.txt', silence_durat
     end_silence = durations[0, -1].item()
     silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
     mels = mels[:, :(mels.shape[1]-silence_frame)]
+  mels = mels * FLAGS.data_std + FLAGS.data_mean # back to original scale
   return mels
 
 

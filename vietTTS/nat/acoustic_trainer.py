@@ -28,6 +28,7 @@ def val_net(x): return AcousticModel(is_training=False)(x)
 def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
+  mels = (mels - FLAGS.data_mean) / FLAGS.data_std
   B, L, D = mels.shape
   inp_mels = jnp.concatenate((jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1)
   n_frames = inputs.durations * FLAGS.sample_rate / (FLAGS.n_fft//4)
@@ -78,6 +79,13 @@ def train():
   melfilter = MelFilter(FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax)
   batch = next(train_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
+
+  mel100 = batch.mels[:, :100]
+  data_mean = jnp.mean(mel100)
+  data_std = jnp.std(mel100)
+  print(
+      f'''Statistics of a batch vs FLAGS: mean/FLAGS.mean {data_mean}/{FLAGS.data_mean}  std/FLAGS.std {data_std}/{FLAGS.data_std}. 
+      Modify config.py if these values do not matched!''')
   params, aux, rng, optim_state = initial_state(batch)
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
@@ -119,9 +127,11 @@ def train():
       # saving predicted mels
       plt.figure(figsize=(10, 10))
       plt.subplot(3, 1, 1)
-      plt.imshow(predicted_mel.T, origin='lower', aspect='auto')
+      min_value = jnp.min(gt_mel.T).item()
+      max_value = jnp.max(gt_mel.T).item()
+      plt.imshow(predicted_mel.T, origin='lower', aspect='auto', vmin=min_value, vmax=max_value)
       plt.subplot(3, 1, 2)
-      plt.imshow(gt_mel.T, origin='lower', aspect='auto')
+      plt.imshow(gt_mel.T, origin='lower', aspect='auto', vmin=min_value, vmax=max_value)
       plt.subplot(3, 1, 3)
       plt.imshow(attn.T, origin='lower', aspect='auto')
       plt.tight_layout()
