@@ -45,9 +45,7 @@ num_devices = jax.device_count()
 
 
 def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
-  """
-    Compute loss: (l1_loss + l2_loss) / 2
-  """
+  """Compute loss: (l1_loss + l2_loss) / 2"""
   mels = melfilter(inputs.wavs.astype(jnp.float32) / (2**15))
   mels = (mels - FLAGS.data_mean) / FLAGS.data_std
   B, L, D = mels.shape
@@ -72,11 +70,9 @@ val_loss_fn = jax.pmap(partial(loss_fn, is_training=False), axis_name='i')
 loss_vag = jax.value_and_grad(train_loss_fn, has_aux=True)
 
 lr_scheduler = optax.warmup_exponential_decay_schedule(
-    0.0, FLAGS.learning_rate, 1_000, 50_000, 0.5, 0, False, FLAGS.learning_rate/100)
-optimizer = optax.chain(
-    optax.clip_by_global_norm(1.0),
-    optax.adamw(lr_scheduler, weight_decay=FLAGS.weight_decay)
-)
+    0.0, FLAGS.learning_rate * num_devices, 1_000, 50_000, 0.5, 0, False, FLAGS.learning_rate/100)
+optimizer = optax.chain(optax.clip_by_global_norm(1.0),
+                        optax.adamw(lr_scheduler, weight_decay=FLAGS.weight_decay))
 
 
 def update_step(prev_state, inputs):

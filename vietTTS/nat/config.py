@@ -18,8 +18,8 @@ class FLAGS(Namespace):
   # dataset
   max_phoneme_seq_len = 128 * 3
   max_wave_len = 1024 * 64 * 3
-  data_mean = -7.023   # infore mel-spectrogram mean
-  data_std = 3.522708  # infore mel-spectrogram std
+  data_mean = -9.0   # infore mel-spectrogram mean
+  data_std = 3.5     # infore mel-spectrogram std
 
   # Montreal Forced Aligner
   special_phonemes = ['sil', 'sp', 'spn', ' ']  # [sil], [sp] [spn] [word end]
@@ -36,7 +36,7 @@ class FLAGS(Namespace):
 
   # training
   batch_size = 16
-  learning_rate = 1e-4
+  learning_rate = 1.25e-4
   duration_learning_rate = 1e-4
   max_grad_norm = 1.0
   weight_decay = 1e-4
