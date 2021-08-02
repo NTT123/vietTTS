@@ -114,13 +114,13 @@ def train():
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
   batch = add_new_dims(batch, (num_devices,))
 
-  mel100 = batch.mels[:, :100]
+  mel100 = batch.mels[:, :, :100]
   data_mean = jnp.mean(mel100)
   data_std = jnp.std(mel100)
   print(f'''
 Statistics of a batch vs FLAGS: 
   mean/FLAGS.mean {data_mean:.3f}/{FLAGS.data_mean}
-  std/FLAGS.std {data_std:.3f}/{FLAGS.data_std}. 
+  std/FLAGS.std {data_std:.3f}/{FLAGS.data_std}
 Modify config.py if these values do not matched!
 ''')
   losses = Deque(maxlen=1000)

@@ -3,6 +3,7 @@ import unicodedata
 from argparse import ArgumentParser
 from pathlib import Path
 
+import jax.numpy as jnp
 import soundfile as sf
 
 from .hifigan.mel2wave import mel2wave
@@ -34,6 +35,11 @@ def nat_normalize_text(text):
 text = nat_normalize_text(args.text)
 print('Normalized text input:', text)
 mel = text2mel(text, args.lexicon_file, args.silence_duration)
+
+# convert this repo "logmel" to HiFi-GAN "logmel"
+mel = jnp.exp(mel) - 1e-3
+mel = jnp.log(jnp.clip(mel, a_min=1e-5, a_max=None))
+
 wave = mel2wave(mel)
 print('writing output to file', args.output)
 sf.write(str(args.output), wave, samplerate=args.sample_rate)
