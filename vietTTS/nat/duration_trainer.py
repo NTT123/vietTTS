@@ -1,9 +1,11 @@
+import os
 from functools import partial
-from typing import Deque
+from typing import Deque, Sequence
 
 import haiku as hk
 import jax
 import jax.numpy as jnp
+import jax.tools.colab_tpu
 import matplotlib.pyplot as plt
 import numpy as np
 import optax
@@ -14,6 +16,11 @@ from .config import FLAGS
 from .data_loader import textgrid_data_loader
 from .model import DurationModel
 from .utils import load_latest_ckpt, print_flags, save_ckpt
+
+if 'COLAB_TPU_ADDR' in os.environ:
+  print("Setting up TPU cores")
+  jax.tools.colab_tpu.setup_tpu()
+print("Jax devices:", jax.devices())
 
 
 def loss_fn(params, aux, rng, x: DurationInput, is_training=True):
@@ -37,7 +44,7 @@ def predict_duration(params, aux, rng, x: DurationInput):
   return d, x.durations
 
 
-val_loss_fn = jax.jit(partial(loss_fn, is_training=False))
+val_loss_fn = jax.pmap(partial(loss_fn, is_training=False), axis_name='i')
 
 loss_vag = jax.value_and_grad(loss_fn, has_aux=True)
 
@@ -47,15 +54,17 @@ optimizer = optax.chain(
 )
 
 
-@jax.jit
+@partial(jax.pmap, axis_name='i')
 def update(params, aux, rng, optim_state, inputs: DurationInput):
   rng, new_rng = jax.random.split(rng)
   (loss, new_aux), grads = loss_vag(params, aux, rng, inputs)
+  grads = jax.lax.pmean(grads, axis_name='i')
   updates, new_optim_state = optimizer.update(grads, optim_state, params)
   new_params = optax.apply_updates(params, updates)
   return loss, (new_params, new_aux, new_rng, new_optim_state)
 
 
+@partial(jax.pmap, axis_name='i')
 def initial_state(batch):
   rng = jax.random.PRNGKey(42)
   params, aux = hk.transform_with_state(lambda x: DurationModel(True)(x)).init(rng, batch)
@@ -76,18 +85,26 @@ def plot_val_duration(step: int, batch, params, aux, rng):
   plt.close()
 
 
+def add_new_dims(x: jnp.ndarray, dims: Sequence[int]) -> jnp.ndarray:
+  """reshape an array by adding new dimensions"""
+  return jax.tree_map(lambda x: jnp.reshape(x, dims + (-1,) + x.shape[1:]), x)
+
+
 def train():
+  num_devices = jax.device_count()
   train_data_iter = textgrid_data_loader(FLAGS.data_dir, FLAGS.max_phoneme_seq_len, FLAGS.batch_size, mode='train')
   val_data_iter = textgrid_data_loader(FLAGS.data_dir, FLAGS.max_phoneme_seq_len, FLAGS.batch_size, mode='val')
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
   latest_ckpt = load_latest_ckpt(FLAGS.ckpt_dir)
   if latest_ckpt is not None:
-    last_step, params, aux, rng, optim_state = latest_ckpt
+    last_step, *state = latest_ckpt
+    params, aux, rng, optim_state = jax.device_put_replicated(state, jax.devices())
   else:
     last_step = -1
     print('Generate random initial states...')
-    params, aux, rng, optim_state = initial_state(next(train_data_iter))
+    batch = add_new_dims(next(train_data_iter), (num_devices,))
+    params, aux, rng, optim_state = initial_state(batch)
 
   tr = tqdm(range(last_step + 1, 1 + FLAGS.num_training_steps),
             total=1 + FLAGS.num_training_steps,
@@ -97,23 +114,25 @@ def train():
   best_val_step = last_step
   best_val_loss = 1e9
   for step in tr:
-    batch = next(train_data_iter)
+    batch = add_new_dims(next(train_data_iter), (num_devices,))
     loss, (params, aux, rng, optim_state) = update(params, aux, rng, optim_state, batch)
     losses.append(loss)
 
     if step % 10 == 0:
-      val_loss, _ = val_loss_fn(params, aux, rng, next(val_data_iter))
+      batch = add_new_dims(next(val_data_iter), (num_devices,))
+      val_loss, _ = val_loss_fn(params, aux, rng, batch)
       val_losses.append(val_loss)
 
     if step % 1000 == 0:
-      loss = sum(losses).item() / len(losses)
-      val_loss = sum(val_losses).item() / len(val_losses)
+      loss = jnp.mean(sum(losses)).item() / len(losses)
+      val_loss = jnp.mean(sum(val_losses)).item() / len(val_losses)
       if val_loss < best_val_loss:
         best_val_loss = val_loss
         best_val_step = step
       plot_val_duration(step, next(val_data_iter), params, aux, rng)
       tr.write(f' {step:>6d}/{FLAGS.num_training_steps:>6d} | train loss {loss:.5f} | val loss {val_loss:.5f}')
-      save_ckpt(step, params, aux, rng, optim_state, ckpt_dir=FLAGS.ckpt_dir)
+      state = params, aux, rng, optim_state
+      save_ckpt(step, *jax.tree_map(lambda x: jax.device_get(x[0]), state), ckpt_dir=FLAGS.ckpt_dir)
 
 
 if __name__ == '__main__':
