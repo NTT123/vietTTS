@@ -35,7 +35,7 @@ class FLAGS(Namespace):
   fmax = 8000
 
   # training
-  batch_size = 64
+  batch_size = 16
   learning_rate = 1e-4
   duration_learning_rate = 1e-4
   max_grad_norm = 1.0

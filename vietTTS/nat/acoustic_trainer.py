@@ -83,6 +83,7 @@ def update_step(prev_state, inputs):
   params, aux, rng, optim_state = prev_state
   rng, new_rng = jax.random.split(rng)
   (loss, new_aux), grads = loss_vag(params, aux, rng, inputs)
+  grads = jax.lax.pmean(grads, axis_name='i')
   updates, new_optim_state = optimizer.update(grads, optim_state, params)
   new_params = optax.apply_updates(updates, params)
   return (new_params, new_aux, new_rng, new_optim_state), loss
@@ -91,7 +92,7 @@ def update_step(prev_state, inputs):
 @partial(jax.pmap, axis_name='i')
 def update(params, aux, rng, optim_state, inputs):
   new_state, losses = jax.lax.scan(update_step, (params, aux, rng, optim_state), inputs)
-  return jnp.mean(losses), new_state
+  return losses, new_state
 
 
 def add_new_dims(x: jnp.ndarray, dims: Sequence[int]) -> jnp.ndarray:
@@ -107,10 +108,11 @@ def initial_state(batch):
 
 
 def train():
+  spu = FLAGS.steps_per_update
   train_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
-                                      FLAGS.batch_size, FLAGS.max_wave_len, 'train')
+                                      FLAGS.batch_size * num_devices * spu, FLAGS.max_wave_len, 'train')
   val_data_iter = load_textgrid_wav(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
-                                    FLAGS.batch_size, FLAGS.max_wave_len, 'val')
+                                    FLAGS.batch_size * num_devices, FLAGS.max_wave_len, 'val')
   batch = next(train_data_iter)
   batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
 
@@ -119,11 +121,10 @@ def train():
   data_std = jnp.std(mel100)
   print(
       f'''Statistics of a batch vs FLAGS: mean/FLAGS.mean {data_mean}/{FLAGS.data_mean}  std/FLAGS.std {data_std}/{FLAGS.data_std}. 
-      Modify config.py if these values do not matched!''')
+Modify config.py if these values do not matched!''')
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
 
-  spu = FLAGS.steps_per_update
   last_step = -spu
 
   # loading latest checkpoint
