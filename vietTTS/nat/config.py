@@ -40,6 +40,7 @@ class FLAGS(Namespace):
   duration_learning_rate = 1e-4
   max_grad_norm = 1.0
   weight_decay = 1e-4
+  steps_per_update = 20
 
   # ckpt
   ckpt_dir = Path('assets/infore/nat')
