@@ -51,11 +51,7 @@ class DurationModel(hk.Module):
     self.is_training = is_training
     self.encoder = TokenEncoder(FLAGS.vocab_size, FLAGS.duration_lstm_dim,
                                 FLAGS.duration_embed_dropout_rate, is_training)
-    self.projection = hk.Sequential([
-        hk.Linear(FLAGS.duration_lstm_dim),
-        jax.nn.relu,
-        hk.Linear(1),
-    ])
+    self.projection = hk.Sequential([hk.Linear(FLAGS.duration_lstm_dim), jax.nn.relu, hk.Linear(1)])
 
   def __call__(self, inputs: DurationInput):
     x = self.encoder(inputs.phonemes, inputs.lengths)
@@ -71,10 +67,8 @@ class AcousticModel(hk.Module):
     super().__init__()
     self.is_training = is_training
     self.encoder = TokenEncoder(FLAGS.vocab_size, FLAGS.acoustic_encoder_dim, 0.5, is_training)
-    self.decoder = hk.deep_rnn_with_skip_connections([
-        LSTM(FLAGS.acoustic_decoder_dim),
-        LSTM(FLAGS.acoustic_decoder_dim)
-    ])
+    self.decoder = hk.deep_rnn_with_skip_connections(
+        [LSTM(FLAGS.acoustic_decoder_dim), LSTM(FLAGS.acoustic_decoder_dim)])
     self.projection = hk.Linear(FLAGS.mel_dim)
 
     # prenet
@@ -127,10 +121,7 @@ class AcousticModel(hk.Module):
       x = self.projection(x)
       return x, (x, new_hxcx)
 
-    state = (
-        jnp.zeros((B, FLAGS.mel_dim), dtype=jnp.float32),
-        self.decoder.initial_state(B)
-    )
+    state = (jnp.zeros((B, FLAGS.mel_dim), dtype=jnp.float32), self.decoder.initial_state(B))
     x, _ = hk.dynamic_unroll(loop_fn, x, state, time_major=False)
     residual = self.postnet(x)
     return x + residual
