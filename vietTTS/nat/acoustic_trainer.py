@@ -100,6 +100,7 @@ def add_new_dims(x: jnp.ndarray, dims: Sequence[int]) -> jnp.ndarray:
   return jax.tree_map(lambda x: jnp.reshape(x, dims + (-1,) + x.shape[1:]), x)
 
 
+@partial(jax.pmap, axis_name='i')
 def initial_state(batch):
   rng = jax.random.PRNGKey(42)
   params, aux = hk.transform_with_state(lambda x: AcousticModel(True)(x)).init(rng, batch)
@@ -134,9 +135,11 @@ Modify config.py if these values do not matched!''')
     with open(ckpt_fn, 'rb') as f:
       dic = pickle.load(f)
       last_step, params, aux, rng, optim_state = dic['step'], dic['params'], dic['aux'], dic['rng'], dic['optim_state']
+      params, aux, rng, optim_state = jax.device_put_replicated((params, aux, rng, optim_state), jax.devices())
   else:
+    batch = next(val_data_iter)
+    batch = add_new_dims(batch, (num_devices,))
     params, aux, rng, optim_state = initial_state(batch)
-  params, aux, rng, optim_state = jax.device_put_replicated((params, aux, rng, optim_state), jax.devices())
 
   tr = tqdm(range(last_step + spu, FLAGS.num_training_steps + spu, spu),
             desc='training',
