@@ -74,7 +74,8 @@ def initial_state(batch):
 
 def plot_val_duration(step: int, batch, params, aux, rng):
   fn = FLAGS.ckpt_dir / f'duration_{step}.png'
-  predicted_dur, gt_dur = predict_duration(params, aux, rng, batch)
+  predicted_dur, gt_dur = predict_duration(
+      *jax.tree_map(lambda x: x[0], (params, aux, rng)), batch)
   L = batch.lengths[0]
   x = np.arange(0, L) * 3
   plt.plot(predicted_dur[0, :L])
@@ -92,8 +93,10 @@ def add_new_dims(x: jnp.ndarray, dims: Sequence[int]) -> jnp.ndarray:
 
 def train():
   num_devices = jax.device_count()
-  train_data_iter = textgrid_data_loader(FLAGS.data_dir, FLAGS.max_phoneme_seq_len, FLAGS.batch_size, mode='train')
-  val_data_iter = textgrid_data_loader(FLAGS.data_dir, FLAGS.max_phoneme_seq_len, FLAGS.batch_size, mode='val')
+  train_data_iter = textgrid_data_loader(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
+                                         FLAGS.batch_size * num_devices, mode='train')
+  val_data_iter = textgrid_data_loader(FLAGS.data_dir, FLAGS.max_phoneme_seq_len,
+                                       FLAGS.batch_size * num_devices, mode='val')
   losses = Deque(maxlen=1000)
   val_losses = Deque(maxlen=100)
   latest_ckpt = load_latest_ckpt(FLAGS.ckpt_dir)
