@@ -102,13 +102,13 @@ def train():
     train_data_iter = textgrid_data_loader(
         FLAGS.data_dir,
         FLAGS.max_phoneme_seq_len,
-        FLAGS.batch_size * num_devices,
+        max(FLAGS.batch_size * num_devices, 32),
         mode="train",
     )
     val_data_iter = textgrid_data_loader(
         FLAGS.data_dir,
         FLAGS.max_phoneme_seq_len,
-        FLAGS.batch_size * num_devices,
+        max(FLAGS.batch_size * num_devices, 32),
         mode="val",
     )
     losses = Deque(maxlen=1000)

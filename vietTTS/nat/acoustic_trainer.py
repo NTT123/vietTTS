@@ -136,14 +136,14 @@ def train():
     train_data_iter = load_textgrid_wav(
         FLAGS.data_dir,
         FLAGS.max_phoneme_seq_len,
-        FLAGS.batch_size * num_devices * spu,
+        max(FLAGS.batch_size * num_devices * spu, 32),
         FLAGS.max_wave_len,
         "train",
     )
     val_data_iter = load_textgrid_wav(
         FLAGS.data_dir,
         FLAGS.max_phoneme_seq_len,
-        FLAGS.batch_size * num_devices,
+        max(FLAGS.batch_size * num_devices, 32),
         FLAGS.max_wave_len,
         "val",
     )
@@ -157,9 +157,9 @@ def train():
     print(
         f"""
 Statistics of a batch vs FLAGS: 
-  mean/FLAGS.mean {data_mean:.3f}/{FLAGS.data_mean}
-  std/FLAGS.std {data_std:.3f}/{FLAGS.data_std}
-Modify config.py if these values do not matched!
+  mean/FLAGS.data_mean {data_mean:.3f}/{FLAGS.data_mean}
+  std/FLAGS.data_std {data_std:.3f}/{FLAGS.data_std}
+Modify config.py if these values do not closely matched!
 """
     )
     losses = Deque(maxlen=1000)

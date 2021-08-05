@@ -45,8 +45,7 @@ class FLAGS(Namespace):
     steps_per_update = 10
 
     # ckpt
-    ckpt_dir = Path("assets/infore/nat")
-    data_dir = Path("assets/infore/data")
+    ckpt_dir = Path("ckpts")
     data_dir = Path("train_data")
 
 
