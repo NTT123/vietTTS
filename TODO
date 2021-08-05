@@ -4,6 +4,8 @@
 - [x] clip LSTM cell
 - [x] unit norm embed vectors
 - [x] normalize data to mean 0, std 1
-- [ ] TPU support
+- [.] TPU support
+- [x] format code with black
+- [ ] Tensorflow dataloader
 - [ ] new HiFi-GAN model
 - [ ] Finetune HiFi-GAN
