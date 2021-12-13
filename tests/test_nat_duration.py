@@ -8,8 +8,8 @@ from vietTTS.nat.model import DurationModel
 
 @hk.testing.transform_and_run
 def test_duration():
-  net = DurationModel()
-  p = jnp.zeros((2, 10), dtype=jnp.int32)
-  l = jnp.zeros((2,), dtype=jnp.int32)
-  o = net(p, l)
-  assert o.shape == (2, 10, 1)
+    net = DurationModel()
+    p = jnp.zeros((2, 10), dtype=jnp.int32)
+    l = jnp.zeros((2,), dtype=jnp.int32)
+    o = net(p, l)
+    assert o.shape == (2, 10, 1)

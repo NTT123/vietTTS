@@ -3,4 +3,4 @@ from typing import NamedTuple
 
 
 class FLAGS:
-  ckpt_dir = Path('./assets/infore/hifigan')
+    ckpt_dir = Path("./assets/infore/hifigan")
