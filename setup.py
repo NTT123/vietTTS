@@ -1,19 +1,19 @@
 from setuptools import setup
 
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 url = "https://github.com/ntt123/vietTTS"
 
 install_requires = [
-    "tabulate",
-    "optax",
+    "dm-haiku",
+    "einops",
+    "gdown",
     "jax",
     "jaxlib",
-    "einops",
     "librosa",
+    "optax",
+    "tabulate",
     "textgrid",
-    "dm-haiku @ git+https://github.com/deepmind/dm-haiku",
     "tqdm",
-    "gdown",
 ]
 setup_requires = []
 tests_require = []
@@ -21,7 +21,7 @@ tests_require = []
 setup(
     name="vietTTS",
     version=__version__,
-    description="A vietnamese text-to-speech system.",
+    description="A vietnamese text-to-speech library.",
     author="ntt123",
     url=url,
     keywords=[

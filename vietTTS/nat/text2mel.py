@@ -1,4 +1,6 @@
 import pickle
+from argparse import ArgumentParser
+from pathlib import Path
 
 import haiku as hk
 import jax
@@ -102,9 +104,6 @@ def text2mel(
 
 
 if __name__ == "__main__":
-    from argparse import ArgumentParser
-    from pathlib import Path
-
     parser = ArgumentParser()
     parser.add_argument("--text", type=str, required=True)
     parser.add_argument("--output", type=Path, required=True)

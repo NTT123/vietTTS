@@ -26,6 +26,6 @@ def save_ckpt(step, params, aux, rng, optim_state, ckpt_dir: Path):
         pickle.dump(dic, f)
 
 
-def print_flags(dict):
-    values = [(k, v) for k, v in dict.items() if not k.startswith("_")]
+def print_flags(flags):
+    values = [(k, v) for k, v in flags.items() if not k.startswith("_")]
     print(tabulate(values))

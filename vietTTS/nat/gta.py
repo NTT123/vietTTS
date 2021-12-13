@@ -1,7 +1,5 @@
-import os
 import pickle
 from argparse import ArgumentParser
-from functools import partial
 from pathlib import Path
 
 import haiku as hk

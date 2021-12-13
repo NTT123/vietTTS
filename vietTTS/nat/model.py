@@ -26,32 +26,21 @@ class TokenEncoder(hk.Module):
     def __call__(self, x, lengths):
         x = self.embed(x)
         x = jax.nn.relu(self.bn1(self.conv1(x), is_training=self.is_training))
-        x = (
-            hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
-            if self.is_training
-            else x
-        )
+        if self.is_training:
+            x = hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
         x = jax.nn.relu(self.bn2(self.conv2(x), is_training=self.is_training))
-        x = (
-            hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
-            if self.is_training
-            else x
-        )
+        if self.is_training:
+            x = hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
         x = jax.nn.relu(self.bn3(self.conv3(x), is_training=self.is_training))
-        x = (
-            hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
-            if self.is_training
-            else x
-        )
-        B, L, D = x.shape
+        if self.is_training:
+            x = hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
+        B, L, _ = x.shape
         mask = jnp.arange(0, L)[None, :] >= (lengths[:, None] - 1)
         h0c0_fwd = self.lstm_fwd.initial_state(B)
-        new_hx_fwd, new_hxcx_fwd = hk.dynamic_unroll(
-            self.lstm_fwd, x, h0c0_fwd, time_major=False
-        )
+        new_hx_fwd, _ = hk.dynamic_unroll(self.lstm_fwd, x, h0c0_fwd, time_major=False)
         x_bwd, mask_bwd = jax.tree_map(lambda x: jnp.flip(x, axis=1), (x, mask))
         h0c0_bwd = self.lstm_bwd.initial_state(B)
-        new_hx_bwd, new_hxcx_bwd = hk.dynamic_unroll(
+        new_hx_bwd, _ = hk.dynamic_unroll(
             self.lstm_bwd, (x_bwd, mask_bwd), h0c0_bwd, time_major=False
         )
         x = jnp.concatenate((new_hx_fwd, jnp.flip(new_hx_bwd, axis=1)), axis=-1)
@@ -71,11 +60,7 @@ class DurationModel(hk.Module):
             is_training,
         )
         self.projection = hk.Sequential(
-            [
-                hk.Linear(FLAGS.duration_lstm_dim),
-                jax.nn.gelu,
-                hk.Linear(1),
-            ]
+            [hk.Linear(FLAGS.duration_lstm_dim), jax.nn.gelu, hk.Linear(1)]
         )
 
     def __call__(self, inputs: DurationInput):
@@ -103,9 +88,8 @@ class AcousticModel(hk.Module):
         self.prenet_fc1 = hk.Linear(256, with_bias=False)
         self.prenet_fc2 = hk.Linear(256, with_bias=False)
         # posnet
-        self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5) for _ in range(4)] + [
-            hk.Conv1D(FLAGS.mel_dim, 5)
-        ]
+        self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5) for _ in range(4)]
+        self.postnet_convs.append(hk.Conv1D(FLAGS.mel_dim, 5))
         self.postnet_bns = [hk.BatchNorm(True, True, 0.9) for _ in range(4)] + [None]
 
     def prenet(self, x, dropout=0.5):
@@ -164,7 +148,7 @@ class AcousticModel(hk.Module):
         x = self.upsample(x, inputs.durations, inputs.mels.shape[1])
         mels = self.prenet(inputs.mels)
         x = jnp.concatenate((x, mels), axis=-1)
-        B, L, D = x.shape
+        B, L, _ = x.shape
         hx = self.decoder.initial_state(B)
 
         def zoneout_decoder(inputs, prev_state):

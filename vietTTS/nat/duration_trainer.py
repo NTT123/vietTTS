@@ -105,8 +105,6 @@ def train():
         ncols=80,
         desc="training",
     )
-    best_val_step = last_step
-    best_val_loss = 1e9
     for step in tr:
         batch = next(train_data_iter)
         loss, (params, aux, rng, optim_state) = update(
@@ -121,9 +119,6 @@ def train():
         if step % 1000 == 0:
             loss = sum(losses).item() / len(losses)
             val_loss = sum(val_losses).item() / len(val_losses)
-            if val_loss < best_val_loss:
-                best_val_loss = val_loss
-                best_val_step = step
             plot_val_duration(step, next(val_data_iter), params, aux, rng)
             tr.write(
                 f" {step:>6d}/{FLAGS.num_training_steps:>6d} | train loss {loss:.5f} | val loss {val_loss:.5f}"

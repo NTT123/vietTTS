@@ -1,13 +1,11 @@
 from functools import partial
-from typing import Deque, List, Optional, Tuple
+from typing import Optional
 
 import jax
 import jax.numpy as jnp
 import librosa
-import optax
 from einops import rearrange
 from jax.numpy import ndarray
-from librosa.core import fft
 
 
 def rolling_window(a: ndarray, window: int, hop_length: int):

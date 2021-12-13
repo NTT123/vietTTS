@@ -41,14 +41,14 @@ Train duration model
 --------------------
 
 ```sh
-python3 -m vietTTS.nat.duration_trainer
+python -m vietTTS.nat.duration_trainer
 ```
 
 
 Train acoustic model
 --------------------
 ```sh
-python3 -m vietTTS.nat.acoustic_trainer
+python -m vietTTS.nat.acoustic_trainer
 ```
 
 
@@ -71,7 +71,7 @@ tail -n +101 data/files.txt > train_files.txt
 rm data/files.txt
 
 # training
-python3 train.py \
+python train.py \
   --config ../assets/hifigan/config.json \
   --input_wavs_dir=data \
   --input_training_file=train_files.txt \
@@ -81,12 +81,12 @@ python3 train.py \
 Finetune on Ground-Truth Aligned melspectrograms:
 ```sh
 cd /path/to/vietTTS # go to vietTTS directory
-python3 -m vietTTS.nat.zero_silence_segments -o train_data # zero all [sil, sp, spn] segments
-python3 -m vietTTS.nat.gta -o /path/to/hifi-gan/ft_dataset  # create gta melspectrograms at hifi-gan/ft_dataset directory
+python -m vietTTS.nat.zero_silence_segments -o train_data # zero all [sil, sp, spn] segments
+python -m vietTTS.nat.gta -o /path/to/hifi-gan/ft_dataset  # create gta melspectrograms at hifi-gan/ft_dataset directory
 
 # turn on finetune
 cd /path/to/hifi-gan
-python3 train.py \
+python train.py \
   --fine_tuning True \
   --config ../assets/hifigan/config.json \
   --input_wavs_dir=data \
@@ -97,7 +97,7 @@ python3 train.py \
 Then, use the following command to convert pytorch model to haiku format:
 ```sh
 cd ..
-python3 -m vietTTS.hifigan.convert_torch_model_to_haiku \
+python -m vietTTS.hifigan.convert_torch_model_to_haiku \
   --config-file=assets/hifigan/config.json \
   --checkpoint-file=hifi-gan/cp_hifigan/g_[latest_checkpoint]
 ```
@@ -106,7 +106,7 @@ Synthesize speech
 -----------------
 
 ```sh
-python3 -m vietTTS.synthesizer \
+python -m vietTTS.synthesizer \
   --lexicon-file=train_data/lexicon.txt \
   --text="hôm qua em tới trường" \
   --output=clip.wav

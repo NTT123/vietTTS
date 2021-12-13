@@ -33,20 +33,17 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
     )
     mels = melfilter(inputs.wavs.astype(jnp.float32) / (2 ** 15))
     B, L, D = mels.shape
-    inp_mels = jnp.concatenate(
-        (jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1
-    )
+    go_frame = jnp.zeros((B, 1, D), dtype=jnp.float32)
+    inp_mels = jnp.concatenate((go_frame, mels[:, :-1, :]), axis=1)
     n_frames = inputs.durations * FLAGS.sample_rate / (FLAGS.n_fft // 4)
     inputs = inputs._replace(mels=inp_mels, durations=n_frames)
-    (mel1_hat, mel2_hat), new_aux = (net if is_training else val_net).apply(
-        params, aux, rng, inputs
-    )
+    model = net if is_training else val_net
+    (mel1_hat, mel2_hat), new_aux = model.apply(params, aux, rng, inputs)
     loss1 = (jnp.square(mel1_hat - mels) + jnp.square(mel2_hat - mels)) / 2
     loss2 = (jnp.abs(mel1_hat - mels) + jnp.abs(mel2_hat - mels)) / 2
     loss = jnp.mean((loss1 + loss2) / 2, axis=-1)
-    mask = (
-        jnp.arange(0, L)[None, :] < (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
-    )
+    num_frames = (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
+    mask = jnp.arange(0, L)[None, :] < num_frames
     loss = jnp.sum(loss * mask) / jnp.sum(mask)
     return (loss, new_aux) if is_training else (loss, new_aux, mel2_hat, mels)
 
