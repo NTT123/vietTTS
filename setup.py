@@ -1,11 +1,12 @@
 from setuptools import setup
 
-__version__ = "0.3.2"
+__version__ = "0.3.3"
 url = "https://github.com/ntt123/vietTTS"
 
 install_requires = [
     "dm-haiku",
     "einops",
+    "fire",
     "gdown",
     "jax",
     "jaxlib",
@@ -37,5 +38,5 @@ setup(
     setup_requires=setup_requires,
     tests_require=tests_require,
     packages=["vietTTS"],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
 )
