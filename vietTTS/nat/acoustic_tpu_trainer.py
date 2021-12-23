@@ -82,7 +82,7 @@ def train(
     losses = Deque(maxlen=1000)
     val_losses = Deque(maxlen=100)
 
-    last_step = -1
+    last_step = -steps_per_update
 
     # loading latest checkpoint
     ckpt_fn = FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle"
