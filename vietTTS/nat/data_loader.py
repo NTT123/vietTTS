@@ -31,7 +31,32 @@ def is_in_word(phone, word):
     return time_in_word(phone.minTime, word) and time_in_word(phone.maxTime, word)
 
 
-def load_textgrid(fn: Path):
+def to_word_mean_duration(data):
+    """Compute the duration of a word and divide it equally for all phonemes."""
+    out = []
+    word_time = 0.0
+    idx = 0
+    t1 = sum(tuple(zip(*data))[1])
+    for i, (phone, duration) in enumerate(data):
+        if phone == " ":
+            l = i - idx
+            for j in range(idx, i):
+                out[j][1] = word_time / l
+        if phone in FLAGS.special_phonemes:
+            word_time = 0.0
+            out.append([phone, duration])
+            idx = i + 1
+        else:
+            out.append([phone, 0.0])
+            word_time = word_time + duration
+
+    t2 = sum(tuple(zip(*data))[1])
+    # sanity check
+    assert t1 == t2
+    return out
+
+
+def load_textgrid(fn: Path, word_mean_duration=True):
     tg = textgrid.TextGrid.fromFile(str(fn.resolve()))
     data = []
     words = list(tg[0])
@@ -46,6 +71,8 @@ def load_textgrid(fn: Path):
                 break
             assert p in words[widx], "mismatched word vs phoneme"
         data.append((p.mark.strip().lower(), p.duration()))
+    if word_mean_duration:
+        data = to_word_mean_duration(data)
     return data
 
 
