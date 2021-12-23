@@ -99,7 +99,9 @@ def train(
             )
 
     tr = tqdm(
-        range(last_step + 1, FLAGS.num_training_steps + 1, steps_per_update),
+        range(
+            last_step + steps_per_update, FLAGS.num_training_steps + 1, steps_per_update
+        ),
         desc="training",
         total=FLAGS.num_training_steps // steps_per_update + 1,
         initial=last_step // steps_per_update + 1,
