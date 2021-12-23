@@ -25,21 +25,27 @@ class TokenEncoder(hk.Module):
 
     def __call__(self, x, lengths):
         x = self.embed(x)
+        N, L, _ = x.shape
+        cnn_mask = jnp.arange(0, L)[None, :] >= lengths[:, None]
+        cnn_mask = cnn_mask[..., None]
+        x = jnp.where(cnn_mask, 0.0, x)
         x = jax.nn.relu(self.bn1(self.conv1(x), is_training=self.is_training))
         if self.is_training:
             x = hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
+        x = jnp.where(cnn_mask, 0.0, x)
         x = jax.nn.relu(self.bn2(self.conv2(x), is_training=self.is_training))
         if self.is_training:
             x = hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
+        x = jnp.where(cnn_mask, 0.0, x)
         x = jax.nn.relu(self.bn3(self.conv3(x), is_training=self.is_training))
         if self.is_training:
             x = hk.dropout(hk.next_rng_key(), self.dropout_rate, x)
-        B, L, _ = x.shape
-        mask = jnp.arange(0, L)[None, :] >= (lengths[:, None] - 1)
-        h0c0_fwd = self.lstm_fwd.initial_state(B)
+
+        rnn_mask = jnp.arange(0, L)[None, :] >= (lengths[:, None] - 1)
+        h0c0_fwd = self.lstm_fwd.initial_state(N)
         new_hx_fwd, _ = hk.dynamic_unroll(self.lstm_fwd, x, h0c0_fwd, time_major=False)
-        x_bwd, mask_bwd = jax.tree_map(lambda x: jnp.flip(x, axis=1), (x, mask))
-        h0c0_bwd = self.lstm_bwd.initial_state(B)
+        x_bwd, mask_bwd = jax.tree_map(lambda x: jnp.flip(x, axis=1), (x, rnn_mask))
+        h0c0_bwd = self.lstm_bwd.initial_state(N)
         new_hx_bwd, _ = hk.dynamic_unroll(
             self.lstm_bwd, (x_bwd, mask_bwd), h0c0_bwd, time_major=False
         )
