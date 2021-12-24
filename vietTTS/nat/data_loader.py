@@ -45,7 +45,12 @@ def load_textgrid(fn: Path):
             if widx >= len(words):
                 break
             assert p in words[widx], "mismatched word vs phoneme"
-        data.append((p.mark.strip().lower(), p.duration()))
+
+        # MFA uses empty string to mark [sil].
+        phone = p.mark
+        if len(phone) == 0:
+            phone = FLAGS.special_phonemes[FLAGS.sil_index]
+        data.append((phone.strip().lower(), p.duration()))
     return data
 
 

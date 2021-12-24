@@ -1,4 +1,5 @@
 import pickle
+import unicodedata
 from argparse import ArgumentParser
 from pathlib import Path
 
@@ -34,27 +35,73 @@ def predict_duration(tokens):
     return forward_fn(dic["params"], dic["aux"], dic["rng"], x)[0]
 
 
+consonants = (
+    ["ngh"]
+    + ["ch", "gh", "gi", "kh", "ng", "nh", "ph", "qu", "tr", "th"]
+    + ["b", "c", "d", "đ", "g", "h", "k", "l", "m", "n", "p", "r", "s", "t", "v", "x"]
+)
+vowels = (
+    ["a", "ă", "â", "e", "ê", "i", "o", "ô", "ơ", "u", "ư", "y"]
+    + ["á", "ắ", "ấ", "é", "ế", "í", "ó", "ố", "ớ", "ú", "ứ", "ý"]
+    + ["à", "ằ", "ầ", "è", "ề", "ì", "ò", "ồ", "ờ", "ù", "ừ", "ỳ"]
+    + ["ả", "ẳ", "ẩ", "ẻ", "ể", "ỉ", "ỏ", "ổ", "ở", "ủ", "ử", "ỷ"]
+    + ["ã", "ẵ", "ẫ", "ẽ", "ễ", "ĩ", "õ", "ỗ", "ỡ", "ũ", "ữ", "ỹ"]
+    + ["ạ", "ặ", "ậ", "ẹ", "ệ", "ị", "ọ", "ộ", "ợ", "ụ", "ự", "ỵ"]
+)
+
+phonemes = consonants + vowels
+
+
+def merge_vowels(phones):
+    out = []
+    for ph in phones:
+        if ph in vowels:
+            if len(out) > 0 and out[-1][0] in vowels:
+                out[-1] = out[-1] + ph
+            else:
+                out.append(ph)
+        else:
+            out.append(ph)
+    return out
+
+
+def word_to_phonemes(word):
+    word = unicodedata.normalize("NFKC", word.strip().lower())
+    idx = 0
+    out = []
+    while idx < len(word):
+        # length: 3, 2, 1
+        for l in [3, 2, 1]:
+            if idx + l <= len(word) and word[idx : (idx + l)] in phonemes:
+                out.append(word[idx : (idx + l)])
+                idx = idx + l
+                break
+        else:
+            raise ValueError(f"Unknown phoneme {word[idx]}")
+    out = merge_vowels(out)
+    return out
+
+
 def text2tokens(text, lexicon_fn):
     phonemes = load_phonemes_set_from_lexicon_file(lexicon_fn)
     lexicon = load_lexicon(lexicon_fn)
 
-    words = text.strip().lower().split()
-    tokens = [FLAGS.sil_index]
+    words = text.strip().lower()
+    phones = []
     for word in words:
-        if word in FLAGS.special_phonemes:
-            tokens.append(phonemes.index(word))
-        elif word in lexicon:
-            p = lexicon[word]
-            p = p.split()
-            p = [phonemes.index(pp) for pp in p]
-            tokens.extend(p)
-            tokens.append(FLAGS.word_end_index)
+        if word in lexicon:
+            phones.extend(lexicon[word].split())
+            phones.append(FLAGS.special_phonemes[FLAGS.word_end_index])
+        elif word == FLAGS.special_phonemes[FLAGS.sil_index]:
+            phones.append(FLAGS.special_phonemes[FLAGS.sil_index])
         else:
-            for p in word:
-                if p in phonemes:
-                    tokens.append(phonemes.index(p))
-            tokens.append(FLAGS.word_end_index)
-    tokens.append(FLAGS.sp_index)  # silence
+            phones.extend(word_to_phonemes(word))
+            phones.append(FLAGS.special_phonemes[FLAGS.word_end_index])
+
+    tokens = [FLAGS.sil_index]
+    for phone in phones:
+        tokens.append(phonemes.index(phone))
+    tokens.append(FLAGS.sil_index)  # silence
     return tokens
 
 
@@ -88,7 +135,7 @@ def text2mel(
     tokens = text2tokens(text, lexicon_fn)
     durations = predict_duration(tokens)
     durations = jnp.where(
-        np.array(tokens)[None, :] == FLAGS.sp_index,
+        np.array(tokens)[None, :] == FLAGS.sil_index,
         jnp.clip(durations, a_min=silence_duration, a_max=None),
         durations,
     )
@@ -96,7 +143,7 @@ def text2mel(
         np.array(tokens)[None, :] == FLAGS.word_end_index, 0.0, durations
     )
     mels = predict_mel(tokens, durations)
-    if tokens[-1] == FLAGS.sp_index:
+    if tokens[-1] == FLAGS.sil_index:
         end_silence = durations[0, -1].item()
         silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
         mels = mels[:, : (mels.shape[1] - silence_frame)]
