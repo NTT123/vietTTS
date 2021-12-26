@@ -24,7 +24,7 @@ def predict_duration(tokens):
         return DurationModel(is_training=False)(x)
 
     forward_fn = jax.jit(hk.transform_with_state(fwd_).apply)
-    with open(FLAGS.ckpt_dir / "duration_ckpt_latest.pickle", "rb") as f:
+    with open(FLAGS.ckpt_dir / "duration_latest_ckpt.pickle", "rb") as f:
         dic = pickle.load(f)
     x = DurationInput(
         np.array(tokens, dtype=np.int32)[None, :],
@@ -59,7 +59,7 @@ def text2tokens(text, lexicon_fn):
 
 
 def predict_mel(tokens, durations):
-    ckpt_fn = FLAGS.ckpt_dir / "acoustic_ckpt_latest.pickle"
+    ckpt_fn = FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle"
     with open(ckpt_fn, "rb") as f:
         dic = pickle.load(f)
         last_step, params, aux, rng, optim_state = (

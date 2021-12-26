@@ -5,7 +5,7 @@ from tabulate import tabulate
 
 
 def load_latest_ckpt(ckpt_dir: Path):
-    ckpt = ckpt_dir / "duration_ckpt_latest.pickle"
+    ckpt = ckpt_dir / "duration_latest_ckpt.pickle"
     if not ckpt.exists():
         return None
     print("Loading latest checkpoint from file", ckpt)
@@ -22,7 +22,7 @@ def save_ckpt(step, params, aux, rng, optim_state, ckpt_dir: Path):
         "rng": rng,
         "optim_state": optim_state,
     }
-    with open(ckpt_dir / "duration_ckpt_latest.pickle", "wb") as f:
+    with open(ckpt_dir / "duration_latest_ckpt.pickle", "wb") as f:
         pickle.dump(dic, f)
 
 
