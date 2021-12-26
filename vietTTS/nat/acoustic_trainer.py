@@ -104,7 +104,7 @@ def train():
     last_step = -1
 
     # loading latest checkpoint
-    ckpt_fn = FLAGS.ckpt_dir / "acoustic_ckpt_latest.pickle"
+    ckpt_fn = FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle"
     if ckpt_fn.exists():
         print("Resuming from latest checkpoint at", ckpt_fn)
         with open(ckpt_fn, "rb") as f:

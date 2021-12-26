@@ -52,7 +52,7 @@ def generate_gta(out_dir: Path):
         FLAGS.max_wave_len,
         "gta",
     )
-    ckpt_fn = FLAGS.ckpt_dir / "acoustic_ckpt_latest.pickle"
+    ckpt_fn = FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle"
     print("Resuming from latest checkpoint at", ckpt_fn)
     with open(ckpt_fn, "rb") as f:
         dic = pickle.load(f)
