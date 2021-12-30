@@ -91,6 +91,7 @@ class AcousticModel(hk.Module):
         self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5) for _ in range(4)]
         self.postnet_convs.append(hk.Conv1D(FLAGS.mel_dim, 5))
         self.postnet_bns = [hk.BatchNorm(True, True, 0.9) for _ in range(4)] + [None]
+        self.zoneout_prob = 0.1
 
     def prenet(self, x, dropout=0.5):
         x = jax.nn.relu(self.prenet_fc1(x))
@@ -132,6 +133,11 @@ class AcousticModel(hk.Module):
             prev_mel = self.prenet(prev_mel)
             x = jnp.concatenate((cond, prev_mel), axis=-1)
             x, new_hxcx = self.decoder(x, hxcx)
+            new_hxcx = jax.tree_multimap(
+                lambda o, n: o * self.zoneout_prob + n * (1.0 - self.zoneout_prob),
+                hxcx,
+                new_hxcx,
+            )
             x = self.projection(x)
             return x, (x, new_hxcx)
 
@@ -155,12 +161,14 @@ class AcousticModel(hk.Module):
             x, mask = inputs
             x, state = self.decoder(x, prev_state)
             state = jax.tree_multimap(
-                lambda m, s1, s2: s1 * m + s2 * (1 - m), mask, prev_state, state
+                lambda m, o, n: o * m + n * (1.0 - m), mask, prev_state, state
             )
             return x, state
 
         mask = jax.tree_map(
-            lambda x: jax.random.bernoulli(hk.next_rng_key(), 0.1, (B, L, x.shape[-1])),
+            lambda x: jax.random.bernoulli(
+                hk.next_rng_key(), self.zoneout_prob, (B, L, x.shape[-1])
+            ),
             hx,
         )
         x, _ = hk.dynamic_unroll(zoneout_decoder, (x, mask), hx, time_major=False)
