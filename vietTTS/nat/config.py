@@ -10,8 +10,7 @@ class FLAGS(Namespace):
     vocab_size = 256
     duration_embed_dropout_rate = 0.5
     num_training_steps = 200_000
-    postnet_dim = 512
-    acoustic_decoder_dim = 512
+    acoustic_decoder_dim = 256
     acoustic_encoder_dim = 256
 
     # dataset

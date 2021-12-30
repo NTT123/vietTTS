@@ -38,14 +38,13 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
     n_frames = inputs.durations * FLAGS.sample_rate / (FLAGS.n_fft // 4)
     inputs = inputs._replace(mels=inp_mels, durations=n_frames)
     model = net if is_training else val_net
-    (mel1_hat, mel2_hat), new_aux = model.apply(params, aux, rng, inputs)
-    loss1 = (jnp.square(mel1_hat - mels) + jnp.square(mel2_hat - mels)) / 2
-    loss2 = (jnp.abs(mel1_hat - mels) + jnp.abs(mel2_hat - mels)) / 2
-    loss = jnp.mean((loss1 + loss2) / 2, axis=-1)
+    mel_hat, new_aux = model.apply(params, aux, rng, inputs)
+    loss = (jnp.square(mel_hat - mels) + jnp.square(mel_hat - mels)) / 2
+    loss = jnp.mean(loss, axis=-1)
     num_frames = (inputs.wav_lengths // (FLAGS.n_fft // 4))[:, None]
     mask = jnp.arange(0, L)[None, :] < num_frames
     loss = jnp.sum(loss * mask) / jnp.sum(mask)
-    return (loss, new_aux) if is_training else (loss, new_aux, mel2_hat, mels)
+    return (loss, new_aux) if is_training else (loss, new_aux, mel_hat, mels)
 
 
 train_loss_fn = partial(loss_fn, is_training=True)

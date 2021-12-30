@@ -85,12 +85,8 @@ class AcousticModel(hk.Module):
         self.projection = hk.Linear(FLAGS.mel_dim)
 
         # prenet
-        self.prenet_fc1 = hk.Linear(256, with_bias=False)
-        self.prenet_fc2 = hk.Linear(256, with_bias=False)
-        # posnet
-        self.postnet_convs = [hk.Conv1D(FLAGS.postnet_dim, 5) for _ in range(4)]
-        self.postnet_convs.append(hk.Conv1D(FLAGS.mel_dim, 5))
-        self.postnet_bns = [hk.BatchNorm(True, True, 0.9) for _ in range(4)] + [None]
+        self.prenet_fc1 = hk.Linear(128, with_bias=False)
+        self.prenet_fc2 = hk.Linear(128, with_bias=False)
         self.zoneout_prob = 0.1
 
     def prenet(self, x, dropout=0.5):
@@ -109,16 +105,6 @@ class AcousticModel(hk.Module):
         w = jax.nn.softmax(-d2, axis=-1)
         hk.set_state("attn", w[0])
         x = jnp.einsum("BLT,BTD->BLD", w, x)
-        return x
-
-    def postnet(self, mel: ndarray) -> ndarray:
-        x = mel
-        for conv, bn in zip(self.postnet_convs, self.postnet_bns):
-            x = conv(x)
-            if bn is not None:
-                x = bn(x, is_training=self.is_training)
-                x = jnp.tanh(x)
-            x = hk.dropout(hk.next_rng_key(), 0.5, x) if self.is_training else x
         return x
 
     def inference(self, tokens, durations, n_frames):
@@ -146,8 +132,7 @@ class AcousticModel(hk.Module):
             self.decoder.initial_state(B),
         )
         x, _ = hk.dynamic_unroll(loop_fn, x, state, time_major=False)
-        residual = self.postnet(x)
-        return x + residual
+        return x
 
     def __call__(self, inputs: AcousticInput):
         x = self.encoder(inputs.phonemes, inputs.lengths)
@@ -173,5 +158,4 @@ class AcousticModel(hk.Module):
         )
         x, _ = hk.dynamic_unroll(zoneout_decoder, (x, mask), hx, time_major=False)
         x = self.projection(x)
-        residual = self.postnet(x)
-        return x, x + residual
+        return x
