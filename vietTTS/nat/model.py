@@ -121,6 +121,14 @@ class AcousticModel(hk.Module):
             x = hk.dropout(hk.next_rng_key(), 0.5, x) if self.is_training else x
         return x
 
+    def zoneout(self, old, new, *, mask):
+        if self.is_training:
+            new = jax.tree_map(lambda m, o, n: o * m + n * (1.0 - m), mask, old, new)
+        else:
+            func = lambda o, n: o * self.zoneout_prob + n * (1.0 - self.zoneout_prob)
+            new = jax.tree_map(func, old, new)
+        return new
+
     def inference(self, tokens, durations, n_frames):
         B, L = tokens.shape
         lengths = jnp.array([L], dtype=jnp.int32)
@@ -133,11 +141,7 @@ class AcousticModel(hk.Module):
             prev_mel = self.prenet(prev_mel)
             x = jnp.concatenate((cond, prev_mel), axis=-1)
             x, new_hxcx = self.decoder(x, hxcx)
-            new_hxcx = jax.tree_multimap(
-                lambda o, n: o * self.zoneout_prob + n * (1.0 - self.zoneout_prob),
-                hxcx,
-                new_hxcx,
-            )
+            new_hxcx = self.zoneout(hxcx, new_hxcx, mask=None)
             x = self.projection(x)
             return x, (x, new_hxcx)
 
@@ -160,9 +164,7 @@ class AcousticModel(hk.Module):
         def zoneout_decoder(inputs, prev_state):
             x, mask = inputs
             x, state = self.decoder(x, prev_state)
-            state = jax.tree_multimap(
-                lambda m, o, n: o * m + n * (1.0 - m), mask, prev_state, state
-            )
+            state = self.zoneout(prev_state, state, mask=mask)
             return x, state
 
         mask = jax.tree_map(
