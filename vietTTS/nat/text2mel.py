@@ -19,12 +19,12 @@ def load_lexicon(fn):
     return dict(lines)
 
 
-def predict_duration(tokens):
+def predict_duration(tokens, ckpt_file):
     def fwd_(x):
         return DurationModel(is_training=False)(x)
 
     forward_fn = jax.jit(hk.transform_with_state(fwd_).apply)
-    with open(FLAGS.ckpt_dir / "duration_latest_ckpt.pickle", "rb") as f:
+    with open(ckpt_file, "rb") as f:
         dic = pickle.load(f)
     x = DurationInput(
         np.array(tokens, dtype=np.int32)[None, :],
@@ -85,10 +85,11 @@ def text2mel(
     text: str,
     lexicon_fn=FLAGS.data_dir / "lexicon.txt",
     silence_duration: float = -1.0,
-    ckpt_fn=FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle",
+    acoustic_ckpt=FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle",
+    duration_ckpt=FLAGS.ckpt_dir / "duration_latest_ckpt.pickle",
 ):
     tokens = text2tokens(text, lexicon_fn)
-    durations = predict_duration(tokens)
+    durations = predict_duration(tokens, duration_ckpt)
     durations = jnp.where(
         np.array(tokens)[None, :] == FLAGS.sp_index,
         jnp.clip(durations, a_min=silence_duration, a_max=None),
@@ -97,7 +98,7 @@ def text2mel(
     durations = jnp.where(
         np.array(tokens)[None, :] == FLAGS.word_end_index, 0.0, durations
     )
-    mels = predict_mel(tokens, durations, ckpt_fn)
+    mels = predict_mel(tokens, durations, acoustic_ckpt)
     if tokens[-1] == FLAGS.sp_index:
         end_silence = durations[0, -1].item()
         silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
