@@ -37,6 +37,6 @@ setup(
     install_requires=install_requires,
     setup_requires=setup_requires,
     tests_require=tests_require,
-    packages=["vietTTS"],
+    packages=["vietTTS", "vietTTS.nat", "vietTTS.hifigan"],
     python_requires=">=3.7",
 )

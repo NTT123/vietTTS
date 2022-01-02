@@ -58,8 +58,7 @@ def text2tokens(text, lexicon_fn):
     return tokens
 
 
-def predict_mel(tokens, durations):
-    ckpt_fn = FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle"
+def predict_mel(tokens, durations, ckpt_fn):
     with open(ckpt_fn, "rb") as f:
         dic = pickle.load(f)
         last_step, params, aux, rng, optim_state = (
@@ -83,7 +82,10 @@ def predict_mel(tokens, durations):
 
 
 def text2mel(
-    text: str, lexicon_fn=FLAGS.data_dir / "lexicon.txt", silence_duration: float = -1.0
+    text: str,
+    lexicon_fn=FLAGS.data_dir / "lexicon.txt",
+    silence_duration: float = -1.0,
+    ckpt_fn=FLAGS.ckpt_dir / "acoustic_latest_ckpt.pickle",
 ):
     tokens = text2tokens(text, lexicon_fn)
     durations = predict_duration(tokens)
@@ -95,7 +97,7 @@ def text2mel(
     durations = jnp.where(
         np.array(tokens)[None, :] == FLAGS.word_end_index, 0.0, durations
     )
-    mels = predict_mel(tokens, durations)
+    mels = predict_mel(tokens, durations, ckpt_fn)
     if tokens[-1] == FLAGS.sp_index:
         end_silence = durations[0, -1].item()
         silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
