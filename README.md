@@ -3,6 +3,8 @@ A Vietnamese TTS
 
 Tacotron + HiFiGAN vocoder for vietnamese datasets.
 
+Online demo at https://huggingface.co/spaces/ntt123/vietTTS.
+
 A synthesized audio clip: [clip.wav](assets/infore/clip.wav). A colab notebook: [notebook](https://colab.research.google.com/drive/1oczrWOQOr1Y_qLdgis1twSlNZlfPVXoY?usp=sharing).
 
 
