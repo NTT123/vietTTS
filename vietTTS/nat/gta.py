@@ -30,14 +30,14 @@ def forward_fn_(params, aux, rng, inputs: AcousticInput):
         FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax
     )
     mels = melfilter(inputs.wavs.astype(jnp.float32) / (2 ** 15))
-    B, L, D = mels.shape
+    B, _, D = mels.shape
     inp_mels = jnp.concatenate(
         (jnp.zeros((B, 1, D), dtype=jnp.float32), mels[:, :-1, :]), axis=1
     )
     n_frames = inputs.durations * FLAGS.sample_rate / (FLAGS.n_fft // 4)
     inputs = inputs._replace(mels=inp_mels, durations=n_frames)
-    (mel1_hat, mel2_hat), new_aux = val_net.apply(params, aux, rng, inputs)
-    return mel2_hat
+    mel_hat, _ = val_net.apply(params, aux, rng, inputs)
+    return mel_hat
 
 
 forward_fn = jax.jit(forward_fn_)
