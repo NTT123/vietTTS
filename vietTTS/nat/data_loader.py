@@ -32,6 +32,7 @@ def is_in_word(phone, word):
 
 
 def load_textgrid(fn: Path):
+    """load textgrid file"""
     tg = textgrid.TextGrid.fromFile(str(fn.resolve()))
     data = []
     words = list(tg[0])
@@ -45,16 +46,20 @@ def load_textgrid(fn: Path):
             if widx >= len(words):
                 break
             assert p in words[widx], "mismatched word vs phoneme"
-        data.append((p.mark.strip().lower(), p.duration()))
+        mark = p.mark.strip().lower()
+        if len(mark) == 0:
+            mark = "sil"
+        data.append((mark, p.duration()))
     return data
 
 
 def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: str):
+    """load all textgrid files in the directory"""
     tg_files = sorted(data_dir.glob("*.TextGrid"))
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100
     assert mode in ["train", "val"]
-    phonemes = load_phonemes_set_from_lexicon_file(data_dir / "lexicon.txt")
+    phonemes = load_phonemes_set_from_lexicon_file("assets/infore/lexicon.txt")
     if mode == "train":
         tg_files = tg_files[:L]
     if mode == "val":
@@ -86,6 +91,7 @@ def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: st
 def load_textgrid_wav(
     data_dir: Path, token_seq_len: int, batch_size, pad_wav_len, mode: str
 ):
+    """load wav and textgrid files to memory."""
     tg_files = sorted(data_dir.glob("*.TextGrid"))
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100

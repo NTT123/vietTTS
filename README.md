@@ -1,7 +1,7 @@
 A Vietnamese TTS
 ================
 
-Tacotron + HiFiGAN vocoder for vietnamese datasets.
+Duration model + Acoustic model + HiFiGAN vocoder for vietnamese text-to-speech application.
 
 Online demo at https://huggingface.co/spaces/ntt123/vietTTS.
 
@@ -32,7 +32,7 @@ Download InfoRe dataset
 -----------------------
 
 ```sh
-bash ./scripts/download_aligned_infore_dataset.sh
+python ./scripts/download_aligned_infore_dataset.py
 ```
 
 **Note**: this is a denoised and aligned version of the original dataset which is donated by the InfoRe Technology company (see [here](https://www.facebook.com/groups/j2team.community/permalink/1010834009248719/)). You can download the original dataset (**InfoRe Technology 1**) at [here](https://github.com/TensorSpeech/TensorFlowASR/blob/main/README.md#vietnamese).
