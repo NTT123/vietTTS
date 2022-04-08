@@ -659,7 +659,6 @@ champions	 c h a m p i o n s
 chan	 c h a n
 chanda	 c h a n d a
 chanel	 c h a n e l
-chaneǀ	 c h a n e ǀ
 chang	 c h a n g
 change	 c h a n g e
 chanh	 c h a n h
@@ -2580,7 +2579,6 @@ justin	 j u s t i n
 juve	 j u v e
 juventus	 j u v e n t u s
 k	 k
-k+	 k +
 ka	 k a
 kabuki	 k a b u k i
 kahn	 k a h n
