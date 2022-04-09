@@ -8,14 +8,8 @@ from scipy.io import wavfile
 from .config import FLAGS, AcousticInput, DurationInput
 
 
-def load_phonemes_set_from_lexicon_file(fn: Path):
-    S = set()
-    for line in open(fn, "r").readlines():
-        word, phonemes = line.strip().lower().split("\t")
-        phonemes = phonemes.split()
-        S.update(phonemes)
-
-    S = FLAGS.special_phonemes + sorted(list(S))
+def load_phonemes_set():
+    S = FLAGS.special_phonemes + FLAGS._normal_phonemes
     return S
 
 
@@ -59,7 +53,7 @@ def textgrid_data_loader(data_dir: Path, seq_len: int, batch_size: int, mode: st
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100
     assert mode in ["train", "val"]
-    phonemes = load_phonemes_set_from_lexicon_file("assets/infore/lexicon.txt")
+    phonemes = load_phonemes_set()
     if mode == "train":
         tg_files = tg_files[:L]
     if mode == "val":
@@ -96,7 +90,7 @@ def load_textgrid_wav(
     random.Random(42).shuffle(tg_files)
     L = len(tg_files) * 95 // 100
     assert mode in ["train", "val", "gta"]
-    phonemes = load_phonemes_set_from_lexicon_file(data_dir / "lexicon.txt")
+    phonemes = load_phonemes_set()
     if mode == "gta":
         tg_files = tg_files  # all files
     elif mode == "train":

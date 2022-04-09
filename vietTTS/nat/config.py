@@ -6,6 +6,8 @@ from jax.numpy import ndarray
 
 
 class FLAGS(Namespace):
+    """Configurations"""
+
     duration_lstm_dim = 256
     vocab_size = 256
     duration_embed_dropout_rate = 0.5
@@ -15,7 +17,7 @@ class FLAGS(Namespace):
     acoustic_encoder_dim = 256
 
     # dataset
-    max_phoneme_seq_len = 128 * 3
+    max_phoneme_seq_len = 128 * 4
     max_wave_len = 1024 * 64 * 3
 
     # Montreal Forced Aligner
@@ -23,6 +25,18 @@ class FLAGS(Namespace):
     sil_index = special_phonemes.index("sil")
     sp_index = special_phonemes.index("sp")
     word_end_index = special_phonemes.index(" ")
+    _normal_phonemes = (
+        []
+        + ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l"]
+        + ["m", "n", "o", "p", "q", "r", "s", "t", "u", "v"]
+        + ["x", "y", "à", "á", "â", "ã", "è", "é", "ê", "ì"]
+        + ["í", "ò", "ó", "ô", "õ", "ù", "ú", "ý", "ă", "đ"]
+        + ["ĩ", "ũ", "ơ", "ư", "ạ", "ả", "ấ", "ầ", "ẩ", "ẫ"]
+        + ["ậ", "ắ", "ằ", "ẳ", "ẵ", "ặ", "ẹ", "ẻ", "ẽ", "ế"]
+        + ["ề", "ể", "ễ", "ệ", "ỉ", "ị", "ọ", "ỏ", "ố", "ồ"]
+        + ["ổ", "ỗ", "ộ", "ớ", "ờ", "ở", "ỡ", "ợ", "ụ", "ủ"]
+        + ["ứ", "ừ", "ử", "ữ", "ự", "ỳ", "ỵ", "ỷ", "ỹ"]
+    )
 
     # dsp
     mel_dim = 80

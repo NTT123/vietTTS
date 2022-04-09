@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from .config import FLAGS, DurationInput
-from .data_loader import load_phonemes_set_from_lexicon_file
+from .data_loader import load_phonemes_set
 from .model import AcousticModel, DurationModel
 
 
@@ -35,7 +35,7 @@ def predict_duration(tokens):
 
 
 def text2tokens(text, lexicon_fn):
-    phonemes = load_phonemes_set_from_lexicon_file(lexicon_fn)
+    phonemes = load_phonemes_set()
     lexicon = load_lexicon(lexicon_fn)
 
     words = text.strip().lower().split()
