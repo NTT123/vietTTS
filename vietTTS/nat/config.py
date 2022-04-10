@@ -23,7 +23,7 @@ class FLAGS(Namespace):
     # Montreal Forced Aligner
     special_phonemes = ["sil", "sp", "spn", " "]  # [sil], [sp] [spn] [word end]
     sil_index = special_phonemes.index("sil")
-    sp_index = special_phonemes.index("sp")
+    sp_index = sil_index  # no use of "sp"
     word_end_index = special_phonemes.index(" ")
     _normal_phonemes = (
         []

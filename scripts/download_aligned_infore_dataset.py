@@ -24,12 +24,12 @@ def download_infore_data():
 def download_textgrid():
     """download textgrid files"""
     files = pooch.retrieve(
-        url="https://huggingface.co/datasets/ntt123/infore/resolve/main/vi_textgrid.zip",
-        known_hash="a652aa0256b6c66f64d0d76f01b329dbe404ebb382010d4a5e52b959ec97e720",
+        url="https://huggingface.co/datasets/ntt123/infore/resolve/main/infore_tg.zip",
+        known_hash="b5e18152c1b3957d750218bc96bf11d1580c0b056662a29b34c0cccab7376e86",
         processor=Unzip(),
         progressbar=True,
     )
-    data_dir = Path(sorted(files)[0]).parent.parent / "infore_spk"
+    data_dir = Path(sorted(files)[0]).parent
     return data_dir
 
 

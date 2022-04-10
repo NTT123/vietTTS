@@ -21,6 +21,10 @@ def loss_fn(params, aux, rng, x: DurationInput, is_training=True):
     def net(x):
         return DurationModel(is_training=is_training)(x)
 
+    if is_training:
+        m_rng, rng = jax.random.split(rng, 2)
+        m = jax.random.bernoulli(m_rng, 0.1, x.phonemes.shape)
+        x = x._replace(phonemes=jnp.where(m, FLAGS.word_end_index, x.phonemes))
     durations, aux = net.apply(params, aux, rng, x)
     mask = jnp.arange(0, x.phonemes.shape[1])[None, :] < x.lengths[:, None]
     # NOT predict [WORD END] token

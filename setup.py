@@ -13,7 +13,7 @@ install_requires = [
     "librosa",
     "optax",
     "tabulate",
-    "textgrid",
+    "textgrid @ git+https://github.com/kylebgorman/textgrid.git",
     "tqdm",
     "matplotlib",
 ]
