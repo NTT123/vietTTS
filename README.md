@@ -24,6 +24,7 @@ pip3 install -e .
 Quick start using pretrained models
 ----------------------------------
 ```sh
+git checkout quickstart
 bash ./scripts/quick_start.sh
 ```
 
