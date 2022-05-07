@@ -77,7 +77,7 @@ def initial_state(batch):
 
 
 def plot_val_duration(step: int, batch, params, aux, rng):
-    fn = FLAGS.ckpt_dir / f"duration_{step}.png"
+    fn = FLAGS.ckpt_dir / f"duration_{step:06d}.png"
     predicted_dur, gt_dur = predict_duration(params, aux, rng, batch)
     L = batch.lengths[0]
     x = np.arange(0, L) * 3

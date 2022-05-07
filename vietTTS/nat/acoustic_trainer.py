@@ -160,7 +160,7 @@ def train():
             plt.subplot(3, 1, 3)
             plt.imshow(attn.T, origin="lower", aspect="auto")
             plt.tight_layout()
-            plt.savefig(FLAGS.ckpt_dir / f"mel_{step}.png")
+            plt.savefig(FLAGS.ckpt_dir / f"mel_{step:06d}.png")
             plt.close()
 
             # saving checkpoint
