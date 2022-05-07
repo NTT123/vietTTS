@@ -20,7 +20,10 @@ for fn in tqdm(files):
     sr, y = wavfile.read(wav_fn)
     y = np.copy(y)
     for phone in tg[1]:
-        if phone.mark in FLAGS.special_phonemes:
+        mark = phone.mark.strip().lower()
+        if len(mark) == 0:
+            mark = "sil"
+        if mark in FLAGS.special_phonemes:
             l = int(phone.minTime * sr)
             r = int(phone.maxTime * sr)
             y[l:r] = 0

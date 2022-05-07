@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 url = "https://github.com/ntt123/vietTTS"
 
 install_requires = [
