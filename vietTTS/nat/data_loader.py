@@ -122,6 +122,14 @@ def load_textgrid_wav(
 
         if len(y) > pad_wav_len:
             y = y[:pad_wav_len]
+
+        # normalize to match hifigan preprocessing
+        y = y.astype(np.float32)
+        y = y / np.max(np.abs(y))
+        y = y * 0.95
+        y = y * (2 ** 15)
+        y = y.astype(np.int16)
+
         wav_length = len(y)
         y = np.pad(y, (0, pad_wav_len - len(y)))
         data.append((fn.stem, ps, ds, l, y, wav_length))
@@ -136,7 +144,7 @@ def load_textgrid_wav(
                 ps = np.array(ps, dtype=np.int32)
                 ds = np.array(ds, dtype=np.float32)
                 lengths = np.array(lengths, dtype=np.int32)
-                wavs = np.array(wavs)
+                wavs = np.array(wavs, dtype=np.int16)
                 wav_lengths = np.array(wav_lengths, dtype=np.int32)
                 if mode == "gta":
                     yield names, AcousticInput(ps, lengths, ds, wavs, wav_lengths, None)
