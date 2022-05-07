@@ -33,6 +33,7 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
         FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax
     )
     wavs = inputs.wavs.astype(jnp.float32) / (2 ** 15)
+    mels = melfilter(wavs)
     B, L, D = mels.shape
     go_frame = jnp.zeros((B, 1, D), dtype=jnp.float32)
     inp_mels = jnp.concatenate((go_frame, mels[:, :-1, :]), axis=1)
