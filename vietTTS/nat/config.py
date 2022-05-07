@@ -52,10 +52,10 @@ class FLAGS(Namespace):
     duration_learning_rate = 1e-4
     max_grad_norm = 1.0
     weight_decay = 1e-4
+    token_mask_prob = 0.1
 
     # ckpt
     ckpt_dir = Path("assets/infore/nat")
-    data_dir = Path("assets/infore/data")
     data_dir = Path("train_data")
 
 

@@ -12,8 +12,8 @@ from tqdm.cli import tqdm
 def download_infore_data():
     """download infore wav files"""
     files = pooch.retrieve(
-        url="https://huggingface.co/datasets/ntt123/infore/resolve/main/infore_16k.zip",
-        known_hash="0c9b2fd6962fd6706fa9673f94a9f1ba534edf34691247ae2be0ff490870ccd7",
+        url="https://huggingface.co/datasets/ntt123/infore/resolve/main/infore_16k_denoised.zip",
+        known_hash="2445527b345fb0b1816ce3c8f09bae419d6bbe251f16d6c74d8dd95ef9fb0737",
         processor=Unzip(),
         progressbar=True,
     )
@@ -25,7 +25,7 @@ def download_textgrid():
     """download textgrid files"""
     files = pooch.retrieve(
         url="https://huggingface.co/datasets/ntt123/infore/resolve/main/infore_tg.zip",
-        known_hash="b5e18152c1b3957d750218bc96bf11d1580c0b056662a29b34c0cccab7376e86",
+        known_hash="26e4f53025220097ea95dc266657de8d65104b0a17a6ffba778fc016c8dd36d7",
         processor=Unzip(),
         progressbar=True,
     )
@@ -33,7 +33,7 @@ def download_textgrid():
     return data_dir
 
 
-DATA_ROOT = Path("./train_data")  # modify this
+DATA_ROOT = Path("./train_data")
 DATA_ROOT.mkdir(parents=True, exist_ok=True)
 wav_dir = download_infore_data()
 tg_dir = download_textgrid()

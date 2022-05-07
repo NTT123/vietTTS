@@ -17,13 +17,17 @@ from .utils import load_latest_ckpt, print_flags, save_ckpt
 
 
 def loss_fn(params, aux, rng, x: DurationInput, is_training=True):
+    """return the l1 loss"""
+
     @hk.transform_with_state
     def net(x):
         return DurationModel(is_training=is_training)(x)
 
     if is_training:
+        # randomly mask tokens with [WORD END] token
+        # during training to avoid overfitting
         m_rng, rng = jax.random.split(rng, 2)
-        m = jax.random.bernoulli(m_rng, 0.1, x.phonemes.shape)
+        m = jax.random.bernoulli(m_rng, FLAGS.token_mask_prob, x.phonemes.shape)
         x = x._replace(phonemes=jnp.where(m, FLAGS.word_end_index, x.phonemes))
     durations, aux = net.apply(params, aux, rng, x)
     mask = jnp.arange(0, x.phonemes.shape[1])[None, :] < x.lengths[:, None]
