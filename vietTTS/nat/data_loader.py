@@ -123,12 +123,12 @@ def load_textgrid_wav(
         if len(y) > pad_wav_len:
             y = y[:pad_wav_len]
 
-        # normalize to match hifigan preprocessing
-        y = y.astype(np.float32)
-        y = y / np.max(np.abs(y))
-        y = y * 0.95
-        y = y * (2 ** 15)
-        y = y.astype(np.int16)
+        # # normalize to match hifigan preprocessing
+        # y = y.astype(np.float32)
+        # y = y / np.max(np.abs(y))
+        # y = y * 0.95
+        # y = y * (2 ** 15)
+        # y = y.astype(np.int16)
 
         wav_length = len(y)
         y = np.pad(y, (0, pad_wav_len - len(y)))
