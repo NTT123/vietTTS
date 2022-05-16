@@ -6,6 +6,8 @@ from jax.numpy import ndarray
 
 
 class FLAGS(Namespace):
+    """Configurations"""
+
     duration_lstm_dim = 256
     vocab_size = 256
     duration_embed_dropout_rate = 0.5
@@ -22,8 +24,20 @@ class FLAGS(Namespace):
     # Montreal Forced Aligner
     special_phonemes = ["sil", "sp", "spn", " "]  # [sil], [sp] [spn] [word end]
     sil_index = special_phonemes.index("sil")
-    sp_index = special_phonemes.index("sp")
+    sp_index = sil_index  # no use of "sp"
     word_end_index = special_phonemes.index(" ")
+    _normal_phonemes = (
+        []
+        + ["a", "b", "c", "d", "e", "g", "h", "i", "k", "l"]
+        + ["m", "n", "o", "p", "q", "r", "s", "t", "u", "v"]
+        + ["x", "y", "à", "á", "â", "ã", "è", "é", "ê", "ì"]
+        + ["í", "ò", "ó", "ô", "õ", "ù", "ú", "ý", "ă", "đ"]
+        + ["ĩ", "ũ", "ơ", "ư", "ạ", "ả", "ấ", "ầ", "ẩ", "ẫ"]
+        + ["ậ", "ắ", "ằ", "ẳ", "ẵ", "ặ", "ẹ", "ẻ", "ẽ", "ế"]
+        + ["ề", "ể", "ễ", "ệ", "ỉ", "ị", "ọ", "ỏ", "ố", "ồ"]
+        + ["ổ", "ỗ", "ộ", "ớ", "ờ", "ở", "ỡ", "ợ", "ụ", "ủ"]
+        + ["ứ", "ừ", "ử", "ữ", "ự", "ỳ", "ỵ", "ỷ", "ỹ"]
+    )
 
     # dsp
     mel_dim = 80
@@ -38,10 +52,10 @@ class FLAGS(Namespace):
     duration_learning_rate = 1e-4
     max_grad_norm = 1.0
     weight_decay = 1e-4
+    token_mask_prob = 0.1
 
     # ckpt
     ckpt_dir = Path("assets/infore/nat")
-    data_dir = Path("assets/infore/data")
     data_dir = Path("train_data")
 
 

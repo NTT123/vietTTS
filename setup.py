@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = "0.3.3"
+__version__ = "0.4.1"
 url = "https://github.com/ntt123/vietTTS"
 
 install_requires = [
@@ -13,8 +13,9 @@ install_requires = [
     "librosa",
     "optax",
     "tabulate",
-    "textgrid",
+    "textgrid @ git+https://github.com/kylebgorman/textgrid.git",
     "tqdm",
+    "matplotlib",
 ]
 setup_requires = []
 tests_require = []

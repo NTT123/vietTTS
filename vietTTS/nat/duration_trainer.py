@@ -17,10 +17,18 @@ from .utils import load_latest_ckpt, print_flags, save_ckpt
 
 
 def loss_fn(params, aux, rng, x: DurationInput, is_training=True):
+    """return the l1 loss"""
+
     @hk.transform_with_state
     def net(x):
         return DurationModel(is_training=is_training)(x)
 
+    if is_training:
+        # randomly mask tokens with [WORD END] token
+        # during training to avoid overfitting
+        m_rng, rng = jax.random.split(rng, 2)
+        m = jax.random.bernoulli(m_rng, FLAGS.token_mask_prob, x.phonemes.shape)
+        x = x._replace(phonemes=jnp.where(m, FLAGS.word_end_index, x.phonemes))
     durations, aux = net.apply(params, aux, rng, x)
     mask = jnp.arange(0, x.phonemes.shape[1])[None, :] < x.lengths[:, None]
     # NOT predict [WORD END] token
@@ -69,7 +77,7 @@ def initial_state(batch):
 
 
 def plot_val_duration(step: int, batch, params, aux, rng):
-    fn = FLAGS.ckpt_dir / f"duration_{step}.png"
+    fn = FLAGS.ckpt_dir / f"duration_{step:06d}.png"
     predicted_dur, gt_dur = predict_duration(params, aux, rng, batch)
     L = batch.lengths[0]
     x = np.arange(0, L) * 3

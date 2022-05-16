@@ -28,10 +28,12 @@ def val_net(x):
 
 
 def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
+    """Compute loss"""
     melfilter = MelFilter(
         FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax
     )
-    mels = melfilter(inputs.wavs.astype(jnp.float32) / (2 ** 15))
+    wavs = inputs.wavs.astype(jnp.float32) / (2 ** 15)
+    mels = melfilter(wavs)
     B, L, D = mels.shape
     go_frame = jnp.zeros((B, 1, D), dtype=jnp.float32)
     inp_mels = jnp.concatenate((go_frame, mels[:, :-1, :]), axis=1)
@@ -154,7 +156,7 @@ def train():
             plt.subplot(3, 1, 3)
             plt.imshow(attn.T, origin="lower", aspect="auto")
             plt.tight_layout()
-            plt.savefig(FLAGS.ckpt_dir / f"mel_{step}.png")
+            plt.savefig(FLAGS.ckpt_dir / f"mel_{step:06d}.png")
             plt.close()
 
             # saving checkpoint

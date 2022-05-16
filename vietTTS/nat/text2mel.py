@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from .config import FLAGS, DurationInput
-from .data_loader import load_phonemes_set_from_lexicon_file
+from .data_loader import load_phonemes_set
 from .model import AcousticModel, DurationModel
 
 
@@ -35,7 +35,7 @@ def predict_duration(tokens):
 
 
 def text2tokens(text, lexicon_fn):
-    phonemes = load_phonemes_set_from_lexicon_file(lexicon_fn)
+    phonemes = load_phonemes_set()
     lexicon = load_lexicon(lexicon_fn)
 
     words = text.strip().lower().split()
@@ -54,7 +54,7 @@ def text2tokens(text, lexicon_fn):
                 if p in phonemes:
                     tokens.append(phonemes.index(p))
             tokens.append(FLAGS.word_end_index)
-    tokens.append(FLAGS.sp_index)  # silence
+    tokens.append(FLAGS.sil_index)  # silence
     return tokens
 
 
@@ -88,7 +88,7 @@ def text2mel(
     tokens = text2tokens(text, lexicon_fn)
     durations = predict_duration(tokens)
     durations = jnp.where(
-        np.array(tokens)[None, :] == FLAGS.sp_index,
+        np.array(tokens)[None, :] == FLAGS.sil_index,
         jnp.clip(durations, a_min=silence_duration, a_max=None),
         durations,
     )
@@ -96,7 +96,7 @@ def text2mel(
         np.array(tokens)[None, :] == FLAGS.word_end_index, 0.0, durations
     )
     mels = predict_mel(tokens, durations)
-    if tokens[-1] == FLAGS.sp_index:
+    if tokens[-1] == FLAGS.sil_index:
         end_silence = durations[0, -1].item()
         silence_frame = int(end_silence * FLAGS.sample_rate / (FLAGS.n_fft // 4))
         mels = mels[:, : (mels.shape[1] - silence_frame)]

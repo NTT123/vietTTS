@@ -154,7 +154,7 @@ class AcousticModel(hk.Module):
         def zoneout_decoder(inputs, prev_state):
             x, mask = inputs
             x, state = self.decoder(x, prev_state)
-            state = jax.tree_multimap(
+            state = jax.tree_map(
                 lambda m, s1, s2: s1 * m + s2 * (1 - m), mask, prev_state, state
             )
             return x, state
