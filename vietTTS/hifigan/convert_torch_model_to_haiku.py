@@ -42,7 +42,8 @@ def convert_to_haiku(a, h, device):
             a = f"generator/~/ups_{ii}"
         elif a.startswith("resblocks."):
             _, x, y, z, _ = a.split(".")
-            a = f"generator/~/res_block1_{x}/~/{y}_{z}"
+            ver = h.resblock
+            a = f"generator/~/res_block{ver}_{x}/~/{y}_{z}"
         print(a, b.shape)
         if a not in hk_map:
             hk_map[a] = {}

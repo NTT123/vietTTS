@@ -32,7 +32,7 @@ def loss_fn(params, aux, rng, inputs: AcousticInput, is_training=True):
     melfilter = MelFilter(
         FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax
     )
-    wavs = inputs.wavs.astype(jnp.float32) / (2 ** 15)
+    wavs = inputs.wavs.astype(jnp.float32) / (2**15)
     mels = melfilter(wavs)
     B, L, D = mels.shape
     go_frame = jnp.zeros((B, 1, D), dtype=jnp.float32)
@@ -98,7 +98,7 @@ def train():
         FLAGS.sample_rate, FLAGS.n_fft, FLAGS.mel_dim, FLAGS.fmin, FLAGS.fmax
     )
     batch = next(train_data_iter)
-    batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2 ** 15)))
+    batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
     params, aux, rng, optim_state = initial_state(optimizer, batch)
     losses = Deque(maxlen=1000)
     val_losses = Deque(maxlen=100)

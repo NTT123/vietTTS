@@ -77,7 +77,7 @@ def train(
     )
     batch = next(train_data_iter)
     batch = jax.tree_map(lambda x: x[:1], batch)
-    batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2 ** 15)))
+    batch = batch._replace(mels=melfilter(batch.wavs.astype(jnp.float32) / (2**15)))
     params, aux, rng, optim_state = initial_state(optimizer, batch)
     losses = Deque(maxlen=1000)
     val_losses = Deque(maxlen=100)
