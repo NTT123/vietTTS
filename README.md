@@ -1,5 +1,7 @@
-A Vietnamese TTS
+A Vietnamese TTS 
 ================
+
+🔔 **Notice**: This project is no longer being updated. Please refer to the new project, [LightSpeed](https://github.com/NTT123/light-speed), which includes [a new male voice](https://huggingface.co/spaces/ntt123/Vietnam-male-voice-TTS).
 
 Duration model + Acoustic model + HiFiGAN vocoder for vietnamese text-to-speech application.
 
@@ -8,7 +10,7 @@ Online demo at https://huggingface.co/spaces/ntt123/vietTTS.
 A synthesized audio clip: [clip.wav](assets/infore/clip.wav). A colab notebook: [notebook](https://colab.research.google.com/drive/1oczrWOQOr1Y_qLdgis1twSlNZlfPVXoY?usp=sharing).
 
 
-🔔Checkout the experimental `multi-speaker` branch (`git checkout multi-speaker`) for multi-speaker support.🔔
+Checkout the experimental `multi-speaker` branch (`git checkout multi-speaker`) for multi-speaker support.
 
 Install
 -------
